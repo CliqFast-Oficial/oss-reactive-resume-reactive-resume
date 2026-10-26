@@ -3,6 +3,7 @@ import z from "zod";
 import * as schema from "@reactive-resume/db/schema";
 import { jsonPatchOperationSchema } from "@reactive-resume/resume/patch";
 import { resumeDataSchema } from "@reactive-resume/schema/resume/data";
+import { slugSchema } from "@reactive-resume/schema/resume/slug";
 import { writableResumeDataSchema } from "@reactive-resume/schema/resume/write";
 import { paginationShape } from "../pagination";
 
@@ -87,7 +88,7 @@ export const resumeDto = {
 				.boolean()
 				.optional()
 				.describe("While true, the resume's name follows its headline until someone renames it."),
-			slug: resumeSchema.shape.slug
+			slug: slugSchema
 				.optional()
 				.describe("The slug of the resume. Generated from the name, and made unique, when omitted."),
 			withSampleData: z.boolean().default(false),
@@ -116,6 +117,7 @@ export const resumeDto = {
 			.partial()
 			.extend({
 				id: z.string(),
+				slug: slugSchema.optional(),
 				data: writableResumeDataSchema.optional(),
 				expectedUpdatedAt: z.coerce
 					.date()
@@ -135,7 +137,7 @@ export const resumeDto = {
 	checkSlug: {
 		input: z.object({
 			resumeId: z.string().describe("The ID of the resume the slug is for."),
-			slug: z.string().max(64).describe("The slug to check."),
+			slug: z.string().describe("The slug to check."),
 		}),
 		output: z.object({
 			status: z
@@ -182,7 +184,7 @@ export const resumeDto = {
 		input: resumeSchema.pick({ id: true }).extend({
 			name: resumeSchema.shape.name.optional(),
 			tags: resumeSchema.shape.tags.optional(),
-			slug: resumeSchema.shape.slug
+			slug: slugSchema
 				.optional()
 				.describe("The slug of the copy. Generated from the name, and made unique, when omitted."),
 		}),

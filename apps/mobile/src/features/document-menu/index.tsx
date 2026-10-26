@@ -4,7 +4,7 @@ import { useRouter } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 import { View } from "react-native";
 import { EnrichedTextInput } from "react-native-enriched-html";
-import { normalizeSlug, SLUG_PATTERN } from "@reactive-resume/resume/sharing";
+import { isValidSlug, MAX_SLUG_LENGTH, normalizeSlug } from "@reactive-resume/resume/sharing";
 import { client } from "@/api/client";
 import { resumeFieldFocus, useResumeStore } from "@/draft";
 import { resume as draftResume } from "@/draft/runtime";
@@ -194,19 +194,22 @@ export function DocumentMenu({ id, inChrome = false }: DocumentMenuProps) {
 									label={t`Slug`}
 									value={slug}
 									onChangeText={(value) => setSlug(normalizeSlug(value))}
-									maxLength={64}
 									editable={!operations.busy}
 									autoCapitalize="none"
 									autoCorrect={false}
 									helper={t`Leave empty to generate an available address from the name.`}
 									error={
-										slug && !SLUG_PATTERN.test(slug) ? t`Use lowercase letters, numbers and single dashes.` : undefined
+										slug.length > MAX_SLUG_LENGTH
+											? t`Use at most 64 characters.`
+											: slug && !isValidSlug(slug)
+												? t`Use lowercase letters, numbers and single dashes.`
+												: undefined
 									}
 								/>
 								<Button
 									label={t`Duplicate`}
 									loading={operations.busy}
-									disabled={!name.trim() || (!!slug && !SLUG_PATTERN.test(slug))}
+									disabled={!name.trim() || (!!slug && !isValidSlug(slug))}
 									onPress={() =>
 										void run(async () => {
 											const current = await flushResume(id);

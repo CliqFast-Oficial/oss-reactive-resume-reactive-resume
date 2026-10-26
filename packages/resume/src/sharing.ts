@@ -1,8 +1,4 @@
-/** A resume's address (its slug): lowercase letters and numbers in groups joined by single dashes. */
-export const SLUG_PATTERN = /^[a-z0-9]+(-[a-z0-9]+)*$/;
-
-/** What a typed address becomes as the user types it: lowercase, spaces as dashes. */
-export const normalizeSlug = (slug: string) => slug.toLowerCase().replace(/\s+/g, "-");
+export { isValidSlug, MAX_SLUG_LENGTH, normalizeSlug, SLUG_PATTERN } from "@reactive-resume/schema/resume/slug";
 
 /** A DNS label: what a username must look like to be a subdomain or a domain of its own. */
 export const DNS_LABEL = /^[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?$/;

@@ -3754,10 +3754,6 @@ msgstr "पत्र अपडेट करता आले नाही. पु
 msgid "Couldn't update the preview. The last working version is still shown. Edit anything to try again."
 msgstr "पूर्वावलोकन अपडेट करता आले नाही. शेवटची चालणारी आवृत्ती अजूनही दाखवली आहे. पुन्हा प्रयत्न करण्यासाठी काहीही संपादित करा."
 
-#: src/libs/error-message.ts
-msgid "Couldn't update the resume. Try again."
-msgstr "रेझ्युमे अपडेट करता आला नाही. पुन्हा प्रयत्न करा."
-
 #: src/features/applications/components/detail/activity.tsx
 msgid "Couldn't update the timeline. Try again."
 msgstr "टाइमलाइन अपडेट करू शकलो नाही. पुन्हा प्रयत्न करा."
@@ -10916,6 +10912,10 @@ msgstr "काही मजकूर पानाबाहेर आहे."
 msgid "Some text is rotated."
 msgstr "काही मजकूर फिरवलेला आहे."
 
+#: src/libs/error-message.ts
+msgid "Something went wrong. Please try again."
+msgstr "काहीतरी चूक झाली. कृपया पुन्हा प्रयत्न करा."
+
 #: src/features/documents/documents-page.tsx
 msgid "Sort"
 msgstr "क्रमवारी लावा"
@@ -11595,6 +11595,10 @@ msgstr "{label} फाइल व्युत्पन्न करता आल�
 #: src/features/homepage/prepare.tsx
 msgid "The 13-point activation lift. Knowledge has the before and after."
 msgstr "ॲक्टिव्हेशनमधील 13 अंकांची वाढ. ज्ञानसंग्रहात आधीचे आणि नंतरचे आकडे आहेत."
+
+#: src/libs/error-message.ts
+msgid "The address must contain only lowercase letters and numbers, separated by single dashes."
+msgstr "पत्त्यामध्ये फक्त लोअरकेस अक्षरे आणि संख्या असणे आवश्यक आहे, जे सिंगल डॅशने वेगळे केलेले असावे."
 
 #: src/features/homepage/faq.tsx
 msgid "The app is translated into {languages} languages by volunteers, and a resume can be written in any language, including right-to-left scripts like Arabic and Hebrew."
@@ -12661,6 +12665,11 @@ msgstr "किमान 8 अक्षरे वापरा."
 #: src/features/ats-checker/messages.ts
 msgid "Use at least 9pt."
 msgstr "किमान 9pt वापरा."
+
+#: src/features/resume/share/address-field.tsx
+#: src/libs/error-message.ts
+msgid "Use at most 64 characters."
+msgstr "जास्तीत जास्त 64 अक्षरे वापरा."
 
 #: src/features/resume/builder/password-dialog.tsx
 msgid "Use between 6 and 64 characters."

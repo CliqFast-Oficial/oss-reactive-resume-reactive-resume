@@ -10,7 +10,8 @@ import {
 	formatTimeSince,
 	normalizeSlug,
 	publicResumeUrl,
-	SLUG_PATTERN,
+	isValidSlug,
+	MAX_SLUG_LENGTH,
 	summarizeViews,
 } from "@reactive-resume/resume/sharing";
 import { flushResume } from "./document";
@@ -74,7 +75,7 @@ export function LinkTab({ resume, offline }: LinkProps) {
 	const saveCheckedSlug = useEffectEvent((value: string, cancelled: () => boolean) => save({ slug: value }, cancelled));
 
 	useEffect(() => {
-		if (!changed || !SLUG_PATTERN.test(slug) || !resume.isPublic || resume.isLocked || offline) return;
+		if (!changed || !isValidSlug(slug) || !resume.isPublic || resume.isLocked || offline) return;
 		let cancelled = false;
 		const timer = setTimeout(() => {
 			setSlugState("checking");
@@ -104,15 +105,20 @@ export function LinkTab({ resume, offline }: LinkProps) {
 		};
 	}, [slug, changed, resume.id, resume.isPublic, resume.isLocked, offline, retry]);
 
-	const addressError = !SLUG_PATTERN.test(slug)
-		? t`Use lowercase letters, numbers and single dashes.`
-		: slugState === "taken"
-			? takenBy
-				? t`You already use this for “${takenBy}”.`
-				: t`Another of your resumes uses this address.`
-			: slugState === "error"
-				? t`Couldn't check or save this address. Try again.`
-				: undefined;
+	const addressError =
+		changed && !slug
+			? t`Add an address.`
+			: changed && slug.length > MAX_SLUG_LENGTH
+				? t`Use at most 64 characters.`
+				: changed && !isValidSlug(slug)
+					? t`Use lowercase letters, numbers and single dashes.`
+					: slugState === "taken"
+						? takenBy
+							? t`You already use this for “${takenBy}”.`
+							: t`Another of your resumes uses this address.`
+						: slugState === "error"
+							? t`Couldn't check or save this address. Try again.`
+							: undefined;
 
 	return (
 		<View style={{ gap: space.s4 }}>

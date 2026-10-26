@@ -3754,10 +3754,6 @@ msgstr "레터를 업데이트할 수 없습니다. 다시 시도해 보세요."
 msgid "Couldn't update the preview. The last working version is still shown. Edit anything to try again."
 msgstr "미리보기를 업데이트할 수 없습니다. 마지막으로 정상 작동한 버전이 계속 표시됩니다. 아무 내용이나 편집하면 다시 시도합니다."
 
-#: src/libs/error-message.ts
-msgid "Couldn't update the resume. Try again."
-msgstr "이력서를 업데이트할 수 없습니다. 다시 시도해 보세요."
-
 #: src/features/applications/components/detail/activity.tsx
 msgid "Couldn't update the timeline. Try again."
 msgstr "타임라인을 업데이트할 수 없습니다. 다시 시도해 보세요."
@@ -10916,6 +10912,10 @@ msgstr "일부 텍스트가 페이지 밖으로 벗어나 있습니다."
 msgid "Some text is rotated."
 msgstr "일부 텍스트가 회전되어 있습니다."
 
+#: src/libs/error-message.ts
+msgid "Something went wrong. Please try again."
+msgstr "문제가 발생했습니다. 다시 시도해 주세요."
+
 #: src/features/documents/documents-page.tsx
 msgid "Sort"
 msgstr "종류"
@@ -11595,6 +11595,10 @@ msgstr "{label} 파일을 생성할 수 없습니다. 다시 시도하거나 대
 #: src/features/homepage/prepare.tsx
 msgid "The 13-point activation lift. Knowledge has the before and after."
 msgstr "활성화율 13포인트 상승. 지식에 전후 수치가 있습니다."
+
+#: src/libs/error-message.ts
+msgid "The address must contain only lowercase letters and numbers, separated by single dashes."
+msgstr "주소에는 소문자와 숫자만 포함되어야 하며 단일 대시로 구분되어야 합니다."
 
 #: src/features/homepage/faq.tsx
 msgid "The app is translated into {languages} languages by volunteers, and a resume can be written in any language, including right-to-left scripts like Arabic and Hebrew."
@@ -12661,6 +12665,11 @@ msgstr "8자 이상 입력하세요."
 #: src/features/ats-checker/messages.ts
 msgid "Use at least 9pt."
 msgstr "최소 9pt 이상을 사용하세요."
+
+#: src/features/resume/share/address-field.tsx
+#: src/libs/error-message.ts
+msgid "Use at most 64 characters."
+msgstr "최대 64자까지 사용할 수 있습니다."
 
 #: src/features/resume/builder/password-dialog.tsx
 msgid "Use between 6 and 64 characters."

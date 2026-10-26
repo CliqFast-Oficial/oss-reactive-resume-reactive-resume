@@ -3754,10 +3754,6 @@ msgstr "Dopis se nepodařilo aktualizovat. Zkuste to znovu."
 msgid "Couldn't update the preview. The last working version is still shown. Edit anything to try again."
 msgstr "Náhled se nepodařilo aktualizovat. Stále se zobrazuje poslední funkční verze. Upravte cokoli a zkuste to znovu."
 
-#: src/libs/error-message.ts
-msgid "Couldn't update the resume. Try again."
-msgstr "Životopis se nepodařilo aktualizovat. Zkuste to znovu."
-
 #: src/features/applications/components/detail/activity.tsx
 msgid "Couldn't update the timeline. Try again."
 msgstr "Časovou osu se nepodařilo aktualizovat. Zkuste to znovu."
@@ -10916,6 +10912,10 @@ msgstr "Část textu je mimo stránku."
 msgid "Some text is rotated."
 msgstr "Část textu je otočená."
 
+#: src/libs/error-message.ts
+msgid "Something went wrong. Please try again."
+msgstr "Něco se pokazilo. Zkuste to prosím znovu."
+
 #: src/features/documents/documents-page.tsx
 msgid "Sort"
 msgstr "Seřadit"
@@ -11595,6 +11595,10 @@ msgstr "Soubor {label} nelze vygenerovat. Zkuste to znovu nebo místo toho stáh
 #: src/features/homepage/prepare.tsx
 msgid "The 13-point activation lift. Knowledge has the before and after."
 msgstr "Nárůst aktivace o 13 bodů. Znalosti obsahují hodnoty před a po."
+
+#: src/libs/error-message.ts
+msgid "The address must contain only lowercase letters and numbers, separated by single dashes."
+msgstr "Adresa musí obsahovat pouze malá písmena a číslice, oddělené jednotlivými pomlčkami."
 
 #: src/features/homepage/faq.tsx
 msgid "The app is translated into {languages} languages by volunteers, and a resume can be written in any language, including right-to-left scripts like Arabic and Hebrew."
@@ -12661,6 +12665,11 @@ msgstr "Použijte alespoň 8 znaků."
 #: src/features/ats-checker/messages.ts
 msgid "Use at least 9pt."
 msgstr "Použijte alespoň 9 bodů."
+
+#: src/features/resume/share/address-field.tsx
+#: src/libs/error-message.ts
+msgid "Use at most 64 characters."
+msgstr "Použijte nejvýše 64 znaků."
 
 #: src/features/resume/builder/password-dialog.tsx
 msgid "Use between 6 and 64 characters."

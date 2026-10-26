@@ -3754,10 +3754,6 @@ msgstr "Xatni yangilab bo'lmadi. Qayta urinib ko'ring."
 msgid "Couldn't update the preview. The last working version is still shown. Edit anything to try again."
 msgstr "Oldindan ko'rishni yangilab bo'lmadi. Oxirgi ishlaydigan versiya hali ham ko'rsatilmoqda. Qayta urinish uchun istalgan narsani tahrirlang."
 
-#: src/libs/error-message.ts
-msgid "Couldn't update the resume. Try again."
-msgstr "Rezyumeni yangilab bo'lmadi. Qayta urinib ko'ring."
-
 #: src/features/applications/components/detail/activity.tsx
 msgid "Couldn't update the timeline. Try again."
 msgstr "Yilnomani yangilab bo‘lmadi. Qayta urinib ko'ring."
@@ -10916,6 +10912,10 @@ msgstr "Ba'zi matnlar sahifadan tashqariga chiqib ketadi."
 msgid "Some text is rotated."
 msgstr "Ba'zi matnlar aylantirilgan."
 
+#: src/libs/error-message.ts
+msgid "Something went wrong. Please try again."
+msgstr "Nimadir noto'g'ri ketdi. Iltimos, qayta urinib ko'ring."
+
 #: src/features/documents/documents-page.tsx
 msgid "Sort"
 msgstr "Saralash"
@@ -11595,6 +11595,10 @@ msgstr "{label} faylini yaratib bo‘lmadi. Qayta urinib ko'ring yoki o'rniga PD
 #: src/features/homepage/prepare.tsx
 msgid "The 13-point activation lift. Knowledge has the before and after."
 msgstr "Aktivatsiyaning 13 punktga o'sishi. Bilimlarda oldingi va keyingi ko'rsatkichlar bor."
+
+#: src/libs/error-message.ts
+msgid "The address must contain only lowercase letters and numbers, separated by single dashes."
+msgstr "Manzilda faqat yakka tirelar bilan ajratilgan kichik harflar va raqamlar bo'lishi kerak."
 
 #: src/features/homepage/faq.tsx
 msgid "The app is translated into {languages} languages by volunteers, and a resume can be written in any language, including right-to-left scripts like Arabic and Hebrew."
@@ -12661,6 +12665,11 @@ msgstr "Kamida 8 ta belgidan foydalaning."
 #: src/features/ats-checker/messages.ts
 msgid "Use at least 9pt."
 msgstr "Kamida 9pt dan foydalaning."
+
+#: src/features/resume/share/address-field.tsx
+#: src/libs/error-message.ts
+msgid "Use at most 64 characters."
+msgstr "Ko'pi bilan 64 ta belgidan foydalaning."
 
 #: src/features/resume/builder/password-dialog.tsx
 msgid "Use between 6 and 64 characters."

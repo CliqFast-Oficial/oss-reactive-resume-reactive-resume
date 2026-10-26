@@ -3754,10 +3754,6 @@ msgstr "Mektup güncellenemedi. Tekrar deneyin."
 msgid "Couldn't update the preview. The last working version is still shown. Edit anything to try again."
 msgstr "Önizleme güncellenemedi. Son çalışan sürüm hâlâ gösteriliyor. Tekrar denemek için herhangi bir şeyi düzenleyin."
 
-#: src/libs/error-message.ts
-msgid "Couldn't update the resume. Try again."
-msgstr "Özgeçmiş güncellenemedi. Tekrar deneyin."
-
 #: src/features/applications/components/detail/activity.tsx
 msgid "Couldn't update the timeline. Try again."
 msgstr "Zaman çizelgesi güncellenemedi. Tekrar deneyin."
@@ -10916,6 +10912,10 @@ msgstr "Bazı metinler sayfa dışına taşıyor."
 msgid "Some text is rotated."
 msgstr "Bazı metinler döndürülmüş."
 
+#: src/libs/error-message.ts
+msgid "Something went wrong. Please try again."
+msgstr "Bir şeyler ters gitti. Lütfen tekrar deneyin."
+
 #: src/features/documents/documents-page.tsx
 msgid "Sort"
 msgstr "Düzenlemek"
@@ -11595,6 +11595,10 @@ msgstr "{label} dosyası oluşturulamadı. Tekrar deneyin veya bunun yerine PDF'
 #: src/features/homepage/prepare.tsx
 msgid "The 13-point activation lift. Knowledge has the before and after."
 msgstr "13 puanlık aktivasyon artışı. Bilgi Bankası'nda öncesi ve sonrası var."
+
+#: src/libs/error-message.ts
+msgid "The address must contain only lowercase letters and numbers, separated by single dashes."
+msgstr "Adres yalnızca küçük harfler ve sayılar içermeli, tek tirelerle ayrılmalıdır."
 
 #: src/features/homepage/faq.tsx
 msgid "The app is translated into {languages} languages by volunteers, and a resume can be written in any language, including right-to-left scripts like Arabic and Hebrew."
@@ -12661,6 +12665,11 @@ msgstr "En az 8 karakter kullanın."
 #: src/features/ats-checker/messages.ts
 msgid "Use at least 9pt."
 msgstr "En az 9pt kullanın."
+
+#: src/features/resume/share/address-field.tsx
+#: src/libs/error-message.ts
+msgid "Use at most 64 characters."
+msgstr "En fazla 64 karakter kullanın."
 
 #: src/features/resume/builder/password-dialog.tsx
 msgid "Use between 6 and 64 characters."

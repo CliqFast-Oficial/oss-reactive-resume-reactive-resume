@@ -57564,7 +57564,6 @@
 									},
 									"slug": {
 										"type": "string",
-										"minLength": 1,
 										"description": "The slug of the resume. Generated from the name, and made unique, when omitted."
 									},
 									"withSampleData": {
@@ -57612,7 +57611,32 @@
 												},
 												"message": {
 													"type": "string",
-													"default": "A resume with this slug already exists. Choose another slug."
+													"default": "A resume with this slug already exists."
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										},
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": true
+												},
+												"code": {
+													"const": "INVALID_SLUG"
+												},
+												"status": {
+													"const": 400
+												},
+												"message": {
+													"type": "string",
+													"default": "The slug must be at most 64 characters and contain only lowercase letters and numbers, separated by single dashes."
 												},
 												"data": {}
 											},
@@ -62146,7 +62170,6 @@
 									},
 									"slug": {
 										"type": "string",
-										"minLength": 1,
 										"description": "The slug of the resume."
 									},
 									"tags": {
@@ -66544,7 +66567,32 @@
 												},
 												"message": {
 													"type": "string",
-													"default": "A resume with this slug already exists. Choose another slug."
+													"default": "A resume with this slug already exists."
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										},
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": true
+												},
+												"code": {
+													"const": "INVALID_SLUG"
+												},
+												"status": {
+													"const": 400
+												},
+												"message": {
+													"type": "string",
+													"default": "The slug must be at most 64 characters and contain only lowercase letters and numbers, separated by single dashes."
 												},
 												"data": {}
 											},
@@ -76107,7 +76155,6 @@
 						"required": true,
 						"schema": {
 							"type": "string",
-							"maxLength": 64,
 							"description": "The slug to check."
 						},
 						"allowEmptyValue": true,
@@ -76258,7 +76305,7 @@
 												},
 												"message": {
 													"type": "string",
-													"default": "A resume with this slug already exists. Choose another slug."
+													"default": "A resume with this slug already exists."
 												},
 												"data": {}
 											},
@@ -76968,7 +77015,6 @@
 									},
 									"slug": {
 										"type": "string",
-										"minLength": 1,
 										"description": "The slug of the copy. Generated from the name, and made unique, when omitted."
 									}
 								}
@@ -76984,6 +77030,151 @@
 								"schema": {
 									"type": "string",
 									"description": "The ID of the duplicated resume."
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "400",
+						"content": {
+							"application/json": {
+								"schema": {
+									"oneOf": [
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": true
+												},
+												"code": {
+													"const": "RESUME_SLUG_ALREADY_EXISTS"
+												},
+												"status": {
+													"const": 400
+												},
+												"message": {
+													"type": "string",
+													"default": "A resume with this slug already exists."
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										},
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": true
+												},
+												"code": {
+													"const": "INVALID_SLUG"
+												},
+												"status": {
+													"const": 400
+												},
+												"message": {
+													"type": "string",
+													"default": "The slug must be at most 64 characters and contain only lowercase letters and numbers, separated by single dashes."
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										},
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": false
+												},
+												"code": {
+													"type": "string"
+												},
+												"status": {
+													"type": "number"
+												},
+												"message": {
+													"type": "string"
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										}
+									]
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "404",
+						"content": {
+							"application/json": {
+								"schema": {
+									"oneOf": [
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": true
+												},
+												"code": {
+													"const": "NOT_FOUND"
+												},
+												"status": {
+													"const": 404
+												},
+												"message": {
+													"type": "string",
+													"default": "The resume does not exist."
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										},
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": false
+												},
+												"code": {
+													"type": "string"
+												},
+												"status": {
+													"type": "number"
+												},
+												"message": {
+													"type": "string"
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										}
+									]
 								}
 							}
 						}
@@ -89249,7 +89440,6 @@
 									},
 									"slug": {
 										"type": "string",
-										"minLength": 1,
 										"description": "The slug of the resume."
 									},
 									"tags": {
@@ -93647,7 +93837,32 @@
 												},
 												"message": {
 													"type": "string",
-													"default": "A resume with this slug already exists. Choose another slug."
+													"default": "A resume with this slug already exists."
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										},
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": true
+												},
+												"code": {
+													"const": "INVALID_SLUG"
+												},
+												"status": {
+													"const": 400
+												},
+												"message": {
+													"type": "string",
+													"default": "The slug must be at most 64 characters and contain only lowercase letters and numbers, separated by single dashes."
 												},
 												"data": {}
 											},
@@ -93924,7 +94139,6 @@
 									},
 									"slug": {
 										"type": "string",
-										"minLength": 1,
 										"description": "The slug of the copy. Generated from the name, and made unique, when omitted."
 									}
 								}
@@ -93940,6 +94154,151 @@
 								"schema": {
 									"type": "string",
 									"description": "The ID of the duplicated resume."
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "400",
+						"content": {
+							"application/json": {
+								"schema": {
+									"oneOf": [
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": true
+												},
+												"code": {
+													"const": "RESUME_SLUG_ALREADY_EXISTS"
+												},
+												"status": {
+													"const": 400
+												},
+												"message": {
+													"type": "string",
+													"default": "A resume with this slug already exists."
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										},
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": true
+												},
+												"code": {
+													"const": "INVALID_SLUG"
+												},
+												"status": {
+													"const": 400
+												},
+												"message": {
+													"type": "string",
+													"default": "The slug must be at most 64 characters and contain only lowercase letters and numbers, separated by single dashes."
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										},
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": false
+												},
+												"code": {
+													"type": "string"
+												},
+												"status": {
+													"type": "number"
+												},
+												"message": {
+													"type": "string"
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										}
+									]
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "404",
+						"content": {
+							"application/json": {
+								"schema": {
+									"oneOf": [
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": true
+												},
+												"code": {
+													"const": "NOT_FOUND"
+												},
+												"status": {
+													"const": 404
+												},
+												"message": {
+													"type": "string",
+													"default": "The resume does not exist."
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										},
+										{
+											"type": "object",
+											"properties": {
+												"defined": {
+													"const": false
+												},
+												"code": {
+													"type": "string"
+												},
+												"status": {
+													"type": "number"
+												},
+												"message": {
+													"type": "string"
+												},
+												"data": {}
+											},
+											"required": [
+												"defined",
+												"code",
+												"status",
+												"message"
+											]
+										}
+									]
 								}
 							}
 						}
@@ -94054,7 +94413,7 @@
 												},
 												"message": {
 													"type": "string",
-													"default": "A resume with this slug already exists. Choose another slug."
+													"default": "A resume with this slug already exists."
 												},
 												"data": {}
 											},
@@ -98683,7 +99042,6 @@
 						"required": true,
 						"schema": {
 							"type": "string",
-							"maxLength": 64,
 							"description": "The slug to check."
 						},
 						"allowEmptyValue": true,

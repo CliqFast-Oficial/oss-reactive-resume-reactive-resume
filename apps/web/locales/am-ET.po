@@ -3754,10 +3754,6 @@ msgstr "ደብዳቤውን ማዘመን አልተቻለም። እንደገና �
 msgid "Couldn't update the preview. The last working version is still shown. Edit anything to try again."
 msgstr "ቅድመ እይታውን ማዘመን አልተቻለም። የመጨረሻው የሚሰራ ስሪት አሁንም ይታያል። እንደገና ለመሞከር ማንኛውንም ነገር ያርትዑ።"
 
-#: src/libs/error-message.ts
-msgid "Couldn't update the resume. Try again."
-msgstr "የስራ ልምድ ማስረጃውን ማዘመን አልተቻለም። እንደገና ይሞክሩ።"
-
 #: src/features/applications/components/detail/activity.tsx
 msgid "Couldn't update the timeline. Try again."
 msgstr "የጊዜ መስመሩን ማዘመን አልተቻለም። እንደገና ይሞክሩ።"
@@ -10916,6 +10912,10 @@ msgstr "አንዳንድ ጽሁፍ ከገጹ ውጭ ይወድቃል።"
 msgid "Some text is rotated."
 msgstr "አንዳንድ ጽሁፍ ተሽከርክሯል።"
 
+#: src/libs/error-message.ts
+msgid "Something went wrong. Please try again."
+msgstr "የሆነ ስህተት ተፈጥሯል። እባክዎ እንደገና ይሞክሩ።"
+
 #: src/features/documents/documents-page.tsx
 msgid "Sort"
 msgstr "ደርድር"
@@ -11595,6 +11595,10 @@ msgstr "የ{label} ፋይል ሊፈጠር አልቻለም። እንደገና ይ
 #: src/features/homepage/prepare.tsx
 msgid "The 13-point activation lift. Knowledge has the before and after."
 msgstr "የ13 ነጥብ የአክቲቬሽን ጭማሪ። እውቀት በፊት እና በኋላ ያለውን ይዟል።"
+
+#: src/libs/error-message.ts
+msgid "The address must contain only lowercase letters and numbers, separated by single dashes."
+msgstr "አድራሻው በነጠላ ሰረዞች (-) የተለዩ የላቲን ትናንሽ ፊደላትን እና ቁጥሮችን ብቻ መያዝ አለበት።"
 
 #: src/features/homepage/faq.tsx
 msgid "The app is translated into {languages} languages by volunteers, and a resume can be written in any language, including right-to-left scripts like Arabic and Hebrew."
@@ -12662,6 +12666,11 @@ msgstr "ቢያንስ 8 ቁምፊዎችን ይጠቀሙ።"
 msgid "Use at least 9pt."
 msgstr "ቢያንስ 9pt ይጠቀሙ።"
 
+#: src/features/resume/share/address-field.tsx
+#: src/libs/error-message.ts
+msgid "Use at most 64 characters."
+msgstr "ቢበዛ 64 ቁምፊዎችን ይጠቀሙ።"
+
 #: src/features/resume/builder/password-dialog.tsx
 msgid "Use between 6 and 64 characters."
 msgstr "ከ6 እስከ 64 ቁምፊዎችን ይጠቀሙ።"
@@ -12689,7 +12698,7 @@ msgstr "በስልጠና ተጠቀም፦ {excerpt}"
 
 #: src/features/resume/share/address-field.tsx
 msgid "Use lowercase letters, numbers and single dashes."
-msgstr "ትንሽ ሆሄያትን፣ ቁጥሮችን እና ነጠላ ሰረዞችን ተጠቀም።"
+msgstr "ትንሽ ሆሄያትን፣ ቁጥሮችን እና ነጠላ ሰረዞች (-)ን ተጠቀም።"
 
 #: src/features/career/knowledge/search-regions-field.tsx
 msgid "Use my timezone"

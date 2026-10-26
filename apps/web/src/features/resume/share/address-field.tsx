@@ -3,7 +3,7 @@ import { Trans } from "@lingui/react/macro";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useEffectEvent, useId, useRef, useState } from "react";
 import { useDebounceValue } from "usehooks-ts";
-import { normalizeSlug, SLUG_PATTERN } from "@reactive-resume/resume/sharing";
+import { isValidSlug, MAX_SLUG_LENGTH, normalizeSlug } from "@reactive-resume/resume/sharing";
 import { Button } from "@reactive-resume/ui/components/button";
 import { Icon } from "@reactive-resume/ui/components/icon";
 import { cn } from "@reactive-resume/utils/style";
@@ -20,7 +20,7 @@ function useSlugAvailability(update: SaveSlug) {
 	const [debouncedSlug] = useDebounceValue(slug, 300);
 
 	const changed = slug !== resume.slug;
-	const wellFormed = SLUG_PATTERN.test(slug);
+	const wellFormed = isValidSlug(slug);
 	const check = useQuery({
 		...orpc.resume.checkSlug.queryOptions({ input: { resumeId: resume.id, slug: debouncedSlug } }),
 		enabled: (resume.isPublic ?? false) && changed && wellFormed && debouncedSlug === slug,
@@ -63,15 +63,16 @@ export function AddressField({ url, username, update }: AddressFieldProps) {
 	const isPublic = resume.isPublic ?? false;
 	const { slug, setSlug, changed, wellFormed, result } = useSlugAvailability(update);
 
-	const invalid = isPublic && (!slug || !wellFormed || result?.status === "taken");
+	const invalid = isPublic && (!slug || (changed && !wellFormed) || result?.status === "taken");
 	const canShare = typeof navigator.share === "function";
 
 	// The hint under the field, when the address isn't taken (that block has its own text).
 	const hint = () => {
 		if (!isPublic) return t`Turn on the link to choose an address.`;
 		if (!slug) return t`Add an address.`;
-		if (!wellFormed) return t`Use lowercase letters, numbers and single dashes.`;
 		if (!changed) return t`Live at ${url.replace(/^https?:\/\//, "")}`;
+		if (slug.length > MAX_SLUG_LENGTH) return t`Use at most 64 characters.`;
+		if (!wellFormed) return t`Use lowercase letters, numbers and single dashes.`;
 		if (result?.status === "available")
 			return t`Saving ${new URL(url).host}/${username}/${slug}… Copy is available after saving.`;
 		return t`Checking… Copy is available after saving.`;

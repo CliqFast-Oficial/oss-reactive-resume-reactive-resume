@@ -90,7 +90,6 @@ const recordSlugChangeMock = vi.hoisted(() => vi.fn());
 // The lookup by username and slug; its query is tested against real SQL in public-pdf.test.ts.
 const findResumeMock = vi.hoisted(() => vi.fn());
 vi.mock("./slugs", () => ({
-	SLUG_PATTERN: /^[a-z0-9]+(-[a-z0-9]+)*$/,
 	checkSlug: vi.fn(),
 	findFreeSlug: vi.fn(async () => "generated-slug"),
 	findResume: findResumeMock,
@@ -201,6 +200,18 @@ describe("versions.restore", () => {
 	});
 });
 
+describe("create", () => {
+	it.each(["", "Invalid Slug@123!", "a".repeat(65)])(
+		"rejects invalid explicit slug %s before persistence",
+		async (slug) => {
+			await expect(
+				resumeService.create({ userId: "u1", name: "Resume", slug, tags: [], locale: "en-US" }),
+			).rejects.toMatchObject({ code: "INVALID_SLUG", status: 400 });
+			expect(dbMock.transaction).not.toHaveBeenCalled();
+		},
+	);
+});
+
 describe("update", () => {
 	const updateHarness = (existing: { slug: string; updatedAt?: Date }) => {
 		const row = { ...createResumeRow(defaultResumeData, existing.updatedAt), slug: existing.slug };
@@ -255,19 +266,28 @@ describe("update", () => {
 		expect(update.set).toHaveBeenCalledWith({ slug: "new-address" });
 	});
 
-	it("rejects a new slug outside the pattern, but accepts an unchanged legacy one", async () => {
-		updateHarness({ slug: "Legacy_Slug" });
-		await expect(resumeService.update({ id: "r1", userId: "u1", slug: "Not Valid" })).rejects.toMatchObject({
-			code: "INVALID_SLUG",
-			status: 400,
-		});
+	it.each(["Legacy_Slug", "a".repeat(70)])(
+		"rejects invalid new addresses but accepts unchanged legacy %s",
+		async (legacySlug) => {
+			updateHarness({ slug: legacySlug });
+			await expect(resumeService.update({ id: "r1", userId: "u1", slug: "Not Valid" })).rejects.toMatchObject({
+				code: "INVALID_SLUG",
+				status: 400,
+			});
 
-		const { update } = updateHarness({ slug: "Legacy_Slug" });
-		await resumeService.update({ id: "r1", userId: "u1", name: "Renamed", slug: "Legacy_Slug" });
-		// A name typed by hand also ends automatic naming.
-		expect(update.set).toHaveBeenCalledWith({ name: "Renamed", autoName: false, slug: "Legacy_Slug" });
-		expect(recordSlugChangeMock).not.toHaveBeenCalled();
-	});
+			updateHarness({ slug: "old-slug" });
+			await expect(resumeService.update({ id: "r1", userId: "u1", slug: "a".repeat(65) })).rejects.toMatchObject({
+				code: "INVALID_SLUG",
+				status: 400,
+			});
+
+			const { update } = updateHarness({ slug: legacySlug });
+			await resumeService.update({ id: "r1", userId: "u1", name: "Renamed", slug: legacySlug });
+			// A name typed by hand also ends automatic naming.
+			expect(update.set).toHaveBeenCalledWith({ name: "Renamed", autoName: false, slug: legacySlug });
+			expect(recordSlugChangeMock).not.toHaveBeenCalled();
+		},
+	);
 
 	it("throws RESUME_LOCKED when the pre-read reports the resume is locked", async () => {
 		const select = createLockedSelectChain([{ data: defaultResumeData, isLocked: true, updatedAt: new Date() }]);
