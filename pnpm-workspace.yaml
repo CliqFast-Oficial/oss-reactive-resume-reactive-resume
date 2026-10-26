@@ -10,7 +10,7 @@ catalog:
   "@better-auth/infra": ^0.4.22
   "@better-auth/oauth-provider": "1.7.12"
   "@better-auth/passkey": "1.7.12"
-  "@cloudflare/workers-types": ^5.20261025.1
+  "@cloudflare/workers-types": ^5.20261026.1
   "@formatjs/intl-displaynames": ^7.3.15
   "@orpc/client": ^1.16.1
   "@orpc/server": ^1.16.1
@@ -97,3 +97,16 @@ patchedDependencies:
 skills:
   dirs:
     - .agents/skills
+permissions:
+  "@tanstack/devtools-vite":
+    skills: true
+  "@tanstack/react-hotkeys":
+    skills: true
+  "@tanstack/react-router":
+    skills: true
+  "@tanstack/router-plugin":
+    skills: true
+  drizzle-kit:
+    skills: true
+  expo-sqlite:
+    skills: true

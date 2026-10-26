@@ -68,7 +68,7 @@
 		"fast-json-patch": "^3.1.1",
 		"fast-png": "^8.0.0",
 		"fflate": "catalog:",
-		"hono": "^4.13.13",
+		"hono": "^4.13.14",
 		"ioredis": "catalog:",
 		"jose": "^6.2.13",
 		"jsonrepair": "catalog:",
