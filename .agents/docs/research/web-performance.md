@@ -76,6 +76,13 @@ and the request structure more than the absolute milliseconds.
 
 ## Ranked backlog
 
+**Done since the audit (October 27, 2026):** the Cloudflare Cache Rule for `/assets/*` (owner; the WASM and `.mjs`
+worker now return `HIT`), and four code changes: brotli copies written by the Docker build and served with
+`precompressed: true`; preload `Link` headers for each page's stylesheet and fonts, for Early Hints; `Cache-Tag`
+headers (`html` on pages, `public` on fixed-name files) so the release purge leaves hashed assets cached; and the
+Cloudflare Web Analytics beacon allowed in `script-src`. The zone settings that make the last three take effect
+(Early Hints, Web Analytics, a brotli Compression Rule) are owner actions.
+
 ### Owner actions in Cloudflare (no code)
 
 1. Cache Rule: cache everything under `/assets/*` (honour origin TTL). Edge-caches the WASM and `.mjs` worker.
