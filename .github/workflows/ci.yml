@@ -51,6 +51,9 @@ jobs:
       OAUTH_TEST_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/oauth_test
     runs-on: ${{ vars.USE_BLACKSMITH == 'true' && 'blacksmith-32vcpu-ubuntu-2404' || 'ubuntu-latest' }}
     timeout-minutes: 30
+    permissions:
+      contents: read
+      id-token: write
 
     services:
       postgres:
@@ -90,6 +93,15 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           cache: "pnpm"
+
+      # Short-lived Vercel Remote Cache token from GitHub OIDC; without TURBO_TEAM or a matching policy, the local cache serves.
+      # Only main pushes get one, so pull requests can't write artifacts that Docker builds reuse.
+      - name: Set up Turbo remote cache
+        if: ${{ vars.TURBO_TEAM != '' && github.event_name == 'push' }}
+        continue-on-error: true
+        uses: vercel/setup-turborepo-remote-cache-action@49d7b1b46ba4c9251e1977986bfe18336feabc8f # v1.1.0
+        with:
+          team: ${{ vars.TURBO_TEAM }}
 
       - name: Restore and save Turbo cache
         uses: actions/cache@v6

@@ -59,7 +59,7 @@
 			"dependsOn": ["^transit"]
 		},
 		"build": {
-			"inputs": ["$TURBO_DEFAULT$", "$TURBO_ROOT$/.env*"],
+			"inputs": ["$TURBO_DEFAULT$", "$TURBO_ROOT$/package.json", "$TURBO_ROOT$/.env*", "!$TURBO_ROOT$/.env.example"],
 			"outputs": ["dist/**", ".vercel/**"],
 			"dependsOn": ["transit"],
 			"env": ["NODE_ENV"]
