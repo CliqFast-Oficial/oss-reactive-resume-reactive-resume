@@ -36,7 +36,7 @@ export function TemplateGallery() {
 				</div>
 
 				<div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-					{templateSchema.options.map((id) => {
+					{templateSchema.options.map((id, index) => {
 						const template = templates[id];
 						const name = template.name;
 						const layout = templateLayouts[id];
@@ -54,7 +54,9 @@ export function TemplateGallery() {
 										alt={t`${name} resume template preview`}
 										width={298}
 										height={420}
-										loading="lazy"
+										// The first row is on the first screen, and the first preview is its largest paint.
+										loading={index < 3 ? "eager" : "lazy"}
+										fetchPriority={index === 0 ? "high" : "auto"}
 										decoding="async"
 										className="mx-auto aspect-[298/420] w-full max-w-74.5 bg-white object-contain shadow-e2"
 									/>
