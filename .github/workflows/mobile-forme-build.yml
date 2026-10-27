@@ -1,4 +1,5 @@
-name: Build Forme Binaries
+name: Mobile Forme build
+run-name: Mobile Forme ${{ inputs.publish && 'publish' || 'build' }} · ${{ github.ref_name }}
 
 on:
   workflow_dispatch:
@@ -12,7 +13,8 @@ permissions:
   contents: read
 
 jobs:
-  prebuilt:
+  build:
+    name: Build native binaries
     runs-on: blacksmith-12vcpu-macos-latest
     timeout-minutes: 60
     outputs:
@@ -20,29 +22,32 @@ jobs:
     env:
       CARGO_BUILD_JOBS: "4"
     steps:
-      - uses: actions/checkout@v7
+      - name: Check out source
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
-      - uses: actions/setup-node@v7
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
-      - uses: android-actions/setup-android@be39fa834029ff78f1a44aa3bb0819b8fc2bd8fd # v4.0.4
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@be39fa834029ff78f1a44aa3bb0819b8fc2bd8fd # v4.0.4
         with:
           packages: ndk;28.2.13676358
-      - name: Install pinned Rust tools
+      - name: Install pinned Rust toolchain and tools
         working-directory: packages/forme-native/rust
         run: |
           rustup toolchain install 1.95.0 --profile minimal \
             --target aarch64-apple-ios,aarch64-apple-ios-sim,aarch64-linux-android,armv7-linux-androideabi,x86_64-linux-android
           cargo install cbindgen --version 0.29.4 --locked
           cargo install cargo-ndk --version 4.1.2 --locked
-      - name: Build both platforms and regenerate notices
+      - name: Build native binaries and verify notices and headers
         run: |
           export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/28.2.13676358"
           bash packages/forme-native/rust/build.sh
           node packages/forme-native/scripts/notices.mjs
           git diff --exit-code -- packages/forme-native/THIRD_PARTY_NOTICES.md packages/forme-native/ios/include/forme_native.h
-      - name: Package content-addressed binaries
+      - name: Package content-addressed native binaries
         id: artifact
         env:
           RELEASE_BASE: https://github.com/${{ github.repository }}/releases/download
@@ -53,7 +58,7 @@ jobs:
           const build = JSON.parse(readFileSync(`${process.env.RUNNER_TEMP}/forme-native-build.json`));
           appendFileSync(process.env.GITHUB_OUTPUT, `tag=${build.tag}\narchive=${build.archive}\nmanifest=${build.manifest}\n`);
           JS
-      - name: Verify fetch without Cargo
+      - name: Verify native binaries can be fetched without Cargo
         env:
           MANIFEST: ${{ steps.artifact.outputs.manifest }}
         run: |
@@ -68,7 +73,8 @@ jobs:
           node_bin="$(command -v node)"
           PATH=/usr/bin:/bin "$node_bin" packages/forme-native/scripts/fetch-prebuilt.mjs --platform android --manifest "$RUNNER_TEMP/local-prebuilt.json"
           PATH=/usr/bin:/bin "$node_bin" packages/forme-native/scripts/fetch-prebuilt.mjs --platform ios --manifest "$RUNNER_TEMP/local-prebuilt.json"
-      - uses: actions/upload-artifact@v7
+      - name: Upload native binary artifacts
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ steps.artifact.outputs.tag }}
           path: ${{ runner.temp }}/forme-native/
@@ -76,22 +82,24 @@ jobs:
           retention-days: 30
 
   publish:
-    needs: prebuilt
+    name: Publish native binaries
+    needs: build
     if: inputs.publish
     runs-on: blacksmith-32vcpu-ubuntu-2404
     timeout-minutes: 5
     permissions:
       contents: write
     steps:
-      - uses: actions/download-artifact@v8
+      - name: Download native binary artifacts
+        uses: actions/download-artifact@v8
         with:
-          name: ${{ needs.prebuilt.outputs.tag }}
+          name: ${{ needs.build.outputs.tag }}
           path: ${{ runner.temp }}/forme-native
-      - name: Publish once (never overwrite release assets)
+      - name: Publish immutable native binary assets
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
-          TAG: ${{ needs.prebuilt.outputs.tag }}
+          TAG: ${{ needs.build.outputs.tag }}
           ARTIFACT_DIR: ${{ runner.temp }}/forme-native
         run: |
           gh release create "$TAG" "$ARTIFACT_DIR/$TAG.tar.gz" "$ARTIFACT_DIR/prebuilt.json" --target "$GITHUB_SHA" --title "$TAG" --notes "Native Forme binaries. Review and commit prebuilt.json before building mobile apps." --prerelease

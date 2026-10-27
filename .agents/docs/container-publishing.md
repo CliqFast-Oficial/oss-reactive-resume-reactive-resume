@@ -6,7 +6,7 @@ The repository is `reactive-resume/reactive-resume`. Docker Hub remains
 
 ## Builds and release safety
 
-`.github/workflows/docker-build.yml` builds AMD64 and ARM64 on matching native runners.
+`.github/workflows/docker-publish.yml` builds AMD64 and ARM64 on matching native runners.
 All workflows run on GitHub-hosted runners (`ubuntu-latest`, `ubuntu-24.04-arm`) by default,
 so forks work without setup. Setting the repository variable `USE_BLACKSMITH=true` switches
 every job to Blacksmith runners (32 vCPU for build/test jobs, 2 vCPU for lightweight jobs) and
@@ -41,7 +41,7 @@ It never builds Android APKs, creates Git tags, or creates GitHub Releases. Prod
 GitHub Releases and `v*` tags are created only by an explicit versioned release operation.
 Docker promotion consumes an existing tag or commit; it does not create either.
 
-For a sideloadable APK, dispatch **Mobile Release** on `main` with `platform=android`,
+For a sideloadable APK, dispatch **Mobile release** on `main` with `platform=android`,
 `format=apk`, the desired `abi`, and `upload=false`. Signing requires approval through
 `mobile-signing`. The preview APK is a downloadable Actions artifact for 14 days;
 release evidence is retained for 90 days. No GitHub tag or release is created.
@@ -53,7 +53,7 @@ remove an asset still referenced by `packages/forme-native/scripts/prebuilt.json
 
 ### Stable promotions
 
-Before moving any container aliases or deploying production, the latest `e2e.yml`
+Before moving any container aliases or deploying production, the latest `ci.yml`
 CI run from a `main` push must have completed successfully for the exact full commit
 SHA being promoted. Missing, failed, cancelled, or pending CI blocks promotion;
 PR checks and manual smoke-only runs cannot authorize it. If historical CI was
@@ -80,7 +80,7 @@ its own alias and skips production integrations). Use it to republish a release 
 that landed after its Git tag, without rebuilding:
 
 ```bash
-gh workflow run docker-build.yml --repo reactive-resume/reactive-resume --ref main -f release=true
+gh workflow run docker-publish.yml --repo reactive-resume/reactive-resume --ref main -f release=true
 ```
 
 To re-promote an existing stable release, select its Git tag. This updates `latest` and
@@ -88,7 +88,7 @@ that release's full/minor/major semver aliases. The tag must match the built `pa
 version. Prerelease tags update only their prerelease alias and skip production integrations.
 
 ```bash
-gh workflow run docker-build.yml --repo reactive-resume/reactive-resume --ref v6.0.1 -f release=true
+gh workflow run docker-publish.yml --repo reactive-resume/reactive-resume --ref v6.0.1 -f release=true
 ```
 
 SSH redeployment requires `SSH_KEY`, `SSH_HOST`, and `SSH_USER`; Cloudflare purging requires
@@ -97,7 +97,7 @@ secret is missing. Dispatch does not create a Git tag, GitHub release, or versio
 
 ## Native mobile updates
 
-After a successful stable Docker promotion and SSH redeploy, `docker-build.yml` calls
+After a successful stable Docker promotion and SSH redeploy, `docker-publish.yml` calls
 `.github/workflows/mobile-ota-update.yml`. This reusable workflow checks out the image's
 exact full source commit and publishes an EAS Update to the `production` channel using
 the `production` EAS environment. Nightlies, manual canaries, and prereleases skip OTA.
@@ -132,7 +132,7 @@ Manual canaries build, publish, merge, and sign images in enabled registries wit
 running production integrations:
 
 ```bash
-gh workflow run docker-build.yml --repo reactive-resume/reactive-resume --ref main -f release=false
+gh workflow run docker-publish.yml --repo reactive-resume/reactive-resume --ref main -f release=false
 ```
 
 Published images retain SBOMs, maximum provenance, and Cosign signatures. GHCR always uses
@@ -191,8 +191,11 @@ repository source label and signing identity; historical digests and signatures 
 Release aliases are mutable: pin the original digest above if you need the pre-rename artifact.
 
 New signatures identify
+`https://github.com/reactive-resume/reactive-resume/.github/workflows/docker-publish.yml@<ref>`.
+Images signed before the workflow rename retain
 `https://github.com/reactive-resume/reactive-resume/.github/workflows/docker-build.yml@<ref>`.
-Historical signatures and image source labels retain the old repository identity. Verify
+Use the workflow identity from the image's signing record when verifying older images.
+Signatures and image source labels from before the repository rename retain the old repository identity. Verify
 historical v5.3.0 with its original workflow identity, even at its new registry address:
 
 ```bash

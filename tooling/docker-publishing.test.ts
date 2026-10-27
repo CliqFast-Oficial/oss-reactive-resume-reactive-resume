@@ -5,7 +5,7 @@ import { join } from "node:path";
 import { expect, it } from "vite-plus/test";
 
 it("keeps smoke dispatches out of release publishing and production deployment", () => {
-	const workflow = readFileSync(new URL("../.github/workflows/docker-build.yml", import.meta.url), "utf8");
+	const workflow = readFileSync(new URL("../.github/workflows/docker-publish.yml", import.meta.url), "utf8");
 	const mode = workflow.match(/ {8}run: \|\n([\s\S]*?)\n {2}build:/)?.[1];
 	if (!mode) throw new Error("Publishing mode script is missing");
 	const directory = mkdtempSync(join(tmpdir(), "docker-publishing-"));
@@ -40,9 +40,9 @@ it("keeps smoke dispatches out of release publishing and production deployment",
 });
 
 it("validates release tags against the built version and distinguishes prereleases", () => {
-	const workflow = readFileSync(new URL("../.github/workflows/docker-build.yml", import.meta.url), "utf8");
+	const workflow = readFileSync(new URL("../.github/workflows/docker-publish.yml", import.meta.url), "utf8");
 	const script = workflow.match(
-		/      - name: Resolve publishing version and commit[\s\S]*?        run: \|\n([\s\S]*?)(?=\n      - name:)/,
+		/      - name: Resolve source commit and version[\s\S]*?        run: \|\n([\s\S]*?)(?=\n      - name:)/,
 	)?.[1];
 	if (!script) throw new Error("Publishing version script is missing");
 	const directory = mkdtempSync(join(tmpdir(), "docker-version-"));

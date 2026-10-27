@@ -1,4 +1,5 @@
-name: E2E
+name: CI
+run-name: ${{ inputs.live_smoke && 'Deployment smoke test' || 'CI' }} · ${{ github.head_ref || github.ref_name }}
 
 on:
   pull_request:
@@ -22,8 +23,8 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
-  e2e:
-    name: ${{ matrix.suite }} tests
+  test:
+    name: Run ${{ matrix.suite == 'Unit' && 'unit' || 'browser' }} tests
     if: ${{ !inputs.live_smoke }}
     strategy:
       fail-fast: false
@@ -67,14 +68,14 @@ jobs:
           --health-retries 5
 
     steps:
-      - name: Checkout Repository
+      - name: Check out source
         if: ${{ vars.USE_BLACKSMITH != 'true' }}
         uses: actions/checkout@v7
         with:
           persist-credentials: false
           fetch-depth: ${{ matrix.suite == 'Unit' && '0' || '1' }}
 
-      - name: Checkout Repository (Blacksmith)
+      - name: Check out source (Blacksmith)
         if: ${{ vars.USE_BLACKSMITH == 'true' }}
         uses: useblacksmith/checkout@v1
         with:
@@ -84,13 +85,13 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v6
 
-      - name: Setup Node
+      - name: Set up Node.js
         uses: actions/setup-node@v7
         with:
           node-version-file: ".nvmrc"
           cache: "pnpm"
 
-      - name: Cache Turbo artifacts
+      - name: Restore and save Turbo cache
         uses: actions/cache@v6
         with:
           path: .turbo/cache
@@ -98,32 +99,32 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-${{ runner.arch }}-turbo-${{ github.workflow }}-${{ github.job }}-${{ matrix.suite }}-${{ hashFiles('pnpm-lock.yaml', '.nvmrc') }}-
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Install PDF Text Extractor
+      - name: Install PDF text extraction tools
         run: sudo apt-get update && sudo apt-get install -y poppler-utils
 
-      - name: Check Package Boundaries
+      - name: Check package boundaries
         if: matrix.suite == 'Unit'
         run: pnpm exec turbo boundaries
 
-      - name: Typecheck Affected Packages
+      - name: Typecheck affected packages
         if: matrix.suite == 'Unit'
         run: pnpm exec turbo run typecheck --affected
 
-      - name: Install Playwright Browser
+      - name: Install Chromium and browser dependencies
         if: matrix.suite == 'Browser'
         timeout-minutes: 10
         run: pnpm exec playwright install --with-deps chromium
 
-      - name: Prepare Storage
+      - name: Prepare test storage
         run: mkdir -p "$LOCAL_STORAGE_PATH"
 
-      - name: Run Database Migrations
+      - name: Migrate test database
         run: pnpm db:migrate
 
-      - name: Prepare OAuth Test Database
+      - name: Create and migrate OAuth test database
         if: matrix.suite == 'Unit'
         run: |
           psql "$DATABASE_URL" -c "CREATE DATABASE oauth_test"
@@ -131,19 +132,19 @@ jobs:
 
       # Discover every package. Four pools of two workers fit the 32-vCPU runner;
       # keep smaller GitHub runners serial to avoid PDF/rate-limit timeouts.
-      - name: Run Unit Tests
+      - name: Run unit tests
         if: matrix.suite == 'Unit'
         run: pnpm exec turbo run test:ci --concurrency=${{ vars.USE_BLACKSMITH == 'true' && 4 || 1 }}
 
-      - name: Build
+      - name: Build application
         if: matrix.suite == 'Browser'
         run: pnpm build
 
-      - name: Run E2E Tests
+      - name: Run browser tests
         if: matrix.suite == 'Browser'
         run: pnpm exec playwright test --workers=${{ vars.USE_BLACKSMITH == 'true' && 4 || 1 }}
 
-      - name: Upload Playwright Report
+      - name: Upload browser test reports and traces
         if: always() && matrix.suite == 'Browser'
         uses: actions/upload-artifact@v7
         with:
@@ -154,8 +155,8 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
 
-  worker:
-    name: Cloudflare compatibility
+  check-cloudflare:
+    name: Check Cloudflare compatibility
     if: ${{ !inputs.live_smoke }}
     runs-on: ${{ vars.USE_BLACKSMITH == 'true' && 'blacksmith-32vcpu-ubuntu-2404' || 'ubuntu-latest' }}
     timeout-minutes: 20
@@ -169,26 +170,33 @@ jobs:
           --health-cmd "pg_isready -U postgres"
           --health-interval 5s --health-timeout 5s --health-retries 10
     steps:
-      - if: ${{ vars.USE_BLACKSMITH != 'true' }}
+      - name: Check out source
+        if: ${{ vars.USE_BLACKSMITH != 'true' }}
         uses: actions/checkout@v7
         with:
           persist-credentials: false
-      - if: ${{ vars.USE_BLACKSMITH == 'true' }}
+      - name: Check out source (Blacksmith)
+        if: ${{ vars.USE_BLACKSMITH == 'true' }}
         uses: useblacksmith/checkout@v1
         with:
           persist-credentials: false
-      - uses: pnpm/action-setup@v6
-      - uses: actions/setup-node@v7
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: pnpm
-      - run: pnpm install --frozen-lockfile
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
       # No cloud account or deployment credentials: forks exercise the real local Workers runtime.
-      - run: pnpm check:cloudflare
-      - run: pnpm test:cloudflare
+      - name: Build and validate Cloudflare bundle
+        run: pnpm check:cloudflare
+      - name: Run Cloudflare smoke tests
+        run: pnpm test:cloudflare
 
-  artifact:
-    name: Vercel artifact
+  check-vercel:
+    name: Check Vercel compatibility
     if: ${{ !inputs.live_smoke }}
     runs-on: ${{ vars.USE_BLACKSMITH == 'true' && 'blacksmith-32vcpu-ubuntu-2404' || 'ubuntu-latest' }}
     timeout-minutes: 20
@@ -212,20 +220,24 @@ jobs:
       VERCEL: "1"
       VERCEL_ENV: production
     steps:
-      - if: ${{ vars.USE_BLACKSMITH != 'true' }}
+      - name: Check out source
+        if: ${{ vars.USE_BLACKSMITH != 'true' }}
         uses: actions/checkout@v7
         with:
           persist-credentials: false
-      - if: ${{ vars.USE_BLACKSMITH == 'true' }}
+      - name: Check out source (Blacksmith)
+        if: ${{ vars.USE_BLACKSMITH == 'true' }}
         uses: useblacksmith/checkout@v1
         with:
           persist-credentials: false
-      - uses: pnpm/action-setup@v6
-      - uses: actions/setup-node@v7
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: pnpm
-      - name: Cache Turbo artifacts
+      - name: Restore and save Turbo cache
         uses: actions/cache@v6
         with:
           path: .turbo/cache
@@ -233,9 +245,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-${{ runner.arch }}-turbo-${{ github.workflow }}-${{ github.job }}-${{ hashFiles('pnpm-lock.yaml', '.nvmrc') }}-
 
-      - run: pnpm install --frozen-lockfile
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
       # Local project settings avoid authentication and API calls. Forks receive no cloud credentials.
-      - name: Build Vercel artifact against isolated PostgreSQL
+      - name: Build Vercel deployment artifact
         run: |
           mkdir -p .vercel
           cat > .vercel/project.json <<'JSON'
@@ -246,7 +259,7 @@ jobs:
           JSON
           pnpm dlx --allow-build=esbuild vercel@61.0.0 build --prod --standalone --yes --global-config "$RUNNER_TEMP/vercel-offline"
       # Runs the backend Function from a copy outside the checkout, so a dependency the build left out fails here.
-      - name: Check backend Function loading and budget
+      - name: Verify Vercel function loading and limits
         run: |
           node --no-experimental-require-module --input-type=module - <<'JS'
           import assert from 'node:assert/strict';
@@ -268,24 +281,28 @@ jobs:
           process.exit(0);
           JS
 
-  live-smoke:
+  smoke-test:
+    name: Smoke-test deployment
     if: github.event_name == 'workflow_dispatch' && inputs.live_smoke
     runs-on: ${{ vars.USE_BLACKSMITH == 'true' && 'blacksmith-2vcpu-ubuntu-2404' || 'ubuntu-latest' }}
     environment: vercel-smoke
     timeout-minutes: 10
     steps:
-      - if: ${{ vars.USE_BLACKSMITH != 'true' }}
+      - name: Check out source
+        if: ${{ vars.USE_BLACKSMITH != 'true' }}
         uses: actions/checkout@v7
         with:
           persist-credentials: false
-      - if: ${{ vars.USE_BLACKSMITH == 'true' }}
+      - name: Check out source (Blacksmith)
+        if: ${{ vars.USE_BLACKSMITH == 'true' }}
         uses: useblacksmith/checkout@v1
         with:
           persist-credentials: false
-      - uses: actions/setup-node@v7
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
-      - name: Smoke-test dedicated deployment
+      - name: Run dedicated deployment smoke test
         env:
           SMOKE_URL: ${{ vars.VERCEL_SMOKE_URL }}
           SMOKE_AI_BASE_URL: ${{ vars.VERCEL_SMOKE_AI_BASE_URL }}

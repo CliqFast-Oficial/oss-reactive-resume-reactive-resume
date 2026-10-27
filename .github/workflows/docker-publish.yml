@@ -1,4 +1,5 @@
-name: Publish Docker Image
+name: Docker publish and deploy
+run-name: Docker ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && 'nightly' || github.event_name == 'workflow_dispatch' && !inputs.release && 'canary' || 'promotion' }} · ${{ github.ref_name }}
 
 on:
   workflow_dispatch:
@@ -26,7 +27,8 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
-  mode:
+  plan:
+    name: Determine publish mode
     runs-on: ${{ vars.USE_BLACKSMITH == 'true' && 'blacksmith-2vcpu-ubuntu-2404' || 'ubuntu-latest' }}
 
     outputs:
@@ -35,7 +37,7 @@ jobs:
       canary: ${{ steps.mode.outputs.canary }}
 
     steps:
-      - name: Determine publishing mode
+      - name: Determine publish mode
         id: mode
         env:
           EVENT_NAME: ${{ github.event_name }}
@@ -59,8 +61,9 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
   build:
-    needs: mode
-    if: ${{ needs.mode.outputs.release != 'true' }}
+    name: Build image (${{ matrix.platform }})
+    needs: plan
+    if: ${{ needs.plan.outputs.release != 'true' }}
 
     strategy:
       fail-fast: false
@@ -83,31 +86,31 @@ jobs:
       attestations: write
 
     steps:
-      - name: Checkout Repository
+      - name: Check out source
         if: ${{ vars.USE_BLACKSMITH != 'true' }}
         uses: actions/checkout@v7
 
-      - name: Checkout Repository (Blacksmith)
+      - name: Check out source (Blacksmith)
         if: ${{ vars.USE_BLACKSMITH == 'true' }}
         uses: useblacksmith/checkout@v1
 
-      - name: Resolve commit SHA
+      - name: Resolve source commit
         id: source
         run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
-      - name: Setup Docker Buildx
+      - name: Set up Docker Buildx
         if: ${{ vars.USE_BLACKSMITH != 'true' }}
         uses: docker/setup-buildx-action@v4
 
       # Persists BuildKit layers and the Dockerfile's pnpm cache mounts between runs, one cache per architecture.
-      - name: Setup Docker Builder (Blacksmith)
+      - name: Set up Docker builder (Blacksmith)
         if: ${{ vars.USE_BLACKSMITH == 'true' }}
         uses: useblacksmith/setup-docker-builder@v2
         with:
           cache-key: Dockerfile-${{ matrix.arch }}
 
       - &registries
-        name: Determine registries
+        name: Determine target registries
         id: registries
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
@@ -124,14 +127,14 @@ jobs:
             echo "dockerhub=$dockerhub"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Login to GitHub Container Registry
+      - name: Log in to GitHub Container Registry
         uses: docker/login-action@v4
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Extract metadata (tags, labels) for Docker
+      - name: Generate image tags and labels
         id: meta
         uses: docker/metadata-action@v6
         with:
@@ -139,7 +142,7 @@ jobs:
           tags: |
             type=raw,value=sha-${{ steps.source.outputs.sha }}-${{ matrix.arch }}
 
-      - name: Build and Push by Digest
+      - name: Build and push image
         id: build
         if: ${{ vars.USE_BLACKSMITH != 'true' }}
         uses: docker/build-push-action@v7
@@ -154,19 +157,19 @@ jobs:
           annotations: ${{ steps.meta.outputs.annotations }}
           build-args: APP_REVISION=${{ steps.source.outputs.sha }}
 
-      - name: Build and Push by Digest (Blacksmith)
+      - name: Build and push image (Blacksmith)
         id: build-blacksmith
         if: ${{ vars.USE_BLACKSMITH == 'true' }}
         uses: useblacksmith/build-push-action@v2
         with: *build-push
 
-      - name: Export digest
+      - name: Prepare image digest artifact
         run: |
           mkdir -p /tmp/digests
           digest="${{ steps.build.outputs.digest || steps.build-blacksmith.outputs.digest }}"
           touch "/tmp/digests/${digest#sha256:}"
 
-      - name: Upload digest
+      - name: Upload image digest
         uses: actions/upload-artifact@v7
         with:
           name: digests-${{ matrix.arch }}
@@ -174,18 +177,19 @@ jobs:
           if-no-files-found: error
           retention-days: 1
 
-  merge:
+  publish:
+    name: Publish images and deploy
     # Release runs skip build; failed builds must never publish partial indexes.
-    if: ${{ !cancelled() && needs.mode.result == 'success' && (needs.build.result == 'success' || needs.build.result == 'skipped') }}
+    if: ${{ !cancelled() && needs.plan.result == 'success' && (needs.build.result == 'success' || needs.build.result == 'skipped') }}
     needs:
-      - mode
+      - plan
       - build
     timeout-minutes: 45
     runs-on: ${{ vars.USE_BLACKSMITH == 'true' && 'blacksmith-2vcpu-ubuntu-2404' || 'ubuntu-latest' }}
 
     outputs:
       sha: ${{ steps.version.outputs.sha }}
-      mobile_ota: ${{ needs.mode.outputs.release == 'true' && steps.version.outputs.prerelease != 'true' && steps.deploy.outcome == 'success' }}
+      mobile_ota: ${{ needs.plan.outputs.release == 'true' && steps.version.outputs.prerelease != 'true' && steps.deploy.outcome == 'success' }}
 
     env:
       DEPLOY: ${{ secrets.SSH_KEY != '' && secrets.SSH_HOST != '' && secrets.SSH_USER != '' }}
@@ -199,7 +203,7 @@ jobs:
       attestations: write
 
     steps:
-      - name: Checkout Repository
+      - name: Check out source
         if: ${{ vars.USE_BLACKSMITH != 'true' }}
         uses: actions/checkout@v7
         with: &checkout-package-json
@@ -208,12 +212,12 @@ jobs:
             tooling/docker
           sparse-checkout-cone-mode: false
 
-      - name: Checkout Repository (Blacksmith)
+      - name: Check out source (Blacksmith)
         if: ${{ vars.USE_BLACKSMITH == 'true' }}
         uses: useblacksmith/checkout@v1
         with: *checkout-package-json
 
-      - name: Resolve publishing version and commit
+      - name: Resolve source commit and version
         id: version
         env:
           GIT_REF: ${{ github.ref }}
@@ -240,8 +244,8 @@ jobs:
             echo "prerelease=$prerelease"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Require successful CI for the exact promotion commit
-        if: ${{ needs.mode.outputs.release == 'true' }}
+      - name: Require successful main CI for source commit
+        if: ${{ needs.plan.outputs.release == 'true' }}
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         env:
           COMMIT_SHA: ${{ steps.version.outputs.sha }}
@@ -250,27 +254,27 @@ jobs:
             const { requireSuccessfulCI } = await import(`${process.env.GITHUB_WORKSPACE}/tooling/docker/check-ci.mjs`);
             await requireSuccessfulCI({ github, repo: context.repo, sha: process.env.COMMIT_SHA });
 
-      - name: Download digests
-        if: ${{ needs.mode.outputs.release != 'true' }}
+      - name: Download image digests
+        if: ${{ needs.plan.outputs.release != 'true' }}
         uses: actions/download-artifact@v8
         with:
           path: /tmp/digests
           pattern: digests-*
           merge-multiple: true
 
-      - name: Setup Docker Buildx
+      - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
 
       - *registries
 
-      - name: Login to GitHub Container Registry
+      - name: Log in to GitHub Container Registry
         uses: docker/login-action@v4
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Parse version components
+      - name: Parse semantic version
         id: semver
         run: |
           VERSION="${{ steps.version.outputs.version }}"
@@ -280,36 +284,36 @@ jobs:
           echo "major=$MAJOR" >> "$GITHUB_OUTPUT"
           echo "minor=$MINOR" >> "$GITHUB_OUTPUT"
 
-      - name: Extract metadata for Docker
+      - name: Generate publish tags
         id: meta
         uses: docker/metadata-action@v6
         with:
           images: ${{ steps.registries.outputs.ghcr_image }}
           flavor: latest=false
           tags: |
-            type=raw,value=sha-${{ steps.version.outputs.sha }},enable=${{ needs.mode.outputs.release != 'true' }}
-            type=raw,value=canary-${{ github.run_id }}-${{ github.run_attempt }},enable=${{ needs.mode.outputs.canary == 'true' }}
-            type=raw,value=nightly,enable=${{ needs.mode.outputs.nightly == 'true' }}
-            type=raw,value=nightly-{{date 'YYYYMMDDHHmmss' tz='UTC'}},enable=${{ needs.mode.outputs.nightly == 'true' }}
-            type=raw,value=latest,enable=${{ needs.mode.outputs.release == 'true' && steps.version.outputs.prerelease != 'true' }}
-            type=raw,value=v${{ steps.version.outputs.version }},enable=${{ needs.mode.outputs.release == 'true' }}
-            type=raw,value=v${{ steps.semver.outputs.major }}.${{ steps.semver.outputs.minor }},enable=${{ needs.mode.outputs.release == 'true' && steps.version.outputs.prerelease != 'true' }}
-            type=raw,value=v${{ steps.semver.outputs.major }},enable=${{ needs.mode.outputs.release == 'true' && steps.version.outputs.prerelease != 'true' }}
+            type=raw,value=sha-${{ steps.version.outputs.sha }},enable=${{ needs.plan.outputs.release != 'true' }}
+            type=raw,value=canary-${{ github.run_id }}-${{ github.run_attempt }},enable=${{ needs.plan.outputs.canary == 'true' }}
+            type=raw,value=nightly,enable=${{ needs.plan.outputs.nightly == 'true' }}
+            type=raw,value=nightly-{{date 'YYYYMMDDHHmmss' tz='UTC'}},enable=${{ needs.plan.outputs.nightly == 'true' }}
+            type=raw,value=latest,enable=${{ needs.plan.outputs.release == 'true' && steps.version.outputs.prerelease != 'true' }}
+            type=raw,value=v${{ steps.version.outputs.version }},enable=${{ needs.plan.outputs.release == 'true' }}
+            type=raw,value=v${{ steps.semver.outputs.major }}.${{ steps.semver.outputs.minor }},enable=${{ needs.plan.outputs.release == 'true' && steps.version.outputs.prerelease != 'true' }}
+            type=raw,value=v${{ steps.semver.outputs.major }},enable=${{ needs.plan.outputs.release == 'true' && steps.version.outputs.prerelease != 'true' }}
 
-      - name: Create manifest list and push
+      - name: Publish multi-architecture image index
         id: manifest
-        if: ${{ needs.mode.outputs.release != 'true' }}
+        if: ${{ needs.plan.outputs.release != 'true' }}
         working-directory: /tmp/digests
         run: |
           set -euo pipefail
 
-          if [[ "${{ needs.mode.outputs.nightly }}" == "true" ]]; then
+          if [[ "${{ needs.plan.outputs.nightly }}" == "true" ]]; then
             FINAL_TAG="sha-${{ steps.version.outputs.sha }}"
-          elif [[ "${{ needs.mode.outputs.canary }}" == "true" ]]; then
+          elif [[ "${{ needs.plan.outputs.canary }}" == "true" ]]; then
             FINAL_TAG="canary-${{ github.run_id }}-${{ github.run_attempt }}"
           fi
 
-          if [[ "${{ needs.mode.outputs.nightly }}" == "true" ]]; then
+          if [[ "${{ needs.plan.outputs.nightly }}" == "true" ]]; then
             main_sha=$(git -C "$GITHUB_WORKSPACE" ls-remote origin refs/heads/main | cut -f1)
             if [[ "$main_sha" != "${{ steps.version.outputs.sha }}" ]]; then
               DOCKER_METADATA_OUTPUT_JSON=$(jq '.tags |= map(select(endswith(":nightly") | not))' <<< "$DOCKER_METADATA_OUTPUT_JSON")
@@ -341,15 +345,15 @@ jobs:
             echo "tags=${tags[*]}"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Promote existing SHA image
+      - name: Promote existing commit image
         id: promotion
-        if: ${{ needs.mode.outputs.release == 'true' }}
+        if: ${{ needs.plan.outputs.release == 'true' }}
         env:
           COMMIT_SHA: ${{ steps.version.outputs.sha }}
           GHCR_IMAGE: ${{ steps.registries.outputs.ghcr_image }}
         run: bash tooling/docker/promote.sh
 
-      - name: Resolve published image
+      - name: Resolve published image reference
         id: published
         env:
           BUILD_TAG: ${{ steps.manifest.outputs.final_tag }}
@@ -375,10 +379,10 @@ jobs:
         # Preserve signatures readable by existing Cosign 2 clients after the CLI 3 upgrade.
         run: cosign sign --yes --new-bundle-format=false --use-signing-config=false ${{ steps.registries.outputs.ghcr_image }}@${{ steps.published.outputs.ghcr_digest }}
 
-      - name: Inspect image
+      - name: Inspect published image
         run: docker buildx imagetools inspect ${{ steps.registries.outputs.ghcr_image }}:${{ steps.published.outputs.final_tag }}
 
-      - name: Verify anonymous pulls on both architectures
+      - name: Verify anonymous AMD64 and ARM64 pulls
         run: |
           set -euo pipefail
           registry_config=$(mktemp -d)
@@ -392,7 +396,7 @@ jobs:
 
       # Docker Hub is a best-effort mirror of the published GHCR index: its failures show as failed
       # steps but never fail the job. A single-source copy keeps the GHCR digest and attestations.
-      - name: Login to Docker Hub
+      - name: Log in to Docker Hub
         id: dockerhub-login
         if: ${{ steps.registries.outputs.dockerhub == 'true' }}
         continue-on-error: true
@@ -401,7 +405,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Mirror to Docker Hub
+      - name: Mirror image to Docker Hub
         if: ${{ steps.dockerhub-login.outcome == 'success' }}
         continue-on-error: true
         timeout-minutes: 15
@@ -420,9 +424,9 @@ jobs:
           cosign sign --yes --new-bundle-format=false --use-signing-config=false "$DOCKER_IMAGE@$DIGEST"
           docker buildx imagetools inspect "$DOCKER_IMAGE:${{ steps.published.outputs.final_tag }}"
 
-      - name: Redeploy Stack
+      - name: Deploy production stack
         id: deploy
-        if: ${{ needs.mode.outputs.release == 'true' && steps.version.outputs.prerelease != 'true' && env.DEPLOY == 'true' }}
+        if: ${{ needs.plan.outputs.release == 'true' && steps.version.outputs.prerelease != 'true' && env.DEPLOY == 'true' }}
         uses: appleboy/ssh-action@v1
         with:
           key: ${{ secrets.SSH_KEY }}
@@ -432,8 +436,8 @@ jobs:
             cd docker
             ./manage_stack.sh up reactive_resume
 
-      - name: Purge Cloudflare cache
-        if: ${{ needs.mode.outputs.release == 'true' && steps.version.outputs.prerelease != 'true' && env.PURGE_CLOUDFLARE == 'true' }}
+      - name: Purge production Cloudflare cache
+        if: ${{ needs.plan.outputs.release == 'true' && steps.version.outputs.prerelease != 'true' && env.PURGE_CLOUDFLARE == 'true' }}
         env:
           CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -454,12 +458,13 @@ jobs:
           echo "Cloudflare cache purged successfully."
 
   mobile-ota-update:
-    needs: merge
-    if: ${{ !cancelled() && needs.merge.result == 'success' && needs.merge.outputs.mobile_ota == 'true' }}
+    name: Mobile OTA update
+    needs: publish
+    if: ${{ !cancelled() && needs.publish.result == 'success' && needs.publish.outputs.mobile_ota == 'true' }}
     permissions:
       contents: read
     uses: ./.github/workflows/mobile-ota-update.yml
     with:
-      sha: ${{ needs.merge.outputs.sha }}
+      sha: ${{ needs.publish.outputs.sha }}
     secrets:
       EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}

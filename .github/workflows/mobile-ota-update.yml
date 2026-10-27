@@ -1,4 +1,4 @@
-name: Mobile OTA Update
+name: Mobile OTA update
 
 on:
   workflow_call:
@@ -18,7 +18,8 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
-  mobile-ota-update:
+  publish:
+    name: Publish production update
     runs-on: ${{ vars.USE_BLACKSMITH == 'true' && 'blacksmith-2vcpu-ubuntu-2404' || 'ubuntu-latest' }}
     timeout-minutes: 20
     permissions:
@@ -31,7 +32,7 @@ jobs:
       COMMIT_SHA: ${{ inputs.sha }}
 
     steps:
-      - name: Check Expo publishing credential
+      - name: Validate Expo token
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
         run: |
@@ -40,14 +41,14 @@ jobs:
             exit 1
           fi
 
-      - name: Checkout Repository
+      - name: Check out source
         if: ${{ vars.USE_BLACKSMITH != 'true' }}
         uses: actions/checkout@v7
         with: &checkout-mobile-ota-update
           ref: ${{ inputs.sha }}
           persist-credentials: false
 
-      - name: Checkout Repository (Blacksmith)
+      - name: Check out source (Blacksmith)
         if: ${{ vars.USE_BLACKSMITH == 'true' }}
         uses: useblacksmith/checkout@v1
         with: *checkout-mobile-ota-update
@@ -55,25 +56,25 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v6
 
-      - name: Setup Node
+      - name: Set up Node.js
         uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: pnpm
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
       - name: Typecheck mobile app
         run: pnpm --filter mobile typecheck
 
-      - name: Setup EAS
+      - name: Set up EAS CLI
         uses: expo/expo-github-action@v9
         with:
           eas-version: 25.2.0
           token: ${{ secrets.EXPO_TOKEN }}
 
-      - name: Wait for matching production backend
+      - name: Wait for healthy backend at source commit
         run: |
           set -euo pipefail
           matches=0
@@ -92,6 +93,6 @@ jobs:
           echo "::error::Production backend did not become healthy at commit $COMMIT_SHA; mobile update withheld."
           exit 1
 
-      - name: Publish matching mobile update
+      - name: Publish production OTA update
         working-directory: apps/mobile
         run: eas update --channel production --environment production --message "Docker $COMMIT_SHA" --upload-source-maps --non-interactive

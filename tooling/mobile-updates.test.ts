@@ -5,7 +5,7 @@ import { join } from "node:path";
 import { runInNewContext } from "node:vm";
 import { expect, it } from "vite-plus/test";
 
-const workflow = readFileSync(new URL("../.github/workflows/docker-build.yml", import.meta.url), "utf8");
+const workflow = readFileSync(new URL("../.github/workflows/docker-publish.yml", import.meta.url), "utf8");
 const otaWorkflow = readFileSync(new URL("../.github/workflows/mobile-ota-update.yml", import.meta.url), "utf8");
 const commit = "a".repeat(40);
 
@@ -22,7 +22,7 @@ it.each([
 		if (!expression) throw new Error("Mobile OTA eligibility output is missing");
 		expect(
 			runInNewContext(expression, {
-				needs: { mode: { outputs: { release } } },
+				needs: { plan: { outputs: { release } } },
 				steps: { version: { outputs: { prerelease } }, deploy: { outcome: deployed } },
 			}),
 		).toBe(expected);
@@ -41,7 +41,7 @@ it.each([
 	expect(
 		runInNewContext(expression, {
 			cancelled: () => cancelled,
-			needs: { merge: { result, outputs: { mobile_ota } } },
+			needs: { publish: { result, outputs: { mobile_ota } } },
 		}),
 	).toBe(expected);
 });
@@ -73,7 +73,7 @@ it.each([
 	],
 ] as const)("requires three consecutive matching production probes: %s", (_name, responses, status, probes) => {
 	const script = otaWorkflow.match(
-		/      - name: Wait for matching production backend[\s\S]*?        run: \|\n([\s\S]*?)(?=\n      - name:)/,
+		/      - name: Wait for healthy backend at source commit[\s\S]*?        run: \|\n([\s\S]*?)(?=\n      - name:)/,
 	)?.[1];
 	if (!script) throw new Error("Production backend check is missing");
 	const directory = mkdtempSync(join(tmpdir(), "mobile-backend-"));
