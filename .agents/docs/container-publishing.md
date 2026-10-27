@@ -36,7 +36,7 @@ outputs use `sha-<full-commit>-amd64` and `sha-<full-commit>-arm64`.
 
 ### Explicit product releases and manual APKs
 
-A push to `main` publishes container images and compatible preview OTA updates only.
+A push to `main` publishes container images only. OTA updates ship with stable production releases.
 It never builds Android APKs, creates Git tags, or creates GitHub Releases. Product
 GitHub Releases and `v*` tags are created only by an explicit versioned release operation.
 Docker promotion consumes an existing tag or commit; it does not create either.
@@ -95,20 +95,24 @@ secret is missing. Dispatch does not create a Git tag, GitHub release, or versio
 
 ## Native mobile updates
 
-After successful GHCR publishing, `mobile-update` checks out the same full commit and
-publishes an EAS Update using the `EXPO_TOKEN` Actions secret. The token must have access
-to Expo account `reactive-resume` and project `5830280e-e1ba-45b7-b9c9-ba048fa3bd4d`.
-Missing credentials fail the mobile job without undoing the published Docker image.
+After a successful stable Docker promotion and SSH redeploy, `docker-build.yml` calls
+`.github/workflows/mobile-ota-update.yml`. This reusable workflow checks out the image's
+exact full source commit and publishes an EAS Update to the `production` channel using
+the `production` EAS environment. Nightlies, manual canaries, and prereleases skip OTA.
 
-- Current-main nightlies, manual canaries, and prereleases publish to the `preview` channel
-  using the `preview` EAS environment. Superseded main builds skip mobile publishing.
-- Stable promotions publish to `production` using the `production` EAS environment only
-  when the SSH redeploy step succeeded. Before publishing, three consecutive probes of
-  `https://rxresu.me/api/health` must identify this service, report healthy, and match the
-  full source commit. Official Docker builds embed `APP_REVISION` for that check.
-- Each channel cancels superseded mobile jobs independently; Docker image builds remain
-  unaffected. Publishing and deployment are separate operations, so a failed mobile job
-  can leave the backend ahead. Fix the failure and rerun the release workflow.
+The workflow uses the `EXPO_TOKEN` Actions secret, which must have access to Expo account
+`reactive-resume` and project `5830280e-e1ba-45b7-b9c9-ba048fa3bd4d`. Missing credentials
+fail the mobile job without undoing the published Docker image.
+
+Before publishing, three consecutive probes of `https://rxresu.me/api/health` must identify
+this service, report healthy, and match the full source commit. Official Docker builds
+embed `APP_REVISION` for that check. A successful container publish alone cannot authorize OTA.
+
+New production OTA jobs cancel superseded OTA jobs; Docker image builds remain unaffected.
+Publishing and deployment are separate operations, so a failed mobile job can leave the
+backend ahead. Fix the failure and rerun failed jobs in the Docker release run. The reusable
+workflow runs within that release's dependency chain; it has no independent push or
+`workflow_run` trigger and receives only the source SHA and Expo secret from its caller.
 
 The app uses `expo-updates` with fingerprint runtime compatibility. Generated native
 projects and local Forme build output are excluded; the Rust sources and reviewed
@@ -116,8 +120,8 @@ prebuilt pin are included. Native changes need a new compatible store build; pub
 an OTA update alone cannot upgrade native code. JavaScript and asset changes are checked
 at launch, downloaded in the background, and applied on the next restart.
 
-Before first use, add `EXPO_TOKEN`, create preview/production EAS channels, and distribute
-new builds with these channels and update configuration. Existing binaries without
+Before first use, add `EXPO_TOKEN`, create the production EAS channel, and distribute
+new production builds with that channel and update configuration. Existing binaries without
 `expo-updates` cannot receive OTA updates. See [mobile release handoff](./mobile-release-handoff.md#over-the-air-updates)
 for setup, rollback, and remaining verification. Keep APIs compatible with older clients
 and self-hosted servers; runtime fingerprints only protect the JavaScript/native boundary.

@@ -81,9 +81,9 @@ One-time activation:
    store build, open it to download, then restart to apply. Verify startup offline and
    saved drafts. Repeat on iOS and Android. Existing preview binaries keep their channel.
 
-The Docker workflow publishes from the image's exact source commit: non-production
-images go to preview, stable releases to production after SSH deployment and three
-matching healthy commit probes. Production deployment must expose `/api/health` from
+The Docker workflow calls `mobile-ota-update.yml` only for stable production releases,
+using the image's exact source commit after successful SSH deployment. Nightlies, canaries,
+and prereleases skip OTA. The OTA workflow requires three matching healthy commit probes. Production deployment must expose `/api/health` from
 the application without caching or substituting a proxy's `OK` response. A missing
 `APP_REVISION`, old replica, or unhealthy backend withholds the mobile update. A timeout
 or missing `EXPO_TOKEN` fails the mobile job; Docker publishing is not rolled back.
