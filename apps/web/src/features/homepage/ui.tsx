@@ -82,7 +82,9 @@ export function Doodle({ name, wipe, className, style, eager = false }: DoodlePr
 		<img
 			src={`/doodles/${name}.webp`}
 			srcSet={`/doodles/${name}-small.webp ${Math.round(width / 2)}w, /doodles/${name}.webp ${width}w`}
-			sizes="(min-width: 900px) 16vw, 30vw"
+			// ponytail: one size for every doodle (they render at 6–16vw); curve and globe upscale the small file up to 1.15×
+			// on 2× screens. Add a per-use `sizes` prop if that ever shows.
+			sizes="(min-width: 900px) 10vw, 30vw"
 			alt=""
 			aria-hidden="true"
 			width={width}

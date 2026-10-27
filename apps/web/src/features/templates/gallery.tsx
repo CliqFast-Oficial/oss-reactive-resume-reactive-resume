@@ -49,6 +49,8 @@ export function TemplateGallery() {
 								>
 									<img
 										src={`/templates/thumb/${id}.webp`}
+										srcSet={`/templates/thumb/${id}-small.webp 300w, /templates/thumb/${id}.webp 596w`}
+										sizes="298px"
 										alt={t`${name} resume template preview`}
 										width={298}
 										height={420}
