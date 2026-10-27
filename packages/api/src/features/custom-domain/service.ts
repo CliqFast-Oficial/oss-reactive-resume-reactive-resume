@@ -210,7 +210,8 @@ export async function traefikConfiguration(options: { service: string; entryPoin
 			},
 		]),
 	);
-	return { http: { routers } };
+	// Traefik rejects an empty map ("routers cannot be a standalone element"), but accepts an empty document.
+	return domains.length > 0 ? { http: { routers } } : {};
 }
 
 let rechecking = false;

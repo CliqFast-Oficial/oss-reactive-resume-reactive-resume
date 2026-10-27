@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vite-plus/test";
 
 const secret = "s".repeat(40);
-const mocks = vi.hoisted(() => ({ traefikConfiguration: vi.fn(async () => ({ http: { routers: {} } })) }));
+const mocks = vi.hoisted(() => ({ traefikConfiguration: vi.fn(async () => ({})) }));
 
 vi.mock("@reactive-resume/env/server", () => ({
 	env: { APP_URL: "https://rxresu.me", CUSTOM_DOMAIN_PROVIDER_SECRET: "s".repeat(40) },
