@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       release:
-        description: Promote existing SHA image (branch updates latest; release tag also updates semver) and redeploy production
+        description: Promote existing SHA image to latest and its package.json version tags, and redeploy production
         type: boolean
         default: false
   push:
@@ -220,26 +220,24 @@ jobs:
         run: |
           set -euo pipefail
           version=$(jq -r .version package.json)
-          prerelease=false
-          tagged=false
           if [[ "$GIT_REF" == refs/tags/v* ]]; then
-            version="${GIT_REF#refs/tags/v}"
-            if [[ ! "$version" =~ ^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?$ ]]; then
+            tag="${GIT_REF#refs/tags/v}"
+            if [[ ! "$tag" =~ ^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?$ ]]; then
               echo "::error::Release tag must be vMAJOR.MINOR.PATCH, optionally with a prerelease suffix."
               exit 1
             fi
-            if [[ "$version" != "$(jq -r .version package.json)" ]]; then
+            if [[ "$tag" != "$version" ]]; then
               echo "::error::Release tag version must match package.json; promotion cannot change the built app version."
               exit 1
             fi
-            if [[ "$version" == *-* ]]; then prerelease=true; fi
-            tagged=true
           fi
+          # A release from a branch publishes the same version aliases as its tag would: package.json names the version.
+          prerelease=false
+          if [[ "$version" == *-* ]]; then prerelease=true; fi
           {
             echo "version=$version"
             echo "sha=$(git rev-parse HEAD)"
             echo "prerelease=$prerelease"
-            echo "tagged=$tagged"
           } >> "$GITHUB_OUTPUT"
 
       - name: Require successful CI for the exact promotion commit
@@ -294,9 +292,9 @@ jobs:
             type=raw,value=nightly,enable=${{ needs.mode.outputs.nightly == 'true' }}
             type=raw,value=nightly-{{date 'YYYYMMDDHHmmss' tz='UTC'}},enable=${{ needs.mode.outputs.nightly == 'true' }}
             type=raw,value=latest,enable=${{ needs.mode.outputs.release == 'true' && steps.version.outputs.prerelease != 'true' }}
-            type=raw,value=v${{ steps.version.outputs.version }},enable=${{ needs.mode.outputs.release == 'true' && steps.version.outputs.tagged == 'true' }}
-            type=raw,value=v${{ steps.semver.outputs.major }}.${{ steps.semver.outputs.minor }},enable=${{ needs.mode.outputs.release == 'true' && steps.version.outputs.tagged == 'true' && steps.version.outputs.prerelease != 'true' }}
-            type=raw,value=v${{ steps.semver.outputs.major }},enable=${{ needs.mode.outputs.release == 'true' && steps.version.outputs.tagged == 'true' && steps.version.outputs.prerelease != 'true' }}
+            type=raw,value=v${{ steps.version.outputs.version }},enable=${{ needs.mode.outputs.release == 'true' }}
+            type=raw,value=v${{ steps.semver.outputs.major }}.${{ steps.semver.outputs.minor }},enable=${{ needs.mode.outputs.release == 'true' && steps.version.outputs.prerelease != 'true' }}
+            type=raw,value=v${{ steps.semver.outputs.major }},enable=${{ needs.mode.outputs.release == 'true' && steps.version.outputs.prerelease != 'true' }}
 
       - name: Create manifest list and push
         id: manifest

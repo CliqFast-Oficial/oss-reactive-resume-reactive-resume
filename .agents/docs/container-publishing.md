@@ -25,7 +25,7 @@ Dockerfile's pnpm cache mounts between runs, keyed per architecture (`Dockerfile
 | Manual dispatch, default `release=false`        | Build AMD64 and ARM64      | `sha-<full-commit>`, `canary-<run-id>-<attempt>`       | No                                                 |
 | Push of a stable `v*` tag                       | Promote existing SHA image | `latest`, version/major/minor (`v6.0.0`, `v6.0`, `v6`) | When configured: SSH redeploy and Cloudflare purge |
 | Push of a prerelease `v*` tag                   | Promote existing SHA image | Prerelease version only (for example, `v6.0.0-rc.1`)   | No                                                 |
-| Manual dispatch, `release=true`, branch         | Promote existing SHA image | `latest`                                               | When configured: SSH redeploy and Cloudflare purge |
+| Manual dispatch, `release=true`, branch         | Promote existing SHA image | `latest`, version/major/minor from `package.json`      | When configured: SSH redeploy and Cloudflare purge |
 | Manual dispatch, `release=true`, stable tag     | Promote existing SHA image | `latest`, version/major/minor (`v6.0.0`, `v6.0`, `v6`) | When configured: SSH redeploy and Cloudflare purge |
 | Manual dispatch, `release=true`, prerelease tag | Promote existing SHA image | Prerelease version only                                | No                                                 |
 
@@ -74,8 +74,10 @@ manual `release=false` build at that ref first, then rerun promotion. Historical
 older workflow files still run their original workflow; their short SHA tags are not promotion
 sources. Keep full SHA images in registry retention policies so commits remain promotable.
 
-Manual `release=true` on main or another branch updates `latest` only, keeping semver
-aliases tied to Git releases. To update `latest` to main without rebuilding:
+Manual `release=true` on main or another branch promotes the branch head to `latest` and to
+the full/minor/major aliases of its `package.json` version (a prerelease version updates only
+its own alias and skips production integrations). Use it to republish a release with a fix
+that landed after its Git tag, without rebuilding:
 
 ```bash
 gh workflow run docker-build.yml --repo reactive-resume/reactive-resume --ref main -f release=true

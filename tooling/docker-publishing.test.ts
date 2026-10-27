@@ -50,16 +50,17 @@ it("validates release tags against the built version and distinguishes prereleas
 
 	try {
 		writeFileSync(join(directory, "git"), `#!/usr/bin/env bash\necho ${commit}\n`, { mode: 0o755 });
-		for (const [event, ref, version, prerelease, tagged, status] of [
-			["push", "refs/tags/v6.0.0", "6.0.0", "false", "true", 0],
-			["push", "refs/tags/v6.0.0-rc.1", "6.0.0-rc.1", "true", "true", 0],
-			["push", "refs/tags/v6.0.1", "6.0.0", "false", "true", 1],
-			["push", "refs/tags/v6.0", "6.0.0", "false", "true", 1],
-			["workflow_dispatch", "refs/heads/main", "6.0.0", "false", "false", 0],
-			["workflow_dispatch", "refs/heads/fix", "6.0.0", "false", "false", 0],
-			["workflow_dispatch", "refs/tags/v6.0.0", "6.0.0", "false", "true", 0],
-			["workflow_dispatch", "refs/tags/v6.0.0-rc.1", "6.0.0-rc.1", "true", "true", 0],
-			["workflow_dispatch", "refs/tags/v6.0.1", "6.0.0", "false", "true", 1],
+		for (const [event, ref, version, prerelease, status] of [
+			["push", "refs/tags/v6.0.0", "6.0.0", "false", 0],
+			["push", "refs/tags/v6.0.0-rc.1", "6.0.0-rc.1", "true", 0],
+			["push", "refs/tags/v6.0.1", "6.0.0", "false", 1],
+			["push", "refs/tags/v6.0", "6.0.0", "false", 1],
+			["workflow_dispatch", "refs/heads/main", "6.0.0", "false", 0],
+			["workflow_dispatch", "refs/heads/main", "6.0.0-rc.1", "true", 0],
+			["workflow_dispatch", "refs/heads/fix", "6.0.0", "false", 0],
+			["workflow_dispatch", "refs/tags/v6.0.0", "6.0.0", "false", 0],
+			["workflow_dispatch", "refs/tags/v6.0.0-rc.1", "6.0.0-rc.1", "true", 0],
+			["workflow_dispatch", "refs/tags/v6.0.1", "6.0.0", "false", 1],
 		] as const) {
 			const output = join(directory, "output");
 			writeFileSync(output, "");
@@ -77,7 +78,7 @@ it("validates release tags against the built version and distinguishes prereleas
 			});
 			expect(result.status, result.stderr).toBe(status);
 			expect(readFileSync(output, "utf8")).toBe(
-				status === 0 ? `version=${version}\nsha=${commit}\nprerelease=${prerelease}\ntagged=${tagged}\n` : "",
+				status === 0 ? `version=${version}\nsha=${commit}\nprerelease=${prerelease}\n` : "",
 			);
 		}
 	} finally {
