@@ -7,7 +7,13 @@ results, so nothing they build reaches a published image or a Vercel deployment.
 ## Setup
 
 1. In the Vercel team that owns the deployment: Settings → Build and Deployment → OIDC Policies for CLI Access →
-   add a Turborepo CLI policy for GitHub repository `reactive-resume/reactive-resume`, restricted to branch `main`.
+   add a Turborepo CLI policy with a custom issuer and claims. A GitHub-preset policy rejected this repository's
+   tokens with `Not authorized.`: the repository uses GitHub's immutable OIDC subject, so `sub` carries owner and
+   repository IDs instead of names.
+   - Issuer: `https://token.actions.githubusercontent.com`
+   - Audience: `https://github.com/reactive-resume` (GitHub's default; the action requests none)
+   - Claim `sub`: `repo:reactive-resume@245328954/reactive-resume@249995750:ref:refs/heads/main`, which also limits
+     tokens to main-branch runs
 2. Add the repository variable `TURBO_TEAM` with the team slug (`gh variable set TURBO_TEAM --body <slug>`).
 
 No secret is stored: `vercel/setup-turborepo-remote-cache-action` exchanges each job's GitHub OIDC token for a

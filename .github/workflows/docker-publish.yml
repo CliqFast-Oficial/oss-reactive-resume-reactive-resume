@@ -166,9 +166,8 @@ jobs:
           build-args: |
             APP_REVISION=${{ steps.source.outputs.sha }}
             TURBO_TEAM=${{ env.TURBO_TEAM }}
-          # A secret, not a build arg: provenance records build args.
-          secrets: |
-            TURBO_TOKEN=${{ env.TURBO_TOKEN }}
+          # A secret, not a build arg: provenance records build args. Omitted without a token, which an empty value can't be.
+          secrets: ${{ env.TURBO_TOKEN && format('TURBO_TOKEN={0}', env.TURBO_TOKEN) || '' }}
 
       - name: Build and push image (Blacksmith)
         id: build-blacksmith
