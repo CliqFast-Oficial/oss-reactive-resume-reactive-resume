@@ -102,7 +102,6 @@
 		"@tanstack/react-devtools": "^0.10.13",
 		"@tanstack/react-query-devtools": "^5.105.0",
 		"@tanstack/react-router-devtools": "^1.167.2",
-		"@tanstack/redact": "catalog:",
 		"@tanstack/router-plugin": "^1.168.48",
 		"@types/babel__core": "^7.20.5",
 		"@types/react": "catalog:",

@@ -20,7 +20,8 @@ and the request structure more than the absolute milliseconds.
   deterministic theme/locale hydration and a CSP for streamed inline scripts. The visible startup delay comes from the
   root context waterfall and preview bytes, which Start does not remove. Revisit only if a measured pilot on the
   optimized baseline wins (see "Decision rule").
-- **Redact: keep it opt-in.** The autofocus failure is a runtime gap: React DOM calls `.focus()` at commit for a newly
+- **Redact: not worth it now; the opt-in build mode was removed** (evaluation in [redact.md](./redact.md)). The
+  autofocus failure is a runtime gap: React DOM calls `.focus()` at commit for a newly
   mounted control with `autoFocus`; Redact only sets the `autofocus` attribute. Redact 0.2.1 (published October 27)
   still has it. Its feature flags can cut a further ~5 KB gzip, but two open upstream issues match this app's stack
   (Base UI submenus closing before a link click; large rerenders reported ~2× slower). Startup bytes are not
@@ -127,7 +128,8 @@ and the request structure more than the absolute milliseconds.
   those pages cut first paint from ~1.7 s to ~0.4–0.6 s locally, but the re-render pushed LCP to 5–7.6 s; hydration
   (Router SSR utilities, or a Start pilot limited to marketing) has to come first.
 - Common-character CJK subsets for the PDF engine (978 KB vs 8.6 MB per weight).
-- Redact by default, only after the gate in [redact.md](./redact.md) passes on 0.2.1 or later with the autofocus fix.
+- Redact, only after upstream focuses `autoFocus` controls on mount: restore the build mode from commit `a23bbd068`
+  and pass the gate in [redact.md](./redact.md).
 
 ### Considered, not worth it
 

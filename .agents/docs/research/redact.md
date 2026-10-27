@@ -5,17 +5,18 @@ Redact 0.2.0, Vite+ 1.3.0, Node 24.22.1, Chromium 156.0.8078.4. Dependency is pi
 
 ## Decision
 
-Redact is implemented as an **opt-in web build mode**. Normal development and production builds retain native React.
-Do not enable Redact for production yet: an existing keyboard-focus browser test fails with Redact and passes with
-native React. The smaller bundle and local startup improvements do not establish compatibility with the whole app.
+**Removed on October 27, 2026; native React is the only runtime.** The gain (13.5% less eager JavaScript, about 6–7%
+faster entry evaluation, small first-paint differences) is not worth carrying a second runtime: an existing
+keyboard-focus browser test fails with Redact, Redact 0.2.1 still doesn't focus `autoFocus` controls on mount, and
+the interaction risks below are unmeasured. The rest of this page records the evaluation as it ran.
 
-```sh
-pnpm --filter web build --mode redact
-pnpm --filter web dev --mode redact
-```
+The opt-in build mode (`pnpm --filter web build --mode redact`), its resolver test (`apps/web/src/redact.test.ts`) and
+the benchmark script (`tooling/redact/benchmark.mjs`) live in commit `a23bbd068`. Restore them from there to
+re-evaluate, after upstream fixes mount-time focus.
 
-No application React imports, shared package APIs, mobile runtime, or backend runtime change. React Compiler remains
-enabled. Redact's default `full` preset is retained; no optional compatibility features are removed to improve results.
+In that mode, no application React imports, shared package APIs, mobile runtime, or backend runtime changed. React
+Compiler stayed enabled. Redact's default `full` preset was retained; no optional compatibility features were removed
+to improve results.
 
 ## Integration boundaries
 
@@ -115,6 +116,7 @@ PDF fallback/preview, assistant streaming, drag-and-drop, and Safari/Firefox beh
 
 ## Reproduce the benchmark
 
+Check out commit `a23bbd068` (or restore its files) first; the build mode and script were removed afterwards.
 Run from repository root with installed dependencies and Playwright Chromium available. No database or production
 credentials are used by the benchmark server. Build snapshots are outside the checkout, so later builds do not alter
 the control. Run the browser benchmark after other build/test processes have finished.

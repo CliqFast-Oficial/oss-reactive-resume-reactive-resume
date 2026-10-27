@@ -54,7 +54,6 @@ catalog:
   expo-store-review: ~58.0.2
   isbot: ^5.2.2
   "@resvg/resvg-wasm": ^2.6.2
-  "@tanstack/redact": 0.2.0
 allowBuilds:
   esbuild: true
   lefthook: true

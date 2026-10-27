@@ -1,13 +1,11 @@
 import type { Plugin, ProxyOptions } from "vite-plus";
 import { readFileSync } from "node:fs";
 import { mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
-import { createRequire } from "node:module";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { lingui } from "@lingui/vite-plugin";
 import babel from "@rolldown/plugin-babel";
 import tailwindcss from "@tailwindcss/vite";
 import { devtools } from "@tanstack/devtools-vite";
-import { redact } from "@tanstack/redact/vite";
 import { tanstackRouter } from "@tanstack/router-plugin/vite";
 import viteReact, { reactCompilerPreset } from "@vitejs/plugin-react";
 import { defineConfig } from "vite-plus";
@@ -19,35 +17,6 @@ const appVersion = JSON.stringify(rootPackageJson.version ?? "0.0.0");
 const workspaceRoot = fileURLToPath(new URL("../..", import.meta.url));
 
 const webRoot = fileURLToPath(new URL(".", import.meta.url));
-const require = createRequire(import.meta.url);
-// The PDF/template renderer uses react-reconciler's private dispatcher; its entire React graph must stay native.
-const nativeRenderer =
-	/[\\/]packages[\\/]pdf[\\/]|[\\/]node_modules[\\/](?:react|react-reconciler|@formepdf[\\/]react)[\\/]/;
-const rendererImports = ["react", "react/jsx-runtime", "react/jsx-dev-runtime", "react/compiler-runtime", "scheduler"];
-const rendererAliases = Object.fromEntries(
-	rendererImports.map((source) => [
-		source,
-		require.resolve(
-			source === "scheduler" ? "@tanstack/redact/scheduler" : source.replace(/^react/, "@tanstack/redact"),
-		),
-	]),
-);
-const rendererPlugin = (): Plugin => {
-	const resolveId = (source: string, importer: string | undefined) => {
-		if (!rendererImports.includes(source)) return;
-		return importer && nativeRenderer.test(importer)
-			? createRequire(importer).resolve(source)
-			: rendererAliases[source];
-	};
-	return {
-		name: "redact-with-native-pdf",
-		enforce: "pre",
-		resolveId,
-		config: () => ({
-			optimizeDeps: { rolldownOptions: { plugins: [{ name: "redact-with-native-pdf", resolveId }] } },
-		}),
-	};
-};
 const prerenderBundleDir = `${webRoot}node_modules/.prerender`;
 // Outside dist/, so the static server and the CDN never serve these pages at their own addresses.
 const prerenderOutDir = `${webRoot}dist-prerender`;
@@ -163,14 +132,12 @@ const serverProxy = serverPaths.reduce(
 	{} as Record<string, ProxyOptions>,
 );
 
-export default defineConfig(({ mode }) => ({
+export default defineConfig({
 	envDir: workspaceRoot,
 
 	resolve: {
 		tsconfigPaths: true,
 	},
-	// Externalized dependencies would import native React alongside the prerenderer's Redact dispatcher.
-	...(mode === "redact" ? { ssr: { noExternal: true as const } } : {}),
 
 	define: {
 		__APP_VERSION__: appVersion,
@@ -256,11 +223,9 @@ export default defineConfig(({ mode }) => ({
 			autoCodeSplitting: true,
 		}),
 		viteReact(),
-		// Opt-in until the browser compatibility gate passes (see .agents/docs/research/redact.md).
-		...(mode === "redact" ? [rendererPlugin(), redact({ skip: rendererImports })] : []),
 		linguiPlugin(),
 		// Keep @babel/core on 7: under Babel 8, React Compiler 1.0 skips every function with a destructuring default
 		// (guarded by src/react-compiler.test.ts).
 		babel({ presets: [reactCompilerPreset()] }),
 	],
-}));
+});
