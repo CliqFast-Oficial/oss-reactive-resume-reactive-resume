@@ -103,7 +103,8 @@ Merely naming an environment does not configure these protection rules.
    A separate `-evidence` artifact retains `release.json`, `fingerprint.json`, available
    JavaScript source maps, iOS dSYMs, Android obfuscation mappings and native debug
    symbols for 90 days. Mapping/symbol files are included when produced by the
-   toolchain; this workflow does not enable obfuscation or manufacture missing symbols.
+   toolchain; the Android build lane enables R8 and resource shrinking, while the
+   workflow preserves the resulting mappings and available native symbols.
    Raw build logs are not uploaded because toolchains can include environment values.
    Actions retention is capped at 90 days for this public repository and deleting a run
    still deletes its artifacts: export evidence to your permanent release records
@@ -128,6 +129,35 @@ CI creates temporary signing files with restrictive permissions, imports the App
 certificate into a temporary keychain, and removes the profile, keychain and temporary
 files after the build. It never invokes capability synchronization or provisions new
 Apple resources. Renew certificates/profiles before expiry and update Actions secrets.
+
+## Android Play Console optimization warnings
+
+The Android build lane in `tooling/mobile/fastlane/Fastfile` passes
+`android.enableMinifyInReleaseBuilds=true` and
+`android.enableShrinkResourcesInReleaseBuilds=true` to Gradle after Expo Prebuild. Both store
+AABs and manual release APKs use these settings. Resource shrinking requires R8;
+do not disable minification independently. Verify a release build, then test photo
+selection/cropping, navigation, notifications, and PDF previews before submitting a
+new binary. This cannot ship through OTA. These build-only optimization flags do
+not change the app's native interfaces or shared Expo configuration/fingerprints;
+no iOS rebuild is needed for this Android fix.
+
+The 1.0.0 Play Console recommendations also report deprecated window APIs and manual
+network bitmap decoding in bundled libraries. Current `expo-image-picker` 58.0.10
+uses `WindowCompat.enableEdgeToEdge` and window insets in `ExpoCropImageActivity`.
+React Native 0.88.0 still contains deprecated status/navigation color setters and
+legacy cutout modes in `WindowUtil.kt`. App screens do not set those colors or modes;
+keep safe-area handling and cropping intact rather than removing framework
+compatibility code to silence a static warning.
+
+App image views already use `expo-image` (Glide on Android). Manual download paths
+remain in dependencies, including `expo-notifications`'s notification image helper
+and `react-native-enriched-html`'s inline-image drawable. The PDF renderer separately
+needs original image bytes; its download enforces a byte limit and timeout. Do not
+replace that with a downsampled display image. Match Play's obfuscated class names
+against the **same release's** archived `mapping.txt` before attributing each report;
+current source alone cannot identify them. Recheck remaining recommendations after
+uploading the new AAB; configuration/source checks do not prove Play cleared them.
 
 ## Manual Android APKs
 

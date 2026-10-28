@@ -26,6 +26,8 @@ platform :android do
         task: abi ? "assemble" : "bundle", build_type: "Release", flags: "--no-daemon",
         print_command: false,
         properties: {
+          "android.enableMinifyInReleaseBuilds" => "true",
+          "android.enableShrinkResourcesInReleaseBuilds" => "true",
           "android.injected.signing.store.file" => keystore,
           "android.injected.signing.store.password" => ENV.fetch("ANDROID_KEYSTORE_PASSWORD"),
           "android.injected.signing.key.alias" => ENV.fetch("ANDROID_KEY_ALIAS"),
