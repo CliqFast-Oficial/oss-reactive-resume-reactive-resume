@@ -15,7 +15,7 @@
 		"lingui:extract": "lingui extract --clean --overwrite"
 	},
 	"dependencies": {
-		"@ai-sdk/react": "^4.0.157",
+		"@ai-sdk/react": "^4.0.159",
 		"@base-ui/react": "^1.9.0",
 		"@better-auth/api-key": "catalog:",
 		"@better-auth/infra": "catalog:",
@@ -76,7 +76,7 @@
 		"fuse.js": "^7.5.0",
 		"immer": "^11.2.9",
 		"js-cookie": "^3.0.8",
-		"motion": "^14.6.0",
+		"motion": "^14.7.1",
 		"pdfjs-dist": "6.4.299",
 		"prettier": "^3.9.10",
 		"qrcode.react": "^4.2.0",
@@ -84,7 +84,7 @@
 		"react-dom": "19.3.1",
 		"react-easy-crop": "^6.2.4",
 		"react-markdown": "^10.1.0",
-		"react-window": "^2.5.0",
+		"react-window": "^2.5.1",
 		"remark-gfm": "^4.0.1",
 		"ts-pattern": "catalog:",
 		"usehooks-ts": "^3.1.1",
