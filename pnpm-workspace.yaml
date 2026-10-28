@@ -97,7 +97,7 @@ overrides:
   node-forge@<1.4.1: ^1.4.2
   zod@>=4.0.0 <4.6.6: ^4.6.7
   # Expo's two plugin schemas use APIs shared with v4; dependency-security.test.mjs checks compatibility.
-  "@expo/cli@58.1.15>zod": ^4.6.7
+  "@expo/cli@58.1.17>zod": ^4.6.7
 patchedDependencies:
   deepmerge@4.3.1: patches/deepmerge@4.3.1.patch
 skills:
