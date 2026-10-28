@@ -52,9 +52,12 @@ const loadAtsPdf = () => import("@reactive-resume/resume/ats-pdf");
 export function useJobMatch(data: ResumeData | undefined): JobMatch {
 	const applicationId = useCurrentBuilderResumeSelector((resume) => resume.applicationId ?? null);
 	const pasted = useEditorStore((state) => state.pastedPosting);
-	const { data: applications } = useQuery(applicationsListQueryOptions());
-	const application = applications?.find((entry) => entry.id === applicationId) ?? null;
-	const posting = application ? (application.jobDescription ?? "").trim() : pasted.trim();
+	const { data: application } = useQuery({
+		...orpc.applications.getById.queryOptions({ input: { id: applicationId ?? "" } }),
+		enabled: Boolean(applicationId),
+	});
+	const selectedApplication = application ?? null;
+	const posting = selectedApplication ? (selectedApplication.jobDescription ?? "").trim() : pasted.trim();
 
 	// The matcher (stemmer and skill aliases) loads only once there's a posting to match.
 	const { data: engine } = useQuery({
@@ -82,7 +85,7 @@ export function useJobMatch(data: ResumeData | undefined): JobMatch {
 		};
 	}, [engine, posting, resumeText, hiddenTerms]);
 
-	return { application, posting, result, hiddenTerms: hiddenTerms ?? [] };
+	return { application: selectedApplication, posting, result, hiddenTerms: hiddenTerms ?? [] };
 }
 
 /** The first spelling of a term the posting uses, as it writes it ("Figma", not "figma"). */
@@ -419,7 +422,13 @@ function NoPosting({ application }: { application: JobMatch["application"] }) {
 	const queryClient = useQueryClient();
 	const { mutate: savePosting, isPending: saving } = useMutation({
 		...orpc.applications.update.mutationOptions(),
-		onSuccess: () => queryClient.invalidateQueries({ queryKey: applicationsListQueryKey() }),
+		onSuccess: (_data, input) =>
+			Promise.all([
+				queryClient.invalidateQueries({ queryKey: applicationsListQueryKey() }),
+				queryClient.invalidateQueries({
+					queryKey: orpc.applications.getById.queryKey({ input: { id: input.id } }),
+				}),
+			]),
 		onError: (error) => toastError(error, t`Couldn't save the posting. Try again.`),
 	});
 

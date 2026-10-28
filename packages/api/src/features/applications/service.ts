@@ -402,6 +402,32 @@ const stripUserId = <T extends { userId: string; activity?: ApplicationTimelineE
 	return rest.activity ? { ...rest, activity: sortTimeline(rest.activity) } : rest;
 };
 
+const applicationSummarySelect = {
+	id: schema.application.id,
+	userId: schema.application.userId,
+	company: schema.application.company,
+	role: schema.application.role,
+	location: schema.application.location,
+	salary: schema.application.salary,
+	status: schema.application.status,
+	closedReason: schema.application.closedReason,
+	resumeId: schema.application.resumeId,
+	coverLetterId: schema.application.coverLetterId,
+	source: schema.application.source,
+	tags: schema.application.tags,
+	sourceUrl: schema.application.sourceUrl,
+	matchScore: schema.application.matchScore,
+	followUpAt: schema.application.followUpAt,
+	followUpNote: schema.application.followUpNote,
+	contacts: schema.application.contacts,
+	activity: sql<
+		ApplicationTimelineEntry[]
+	>`jsonb_path_query_array(${schema.application.activity}, '$[*] ? (@.type == "stage" || @.type == "interview")')`,
+	appliedAt: schema.application.appliedAt,
+	createdAt: schema.application.createdAt,
+	updatedAt: schema.application.updatedAt,
+};
+
 export const applicationService = {
 	list: async (input: {
 		userId: string;
@@ -428,6 +454,75 @@ export const applicationService = {
 		]);
 
 		return { items: rows.map(stripUserId), total: totals?.[0]?.total ?? rows.length };
+	},
+
+	listSummary: async (input: {
+		userId: string;
+		status?: ApplicationStatus;
+		tags?: string[];
+		limit?: number;
+		offset?: number;
+		includeInitialDetails?: number;
+	}) => {
+		const where = and(
+			eq(schema.application.userId, input.userId),
+			input.status ? eq(schema.application.status, input.status) : undefined,
+			input.tags && input.tags.length > 0 ? arrayContains(schema.application.tags, input.tags) : undefined,
+		);
+		const query = db
+			.select(applicationSummarySelect)
+			.from(schema.application)
+			.where(where)
+			.orderBy(sql`${schema.application.updatedAt} desc nulls last`, desc(schema.application.id));
+		const paged = input.limit !== undefined || input.offset !== undefined;
+		const [rows, totals] = await Promise.all([
+			paged ? query.limit(input.limit ?? 20).offset(input.offset ?? 0) : query,
+			paged ? db.select({ total: count() }).from(schema.application).where(where) : undefined,
+		]);
+
+		const items = rows.map(stripUserId);
+		const initialDetailCount = input.includeInitialDetails ?? 0;
+		if (initialDetailCount === 0 || items.length === 0) {
+			return { items, total: totals?.[0]?.total ?? rows.length };
+		}
+
+		// Web keeps SQL order within each stage. Mobile differs only when the cutoff
+		// falls inside a timestamp tie, so only that group needs an ID sort.
+		const stageOrder: readonly ApplicationStatus[] = ["interview", "offer", "screening", "applied", "saved", "closed"];
+		const buckets = new Map<ApplicationStatus, typeof items>();
+		for (const item of items) {
+			if (item.status === "closed" && input.status === undefined) continue;
+			const bucket = buckets.get(item.status);
+			if (bucket) bucket.push(item);
+			else buckets.set(item.status, [item]);
+		}
+		const webCandidates = stageOrder.flatMap((status) => buckets.get(status) ?? []).slice(0, initialDetailCount);
+		const candidateIds = new Set(webCandidates.map((item) => item.id));
+		const boundary = webCandidates.at(-1);
+		if (boundary) {
+			const sameGroup = (item: (typeof items)[number]) =>
+				item.status === boundary.status && item.updatedAt.getTime() === boundary.updatedAt.getTime();
+			const mobileCount = webCandidates.filter(sameGroup).length;
+			const tied = items.filter(sameGroup);
+			for (const item of tied.toSorted((a, b) => a.id.localeCompare(b.id)).slice(0, mobileCount)) {
+				candidateIds.add(item.id);
+			}
+		}
+		if (candidateIds.size === 0) return { items, total: totals?.[0]?.total ?? rows.length };
+
+		// Fetch candidates together so the initial response adds one bounded query, never one query per row.
+		const fullRows = await db
+			.select()
+			.from(schema.application)
+			.where(and(eq(schema.application.userId, input.userId), inArray(schema.application.id, [...candidateIds])));
+		const details = new Map(fullRows.map((row) => [row.id, stripUserId(row)]));
+		return {
+			items: items.map((item) => {
+				const initialDetail = details.get(item.id);
+				return initialDetail ? { ...item, initialDetail } : item;
+			}),
+			total: totals?.[0]?.total ?? rows.length,
+		};
 	},
 
 	getById: async (input: { id: string; userId: string }) => {

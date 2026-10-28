@@ -1,5 +1,5 @@
 import type { ScheduledInterview } from "../interviews";
-import type { Application } from "../types";
+import type { ApplicationSummary } from "../types";
 import type { InterviewTimelineEntry } from "@reactive-resume/schema/applications/data";
 import { t } from "@lingui/core/macro";
 import { useLingui } from "@lingui/react";
@@ -25,14 +25,14 @@ const MAX_CHIPS_PER_DAY = 3;
 
 type DialogState =
 	| { open: false }
-	| { open: true; application: Application | null; interview: InterviewTimelineEntry | null; day: Date | null };
+	| { open: true; application: ApplicationSummary | null; interview: InterviewTimelineEntry | null; day: Date | null };
 
 type ApplicationCalendarProps = {
 	// Applications matching the page filters; their interviews are shown.
-	applications: Application[];
+	applications: ApplicationSummary[];
 	// Every application, offered by the "schedule interview" picker.
-	allApplications: Application[];
-	onOpen: (application: Application) => void;
+	allApplications: ApplicationSummary[];
+	onOpen: (application: ApplicationSummary) => void;
 };
 
 export function ApplicationCalendar({ applications, allApplications, onOpen }: ApplicationCalendarProps) {
@@ -294,6 +294,7 @@ function UpcomingCard({ item, timeRange, locale, onEdit, onOpenApplication }: Up
 	return (
 		<div
 			data-upcoming-interview={item.interview.id}
+			data-application-id={item.application.id}
 			className="relative overflow-hidden rounded-xl border border-line bg-surface ps-4 text-sm"
 		>
 			<span className="absolute inset-y-0 start-0 w-1" style={{ background: kind?.color }} />
@@ -313,7 +314,12 @@ function UpcomingCard({ item, timeRange, locale, onEdit, onOpenApplication }: Up
 					</span>
 				)}
 			</button>
-			<button type="button" className="mb-2 text-xs text-accent-text hover:underline" onClick={onOpenApplication}>
+			<button
+				type="button"
+				data-application-open
+				className="mb-2 text-xs text-accent-text hover:underline"
+				onClick={onOpenApplication}
+			>
 				<Trans>View application</Trans>
 			</button>
 		</div>

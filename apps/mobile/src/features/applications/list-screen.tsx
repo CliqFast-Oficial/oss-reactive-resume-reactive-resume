@@ -10,7 +10,7 @@ import { AddApplicationSheet } from "./add-sheet";
 import { applicationError } from "./error";
 import { filterApplications, groupApplications, visibleSelection } from "./list";
 import { describeNextStep, getNextStep } from "./next-step";
-import { useApplicationMutations, useApplications } from "./queries";
+import { useApplicationDetailPrefetch, useApplicationMutations, useApplications } from "./queries";
 import { CLOSED_REASONS, getClosedReasonLabel, getStageColor, getStageLabel, PIPELINE } from "./stages";
 import { useSession } from "@/auth/session";
 import { useUserTime } from "@/features/application-detail/hooks";
@@ -36,6 +36,8 @@ import {
 	useTheme,
 } from "@/ui";
 import { usePullRefresh } from "@/ui/use-pull-refresh";
+
+const VIEWABILITY_CONFIG = { itemVisiblePercentThreshold: 30 };
 
 export function ApplicationsListScreen() {
 	const session = useSession();
@@ -84,6 +86,7 @@ function ApplicationsList() {
 	const filtersActive = Boolean(search.trim() || tag || showClosed);
 	const groups = groupApplications(filtered, sort, direction);
 	const selectedIds = visibleSelection(groups, collapsed, selected);
+	const onViewableItemsChanged = useApplicationDetailPrefetch();
 	const tags = [...new Set(applications.flatMap((item) => item.tags))].sort();
 	const changeFilters = (change: () => void) => {
 		change();
@@ -255,6 +258,8 @@ function ApplicationsList() {
 								}))
 					}
 					keyExtractor={(item) => item.id}
+					onViewableItemsChanged={onViewableItemsChanged}
+					viewabilityConfig={VIEWABILITY_CONFIG}
 					keyboardShouldPersistTaps="handled"
 					refreshControl={<RefreshControl {...pull} tintColor={colors.accent} colors={[colors.accent]} />}
 					stickySectionHeadersEnabled={false}

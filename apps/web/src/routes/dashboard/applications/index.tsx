@@ -1,9 +1,9 @@
-import type { Application } from "@/features/applications/types";
+import type { Application, ApplicationSummary } from "@/features/applications/types";
 import { t } from "@lingui/core/macro";
 import { Plural, Trans } from "@lingui/react/macro";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { createFileRoute, stripSearchParams, useNavigate } from "@tanstack/react-router";
-import { useDeferredValue, useEffect, useState } from "react";
+import { useCallback, useDeferredValue, useEffect, useRef, useState } from "react";
 import z from "zod";
 import { Button } from "@reactive-resume/ui/components/button";
 import {
@@ -29,7 +29,13 @@ import { ImportApplicationsSheet } from "@/features/applications/components/impo
 import { ApplicationInsights, InsightsSkeleton } from "@/features/applications/components/insights-view";
 import { ApplicationList } from "@/features/applications/components/list-view";
 import { getNextStep } from "@/features/applications/next-step";
-import { applicationsListQueryOptions } from "@/features/applications/queries";
+import {
+	applicationDetailQueryOptions,
+	applicationsFullListQueryOptions,
+	applicationsListQueryOptions,
+	hydrateApplicationDetail,
+} from "@/features/applications/queries";
+import { toastError } from "@/libs/error-message";
 import { ENTER_CLASS } from "@/libs/motion";
 
 const VIEWS = ["list", "board", "insights", "calendar"] as const;
@@ -53,7 +59,7 @@ export const Route = createFileRoute("/dashboard/applications/")({
 });
 
 /** Search reads role, company, location, contacts and tags. */
-function matches(application: Application, query: string) {
+function matches(application: ApplicationSummary, query: string) {
 	if (!query) return true;
 	const haystack = [
 		application.role,
@@ -76,12 +82,75 @@ function RouteComponent() {
 	const [adding, setAdding] = useState(false);
 	const [importing, setImporting] = useState(false);
 	const [exporting, setExporting] = useState(false);
+	const [exportLoading, setExportLoading] = useState(false);
 	const [editing, setEditing] = useState<Application | null>(null);
 	const [selectedId, setSelectedId] = useState<string | null>(null);
 	// Views animate in only after a switch, never on the page's first render.
 	const [viewSwitched, setViewSwitched] = useState(false);
 
 	const { data: applications, isPending, isError, isFetching, refetch } = useQuery(applicationsListQueryOptions());
+	const queryClient = useQueryClient();
+	const { data: fullApplications } = useQuery({ ...applicationsFullListQueryOptions(), enabled: exporting });
+
+	const PREFETCH_LIMIT = 12;
+	const prefetchInFlight = useRef(new Set<string>());
+	const prefetch = useCallback(
+		(id: string) => {
+			const options = applicationDetailQueryOptions(id);
+			if (
+				prefetchInFlight.current.has(id) ||
+				prefetchInFlight.current.size >= PREFETCH_LIMIT ||
+				queryClient.getQueryData(options.queryKey) ||
+				queryClient.getQueryState(options.queryKey)?.fetchStatus === "fetching"
+			)
+				return;
+			prefetchInFlight.current.add(id);
+			void queryClient
+				.fetchQuery(options)
+				.catch(() => {})
+				.finally(() => prefetchInFlight.current.delete(id));
+		},
+		[queryClient],
+	);
+
+	useEffect(() => {
+		if (!applications) return;
+		for (const application of applications) hydrateApplicationDetail(queryClient, application);
+	}, [applications, queryClient]);
+
+	useEffect(() => {
+		let timer: number | undefined;
+		const openControl = (target: EventTarget | null) =>
+			target instanceof Element ? target.closest<HTMLElement>("[data-application-open]") : null;
+		const onPointerOver = (event: PointerEvent) => {
+			const open = openControl(event.target);
+			if (!open || open.contains(event.relatedTarget as Node | null)) return;
+			const id = open.closest<HTMLElement>("[data-application-id]")?.dataset.applicationId;
+			if (!id) return;
+			window.clearTimeout(timer);
+			timer = window.setTimeout(() => prefetch(id), 120);
+		};
+		const onPointerOut = (event: PointerEvent) => {
+			const open = openControl(event.target);
+			if (open && !open.contains(event.relatedTarget as Node | null)) window.clearTimeout(timer);
+		};
+		const onFocusIn = (event: FocusEvent) => {
+			const id = openControl(event.target)?.closest<HTMLElement>("[data-application-id]")?.dataset.applicationId;
+			if (id) {
+				window.clearTimeout(timer);
+				prefetch(id);
+			}
+		};
+		document.addEventListener("pointerover", onPointerOver);
+		document.addEventListener("pointerout", onPointerOut);
+		document.addEventListener("focusin", onFocusIn);
+		return () => {
+			document.removeEventListener("pointerover", onPointerOver);
+			document.removeEventListener("pointerout", onPointerOut);
+			document.removeEventListener("focusin", onFocusIn);
+			window.clearTimeout(timer);
+		};
+	}, [prefetch]);
 	const setSearch = (patch: Partial<Search>) =>
 		void navigate({ resetScroll: false, search: (prev: Search) => ({ ...prev, ...patch }) });
 
@@ -111,8 +180,25 @@ function RouteComponent() {
 	const shown: View = phone && (view === "board" || view === "calendar") ? "list" : view;
 	const empty = !!applications && applications.length === 0;
 	// Hoisted so the compiler keeps one function; inline, it changes with every keystroke and re-renders each row.
-	const openApplication = (application: Application) => setSelectedId(application.id);
+	const openApplication = (application: ApplicationSummary) => {
+		hydrateApplicationDetail(queryClient, application);
+		setSelectedId(application.id);
+	};
 	const noMatches = !!applications && !empty && text && filtered.length === 0;
+	const filteredIds = new Set(filtered.map((application) => application.id));
+	const filteredFullApplications = fullApplications?.filter((application) => filteredIds.has(application.id)) ?? [];
+	const openExport = async () => {
+		if (exportLoading) return;
+		setExportLoading(true);
+		try {
+			await queryClient.fetchQuery({ ...applicationsFullListQueryOptions(), staleTime: 0 });
+			setExporting(true);
+		} catch (error) {
+			toastError(error, t`Couldn't load this. Your saved data hasn't changed.`);
+		} finally {
+			setExportLoading(false);
+		}
+	};
 
 	return (
 		<div className="mx-auto grid w-full max-w-[1180px] content-start gap-5 px-8 py-8 max-sm:px-4 max-sm:py-5">
@@ -130,7 +216,7 @@ function RouteComponent() {
 								<DropdownMenuItem onClick={() => setImporting(true)}>
 									<Trans>Import from CSV…</Trans>
 								</DropdownMenuItem>
-								<DropdownMenuItem disabled={empty || !applications} onClick={() => setExporting(true)}>
+								<DropdownMenuItem disabled={empty || !applications || exportLoading} onClick={() => void openExport()}>
 									<Trans>Export to CSV…</Trans>
 								</DropdownMenuItem>
 							</DropdownMenuContent>
@@ -283,8 +369,8 @@ function RouteComponent() {
 			<ExportApplicationsSheet
 				open={exporting}
 				onOpenChange={setExporting}
-				applications={applications ?? []}
-				filtered={filtered.filter((application) => closed || application.status !== "closed")}
+				applications={fullApplications ?? []}
+				filtered={filteredFullApplications.filter((application) => closed || application.status !== "closed")}
 			/>
 			<ApplicationDetailSheet
 				application={selected}
@@ -308,11 +394,13 @@ function readDismissed(): string[] {
 	}
 }
 
+type FollowUpNudgeProps = { applications: ApplicationSummary[]; onOpen: (id: string) => void };
+
 /**
  * The follow-up nudge: the application waiting longest without a reply (10+ days since applying). Dismissing it is
  * remembered on this device; it doesn't come back for that application.
  */
-function FollowUpNudge({ applications, onOpen }: { applications: Application[]; onOpen: (id: string) => void }) {
+function FollowUpNudge({ applications, onOpen }: FollowUpNudgeProps) {
 	const [dismissed, setDismissed] = useState(readDismissed);
 
 	const dismissedIds = new Set(dismissed);
@@ -341,6 +429,7 @@ function FollowUpNudge({ applications, onOpen }: { applications: Application[]; 
 	return (
 		<div
 			key={waiting.application.id}
+			data-application-id={waiting.application.id}
 			role="status"
 			className={cn(
 				ENTER_CLASS,
@@ -355,7 +444,7 @@ function FollowUpNudge({ applications, onOpen }: { applications: Application[]; 
 					other={`${company}: no reply for # days. A short follow-up is usually fine now.`}
 				/>
 			</span>
-			<Button size="sm" variant="secondary" onClick={() => onOpen(waiting.application.id)}>
+			<Button size="sm" variant="secondary" data-application-open onClick={() => onOpen(waiting.application.id)}>
 				<Trans>Open</Trans>
 			</Button>
 			<Button size="icon-sm" variant="ghost" aria-label={t`Dismiss`} onClick={dismiss} className="text-warn-text">
