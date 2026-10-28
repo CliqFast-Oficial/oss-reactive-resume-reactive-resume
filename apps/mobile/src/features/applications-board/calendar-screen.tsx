@@ -86,7 +86,6 @@ function ApplicationCalendar() {
 		new Intl.DateTimeFormat(i18n.locale, { timeZone: "UTC", ...options });
 	const monthTitle = utc({ month: "long", year: "numeric" }).format(Date.UTC(month.year, month.month, 1));
 	const weekday = utc({ weekday: "narrow" });
-	const weekdayLong = utc({ weekday: "long" });
 	const fullDay = utc({ weekday: "long", day: "numeric", month: "long" });
 	const tomorrow = new Date(dateOfKey(today).getTime() + 86_400_000).toISOString().slice(0, 10);
 	const dayHeading = (key: string) =>
@@ -233,7 +232,7 @@ function ApplicationCalendar() {
 									key={day.key}
 									accessibilityRole="button"
 									accessibilityState={{ selected: isSelected }}
-									accessibilityLabel={`${weekdayLong.format(dateOfKey(day.key))} ${fullDay.format(dateOfKey(day.key))}${summary ? `: ${summary}` : ""}`}
+									accessibilityLabel={`${fullDay.format(dateOfKey(day.key))}${summary ? `: ${summary}` : ""}`}
 									onPress={() => setSelected(day.key)}
 									style={{
 										flex: 1,

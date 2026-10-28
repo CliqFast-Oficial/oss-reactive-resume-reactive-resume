@@ -36,7 +36,7 @@ export function CollectionHeader({
 }: CollectionHeaderProps) {
 	const { t } = useLingui();
 	const { colors, radius, size, space, type } = useTheme();
-	const [searching, setSearching] = useState(false);
+	const [searching, setSearching] = useState(Boolean(value));
 	const { fontScale } = useWindowDimensions();
 	const stacked = fontScale > 1.3;
 	return (
@@ -71,7 +71,7 @@ export function CollectionHeader({
 						value={value}
 						onChangeText={onChangeText}
 						editable={!disabled}
-						autoFocus
+						autoFocus={!value}
 						autoCorrect={false}
 						autoCapitalize="none"
 						returnKeyType="search"

@@ -40,6 +40,7 @@ import {
 	ConfirmDialog,
 	Icon,
 	IconButton,
+	ListGroup,
 	ListRow,
 	SelectSheet,
 	showToast,
@@ -125,14 +126,16 @@ export function StageStepper({ application, onMarkApplied }: StageStepperProps) 
 					{closed ? "" : plural(days, { 0: "· since today", one: "· for # day", other: "· for # days" })}
 				</Text>
 			</View>
-			<SelectSheet
-				appearance="row"
-				label={t`Change stage`}
-				value={status}
-				options={PIPELINE.map((stage) => ({ value: stage, label: getStageLabel(stage) }))}
-				disabled={update.isPending || closed}
-				onChange={move}
-			/>
+			<ListGroup>
+				<SelectSheet
+					appearance="row"
+					label={t`Change stage`}
+					value={status}
+					options={PIPELINE.map((stage) => ({ value: stage, label: getStageLabel(stage) }))}
+					disabled={update.isPending || closed}
+					onChange={move}
+				/>
+			</ListGroup>
 		</View>
 	);
 }
@@ -304,36 +307,38 @@ export function WhatYouSent({ application }: SectionProps) {
 
 	return (
 		<Section title={application.status === "saved" ? t`Documents for this job` : t`What you sent`}>
-			<Card style={{ padding: 0 }}>
-				{resumeId ? (
-					<ListRow
-						leading="file-text"
-						title={resume?.name ?? t`Linked resume`}
-						subtitle={
-							sentResumeVersionId
-								? application.sentCheckScore !== null
-									? t`Version sent ${date} · Check ${application.sentCheckScore}`
-									: t`Version sent ${date}`
-								: t`Linked · not sent yet`
-						}
-						chevron
-						onPress={() =>
-							router.push(
-								sentResumeVersionId ? routes.history(resumeId, sentResumeVersionId) : routes.builder(resumeId),
-							)
-						}
-					/>
-				) : null}
-				{coverLetterId ? (
-					<ListRow
-						leading="envelope-simple"
-						title={letter?.name ?? t`Cover letter`}
-						subtitle={sentCoverLetterVersionId ? t`Version sent ${date}` : t`Linked · not sent yet`}
-						chevron
-						onPress={() => router.push(routes.letter(coverLetterId, "write", sentCoverLetterVersionId ?? undefined))}
-					/>
-				) : null}
-			</Card>
+			{resumeId || coverLetterId ? (
+				<Card style={{ padding: 0 }}>
+					{resumeId ? (
+						<ListRow
+							leading="file-text"
+							title={resume?.name ?? t`Linked resume`}
+							subtitle={
+								sentResumeVersionId
+									? application.sentCheckScore !== null
+										? t`Version sent ${date} · Check ${application.sentCheckScore}`
+										: t`Version sent ${date}`
+									: t`Linked · not sent yet`
+							}
+							chevron
+							onPress={() =>
+								router.push(
+									sentResumeVersionId ? routes.history(resumeId, sentResumeVersionId) : routes.builder(resumeId),
+								)
+							}
+						/>
+					) : null}
+					{coverLetterId ? (
+						<ListRow
+							leading="envelope-simple"
+							title={letter?.name ?? t`Cover letter`}
+							subtitle={sentCoverLetterVersionId ? t`Version sent ${date}` : t`Linked · not sent yet`}
+							chevron
+							onPress={() => router.push(routes.letter(coverLetterId, "write", sentCoverLetterVersionId ?? undefined))}
+						/>
+					) : null}
+				</Card>
+			) : null}
 			{!resumeId || !coverLetterId ? (
 				<View style={{ flexDirection: "row", flexWrap: "wrap", gap: space.s2 }}>
 					{!resumeId ? (

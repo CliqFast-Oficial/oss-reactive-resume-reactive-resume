@@ -21,8 +21,12 @@ vi.mock("@reactive-resume/auth/config", () => ({
 vi.mock("@reactive-resume/db/client", () => ({ db: dbMock }));
 vi.mock("@reactive-resume/db/schema", () => ({ user: { __table: "user" } }));
 vi.mock("drizzle-orm", () => ({ eq: () => "EQ" }));
+vi.mock("@reactive-resume/env/server", async (importOriginal) => {
+	const { env } = await importOriginal<typeof import("@reactive-resume/env/server")>();
+	return { env: { ...env, APP_ALIAS_URL: "https://rx.cv" } };
+});
 
-const { resolveUserFromRequestHeaders, resolveAuthenticationFromRequestHeaders, protectedProcedure } =
+const { resolveUserFromRequestHeaders, resolveAuthenticationFromRequestHeaders, publicProcedure, protectedProcedure } =
 	await import("./context");
 
 const setupDbResolves = (userResult: unknown) => {
@@ -80,16 +84,40 @@ describe("resolveUserFromRequestHeaders", () => {
 });
 
 describe("cookie request origins", () => {
-	it.each([{ origin: "https://attacker.example" }, { origin: "null" }, { "sec-fetch-site": "cross-site" }])(
-		"rejects ambient credentials from another origin: %j",
-		async (originHeaders) => {
-			reset();
-			authMock.api.getSession.mockResolvedValue({ user: { id: "owner" } });
-			const headers = new Headers({ cookie: "session=valid", ...originHeaders });
-			await expect(resolveUserFromRequestHeaders(headers)).rejects.toMatchObject({ code: "FORBIDDEN" });
-			expect(authMock.api.getSession).not.toHaveBeenCalled();
-		},
-	);
+	it.each([
+		{ origin: "https://attacker.example" },
+		{ origin: "null" },
+		{ "sec-fetch-site": "cross-site" },
+		{ origin: "https://rx.cv", "sec-fetch-site": "cross-site" },
+		{ origin: "https://rx.cv.attacker.example", "sec-fetch-site": "same-origin" },
+		{ origin: "http://rx.cv", "sec-fetch-site": "same-origin" },
+		{ origin: "https://rx.cv:8443", "sec-fetch-site": "same-origin" },
+	])("rejects ambient credentials from another origin: %j", async (originHeaders) => {
+		reset();
+		authMock.api.getSession.mockResolvedValue({ user: { id: "owner" } });
+		const headers = new Headers({ cookie: "session=valid", ...originHeaders });
+		await expect(resolveUserFromRequestHeaders(headers)).rejects.toMatchObject({ code: "FORBIDDEN" });
+		expect(authMock.api.getSession).not.toHaveBeenCalled();
+	});
+
+	it("serves anonymous public procedures on the alias when incidental cookies are present", async () => {
+		reset();
+		authMock.api.getSession.mockResolvedValue(null);
+		const context = {
+			locale: "en-US" as const,
+			reqHeaders: new Headers({ cookie: "theme=dark", origin: "https://rx.cv", "sec-fetch-site": "same-origin" }),
+		};
+		const publicOperation = createProcedureClient(
+			publicProcedure.handler(({ context }) => context.user),
+			{ context },
+		);
+		await expect(publicOperation(undefined)).resolves.toBeNull();
+		const protectedOperation = createProcedureClient(
+			protectedProcedure.handler(() => "private"),
+			{ context },
+		);
+		await expect(protectedOperation(undefined)).rejects.toMatchObject({ code: "UNAUTHORIZED" });
+	});
 
 	it("accepts same-origin cookies and explicit bearer credentials from other origins", async () => {
 		reset();

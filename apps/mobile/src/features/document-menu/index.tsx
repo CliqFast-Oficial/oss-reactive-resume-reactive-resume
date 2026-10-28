@@ -278,6 +278,8 @@ function NotesEditor({ id, value, locked }: NotesEditorProps) {
 	const editor = useRef<EnrichedTextInputInstance>(null);
 	const last = useRef(value);
 	const focused = useRef(false);
+	const [isFocused, setIsFocused] = useState(false);
+	const border = isFocused ? 2 : 1;
 	useEffect(
 		() => () => {
 			if (focused.current) {
@@ -294,42 +296,50 @@ function NotesEditor({ id, value, locked }: NotesEditorProps) {
 		}
 	}, [value]);
 	return (
-		<EnrichedTextInput
-			key={id}
-			ref={editor}
-			accessibilityLabel={t`Notes`}
-			defaultValue={value}
-			editable={!locked}
-			onFocus={() => {
-				focused.current = true;
-				resumeFieldFocus.onFocus();
-			}}
-			onBlur={() => {
-				focused.current = false;
-				resumeFieldFocus.onBlur();
-			}}
+		<View
 			style={{
-				minHeight: space.s12 * 3,
-				color: colors.ink,
-				backgroundColor: colors.raised,
-				borderColor: colors.lineStrong,
-				borderWidth: 1,
+				borderWidth: border,
 				borderRadius: radius.rMd,
-				padding: space.s3,
-				fontFamily: type.body.fontFamily,
-				fontSize: type.body.fontSize,
+				borderColor: isFocused ? colors.accent : colors.lineStrong,
+				backgroundColor: locked ? colors.sunken : colors.raised,
+				overflow: "hidden",
 			}}
-			onChangeHtml={(event) => {
-				if (!focused.current) return;
-				const html = event.nativeEvent.value;
-				last.current = html;
-				useResumeStore.getState().update(
-					(data) => {
-						data.metadata.notes = html;
-					},
-					{ coalesceKey: "metadata.notes" },
-				);
-			}}
-		/>
+		>
+			<EnrichedTextInput
+				key={id}
+				ref={editor}
+				accessibilityLabel={t`Notes`}
+				defaultValue={value}
+				editable={!locked}
+				onFocus={() => {
+					focused.current = true;
+					setIsFocused(true);
+					resumeFieldFocus.onFocus();
+				}}
+				onBlur={() => {
+					focused.current = false;
+					setIsFocused(false);
+					resumeFieldFocus.onBlur();
+				}}
+				style={{
+					minHeight: space.s12 * 3 - border * 2,
+					color: colors.ink,
+					padding: space.s3 - (border - 1),
+					fontFamily: type.body.fontFamily,
+					fontSize: type.body.fontSize,
+				}}
+				onChangeHtml={(event) => {
+					if (!focused.current) return;
+					const html = event.nativeEvent.value;
+					last.current = html;
+					useResumeStore.getState().update(
+						(data) => {
+							data.metadata.notes = html;
+						},
+						{ coalesceKey: "metadata.notes" },
+					);
+				}}
+			/>
+		</View>
 	);
 }

@@ -712,7 +712,12 @@ export const applicationService = {
 					.returning();
 
 				if (!updated) throw new ORPCError("NOT_FOUND");
-				return stripUserId(await recordSentResume(updated, tx));
+				// Editing metadata must not mark a linked draft as submitted.
+				const result =
+					status !== undefined || fields.resumeId !== undefined || fields.coverLetterId !== undefined
+						? await recordSentResume(updated, tx)
+						: updated;
+				return stripUserId(result);
 			});
 			if (fields.resumeFileUrl !== undefined || fields.coverLetterUrl !== undefined || resumeFile || coverLetterFile) {
 				await deleteApplicationAttachments(userId, [existing]).catch(() => {});
@@ -992,7 +997,9 @@ export const applicationService = {
 				.where(scope)
 				.returning();
 
-			for (const row of rows) await recordSentResume(row, tx);
+			if (input.status !== undefined) {
+				for (const row of rows) await recordSentResume(row, tx);
+			}
 			return { updated: rows.length };
 		});
 	},

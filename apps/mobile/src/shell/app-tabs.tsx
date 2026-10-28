@@ -5,7 +5,6 @@ import { useLingui } from "@lingui/react/macro";
 import { useRouter, usePathname } from "expo-router";
 import { Children, useEffect, useState } from "react";
 import { I18nManager, Platform, Pressable, ScrollView, View, useWindowDimensions } from "react-native";
-import { useKeyboardState } from "react-native-keyboard-controller";
 import Animated, {
 	useAnimatedStyle,
 	useSharedValue,
@@ -16,6 +15,7 @@ import Animated, {
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { routes } from "@/routes";
 import { Button, Icon, IconButton, Text, haptics, useReducedMotion, useTheme } from "@/ui";
+import { useKeyboardVisible } from "@/ui/keyboard";
 
 /** The tab routes of `app/(tabs)`, in tab-bar order. `create` is the raised "+" that opens New. */
 const appTabIcons: Record<string, IconName> = {
@@ -125,15 +125,16 @@ export function BarItem({ label, icon, focused, onPress, badge, badgeTone = "acc
 				flex: 1,
 				minHeight: android ? androidTabHeight : size.tabBar,
 				alignItems: "center",
-				justifyContent: "center",
+				justifyContent: "flex-start",
 				gap: space.s0,
-				paddingVertical: space.s1,
-				paddingHorizontal: space.s0,
+				paddingTop: space.s2,
+				paddingBottom: space.s1,
+				paddingHorizontal: space.s1,
 				backgroundColor: pressed && !android ? colors.press : "transparent",
 			})}
 		>
 			{icon ? (
-				<View style={{ alignItems: "center", justifyContent: "center" }}>
+				<View style={{ height: size.newPill.height, alignItems: "center", justifyContent: "center" }}>
 					<Icon name={icon} filled={focused} color={focused ? colors.ink : colors.ink2} size={size.icon.bar} />
 					{badge === undefined ? null : <TabBadge value={badge} tone={badgeTone} />}
 				</View>
@@ -150,7 +151,16 @@ export function BarItem({ label, icon, focused, onPress, badge, badgeTone = "acc
 					<Icon name="plus" color={colors.onAccent} size={size.icon.row} />
 				</View>
 			)}
-			<Text variant="micro" color={focused ? "ink" : "ink2"} align="center" style={{ alignSelf: "stretch" }}>
+			<Text
+				variant="micro"
+				color={focused ? "ink" : "ink2"}
+				align="center"
+				// Fit long words within a cell; translated phrases can still wrap at spaces.
+				numberOfLines={label.split(" ").length}
+				adjustsFontSizeToFit
+				minimumFontScale={0.7}
+				style={{ alignSelf: "stretch" }}
+			>
 				{label}
 			</Text>
 		</Pressable>
@@ -226,7 +236,7 @@ type BarProps = {
 export function Bar({ children, activeIndex }: BarProps) {
 	const insets = useSafeAreaInsets();
 	const { colors } = useTheme();
-	const keyboardVisible = useKeyboardState((keyboard) => keyboard.isVisible);
+	const keyboardVisible = useKeyboardVisible();
 	const [width, setWidth] = useState(0);
 	const count = Children.count(children);
 
@@ -258,7 +268,7 @@ export function Bar({ children, activeIndex }: BarProps) {
 /**
  * The phone tab bar (app.html): five cells, the active tab with a filled icon and the `accent` 28×3 marker on the top
  * rule (both platforms), and the raised "+" pill in the middle. Labels stay under the icons at every text
- * size (`micro` caps its scale); the bar grows taller instead of truncating.
+ * size (`micro` caps its scale); phrases wrap and long words fit within their cells.
  */
 export function PhoneTabBar(props: BottomTabBarProps) {
 	const { t } = useLingui();

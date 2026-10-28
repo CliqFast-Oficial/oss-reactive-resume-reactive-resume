@@ -8,7 +8,8 @@ import { useLingui } from "@lingui/react/macro";
 import { ORPCError } from "@orpc/client";
 import { useRouter } from "expo-router";
 import { useState } from "react";
-import { Keyboard, ScrollView, View } from "react-native";
+import { Keyboard, View, useWindowDimensions } from "react-native";
+import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 import { coverLetterTextToHtml, defaultCoverLetterSignOff, greetingName } from "@reactive-resume/resume/cover-letter";
 import { useLetterWords } from "./compose";
 import { designSummary } from "./design-presets";
@@ -38,6 +39,7 @@ import {
 	useReducedMotion,
 	useTheme,
 } from "@/ui";
+import { useKeyboardScrollSpace } from "@/ui/keyboard";
 
 type Recipe = (letter: WritableDraft<LetterDocument>) => void;
 
@@ -78,6 +80,7 @@ export function LetterWrite({ id }: { id: string }) {
 	const draft = useLetterDrafting((state) => state.draft);
 	const applications = useApplications();
 	const { size, space } = useTheme();
+	const keyboardSpace = useKeyboardScrollSpace();
 
 	if (!letter) {
 		return status === "error" ? (
@@ -103,7 +106,12 @@ export function LetterWrite({ id }: { id: string }) {
 
 	return (
 		<View style={{ flex: 1 }}>
-			<ScrollView keyboardShouldPersistTaps="handled" keyboardDismissMode="interactive">
+			<KeyboardAwareScrollView
+				extraKeyboardSpace={keyboardSpace}
+				bottomOffset={size.hit + space.s4}
+				keyboardShouldPersistTaps="handled"
+				keyboardDismissMode="interactive"
+			>
 				{disabled ? (
 					<Banner icon="lock" tone="info" message={t`This letter is locked. Unlock it in Documents to edit.`} />
 				) : null}
@@ -117,7 +125,7 @@ export function LetterWrite({ id }: { id: string }) {
 				/>
 				<DesignNote letter={letter} />
 				<View style={{ height: size.hit + space.s5 }} />
-			</ScrollView>
+			</KeyboardAwareScrollView>
 			<LetterRichTextToolbar />
 		</View>
 	);
@@ -143,6 +151,8 @@ type ForSectionProps = {
 function ForSection({ application, applications, disabled }: ForSectionProps) {
 	const { t } = useLingui();
 	const { colors, radius, size, space } = useTheme();
+	const { fontScale } = useWindowDimensions();
+	const stacked = fontScale > 1.3;
 	const [open, setOpen] = useState(false);
 	const [query, setQuery] = useState("");
 	const search = query.trim().toLocaleLowerCase();
@@ -167,8 +177,8 @@ function ForSection({ application, applications, disabled }: ForSectionProps) {
 			{application ? (
 				<View
 					style={{
-						flexDirection: "row",
-						alignItems: "center",
+						flexDirection: stacked ? "column" : "row",
+						alignItems: stacked ? "flex-start" : "center",
 						gap: space.s3,
 						padding: space.s3,
 						borderWidth: 1,
@@ -190,25 +200,38 @@ function ForSection({ application, applications, disabled }: ForSectionProps) {
 							{application.company.charAt(0).toLocaleUpperCase()}
 						</Text>
 					</View>
-					<View style={{ flex: 1, minWidth: 0 }}>
-						<Text weight={500} numberOfLines={1}>
+					<View style={stacked ? { alignSelf: "stretch" } : { flex: 1, minWidth: 0 }}>
+						<Text weight={500} numberOfLines={stacked ? undefined : 2}>
 							{application.role}
 						</Text>
-						<View style={{ flexDirection: "row", alignItems: "center", gap: space.s1 }}>
-							<Text variant="caption" color="ink3" numberOfLines={1} style={{ flexShrink: 1 }}>
-								{application.company} ·
+						<View
+							style={{
+								flexDirection: stacked ? "column" : "row",
+								alignItems: stacked ? "flex-start" : "center",
+								gap: space.s1,
+							}}
+						>
+							<Text
+								variant="caption"
+								color="ink3"
+								numberOfLines={stacked ? undefined : 1}
+								style={stacked ? { alignSelf: "stretch" } : { flexShrink: 1 }}
+							>
+								{application.company}
 							</Text>
-							<View
-								style={{
-									width: space.s2 - space.s0,
-									height: space.s2 - space.s0,
-									borderRadius: radius.rLg,
-									backgroundColor: getStageColor(application.status, colors),
-								}}
-							/>
-							<Text variant="caption" color="ink3">
-								{getStageLabel(application.status)}
-							</Text>
+							<View style={{ flexDirection: "row", alignItems: "center", gap: space.s1 }}>
+								<View
+									style={{
+										width: space.s2 - space.s0,
+										height: space.s2 - space.s0,
+										borderRadius: radius.rLg,
+										backgroundColor: getStageColor(application.status, colors),
+									}}
+								/>
+								<Text variant="caption" color="ink3">
+									{getStageLabel(application.status)}
+								</Text>
+							</View>
 						</View>
 					</View>
 					<Button size="sm" variant="secondary" label={t`Change`} disabled={disabled} onPress={() => setOpen(true)} />

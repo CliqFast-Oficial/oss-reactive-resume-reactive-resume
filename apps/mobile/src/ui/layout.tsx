@@ -76,6 +76,18 @@ export function ListRow({
 	// ink3 is too light on selectedFill (tokens.md §1); secondary text uses ink2 there.
 	const quiet: ColorToken = selected ? "ink2" : "ink3";
 	const pressable = !!onPress || !!onLongPress;
+	const Container = pressable ? Pressable : View;
+	const rowStyle = (pressed: boolean): ViewStyle => ({
+		minHeight: subtitle ? size.row + space.s3 : android ? size.row + space.s1 : size.row,
+		flexDirection: stacked ? "column" : "row",
+		alignItems: stacked ? "stretch" : "center",
+		gap: stacked ? space.s2 : android ? space.s4 : space.s3,
+		paddingVertical: space.s2,
+		paddingStart: space.s4,
+		paddingEnd: android ? space.s4 : space.s3,
+		backgroundColor: pressed && !android ? colors.press : selected ? colors.selectedFill : "transparent",
+		opacity: disabled ? 0.45 : 1,
+	});
 	const leadingGraphic =
 		typeof leading === "string" ? (
 			<Icon name={leading as IconName} size={size.icon.row} color={colors[tone === "ink" ? "ink2" : tone]} />
@@ -105,11 +117,12 @@ export function ListRow({
 	);
 
 	return (
-		<Pressable
+		<Container
+			accessible={pressable || trailing === undefined}
 			accessibilityRole={pressable ? "button" : undefined}
 			accessibilityState={{ disabled: !!disabled, selected: !!selected }}
 			accessibilityHint={accessibilityHint}
-			disabled={disabled || !pressable}
+			disabled={disabled}
 			onPress={onPress}
 			onLongPress={
 				onLongPress
@@ -120,17 +133,7 @@ export function ListRow({
 					: undefined
 			}
 			android_ripple={pressable ? { color: colors.press } : undefined}
-			style={({ pressed }) => ({
-				minHeight: subtitle ? size.row + space.s3 : android ? size.row + space.s1 : size.row,
-				flexDirection: stacked ? "column" : "row",
-				alignItems: stacked ? "stretch" : "center",
-				gap: stacked ? space.s2 : android ? space.s4 : space.s3,
-				paddingVertical: space.s2,
-				paddingStart: space.s4,
-				paddingEnd: android ? space.s4 : space.s3,
-				backgroundColor: pressed && !android ? colors.press : selected ? colors.selectedFill : "transparent",
-				opacity: disabled ? 0.45 : 1,
-			})}
+			style={pressable ? ({ pressed }) => rowStyle(pressed) : rowStyle(false)}
 		>
 			{divider && !android ? (
 				<View
@@ -174,7 +177,7 @@ export function ListRow({
 					{indicators}
 				</>
 			)}
-		</Pressable>
+		</Container>
 	);
 }
 

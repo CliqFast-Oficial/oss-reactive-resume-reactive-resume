@@ -3,7 +3,7 @@ import type { Locale } from "@reactive-resume/utils/locale";
 import { useLingui } from "@lingui/react/macro";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
-import { DevSettings, View } from "react-native";
+import { DevSettings, View, useWindowDimensions } from "react-native";
 import { localeSchema } from "@reactive-resume/utils/locale";
 import { timezoneSchema } from "@reactive-resume/utils/timezone";
 import { client, orpc } from "@/api/client";
@@ -40,6 +40,7 @@ export default function PreferencesScreen() {
 		haptics.selection();
 	};
 	const { space } = useTheme();
+	const { fontScale } = useWindowDimensions();
 	const profile = useProfile();
 	const queryClient = useQueryClient();
 	const [locale, setLocale] = useState(getLocalePreference);
@@ -94,6 +95,7 @@ export default function PreferencesScreen() {
 			<Text variant="caption" color="ink2">{t`Appearance`}</Text>
 			<Segmented<ThemePreference>
 				label={t`Theme`}
+				orientation={fontScale > 1.3 ? "vertical" : "horizontal"}
 				value={theme}
 				onChange={(value) => {
 					try {

@@ -22,7 +22,19 @@ import { getServer } from "@/auth/session";
 import { useResumeStore } from "@/draft";
 import { resume as draftResume } from "@/draft/runtime";
 import { useDocumentOperations } from "@/features/documents/queries";
-import { Banner, Button, ListRow, Sheet, Skeleton, Switch, Text, TextField, showToast, useTheme } from "@/ui";
+import {
+	Banner,
+	Button,
+	ListGroup,
+	ListRow,
+	Sheet,
+	Skeleton,
+	Switch,
+	Text,
+	TextField,
+	showToast,
+	useTheme,
+} from "@/ui";
 
 /** Sharing settings: saved beside the resume, not in its data. */
 export type ShareSettings = Partial<
@@ -123,20 +135,22 @@ export function LinkTab({ resume, offline }: LinkProps) {
 	return (
 		<View style={{ gap: space.s4 }}>
 			{operations.error && <Banner tone="danger" message={operations.error} />}
-			<ListRow
-				title={t`Public link`}
-				subtitle={
-					resume.isPublic ? t`On. Anyone with the link can see your web page.` : t`Off. Only you can see this resume.`
-				}
-				trailing={
-					<Switch
-						label={t`Public link`}
-						value={resume.isPublic}
-						disabled={disabled}
-						onValueChange={(value) => void save({ isPublic: value })}
-					/>
-				}
-			/>
+			<ListGroup>
+				<ListRow
+					title={t`Public link`}
+					subtitle={
+						resume.isPublic ? t`On. Anyone with the link can see your web page.` : t`Off. Only you can see this resume.`
+					}
+					trailing={
+						<Switch
+							label={t`Public link`}
+							value={resume.isPublic}
+							disabled={disabled}
+							onValueChange={(value) => void save({ isPublic: value })}
+						/>
+					}
+				/>
+			</ListGroup>
 			<TextField
 				label={t`Address`}
 				value={slug}

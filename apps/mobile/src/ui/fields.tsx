@@ -314,6 +314,8 @@ export type SegmentedProps<T extends string> = {
 	/** The accessible name of the group. */
 	label?: string | undefined;
 	orientation?: "horizontal" | "vertical";
+	/** Size horizontal choices to their content instead of filling the row. */
+	compact?: boolean;
 };
 
 type SegmentProps = {
@@ -322,9 +324,10 @@ type SegmentProps = {
 	active: boolean;
 	onPress: () => void;
 	stacked: boolean;
+	compact: boolean;
 };
 
-function Segment({ label, icon, active, onPress, stacked }: SegmentProps) {
+function Segment({ label, icon, active, onPress, stacked, compact }: SegmentProps) {
 	const { colors, motion, radius, shadows, size, space } = useTheme();
 	const shown = useSharedValue(active ? 1 : 0);
 
@@ -343,7 +346,7 @@ function Segment({ label, icon, active, onPress, stacked }: SegmentProps) {
 			// 40 pt inside the track's 2 pt padding; the slop brings the target to 44.
 			hitSlop={{ top: space.s0, bottom: space.s0 }}
 			style={{
-				flex: stacked ? undefined : 1,
+				flex: stacked || compact ? undefined : 1,
 				minHeight: size.hit - space.s0 * 2,
 				flexDirection: "row",
 				alignItems: "center",
@@ -382,6 +385,7 @@ export function Segmented<T extends string>({
 	onChange,
 	label,
 	orientation = "horizontal",
+	compact = false,
 }: SegmentedProps<T>) {
 	const { colors, radius, space } = useTheme();
 	const stacked = orientation === "vertical";
@@ -405,6 +409,7 @@ export function Segmented<T extends string>({
 					icon={option.icon}
 					active={option.value === value}
 					stacked={stacked}
+					compact={compact}
 					onPress={() => {
 						if (option.value === value) return;
 						haptics.selection();

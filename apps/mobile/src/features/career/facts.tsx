@@ -57,7 +57,7 @@ const keyOf = (fact: Fact) => fact.id;
 
 export function Facts({ children, onRefresh }: FactsProps) {
 	const { t } = useLingui();
-	const { colors, space } = useTheme();
+	const { colors, size, space } = useTheme();
 	const { facts } = useCareerQueries();
 	const pull = usePullRefresh(onRefresh);
 	const [search, setSearch] = useState("");
@@ -128,7 +128,15 @@ export function Facts({ children, onRefresh }: FactsProps) {
 	);
 
 	const header = (
-		<View style={{ gap: space.s4, paddingBottom: space.s4 }}>
+		<View
+			style={{
+				gap: space.s4,
+				paddingBottom: space.s4,
+				width: "100%",
+				maxWidth: size.formSheet - space.s4 * 2,
+				alignSelf: "center",
+			}}
+		>
 			{children}
 			<TextField label={t`Search facts`} value={search} onChangeText={setSearch} />
 			<SelectSheet
@@ -206,9 +214,17 @@ type FactRowProps = { fact: Fact; index: number; first: boolean; pending: boolea
 // Memoized: the app has no React Compiler, and typing or one toggle shouldn't re-render every card.
 const FactRow = memo(function FactRow({ fact, index, first, pending, actions }: FactRowProps) {
 	const { t } = useLingui();
-	const { space } = useTheme();
+	const { size, space } = useTheme();
 	return (
-		<Animated.View {...listItemMotion(index, first)} style={{ paddingBottom: space.s4 }}>
+		<Animated.View
+			{...listItemMotion(index, first)}
+			style={{
+				paddingBottom: space.s4,
+				width: "100%",
+				maxWidth: size.formSheet - space.s4 * 2,
+				alignSelf: "center",
+			}}
+		>
 			<Card style={{ gap: space.s3 }}>
 				<Actions>
 					<Chip label={categoryLabel(fact.category)} />

@@ -6,7 +6,6 @@ import { useLingui } from "@lingui/react/macro";
 import { useRouter, Stack, useNavigation, useSegments } from "expo-router";
 import { createContext, use, useEffect, useState } from "react";
 import { ActivityIndicator, I18nManager, Platform, Pressable, View } from "react-native";
-import { KeyboardAvoidingView } from "react-native-keyboard-controller";
 import { SafeAreaInsetsContext, useSafeAreaInsets } from "react-native-safe-area-context";
 import { AppStrip } from "./app-banner";
 import { Bar, BarItem } from "./app-tabs";
@@ -16,6 +15,7 @@ import { TopBar } from "./top-bar";
 import { useIsTablet } from "./use-is-tablet";
 import { routes } from "@/routes";
 import { Button, Icon, IconButton, Segmented, Text, useReducedMotion, useTheme } from "@/ui";
+import { KeyboardFrame, useKeyboardVisible } from "@/ui/keyboard";
 
 export type SaveStatusSlot = {
 	status: SaveStatus;
@@ -113,6 +113,7 @@ function Frame<T extends string>({ panes, tabletPanes, page, title, onExport, mo
 	const tablet = useIsTablet();
 	const navigation = useNavigation();
 	const insets = useSafeAreaInsets();
+	const keyboardVisible = useKeyboardVisible();
 	const { colors, size } = useTheme();
 	const reduced = useReducedMotion();
 	const current = useSegments().at(-1);
@@ -163,6 +164,7 @@ function Frame<T extends string>({ panes, tabletPanes, page, title, onExport, mo
 		leave: () => (navigation.canGoBack() ? navigation.goBack() : router.replace(routes.documents())),
 		modes: activePane ? (
 			<Segmented
+				compact
 				label={t`Editor mode`}
 				value={activePane.pane}
 				options={shownPanes.map(({ pane, label, icon }) => ({ value: pane, label, icon }))}
@@ -178,7 +180,7 @@ function Frame<T extends string>({ panes, tabletPanes, page, title, onExport, mo
 		<FrameContext value={frame}>
 			<View style={{ flex: 1, backgroundColor: colors.bg }}>
 				{tablet ? <ChromeTopBar /> : null}
-				<KeyboardAvoidingView
+				<KeyboardFrame
 					behavior="padding"
 					automaticOffset
 					style={{ flex: 1, paddingLeft: insets.left, paddingRight: insets.right }}
@@ -200,7 +202,11 @@ function Frame<T extends string>({ panes, tabletPanes, page, title, onExport, mo
 							>
 								<Stack
 									screenOptions={({ route }) => {
-										if (!paneNames.has(route.name)) return { headerTransparent: false };
+										if (!paneNames.has(route.name))
+											return {
+												headerTransparent: false,
+												unstable_nativeProps: { headerConfig: { disableTopInsetApplication: tablet } },
+											};
 										const animation = reduced ? "fade" : paneAnimation;
 										return tablet ? { headerShown: false, animation } : { header: () => <ChromeTopBar />, animation };
 									}}
@@ -214,11 +220,13 @@ function Frame<T extends string>({ panes, tabletPanes, page, title, onExport, mo
 									))}
 								</Stack>
 							</View>
-							{tablet && page ? <View style={{ flex: 1, paddingBottom: insets.bottom }}>{page}</View> : null}
+							{tablet && page ? (
+								<View style={{ flex: 1, paddingBottom: keyboardVisible ? 0 : insets.bottom }}>{page}</View>
+							) : null}
 						</View>
 						{!tablet && barPane ? <PaneBar panes={panes} active={barPane.pane} onSwitch={switchPane} /> : null}
 					</SafeAreaInsetsContext>
-				</KeyboardAvoidingView>
+				</KeyboardFrame>
 			</View>
 		</FrameContext>
 	);
@@ -297,7 +305,11 @@ type ExportButtonProps = {
 function ExportButton({ tablet, onPress }: ExportButtonProps) {
 	const { t } = useLingui();
 	if (tablet)
-		return <Button variant="secondary" size="sm" icon="download-simple" label={t`Download`} onPress={onPress} />;
+		return (
+			<View>
+				<Button variant="secondary" size="sm" icon="download-simple" label={t`Download`} onPress={onPress} />
+			</View>
+		);
 	return <IconButton icon="download-simple" label={t`Download & history`} onPress={onPress} />;
 }
 
@@ -331,11 +343,13 @@ function SaveStatusLine({ status, locked, onRetry }: SaveStatusLineProps) {
 			accessibilityLiveRegion="polite"
 			style={{ flexDirection: "row", alignItems: "center", gap: space.s1, minWidth: 0 }}
 		>
-			{look.icon ? (
-				<Icon name={look.icon} size={size.icon.meta} color={colors[look.color]} />
-			) : (
-				<ActivityIndicator size="small" color={colors.ink3} style={{ transform: [{ scale: 0.7 }] }} />
-			)}
+			<View style={{ width: size.icon.meta, height: size.icon.meta, alignItems: "center", justifyContent: "center" }}>
+				{look.icon ? (
+					<Icon name={look.icon} size={size.icon.meta} color={colors[look.color]} />
+				) : (
+					<ActivityIndicator size="small" color={colors.ink3} style={{ transform: [{ scale: 0.7 }] }} />
+				)}
+			</View>
 			<Text variant="caption" color={look.color} numberOfLines={1} style={{ flexShrink: 1 }}>
 				{label}
 			</Text>

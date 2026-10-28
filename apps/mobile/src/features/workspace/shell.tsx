@@ -23,6 +23,7 @@ import { getStageColor, getStageLabel } from "@/features/applications/stages";
 import { routes } from "@/routes";
 import { useWorkspaceChrome } from "@/shell/workspace-chrome";
 import { Banner, Button, EmptyState, Screen, Text, useTheme } from "@/ui";
+import { useKeyboardScrollSpace } from "@/ui/keyboard";
 
 export type WorkspaceSearch = { version?: string; speak?: boolean; story?: string };
 
@@ -68,6 +69,7 @@ type WorkspaceScreenProps = { tab: WorkspaceTab; children: (props: WorkspaceTabP
 export function WorkspaceScreen({ tab, children }: WorkspaceScreenProps) {
 	const { t } = useLingui();
 	const { space } = useTheme();
+	const keyboardSpace = useKeyboardScrollSpace();
 	const router = useRouter();
 	const params = useLocalSearchParams<{ id: string; version?: string; speak?: string; story?: string }>();
 	const id = params.id;
@@ -128,6 +130,7 @@ export function WorkspaceScreen({ tab, children }: WorkspaceScreenProps) {
 		<View style={{ flex: 1 }}>
 			<Stack.Screen options={{ title: application.company }} />
 			<KeyboardAwareScrollView
+				extraKeyboardSpace={keyboardSpace}
 				bottomOffset={space.s6}
 				keyboardShouldPersistTaps="handled"
 				contentInsetAdjustmentBehavior="automatic"

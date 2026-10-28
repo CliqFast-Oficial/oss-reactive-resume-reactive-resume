@@ -14,6 +14,8 @@ const native = {
 	View: "View",
 	Text: "NativeText",
 	ScrollView: "ScrollView",
+	TextInput: "TextInput",
+	Keyboard: { dismiss() {} },
 	Pressable: "Pressable",
 	I18nManager: { isRTL: false },
 	Platform: { OS: "ios", select: (values) => values.ios ?? values.default },
@@ -42,9 +44,17 @@ const mocks = {
 	"@lingui/react/macro": { useLingui: () => ({ t: tag }) },
 	"expo-router": { useRouter: () => router, usePathname: () => "/documents" },
 	"expo-observe": { useObserve: () => ({ markInteractive() {} }) },
-	"react-native-keyboard-controller": { useKeyboardState: () => false },
+	"react-native-keyboard-controller": { KeyboardAwareScrollView: "ScrollView", useKeyboardState: () => false },
+	"react-native-reanimated": { useAnimatedReaction: (prepare, react) => effects.push(() => react(prepare(), null)) },
+	"react-native-worklets": { scheduleOnRN: (run, ...args) => run(...args) },
 	"@/routes": { routes },
 };
+let keyboardHeight = 0;
+mocks["react-native-keyboard-controller"].useKeyboardState = (select) =>
+	select({ height: keyboardHeight, isVisible: keyboardHeight > 0 });
+mocks["react-native-keyboard-controller"].useReanimatedKeyboardAnimation = () => ({
+	height: { get: () => keyboardHeight },
+});
 function load(path, extra = {}) {
 	const module = { exports: {} };
 	const source = readFileSync(new URL(`../src/${path}`, import.meta.url), "utf8");
@@ -84,6 +94,23 @@ mocks["@/ui/use-pull-refresh"] = pullRefresh;
 mocks["@/components/collection-header"] = { CollectionHeader: "CollectionHeader" };
 const { useIsTablet: isTablet } = load("shell/use-is-tablet.ts");
 mocks["./use-is-tablet"] = { useIsTablet: isTablet };
+const keyboardLayout = load("ui/keyboard.tsx");
+mocks["./keyboard"] = keyboardLayout;
+mocks["@/ui/keyboard"] = keyboardLayout;
+const resizedKeyboard = keyboardLayout.KeyboardFrame({}).type;
+for (const height of [0, 300, 200]) {
+	keyboardHeight = height;
+	resizedKeyboard.current = false;
+	assert.equal(keyboardLayout.useKeyboardScrollSpace() + height, height, "Overlaid keyboards need scroll space");
+	resizedKeyboard.current = true;
+	assert.equal(
+		keyboardLayout.useKeyboardScrollSpace() + height,
+		0,
+		"Resized viewports must not add keyboard space twice",
+	);
+}
+resizedKeyboard.current = false;
+keyboardHeight = 0;
 const { Screen } = load("ui/text.tsx");
 const { TopBar } = load("shell/top-bar.tsx");
 const { AppSidebar } = load("shell/app-tabs.tsx", { "react-native-reanimated": {} });
@@ -302,8 +329,134 @@ const render = (component, props = {}) => {
 	for (const effect of effects) effect();
 	return tree;
 };
+// Android activity recreation can leave event caches visible after the native keyboard has closed.
+react.Children = { count: (children) => (children == null ? 0 : Array.isArray(children) ? children.length : 1) };
+const { Bar: VisibilityBar } = load("shell/app-tabs.tsx", {
+	"react-native-reanimated": {},
+	"react-native-keyboard-controller": { useKeyboardState: () => true },
+});
+hooks.length = 0;
+assert.ok(render(VisibilityBar), "Native keyboard is hidden: stale event cache must not hide navigation");
+for (const height of [300, 450, 0, 300, 0]) {
+	keyboardHeight = height;
+	render(VisibilityBar);
+	assert.equal(render(VisibilityBar) === null, height !== 0, "Navigation follows native frames after recreation");
+}
+// Native nested headers clear the status bar only on phones; the tablet top bar already clears it.
+const builderStack = { Screen: "Stack.Screen" };
+const { BuilderChrome } = load("shell/builder-chrome.tsx", {
+	"expo-router": {
+		useRouter: () => router,
+		useNavigation: () => ({}),
+		useSegments: () => ["builder", "fictional", "basics"],
+		Stack: builderStack,
+	},
+	"./app-banner": { AppStrip: "AppStrip" },
+	"./app-tabs": { Bar: "Bar", BarItem: "BarItem" },
+	"./key-commands": { useKeyCommands() {} },
+	"./slot": { createSlot: () => ({ Provider: "SlotProvider", useFill() {} }) },
+	"./top-bar": { TopBar },
+});
+const builderProps = {
+	panes: [{ pane: "write", label: "Write", icon: "pencil", href: "/write" }],
+	tabletPanes: ["write"],
+	page: element("Preview", {}),
+	title: "Fictional resume",
+};
+const builderFrame = nodes(BuilderChrome(builderProps)).find((node) => typeof node.type === "function");
+hooks.length = 0;
+insets = { top: 48, bottom: 32, left: 0, right: 0 };
+for (const width of [443, 852, 443, 852]) {
+	window = { width, height: 883, fontScale: 1 };
+	for (const visible of [false, true, false]) {
+		keyboardHeight = visible ? 300 : 0;
+		render(builderFrame.type, builderProps);
+		const tree = render(builderFrame.type, builderProps);
+		const stack = nodes(tree).find((node) => node.type === builderStack);
+		assert.equal(
+			stack.props.screenOptions({ route: { name: "basics" } }).unstable_nativeProps?.headerConfig
+				?.disableTopInsetApplication,
+			width >= 750,
+			"Fold transitions must switch native header insets without changing the route",
+		);
+		const preview = nodes(tree).find(
+			(node) =>
+				nodes(node.props.children).some((child) => child.type === "Preview") &&
+				node.props.style?.paddingBottom !== undefined,
+		);
+		if (width >= 750) {
+			assert.equal(
+				preview.props.style.paddingBottom,
+				visible ? 0 : 32,
+				"Keyboard replaces the preview's bottom safe area",
+			);
+		} else {
+			assert.equal(preview, undefined, "Phones keep preview in its own pane");
+		}
+	}
+}
+hooks.length = 0;
 react.useRef = (initial) => react.useState({ current: initial })[0];
 react.useCallback = (callback) => callback;
+// The first focus must allow Improve for an existing line without requiring another caret tap.
+const richText = load("features/write/rich-text.ts");
+const { RichTextField, RichTextToolbar } = load("features/write/rich-text-field.tsx", {
+	react: {
+		...react,
+		useState: (initial) => react.useState(typeof initial === "function" ? initial() : initial),
+		useEffect() {},
+		useMemo: (compute) => compute(),
+		useSyncExternalStore: (_subscribe, snapshot) => snapshot(),
+	},
+	"@lingui/core/macro": { plural: () => "characters" },
+	"react-native-enriched-html": { EnrichedTextInput: "RichInput" },
+	"./rich-text": richText,
+	"./improve": { ImprovePanel: "ImprovePanel" },
+	"./pickers": { PromptSheet: "PromptSheet" },
+	"@/draft": { resumeFieldFocus: { onFocus() {}, onBlur() {} } },
+});
+for (const text of ["Existing line", ""]) {
+	hooks.length = 0;
+	const field = render(RichTextField, { label: "Summary", value: `<p>${text}</p>`, onChange() {} });
+	const input = nodes(field).find((node) => node.type === "RichInput");
+	input.props.onChangeText({ nativeEvent: { value: text } });
+	input.props.onFocus();
+	const toolbar = render(RichTextToolbar);
+	for (const height of [300, 0]) {
+		keyboardHeight = height;
+		render(RichTextToolbar);
+		const dock = nodes(render(RichTextToolbar)).find((node) => node.props.accessibilityRole === "toolbar");
+		assert.equal(dock.props.style.paddingBottom, height ? 0 : insets.bottom, "Hardware-keyboard tools clear gestures");
+	}
+	keyboardHeight = 0;
+	const improve = nodes(toolbar).find((node) => node.props.label === "Improve selected line");
+	assert.equal(improve.props.disabled, text === "", "First focus enables Improve only for nonempty lines");
+	if (text) {
+		const commands = [];
+		input.props.ref.current = {
+			toggleUnderline: () => commands.push("underline"),
+			toggleStrikeThrough: () => commands.push("strikethrough"),
+			focus: () => commands.push("focus"),
+		};
+		for (const [title, command] of [
+			["Underline", "underline"],
+			["Strikethrough", "strikethrough"],
+		]) {
+			nodes(render(RichTextToolbar))
+				.find((node) => node.props.label === "Text style")
+				.props.onPress();
+			const menu = nodes(render(RichTextToolbar)).find((node) => node.props.title === "Text style");
+			assert.equal(menu.props.open, true);
+			nodes(menu)
+				.find((node) => node.props.title === title)
+				.props.onPress();
+			assert.deepEqual(commands.splice(0), [command, "focus"], "Text style preserves formatting and returns focus");
+			assert.equal(nodes(render(RichTextToolbar)).find((node) => node.props.title === "Text style").props.open, false);
+		}
+	}
+	input.props.onBlur();
+}
+hooks.length = 0;
 native.StyleSheet = { hairlineWidth: 1 };
 const animation = {
 	View: "Animated.View",
@@ -371,6 +524,29 @@ const { DocumentsLibrary } = load("features/documents/library.tsx", {
 		useFirstAppearance: () => false,
 	},
 });
+// Changing library columns remounts its header; an active filter must remain visible and clearable.
+hooks.length = 0;
+let restoredSearch = "Fold QA duplicate";
+const searchedHeader = render(CollectionHeader, {
+	title: "Documents",
+	searchLabel: "Search documents",
+	placeholder: "Search",
+	value: restoredSearch,
+	onChangeText(value) {
+		restoredSearch = value;
+	},
+});
+assert.equal(nodes(searchedHeader).find((node) => node.type === "TextInput")?.props.value, restoredSearch);
+assert.equal(
+	nodes(searchedHeader).find((node) => node.type === "TextInput").props.autoFocus,
+	false,
+	"Restoring an active filter must not summon the keyboard",
+);
+nodes(searchedHeader)
+	.find((node) => node.props.label === "Close search")
+	.props.onPress();
+assert.equal(restoredSearch, "");
+
 for (const fontScale of [1, 1.95, 3.12]) {
 	window = { width: 320, height: 568, fontScale };
 	hooks.length = 0;
@@ -393,9 +569,10 @@ for (const fontScale of [1, 1.95, 3.12]) {
 	});
 	const title = nodes(row).find((node) => node.props.children?.includes("Preferences"));
 	const content = nodes(row).find((node) => node.props.children?.includes(title));
-	assert.equal(row.props.style({ pressed: false }).flexDirection, fontScale > 1.3 ? "column" : "row");
+	const rowStyle = typeof row.props.style === "function" ? row.props.style({ pressed: false }) : row.props.style;
+	assert.equal(rowStyle.flexDirection, fontScale > 1.3 ? "column" : "row");
 	if (fontScale > 1.3) {
-		assert.equal(row.props.style({ pressed: false }).alignItems, "stretch", "Large row titles need full width");
+		assert.equal(rowStyle.alignItems, "stretch", "Large row titles need full width");
 		assert.equal(
 			nodes(content).some((node) => node.type === "Icon"),
 			false,
@@ -417,10 +594,12 @@ for (const fontScale of [1, 1.95, 3.12]) {
 	assert.ok(choice, "Three Knowledge choices must remain inline");
 	const segments = render(Segmented, choice.props);
 	assert.equal(segments.props.style.flexDirection, fontScale > 1.3 ? "column" : "row");
-	for (const label of ["Documents", "Applications", "Career", "Settings"]) {
+	for (const label of ["Documents", "Applications", "Career", "Settings", "Podania o pracę", "தொழில் வாழ்க்கை"]) {
 		const item = render(BarItem, { label, icon: "file-text", focused: false, onPress() {} });
 		const text = nodes(item).find((node) => node.props.children?.includes(label));
-		assert.equal(text.props.numberOfLines, undefined, "Navigation labels must wrap instead of ellipsizing");
+		assert.equal(text.props.numberOfLines, label.split(" ").length, "Translated phrases must retain room to wrap");
+		assert.equal(text.props.adjustsFontSizeToFit, true, "Long navigation words must fit their cells");
+		assert.equal(text.props.minimumFontScale, 0.7);
 		assert.equal(item.props.accessibilityLabel, label);
 	}
 	for (const isError of [false, true]) {
@@ -488,6 +667,14 @@ assert.ok(nodes(workspace).some((node) => node.props.label === "Next workspace t
 selectedTab = "apply";
 workspace = render(frame.type, frame.props);
 assert.equal(scrolled.at(-1), 40, "Changing route must reveal the selected tab again");
+assert.ok(nodes(workspace).some((node) => node.type === keyboardLayout.KeyboardFrame));
+selectedTab = "details";
+hooks.length = 0;
+assert.equal(
+	nodes(render(frame.type, frame.props)).some((node) => node.type === keyboardLayout.KeyboardFrame),
+	false,
+	"Application details keep their own full-height scroll space outside workspace keyboard resizing",
+);
 console.log(
 	"PASS safe areas, measured Screen viewport, Duo rail navigation/targets, tablet sidebar, responsive editor modes, history split, measured PDF pages, large-text chrome/rows/navigation, workspace selection and overflow",
 );
@@ -559,6 +746,37 @@ const search = (query) => {
 picker = search(" Arrow ");
 assert.ok(picker.props.data.length > 60, "Search must not truncate large result sets");
 assert.ok(picker.props.data.every((name) => !name || name.includes("arrow")));
+
+assert.equal(
+	render(ListRow, { title: "Setting", trailing: element("Switch", {}) }).props.accessible,
+	false,
+	"Passive rows must expose their child switches as independent accessibility controls",
+);
+assert.equal(render(ListRow, { title: "Setting", trailing: element("Switch", {}) }).type, "View");
+assert.equal(render(ListRow, { title: "Status", value: "Saved" }).props.accessible, true);
+assert.equal(render(ListRow, { title: "Open", onPress() {} }).props.accessible, true);
+
+// An unknown decorative icon crashes its entire screen, including rows accepting ReactNode leading content.
+const { Icon: NativeIcon } = load(
+	"ui/icon.tsx",
+	Object.fromEntries(
+		[
+			...readFileSync(new URL("../src/ui/icon.tsx", import.meta.url), "utf8").matchAll(
+				/import \{ (\w+) \} from "(phosphor-react-native\/src\/icons\/[^"]+)"/g,
+			),
+		].map(([, symbol, path]) => [path, { [symbol]: symbol }]),
+	),
+);
+for (const directory of [new URL("../src/", import.meta.url), new URL("../app/", import.meta.url)]) {
+	for (const path of readdirSync(directory, { recursive: true }).filter((path) => path.endsWith(".tsx"))) {
+		const source = readFileSync(new URL(path, directory), "utf8");
+		for (const pattern of [/\b(?:icon|leading)="([^"]+)"/g, /<Icon\b[^>]*\bname="([^"]+)"/g]) {
+			for (const [, name] of source.matchAll(pattern)) {
+				assert.ok(NativeIcon({ name }).type, `${path}: icon "${name}" must resolve before its screen renders`);
+			}
+		}
+	}
+}
 picker = search("no-such-icon");
 assert.deepEqual(picker.props.data, [""]);
 assert.ok(picker.props.ListFooterComponent);

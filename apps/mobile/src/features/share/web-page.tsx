@@ -104,7 +104,7 @@ export function WebPageSettings({ resume, offline, username, origin, flags, oper
 				{shortLink && (
 					<ListRow
 						title={shortLink.replace(/^https?:\/\//, "")}
-						leading="link"
+						leading="link-simple-horizontal"
 						disabled={offline}
 						onPress={() =>
 							void operations.run(async () => {

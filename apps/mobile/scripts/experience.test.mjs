@@ -42,6 +42,7 @@ const ui = Object.fromEntries(
 		"ConfirmDialog",
 		"Icon",
 		"IconButton",
+		"ListGroup",
 		"ListRow",
 		"SelectSheet",
 		"Switch",
@@ -124,6 +125,55 @@ const draftBoundary = {
 };
 const document = load("features/share/document.ts", { "@/draft": draftBoundary });
 const { safeFileName } = load("features/share/model.ts");
+const exportedBytes = new Uint8Array([1, 2, 3]);
+const translatedLetterWords = {
+	greeting: (name) => `Liebe ${name},`,
+	teamGreeting: "Liebes Team & Personal,",
+	hiringTeam: "Personal + Team",
+	signOff: "Mit freundlichen Grüßen",
+};
+let exportPath;
+const { exportFile } = load("features/share/files.ts", {
+	"expo-file-system": {
+		Directory: class {},
+		File: class {
+			async write(bytes) {
+				assert.deepEqual(bytes, exportedBytes);
+			}
+		},
+		Paths: {},
+	},
+	"expo-print": {},
+	"expo-sharing": {},
+	"@reactive-resume/resume/export-sections": {},
+	"./letter": { letterWords: async () => translatedLetterWords },
+	"./messages": {},
+	"./model": { safeFileName },
+	"@/preview/pipeline": {},
+	"@/api/client": {
+		client: { coverLetters: { getById: async () => ({ style: { metadata: { page: { locale: "de-DE" } } } }) } },
+		rest: async (path) => {
+			exportPath = new URL(path, "https://example.test");
+			return { ok: true, arrayBuffer: async () => exportedBytes.buffer };
+		},
+	},
+});
+for (const format of ["docx", "odt", "md", "json"]) {
+	await exportFile({ directory: {}, id: "letter-a", name: "Letter", format, letter: true });
+	assert.equal(exportPath.pathname, `/cover-letters/letter-a/exports/${format}`);
+	assert.deepEqual(
+		Object.fromEntries(exportPath.searchParams),
+		format === "json"
+			? {}
+			: {
+					"words[greeting]": "Liebe {name},",
+					"words[teamGreeting]": translatedLetterWords.teamGreeting,
+					"words[hiringTeam]": translatedLetterWords.hiringTeam,
+					"words[signOff]": translatedLetterWords.signOff,
+				},
+		"Localized letter exports must use OpenAPI object query parameters",
+	);
+}
 let rejectExport = false;
 let releaseExport;
 let holdExport = false;
@@ -246,8 +296,8 @@ assert.equal(
 
 const stages = load("features/applications/stages.ts");
 const nextSteps = load("features/applications/next-step.ts", { "./stages": stages });
-const time = { locale: "en-US", timeZone: "UTC", when: String, time: String, day: String };
-const { StageStepper, NextStepCard } = load("features/application-detail/sections.tsx", {
+const time = { locale: "en-US", timeZone: "UTC", when: String, time: String, day: String, utcDay: String };
+const { StageStepper, NextStepCard, WhatYouSent } = load("features/application-detail/sections.tsx", {
 	"@tanstack/react-query": {},
 	"expo-document-picker": {},
 	"expo-file-system": {},
@@ -256,6 +306,8 @@ const { StageStepper, NextStepCard } = load("features/application-detail/section
 	"./attachment": {},
 	"./notes-queue": { createNotesQueue: () => ({}) },
 	"./hooks": {
+		useDocuments: () => ({ data: [] }),
+		useDetailMutations: () => ({ createLetter: { isPending: false } }),
 		useNow: () => new Date(),
 		useUserTime: () => time,
 		followUpReminder: () => null,
@@ -297,6 +349,33 @@ control(tree, "Change stage").onChange("applied");
 assert.deepEqual(calls, ["mark-applied"], "Explicit Saved → Applied still captures submission details");
 control(tree, "Change stage").onChange("interview");
 assert.deepEqual(calls.at(-1), { id: "job-a", status: "interview" });
+
+for (const [resumeId, coverLetterId] of [
+	[null, null],
+	["resume-a", null],
+	[null, "letter-a"],
+	["resume-a", "letter-a"],
+]) {
+	reset();
+	tree = render(WhatYouSent, { application: { ...application, resumeId, coverLetterId } });
+	assert.equal(
+		nodes(tree).filter((node) => node.type === "Card").length,
+		resumeId || coverLetterId ? 1 : 0,
+		"Only linked documents should create a card; an empty card leaves a stray border",
+	);
+	assert.equal(
+		nodes(tree).filter((node) => node.type === "ListRow").length,
+		Number(!!resumeId) + Number(!!coverLetterId),
+	);
+	assert.equal(
+		nodes(tree).some((node) => node.props.label === "Prepare a resume"),
+		!resumeId,
+	);
+	assert.equal(
+		nodes(tree).some((node) => node.props.label === "Write a letter"),
+		!coverLetterId,
+	);
+}
 
 for (const [overrides, label, destination] of [
 	[{}, "Prepare application", "fit"],

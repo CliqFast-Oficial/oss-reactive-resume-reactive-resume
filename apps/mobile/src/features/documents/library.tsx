@@ -423,7 +423,6 @@ export function DocumentsLibrary({ trashed = false }: DocumentsLibraryProps) {
 		>
 			<Stack.Screen options={{ title: trashed ? t`Trash` : t`Documents`, headerShown: false }} />
 			<AnimatedLegendList
-				key={columns}
 				data={session.status === "signed-in" ? filtered : []}
 				ListHeaderComponent={header}
 				numColumns={columns}

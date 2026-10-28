@@ -27,6 +27,7 @@ import { nativeEnvironment } from "@/draft/native";
 import { ResumePage } from "@/preview/page";
 import { useIsTablet } from "@/shell/use-is-tablet";
 import { Banner, IconButton, Skeleton, Text, haptics, showToast, useReducedMotion, useTheme } from "@/ui";
+import { useKeyboardScrollSpace } from "@/ui/keyboard";
 
 type Tab = "template" | "type" | "color" | "page";
 type Entry = { kind: "advanced"; id: AdvancedId } | { kind: "picker"; spec: PickerSpec };
@@ -43,6 +44,7 @@ export function DesignPane({ id }: { id: string }) {
 	const { colors, fonts, radius, space, size, motion, shadows } = useTheme();
 	const window = useWindowDimensions();
 	const tablet = useIsTablet();
+	const keyboardSpace = useKeyboardScrollSpace();
 	const reduced = useReducedMotion();
 	const draft = useDesignDraft(id);
 	const session = useSession();
@@ -252,6 +254,7 @@ export function DesignPane({ id }: { id: string }) {
 					style={{ flex: 1 }}
 				>
 					<KeyboardAwareScrollView
+						extraKeyboardSpace={keyboardSpace}
 						scrollEnabled={!scrollLocked}
 						keyboardShouldPersistTaps="handled"
 						contentContainerStyle={{ padding: space.s4, paddingBottom: space.s12 }}

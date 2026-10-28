@@ -7,12 +7,13 @@ import { Preferences } from "./preferences";
 import { LoadState } from "./shared";
 import { Stories } from "./stories";
 import { useSession } from "@/auth/session";
-import { Screen, Segmented, Text } from "@/ui";
+import { Screen, Segmented, Text, useTheme } from "@/ui";
 
 export function KnowledgeScreen() {
 	const { t } = useLingui();
 	const [tab, setTab] = useState("facts");
 	const { fontScale } = useWindowDimensions();
+	const { size } = useTheme();
 	const session = useSession();
 	const { facts, stories, profile } = useCareerQueries();
 	const refresh = () => Promise.allSettled([facts.refetch(), stories.refetch(), profile.refetch()]);
@@ -42,7 +43,7 @@ export function KnowledgeScreen() {
 			</Screen>
 		);
 	return (
-		<Screen onRefresh={refresh}>
+		<Screen onRefresh={refresh} contentStyle={{ width: "100%", maxWidth: size.formSheet, alignSelf: "center" }}>
 			{intro}
 			{tab === "stories" ? (
 				<Stories key={session.server} />

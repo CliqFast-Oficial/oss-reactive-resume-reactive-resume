@@ -25,7 +25,7 @@ type Overlay =
 /** One application: stage stepper, next step, what was sent, facts, contacts, notes, timeline and attachments. */
 export function ApplicationDetail({ id }: ApplicationDetailProps) {
 	const { t } = useLingui();
-	const { space } = useTheme();
+	const { space, size } = useTheme();
 	const router = useRouter();
 	const session = useSession();
 	const query = useApplication(id);
@@ -71,7 +71,16 @@ export function ApplicationDetail({ id }: ApplicationDetailProps) {
 	const openInterview = (interview: InterviewTimelineEntry | null) => setOverlay({ kind: "interview", interview });
 
 	return (
-		<Screen onRefresh={query.refetch} contentStyle={{ gap: space.s6, paddingBottom: space.s12 }}>
+		<Screen
+			onRefresh={query.refetch}
+			contentStyle={{
+				gap: space.s6,
+				paddingBottom: space.s12,
+				width: "100%",
+				maxWidth: size.sheetDetail,
+				alignSelf: "center",
+			}}
+		>
 			<Stack.Screen options={{ title: application.company }} />
 			<View style={{ gap: space.s1 }}>
 				<Text variant="display">{application.role}</Text>

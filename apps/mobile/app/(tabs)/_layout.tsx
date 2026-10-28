@@ -3,7 +3,6 @@ import { useNetworkState } from "expo-network";
 import { useRouter } from "expo-router";
 import { Tabs } from "expo-router/tabs";
 import { View } from "react-native";
-import { KeyboardAvoidingView } from "react-native-keyboard-controller";
 import {
 	SafeAreaInsetsContext,
 	SafeAreaProvider,
@@ -16,6 +15,7 @@ import { AppSidebar, PhoneTabBar } from "@/shell/app-tabs";
 import { useKeyCommands } from "@/shell/key-commands";
 import { useIsTablet } from "@/shell/use-is-tablet";
 import { useReducedMotion, useTheme } from "@/ui";
+import { KeyboardFrame } from "@/ui/keyboard";
 
 /**
  * Five tabs: Documents, Applications, the raised "+" (opens New as a modal), Career, Settings. Phone: the bottom tab
@@ -53,7 +53,7 @@ export default function TabsLayout() {
 			{/* Under a banner the status bar is already cleared, so the tabs' headers must not pad it again. */}
 			<SafeAreaInsetsContext value={offline ? { ...insets, top: 0 } : insets}>
 				<BannerAbove value={offline}>
-					<KeyboardAvoidingView behavior="padding" automaticOffset style={{ flex: 1 }}>
+					<KeyboardFrame behavior="padding" automaticOffset style={{ flex: 1 }}>
 						<SafeAreaView edges={["left", "right"]} style={{ flex: 1 }}>
 							<SafeAreaProvider>
 								<Tabs
@@ -86,7 +86,7 @@ export default function TabsLayout() {
 								</Tabs>
 							</SafeAreaProvider>
 						</SafeAreaView>
-					</KeyboardAvoidingView>
+					</KeyboardFrame>
 				</BannerAbove>
 			</SafeAreaInsetsContext>
 		</View>

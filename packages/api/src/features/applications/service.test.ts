@@ -235,6 +235,34 @@ describe("applicationService sent resume", () => {
 		},
 	);
 
+	it.each([{ notes: "Private interview note" }, { role: "Senior Engineer" }])(
+		"does not record linked drafts as submitted during metadata edits: %j",
+		async (fields) => {
+			const data = structuredClone((await import("@reactive-resume/schema/resume/default")).defaultResumeData);
+			setSelectResults([sentRow], [{ id: "user-1" }], [sentRow], [{ id: "resume-1", data }]);
+			dbMock.update.mockReturnValue({
+				set: () => ({ where: () => ({ returning: () => Promise.resolve([sentRow]) }) }),
+			});
+
+			const result = await applicationService.update({ id: sentRow.id, userId: sentRow.userId, ...fields });
+
+			expect(writeVersionMock).not.toHaveBeenCalled();
+			expect(result.sentResumeVersionId).toBeNull();
+		},
+	);
+
+	it("does not record linked drafts as submitted when bulk-adding tags", async () => {
+		const data = structuredClone((await import("@reactive-resume/schema/resume/default")).defaultResumeData);
+		setSelectResults([{ id: "user-1" }], [{ id: "resume-1", data }]);
+		dbMock.update.mockReturnValue({
+			set: () => ({ where: () => ({ returning: () => Promise.resolve([sentRow]) }) }),
+		});
+
+		await applicationService.bulkUpdate({ userId: sentRow.userId, ids: [sentRow.id], addTags: ["priority"] });
+
+		expect(writeVersionMock).not.toHaveBeenCalled();
+	});
+
 	it("saves it once, and not before the application is sent", async () => {
 		setSelectResults([existing], [{ id: "user-1" }], [existing], [existing], [{ id: "user-1" }], [existing]);
 		const set = vi.fn(() => ({
