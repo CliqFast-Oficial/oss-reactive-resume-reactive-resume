@@ -233,6 +233,14 @@ pair`. Passwordless (`nopass`) ACL users keep an explicitly empty password: `red
 
 Saved AI providers and Assistant conversations are kept in PostgreSQL, so they remain available without Redis.
 
+## Career scheduling
+
+| Variable      | Default | Description                                                                                                                                                                                                                                                                          |
+| ------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `CRON_SECRET` | unset   | Authenticates `GET` and `POST /api/career/run` with `Authorization: Bearer <secret>`. At least 16 characters; generate it with `openssl rand -hex 32`. Required for Vercel Cron or an external HTTP scheduler. Node.js/Docker and Cloudflare schedule internally without this token. |
+
+Without `CRON_SECRET`, the HTTP runner returns `404`; an invalid bearer token returns `401`. On Vercel, set the secret in the Production environment and redeploy so Vercel Cron can supply it. Users must still opt in to each schedule. See [Career scheduling](/contributing/career-platform#operate-scheduled-work) for deployment timing and verification, and [Self-hosting on Vercel](/self-hosting/vercel#scheduled-career-work) for its setup.
+
 ## Web access
 
 The built-in reader is active without credentials. Search and enhanced reading use one optional connection:

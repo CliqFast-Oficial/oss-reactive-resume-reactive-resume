@@ -109,12 +109,9 @@ Attach this PDF as the resume I sent to Northwind Games.
 Remove the cover-letter PDF from the Blue Harbor Studio application.
 ```
 
-`attach_application_document` accepts one resume PDF and one cover-letter PDF per application, up to 10 MB each, sent as base64. Attaching a new file replaces the old one.
+`attach_application_document` accepts one resume PDF and one cover-letter PDF per application, up to 10 MiB each. Inline `dataBase64` is limited to 3 MiB of encoded text (about 2.25 MiB of file bytes). For a larger PDF, upload it under your account first and supply its owned `storagePath` instead. Supply exactly one of `dataBase64` or `storagePath`; external URLs and other users' files cannot be used. See [File limits and references](/guides/using-the-mcp-server#file-limits-and-references).
 
-<Warning>
-  Anyone with the address of an attached PDF can download it without signing in. Attaching a file never sends it to an
-  employer.
-</Warning>
+Attaching a new file replaces the old one. Downloading an attached PDF requires authentication as its owner with read permission; other requests receive a 404 response. Attaching a file never sends it to an employer.
 
 If your client can't read files from your computer, attach the PDF in the app instead. See [Managing an application](/guides/managing-an-application).
 
@@ -169,13 +166,14 @@ Use Reactive Resume MCP for job applications. Call list_applications before crea
 
 ## Troubleshooting
 
-| Problem                                                  | What to do                                                                                                                                                   |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| The client can't see application tools                   | Reconnect the server and ask the client to refresh its tools.                                                                                                |
-| The client creates duplicates                            | Ask it to list applications first and match on company and role before creating one.                                                                         |
-| A stage change to `rejected` or an archive request fails | Those no longer exist. Use the `closed` stage with a reason.                                                                                                 |
-| Attaching a document fails                               | Only PDFs up to 10 MB are accepted. Attach from the app if your client can't read the file.                                                                  |
-| Scoring, tailoring or drafting fails                     | Check that a default AI provider is set up and tested. For scoring and tailoring, also check that the application has a job description and a linked resume. |
+| Problem                                                  | What to do                                                                                                                                                                                     |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| The client can't see application tools                   | Reconnect the server and ask the client to refresh its tools.                                                                                                                                  |
+| The client creates duplicates                            | Ask it to list applications first and match on company and role before creating one.                                                                                                           |
+| A stage change to `rejected` or an archive request fails | Those no longer exist. Use the `closed` stage with a reason.                                                                                                                                   |
+| Attaching a document fails                               | Use a PDF up to 10 MiB. Inline base64 allows 3 MiB encoded (about 2.25 MiB of file bytes); use an owned `storagePath` for larger PDFs. Attach from the app if your client can't read the file. |
+| An attached PDF returns 404                              | Authenticate as the file's owner with read permission. The address alone does not grant access to a signed-out browser or another account.                                                     |
+| Scoring, tailoring or drafting fails                     | Check that a default AI provider is set up and tested. For scoring and tailoring, also check that the application has a job description and a linked resume.                                   |
 
 ## Related guides
 

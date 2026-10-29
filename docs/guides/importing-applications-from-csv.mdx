@@ -96,8 +96,9 @@ Up to 500 applications import at a time. If your file has more, the summary says
 <Steps>
   <Step title="Open Export to CSV">Select the import/export button, then **Export to CSV…**.</Step>
   <Step title="Choose what to export">
-    Under **Applications to export**, choose **Current filters** (the applications matching your current search, closed
-    ones included) or **All applications (including closed)**.
+    Under **Applications to export**, choose **Current filters** to export applications matching your search and **Show
+    closed** setting. Closed applications are included only when **Show closed** is on. Choose **All applications
+    (including closed)** to include every application regardless of those settings.
   </Step>
   <Step title="Limit by date, if you like">
     Set **Application date from** and **Application date to** to export only applications from that period. Leave them
@@ -113,7 +114,9 @@ Up to 500 applications import at a time. If your file has more, the summary says
   />
 </Frame>
 
-The file is named `applications-YYYY-MM-DD.csv` and opens in any spreadsheet app. It has these columns: Company, Role, Stage, Lane, Lane Category, Lane Closed Reason, Stage Date, Application Date, Location, Salary, Source, URL, Tags, Contacts, Notes, Closed Reason, Stage History, Timeline, Created At and Updated At.
+The file is named `applications-YYYY-MM-DD.csv` and opens in any spreadsheet app. It has these columns: Company, Role, Stage, Lane, Lane Category, Lane Closed Reason, Stage Date, Application Date, Location, Salary, Source, URL, Job Description, Posting Source, Tags, Contacts, Notes, Closed Reason, Stage History, Timeline, Created At and Updated At.
+
+**Job Description** contains the saved posting text. **Posting Source** contains its source metadata as JSON, such as how and when it was retrieved and whether it was clipped, when available. The export also includes your contacts, notes and timeline, so treat the downloaded file as private application data and check it before sharing.
 
 **Stage** is always one of the standard stages, so other spreadsheets and older versions can read it. **Lane** is the name of your own stage, **Lane Category** what it counts as, and **Lane Closed Reason** its preset outcome, if any.
 
