@@ -50,7 +50,6 @@ temp
 # AI
 .codex
 .agents/*
-!.agents/docs/
 .claude
 .cursor
 .mcp.json
