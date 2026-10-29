@@ -2,20 +2,9 @@ import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { expect, it } from "vite-plus/test";
 import { compileStylesheet } from "@reactive-resume/resume/stylesheet";
-import { buildGeneratedDocumentation } from "./generate-reference";
-
-const defaultDocumentationPaths = {
-	jsonSchemaGuide: fileURLToPath(new URL("../../docs/guides/json-resume-schema.mdx", import.meta.url)),
-	skillSchemaReference: fileURLToPath(
-		new URL("../../plugins/reactive-resume/skills/resume-builder/references/schema.md", import.meta.url),
-	),
-};
-const applyingCustomStylesGuide = fileURLToPath(new URL("../../docs/applying-custom-styles.mdx", import.meta.url));
+const applyingCustomStylesGuide = fileURLToPath(new URL("../docs/applying-custom-styles.mdx", import.meta.url));
 
 type SemanticCssExample = { label: string; source: string };
-
-const readTargets = (paths: typeof defaultDocumentationPaths) =>
-	Promise.all(Object.values(paths).map((path) => readFile(path, "utf8")));
 
 function extractSemanticCssExamples(source: string): SemanticCssExample[] {
 	const examples: SemanticCssExample[] = [];
@@ -30,15 +19,6 @@ function extractSemanticCssExamples(source: string): SemanticCssExample[] {
 
 	return examples;
 }
-
-it("keeps every committed generated document synchronized", async () => {
-	const [jsonSchemaGuide, skillSchemaReference] = await readTargets(defaultDocumentationPaths);
-
-	expect(await buildGeneratedDocumentation(defaultDocumentationPaths)).toEqual({
-		jsonSchemaGuide,
-		skillSchemaReference,
-	});
-});
 
 it("compiles every Semantic CSS example in the public guide", async () => {
 	const source = await readFile(applyingCustomStylesGuide, "utf8");

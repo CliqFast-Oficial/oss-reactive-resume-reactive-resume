@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 import { readdirSync } from "node:fs";
+import { join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { gunzipSync } from "node:zlib";
 import { describe, expect, it } from "vite-plus/test";
@@ -41,15 +42,21 @@ describe("agent skills discovery", () => {
 	});
 
 	it("places SKILL.md at the archive root and builds identical bytes each time", () => {
-		const [first] = loadAgentSkills(skillsRoot);
-		const [second] = loadAgentSkills(skillsRoot);
+		const first = loadAgentSkills(skillsRoot);
+		const second = loadAgentSkills(skillsRoot);
 
-		if (!first) throw new Error("No agent skills found");
-		const entries = listTarEntries(first.archive);
-		expect(entries).toContain("SKILL.md");
-		expect(entries.some((path) => path.startsWith("references/"))).toBe(true);
-		expect(entries.every((path) => !path.startsWith("/") && !path.includes(".."))).toBe(true);
-		expect(second?.digest).toBe(first.digest);
+		expect(first.length).toBeGreaterThan(0);
+		for (const skill of first) {
+			const root = join(skillsRoot, skill.name);
+			const files = readdirSync(root, { recursive: true, withFileTypes: true })
+				.filter((entry) => entry.isFile())
+				.map((entry) => relative(root, join(entry.parentPath, entry.name)).split("\\").join("/"));
+			const entries = listTarEntries(skill.archive);
+			expect(entries).toContain("SKILL.md");
+			expect(entries.toSorted()).toEqual(files.toSorted());
+			expect(entries.every((path) => !path.startsWith("/") && !path.includes(".."))).toBe(true);
+			expect(second.find((entry) => entry.name === skill.name)?.digest).toBe(skill.digest);
+		}
 	});
 
 	it("returns 404 for unknown archives", () => {
