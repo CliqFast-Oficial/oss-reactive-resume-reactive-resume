@@ -960,6 +960,10 @@ msgstr "Shto një @ dhe domenin, si name@example.com"
 msgid "Add an address."
 msgstr "Shto një adresë."
 
+#: src/features/career/offer-entry.tsx
+msgid "Add an application first"
+msgstr "Shtoni fillimisht një aplikim"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first."
 msgstr "Fillimisht shtoni një aplikim."
@@ -1044,6 +1048,14 @@ msgstr "Shto fazë"
 #: src/features/write/fields.ts
 msgid "Add language"
 msgstr "Shto gjuhën"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "Shto ofertë pune"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "Shtoni kushtet e ofertës së punës manualisht ose përdorni nxjerrjen opsionale me IA te Mesazhet."
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1473,6 +1485,7 @@ msgstr "Shfaqet në faqe pasi të ketë një organizatë."
 #: app/_layout.tsx
 #: src/features/application-detail/detail-screen.tsx
 #: src/features/applications-board/calendar-screen.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/letters/write.tsx
 #: src/shell/workspace-chrome.tsx
@@ -1806,6 +1819,7 @@ msgctxt "Entry header accent: a bar beside the header"
 msgid "Bar"
 msgstr "Shirit"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "Paga bazë"
@@ -1873,10 +1887,12 @@ msgstr "Teksti i trupit u vendos në {minimum} pt"
 msgid "Bold"
 msgstr "Të trasha"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "Bonus"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus conditions"
 msgstr "Kushtet e bonusit"
@@ -2219,6 +2235,10 @@ msgstr "Zgjidhni një ofrues të testuar të AI përpara se të ndani të dhëna
 msgid "Choose a time"
 msgstr "Zgjidhni një kohë"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "Zgjidhni një datë dhe orë të vlefshme në zonën kohore {timeZone}, ose hiqni afatin."
+
 #: src/features/applications/add-sheet.tsx
 msgid "Choose a valid follow-up date before saving."
 msgstr "Zgjidhni një datë të vlefshme vazhdimi përpara se të ruani."
@@ -2234,6 +2254,10 @@ msgstr "Zgjidhni një skedar WebM, MP4, MP3, WAV ose Ogg deri në 2 MB."
 #: src/features/applications-board/calendar-screen.tsx
 msgid "Choose an application"
 msgstr "Zgjidhni një aplikim"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "Zgjidhni një aplikim për punë dhe korrigjoni fushat e theksuara para se ta ruani."
 
 #: src/features/workspace/tabs/practise.tsx
 msgid "Choose an audio file"
@@ -3209,6 +3233,7 @@ msgstr "Krijuar {0} · Përdorimi i fundit {1} · Skadon {2}"
 msgid "Creating document…"
 msgstr "Po krijohet dokumenti…"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "Monedha"
@@ -3921,6 +3946,10 @@ msgstr "Leximi i përmirësuar dështoi"
 msgid "Enhanced reading unavailable; used the built-in reader."
 msgstr "Leximi i përmirësuar i padisponueshëm; përdori lexuesin e integruar."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "Vendosni shumën e plotë, për shembull 95000, ose lëreni bosh."
+
 #: src/features/career/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "Vendosni një shumë të plotë, si 95000. Shuma juaj e mëparshme nuk ka ndryshuar."
@@ -3933,6 +3962,7 @@ msgstr "Vendosni një ngjyrë hex si #1a1a1a, ose rgba(…)."
 msgid "Enter a name, up to 64 characters."
 msgstr "Futni një emër, deri në 64 karaktere."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Enter a three-letter currency code."
 msgstr "Vendosni kodin e monedhës me tre shkronja."
@@ -3965,6 +3995,10 @@ msgstr "Fut një adresë si resume.example.org."
 msgid "Enter any model ID supported by your endpoint."
 msgstr "Futni çdo ID të modelit të mbështetur nga pika juaj përfundimtare."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "Vendosni vetë kushtet. Nuk dërgohet asnjë kërkesë te IA-ja. Lërini bosh shumat e panjohura."
+
 #: app/(auth)/server.tsx
 msgid "Enter the address you open Reactive Resume at in a browser. The app checks it's a Reactive Resume server that allows app sign-in before you continue."
 msgstr "Futni adresën në të cilën hapni Reactive Resume në një shfletues. Aplikacioni kontrollon se është një server Reactive Resume që lejon identifikimin në aplikacion përpara se të vazhdoni."
@@ -3991,6 +4025,7 @@ msgstr "Hyrja u fshi"
 msgid "Entry options"
 msgstr "Opsionet e hyrjes"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "Aksione"
@@ -4026,10 +4061,6 @@ msgstr "Çdo term që thekson shpallja e punës është tashmë aty."
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "Çdo javë"
-
-#: src/features/workspace/tabs/saved.tsx
-msgid "Everything the coach wrote for {company}, newest first."
-msgstr "Gjithçka që shkroi këshilltari për {company}, nga më e reja."
 
 #: src/features/career/facts.tsx
 #: src/features/write/fields.ts
@@ -4182,8 +4213,8 @@ msgid "Fit"
 msgstr "Përputhja"
 
 #: src/features/workspace/tabs/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "Kontrollet e përputhjes, përmbledhjet, komentet e ushtrimeve, analizat, përgjigjet dhe përgjigjet ndaj mesazheve vijnë këtu ndërsa skedat e tjera i krijojnë."
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "Kontrollet e përputhjes, përmbledhjet, komentet e ushtrimeve, analizat pas intervistës, përgjigjet në formularë, përgjigjet ndaj mesazheve dhe ofertat e punës shfaqen këtu ndërsa i ruani."
 
 #: src/features/check/issues.ts
 msgid "Fix the date"
@@ -5136,10 +5167,12 @@ msgstr "Faqosja"
 msgid "Leads with why you fit"
 msgstr "Drejton me arsyen pse ju përshtateni"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "Buxheti për mësim"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "Largohu"
@@ -6462,6 +6495,14 @@ msgstr "Joaktiv. Vetëm ju mund ta shihni këtë CV."
 msgid "Offer"
 msgstr "Ofertë"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "Oferta e punës u ruajt"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "Lloji i ofertës së punës"
+
 #: app/(tabs)/career/_layout.tsx
 msgid "Offers"
 msgstr "Ofertat"
@@ -6478,6 +6519,7 @@ msgstr "Ditët në zyrë nuk dihen."
 msgid "Office days not stated"
 msgstr "Ditët në zyrë nuk përmenden"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Office days per week"
 msgstr "Ditë në zyrë në javë"
@@ -6729,6 +6771,7 @@ msgstr "Formatimi origjinal i tabelës është ruajtur. Kjo përmbajtje është 
 msgid "Other"
 msgstr "Tjetër"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "Përfitime të tjera"
@@ -6858,10 +6901,6 @@ msgstr "Ngjit një postim pune"
 msgid "Paste a message from {company}"
 msgstr "Ngjit një mesazh nga {company}"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "Ngjitni një ofertë te skeda Mesazhet e një aplikimi."
-
 #: src/features/workspace/tabs/messages.tsx
 msgid "Paste the email or message, without the signature."
 msgstr "Ngjitni email-in ose mesazhin, pa nënshkrimin."
@@ -6888,6 +6927,7 @@ msgstr "Përshkrimi i ngjitur"
 msgid "Paused"
 msgstr "Në pauzë"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Pay period"
 msgstr "Periudha e pagesës"
@@ -6921,16 +6961,19 @@ msgstr "PDF përdor ofruesin tuaj AI kur është gati. Çaktivizoni AI për të 
 msgid "PDF, Word, Reactive Resume, JSON Resume or LinkedIn export."
 msgstr "Eksporto PDF, Word, Reactive Resume, JSON Resume ose LinkedIn."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per hour"
 msgstr "Në orë"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per month"
 msgstr "Në muaj"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per year"
@@ -7847,6 +7890,7 @@ msgstr "Rezervoni shkronjat e mëdha për titujt e shkurtër. Ato ngadalësojnë
 msgid "Reset design defaults"
 msgstr "Rivendos standardet e dizajnit"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "Përgjigjuni deri më"
@@ -8255,6 +8299,10 @@ msgstr "Ruaj punën"
 msgid "Save lane"
 msgstr "Ruaj fazën"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "Ruaj ofertën e punës"
+
 #: src/features/share/files.ts
 msgid "Save or share file"
 msgstr "Ruani ose shpërndani skedarin"
@@ -8320,6 +8368,10 @@ msgstr "U ruajt një histori: {title}"
 msgid "Saved description"
 msgstr "Përshkrimi i ruajtur"
 
+#: src/features/workspace/tabs/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "Elementet e ruajtura për {company}, më të rejat në fillim."
+
 #: src/features/career/today.tsx
 msgid "Saved to Applications with the posting"
 msgstr "U ruajt te Aplikimet me shpalljen"
@@ -8340,6 +8392,7 @@ msgstr "U ruajt te skeda Ruajtur · Ushtrim"
 msgid "Saving the job. Wait for confirmation before making another change."
 msgstr "Ruajtja e punës. Prisni për konfirmim përpara se të bëni një ndryshim tjetër."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 #: src/features/settings/profile.tsx
 #: src/shell/builder-chrome.tsx
@@ -10157,6 +10210,10 @@ msgstr "Shtrëngoni në një faqe"
 msgid "Tightening"
 msgstr "Po shkurtohet"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "Ora"
+
 #. placeholder {0}: draft.timezone
 #: src/features/application-detail/interview-sheet.tsx
 msgid "Time · {0}"
@@ -10174,6 +10231,7 @@ msgstr "Ora, lidhja, kush, çfarë dërguat"
 msgid "Timeline"
 msgstr "Afati kohor"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "Oraret shfaqen në {timeZone}."
@@ -10430,6 +10488,10 @@ msgstr "Nënvizoni lidhjet"
 #: src/ui/overlays.tsx
 msgid "Undo"
 msgstr "Anulo"
+
+#: src/features/career/offer-entry.tsx
+msgid "Unknown"
+msgstr "E panjohur"
 
 #: src/features/career/offers.tsx
 msgid "Unknown · ask"
@@ -10735,6 +10797,7 @@ msgstr "Vlera"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "Ndryshoni fillimet që seksioni të mos duket standard."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "Ofertë me gojë"
@@ -10840,6 +10903,10 @@ msgstr "Parametrat e zërit"
 #: src/features/write/fields.ts
 msgid "Volunteer"
 msgstr "Punë vullnetare"
+
+#: src/features/career/offer-entry.tsx
+msgid "Wait for your account timezone to load, retry if it failed, or clear the deadline."
+msgstr "Prisni të ngarkohet zona kohore e llogarisë suaj, provoni përsëri nëse ngarkimi dështoi, ose hiqni afatin."
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Waiting for you"
@@ -11004,6 +11071,7 @@ msgstr "Nga vijnë aplikimet"
 msgid "Where you want to work"
 msgstr "Ku dëshironi të punoni"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "Ku punoni"
@@ -11138,6 +11206,7 @@ msgstr "Shkrimi"
 msgid "Writing help, tailored suggestions and the assistant. The default provider is used wherever you don't pick one. Your keys stay encrypted."
 msgstr "Ndihmë për shkrimin, sugjerime të përshtatura dhe asistenti. Ofruesi i parazgjedhur përdoret kudo ku nuk zgjidhni një. Çelësat tuaj mbeten të enkriptuar."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "Ofertë me shkrim"

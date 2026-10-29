@@ -960,6 +960,10 @@ msgstr "הוסף @ ואת הדומיין, כמו name@example.com"
 msgid "Add an address."
 msgstr "הוסף כתובת."
 
+#: src/features/career/offer-entry.tsx
+msgid "Add an application first"
+msgstr "הוסף קודם מועמדות"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first."
 msgstr "הוסף קודם מועמדות."
@@ -1044,6 +1048,14 @@ msgstr "הוספת שלב"
 #: src/features/write/fields.ts
 msgid "Add language"
 msgstr "הוסף שפה"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "הוספת הצעת עבודה"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "אפשר להזין את תנאי הצעת העבודה ידנית, או להשתמש באפשרות לחילוץ באמצעות בינה מלאכותית בהודעות."
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1473,6 +1485,7 @@ msgstr "מופיע בדף ברגע שיש לו ארגון."
 #: app/_layout.tsx
 #: src/features/application-detail/detail-screen.tsx
 #: src/features/applications-board/calendar-screen.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/letters/write.tsx
 #: src/shell/workspace-chrome.tsx
@@ -1806,6 +1819,7 @@ msgctxt "Entry header accent: a bar beside the header"
 msgid "Bar"
 msgstr "פס צדדי"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "שכר בסיס"
@@ -1873,10 +1887,12 @@ msgstr "טקסט גוף מוגדר ל-{minimum} pt"
 msgid "Bold"
 msgstr "מודגש"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "בונוס"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus conditions"
 msgstr "תנאי בונוס"
@@ -2219,6 +2235,10 @@ msgstr "בחר ספק AI בדוק לפני שיתוף נתונים."
 msgid "Choose a time"
 msgstr "בחר שעה"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "יש לבחור תאריך ושעה תקינים באזור הזמן {timeZone}, או להסיר את המועד האחרון."
+
 #: src/features/applications/add-sheet.tsx
 msgid "Choose a valid follow-up date before saving."
 msgstr "בחר תאריך מעקב חוקי לפני השמירה."
@@ -2234,6 +2254,10 @@ msgstr "בחר קובץ WebM, MP4, MP3, WAV או Ogg בגודל של עד 2 MB."
 #: src/features/applications-board/calendar-screen.tsx
 msgid "Choose an application"
 msgstr "בחר מועמדות"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "יש לבחור מועמדות ולתקן את השדות המסומנים לפני השמירה."
 
 #: src/features/workspace/tabs/practise.tsx
 msgid "Choose an audio file"
@@ -3209,6 +3233,7 @@ msgstr "נוצר {0} · בשימוש אחרון {1} · יפוג {2}"
 msgid "Creating document…"
 msgstr "יוצר מסמך…"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "מטבע"
@@ -3921,6 +3946,10 @@ msgstr "קריאה משופרת נכשלה"
 msgid "Enhanced reading unavailable; used the built-in reader."
 msgstr "קריאה משופרת אינה זמינה; השתמש בקורא המובנה."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "יש להזין סכום מלא, למשל 95000, או להשאיר ריק."
+
 #: src/features/career/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "הזן סכום מלא, למשל 95000. הסכום הקודם שלך לא השתנה."
@@ -3933,6 +3962,7 @@ msgstr "הזן צבע הקסדצימלי כגון #1a1a1a, או rgba(…)."
 msgid "Enter a name, up to 64 characters."
 msgstr "הזן שם, עד 64 תווים."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Enter a three-letter currency code."
 msgstr "הזן קוד מטבע בן שלוש אותיות."
@@ -3965,6 +3995,10 @@ msgstr "הזן כתובת כגון resume.example.org."
 msgid "Enter any model ID supported by your endpoint."
 msgstr "הזן כל מזהה דגם שנתמך על ידי נקודת הקצה שלך."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "יש להזין את התנאים בעצמך. לא נשלחת בקשה לבינה מלאכותית. יש להשאיר סכומים לא ידועים ריקים."
+
 #: app/(auth)/server.tsx
 msgid "Enter the address you open Reactive Resume at in a browser. The app checks it's a Reactive Resume server that allows app sign-in before you continue."
 msgstr "הזן את הכתובת שבה אתה פותח את Reactive Resume בדפדפן. האפליקציה בודקת שזהו שרת Reactive Resume שמאפשר כניסה לאפליקציה לפני שתמשיך."
@@ -3991,6 +4025,7 @@ msgstr "הערך נמחק"
 msgid "Entry options"
 msgstr "אפשרויות כניסה"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "אופציות"
@@ -4026,10 +4061,6 @@ msgstr "כל מונח שמדגיש פרסום העבודה כבר שם."
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "כל שבוע"
-
-#: src/features/workspace/tabs/saved.tsx
-msgid "Everything the coach wrote for {company}, newest first."
-msgstr "כל מה שהמאמן כתב עבור {company}, הכי חדש ראשון."
 
 #: src/features/career/facts.tsx
 #: src/features/write/fields.ts
@@ -4182,8 +4213,8 @@ msgid "Fit"
 msgstr "התאמה"
 
 #: src/features/workspace/tabs/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "בדיקות התאמה, תדריכים, משוב על תרגול, תחקירים, תשובות ומענים יגיעו לכאן כשהלשוניות האחרות ייצרו אותם."
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "בדיקות התאמה לתפקיד, תדריכי הכנה, משוב על תרגול ראיונות, תחקירים לאחר ראיונות, תשובות לטפסים, מענים להודעות והצעות עבודה יופיעו כאן לאחר שמירתם."
 
 #: src/features/check/issues.ts
 msgid "Fix the date"
@@ -5136,10 +5167,12 @@ msgstr "פריסה"
 msgid "Leads with why you fit"
 msgstr "מוביל עם למה אתה מתאים"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "תקציב למידה"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "עזוב"
@@ -6462,6 +6495,14 @@ msgstr "כבוי. רק אתה יכול לראות את קורות החיים."
 msgid "Offer"
 msgstr "הצעה"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "הצעת העבודה נשמרה"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "סוג הצעת העבודה"
+
 #: app/(tabs)/career/_layout.tsx
 msgid "Offers"
 msgstr "הצעות"
@@ -6478,6 +6519,7 @@ msgstr "ימי המשרד אינם ידועים."
 msgid "Office days not stated"
 msgstr "ימי משרד לא צוינו"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Office days per week"
 msgstr "ימי משרד בשבוע"
@@ -6729,6 +6771,7 @@ msgstr "עיצוב הטבלה המקורי נשמר. תוכן זה הוא לקר
 msgid "Other"
 msgstr "אחר"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "הטבות אחרות"
@@ -6858,10 +6901,6 @@ msgstr "הדבק פרסום דרושים"
 msgid "Paste a message from {company}"
 msgstr "הדבק הודעה מ-{company}"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "הדבק הצעה בלשונית \"הודעות\" של מועמדות."
-
 #: src/features/workspace/tabs/messages.tsx
 msgid "Paste the email or message, without the signature."
 msgstr "הדבק את הדוא״ל או ההודעה, בלי החתימה."
@@ -6888,6 +6927,7 @@ msgstr "הודבק תיאור"
 msgid "Paused"
 msgstr "מושהה"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Pay period"
 msgstr "תקופת תשלום"
@@ -6921,16 +6961,19 @@ msgstr "PDF משתמש בספק ה-AI שלך כשהוא מוכן. כבה את AI
 msgid "PDF, Word, Reactive Resume, JSON Resume or LinkedIn export."
 msgstr "ייצוא PDF, Word, Reactive Resume, JSON Resume או LinkedIn."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per hour"
 msgstr "לשעה"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per month"
 msgstr "לחודש"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per year"
@@ -7847,6 +7890,7 @@ msgstr "שמור אותיות רישיות לכותרות קצרות בלבד. �
 msgid "Reset design defaults"
 msgstr "אפס את ברירת המחדל של העיצוב"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "יש להשיב עד"
@@ -8255,6 +8299,10 @@ msgstr "שמור עבודה"
 msgid "Save lane"
 msgstr "שמירת שלב"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "שמירת הצעת עבודה"
+
 #: src/features/share/files.ts
 msgid "Save or share file"
 msgstr "שמור או שתף קובץ"
@@ -8320,6 +8368,10 @@ msgstr "שמר סיפור: {title}"
 msgid "Saved description"
 msgstr "תיאור שמור"
 
+#: src/features/workspace/tabs/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "פריטים שנשמרו עבור {company}, מהחדש לישן."
+
 #: src/features/career/today.tsx
 msgid "Saved to Applications with the posting"
 msgstr "נשמר במועמדויות יחד עם המודעה"
@@ -8340,6 +8392,7 @@ msgstr "נשמר ב\"שמורים\" · תרגול"
 msgid "Saving the job. Wait for confirmation before making another change."
 msgstr "מציל את העבודה. המתן לאישור לפני ביצוע שינוי נוסף."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 #: src/features/settings/profile.tsx
 #: src/shell/builder-chrome.tsx
@@ -10157,6 +10210,10 @@ msgstr "הדקו לדף אחד"
 msgid "Tightening"
 msgstr "מצמצם"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "שעה"
+
 #. placeholder {0}: draft.timezone
 #: src/features/application-detail/interview-sheet.tsx
 msgid "Time · {0}"
@@ -10174,6 +10231,7 @@ msgstr "שעה, קישור, עם מי, מה ששלחת"
 msgid "Timeline"
 msgstr "ציר זמן"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "השעות מוצגות לפי {timeZone}."
@@ -10430,6 +10488,10 @@ msgstr "קו תחתון של קישורים"
 #: src/ui/overlays.tsx
 msgid "Undo"
 msgstr "לְבַטֵל"
+
+#: src/features/career/offer-entry.tsx
+msgid "Unknown"
+msgstr "לא ידוע"
 
 #: src/features/career/offers.tsx
 msgid "Unknown · ask"
@@ -10735,6 +10797,7 @@ msgstr "ערך"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "גוון את הפתיחות כדי שהמקטע לא יישמע כמו טקסט גנרי."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "הצעה בעל פה"
@@ -10840,6 +10903,10 @@ msgstr "הגדרות קול"
 #: src/features/write/fields.ts
 msgid "Volunteer"
 msgstr "התנדבות"
+
+#: src/features/career/offer-entry.tsx
+msgid "Wait for your account timezone to load, retry if it failed, or clear the deadline."
+msgstr "יש להמתין לטעינת אזור הזמן של החשבון, לנסות שוב אם הטעינה נכשלה, או להסיר את המועד האחרון."
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Waiting for you"
@@ -11004,6 +11071,7 @@ msgstr "מאיפה מגיעות המועמדויות"
 msgid "Where you want to work"
 msgstr "איפה אתה רוצה לעבוד"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "מקום העבודה"
@@ -11138,6 +11206,7 @@ msgstr "כתיבה"
 msgid "Writing help, tailored suggestions and the assistant. The default provider is used wherever you don't pick one. Your keys stay encrypted."
 msgstr "עזרה בכתיבה, הצעות מותאמות והעוזר. ספק ברירת המחדל משמש בכל מקום שבו לא תבחר ספק. המפתחות שלך נשארים מוצפנים."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "הצעה בכתב"

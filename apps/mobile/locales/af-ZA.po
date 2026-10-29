@@ -960,6 +960,10 @@ msgstr "Voeg 'n @ en die domein by, soos name@example.com"
 msgid "Add an address."
 msgstr "Voeg 'n adres by."
 
+#: src/features/career/offer-entry.tsx
+msgid "Add an application first"
+msgstr "Voeg eers 'n aansoek by"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first."
 msgstr "Voeg eers 'n aansoek by."
@@ -1044,6 +1048,14 @@ msgstr "Voeg fase by"
 #: src/features/write/fields.ts
 msgid "Add language"
 msgstr "Voeg taal by"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "Voeg werksaanbod by"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "Voeg die voorwaardes van 'n werksaanbod met die hand by, of gebruik die opsionele KI-onttrekking in Boodskappe."
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1473,6 +1485,7 @@ msgstr "Verskyn op die bladsy sodra dit 'n organisasie het."
 #: app/_layout.tsx
 #: src/features/application-detail/detail-screen.tsx
 #: src/features/applications-board/calendar-screen.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/letters/write.tsx
 #: src/shell/workspace-chrome.tsx
@@ -1806,6 +1819,7 @@ msgctxt "Entry header accent: a bar beside the header"
 msgid "Bar"
 msgstr "Systaaf"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "Basiese salaris"
@@ -1873,10 +1887,12 @@ msgstr "Liggaamsteks gestel na {minimum} pt"
 msgid "Bold"
 msgstr "Vet"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "Bonus"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus conditions"
 msgstr "Bonus voorwaardes"
@@ -2219,6 +2235,10 @@ msgstr "Kies 'n getoetste KI-verskaffer voordat u data deel."
 msgid "Choose a time"
 msgstr "Kies 'n tyd"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "Kies ’n geldige datum en tyd in {timeZone}, of maak die sperdatumveld leeg."
+
 #: src/features/applications/add-sheet.tsx
 msgid "Choose a valid follow-up date before saving."
 msgstr "Kies 'n geldige opvolgdatum voordat u stoor."
@@ -2234,6 +2254,10 @@ msgstr "Kies 'n WebM-, MP4-, MP3-, WAV- of Ogg-lêer van tot 2 MB."
 #: src/features/applications-board/calendar-screen.tsx
 msgid "Choose an application"
 msgstr "Kies ’n aansoek"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "Kies ’n aansoek en maak die gemerkte velde reg voordat jy stoor."
 
 #: src/features/workspace/tabs/practise.tsx
 msgid "Choose an audio file"
@@ -3209,6 +3233,7 @@ msgstr "Geskep {0} · Laas gebruik {1} · Verval {2}"
 msgid "Creating document…"
 msgstr "Skep tans dokument …"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "Geldeenheid"
@@ -3921,6 +3946,10 @@ msgstr "Verbeterde lees het misluk"
 msgid "Enhanced reading unavailable; used the built-in reader."
 msgstr "Verbeterde lees nie beskikbaar nie; die ingeboude leser gebruik."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "Voer 'n volledige bedrag in, soos 95000, of laat dit leeg."
+
 #: src/features/career/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "Voer 'n volle bedrag in, soos 95000. Jou vorige bedrag bly onveranderd."
@@ -3933,9 +3962,10 @@ msgstr "Voer 'n hekskleur in soos #1a1a1a, of rgba(…)."
 msgid "Enter a name, up to 64 characters."
 msgstr "Voer 'n naam in, tot 64 karakters."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Enter a three-letter currency code."
-msgstr "Voer 'n geldeenheidkode van drie dekletters in."
+msgstr "Voer 'n geldeenheidkode van drie letters in."
 
 #: src/features/applications/add-sheet.tsx
 msgid "Enter a valid date."
@@ -3965,6 +3995,10 @@ msgstr "Voer ’n adres soos resume.example.org in."
 msgid "Enter any model ID supported by your endpoint."
 msgstr "Voer enige model-ID in wat deur jou eindpunt ondersteun word."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "Voer die voorwaardes self in. Geen KI-versoek word gestuur nie. Laat onbekende bedrae leeg."
+
 #: app/(auth)/server.tsx
 msgid "Enter the address you open Reactive Resume at in a browser. The app checks it's a Reactive Resume server that allows app sign-in before you continue."
 msgstr "Voer die adres in waar jy Reactive Resume in ’n blaaier oopmaak. Voor jy voortgaan, maak die toepassing seker dat dit ’n Reactive Resume-bediener is wat aanmelding deur die toepassing toelaat."
@@ -3991,6 +4025,7 @@ msgstr "Inskrywing uitgevee"
 msgid "Entry options"
 msgstr "Toegangsopsies"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "Aandele"
@@ -4026,10 +4061,6 @@ msgstr "Elke term wat die posplasing beklemtoon, is reeds daar."
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "Elke week"
-
-#: src/features/workspace/tabs/saved.tsx
-msgid "Everything the coach wrote for {company}, newest first."
-msgstr "Alles wat die afrigter vir {company} geskryf het, nuutste eerste."
 
 #: src/features/career/facts.tsx
 #: src/features/write/fields.ts
@@ -4182,8 +4213,8 @@ msgid "Fit"
 msgstr "Geskiktheid"
 
 #: src/features/workspace/tabs/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "Geskiktheidstoetse, oorsigte, oefenterugvoer, nabesprekings, antwoorde en antwoordboodskappe beland hier soos die ander oortjies dit skep."
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "Geskiktheidstoetse, oorsigte, oefenterugvoer, nabesprekings, antwoorde, antwoordboodskappe en werksaanbiedinge beland hier soos jy dit stoor."
 
 #: src/features/check/issues.ts
 msgid "Fix the date"
@@ -5136,10 +5167,12 @@ msgstr "Uitleg"
 msgid "Leads with why you fit"
 msgstr "Lei met hoekom jy pas"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "Leerbegroting"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "Verlaat"
@@ -6462,6 +6495,14 @@ msgstr "Af. Net jy kan hierdie CV sien."
 msgid "Offer"
 msgstr "Aanbod"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "Werksaanbod gestoor"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "Soort werksaanbod"
+
 #: app/(tabs)/career/_layout.tsx
 msgid "Offers"
 msgstr "Aanbiedinge"
@@ -6478,6 +6519,7 @@ msgstr "Kantoordae is onbekend."
 msgid "Office days not stated"
 msgstr "Kantoordae nie vermeld nie"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Office days per week"
 msgstr "Kantoor dae per week"
@@ -6729,6 +6771,7 @@ msgstr "Die oorspronklike tabelformatering bly behoue. Hierdie inhoud is leesall
 msgid "Other"
 msgstr "Ander"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "Ander voordele"
@@ -6858,10 +6901,6 @@ msgstr "Plak 'n posplasing"
 msgid "Paste a message from {company}"
 msgstr "Plak 'n boodskap van {company}"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "Plak 'n aanbod in 'n aansoek se Boodskappe-oortjie."
-
 #: src/features/workspace/tabs/messages.tsx
 msgid "Paste the email or message, without the signature."
 msgstr "Plak die e-pos of boodskap, sonder die handtekening."
@@ -6888,6 +6927,7 @@ msgstr "Geplakte beskrywing"
 msgid "Paused"
 msgstr "Onderbreek"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Pay period"
 msgstr "Betaalperiode"
@@ -6921,16 +6961,19 @@ msgstr "PDF gebruik jou KI-verskaffer wanneer een gereed is. Skakel die KI-skake
 msgid "PDF, Word, Reactive Resume, JSON Resume or LinkedIn export."
 msgstr "PDF, Word, Reactive Resume, JSON Resume of LinkedIn-uitvoer."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per hour"
 msgstr "Per uur"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per month"
 msgstr "Per maand"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per year"
@@ -7847,6 +7890,7 @@ msgstr "Bespaar hoofletters vir kort opskrifte. Dit vertraag lees en kan hooflet
 msgid "Reset design defaults"
 msgstr "Stel ontwerp verstek terug"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "Antwoord teen"
@@ -8255,6 +8299,10 @@ msgstr "Stoor werk"
 msgid "Save lane"
 msgstr "Stoor fase"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "Stoor werksaanbod"
+
 #: src/features/share/files.ts
 msgid "Save or share file"
 msgstr "Stoor of deel lêer"
@@ -8320,6 +8368,10 @@ msgstr "Gestoor 'n storie: {title}"
 msgid "Saved description"
 msgstr "Gestoorde beskrywing"
 
+#: src/features/workspace/tabs/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "Gestoorde items vir {company}, nuutste eerste."
+
 #: src/features/career/today.tsx
 msgid "Saved to Applications with the posting"
 msgstr "Saam met die plasing in Aansoeke bewaar"
@@ -8340,6 +8392,7 @@ msgstr "Bewaar in Gestoor · Oefening"
 msgid "Saving the job. Wait for confirmation before making another change."
 msgstr "Stoor die werk. Wag vir bevestiging voordat jy nog 'n verandering aanbring."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 #: src/features/settings/profile.tsx
 #: src/shell/builder-chrome.tsx
@@ -10157,6 +10210,10 @@ msgstr "Draai vas tot een bladsy"
 msgid "Tightening"
 msgstr "Maak bondiger"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "Tyd"
+
 #. placeholder {0}: draft.timezone
 #: src/features/application-detail/interview-sheet.tsx
 msgid "Time · {0}"
@@ -10174,6 +10231,7 @@ msgstr "Tyd, skakel, wie, wat jy gestuur het"
 msgid "Timeline"
 msgstr "Tydlyn"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "Tye word in {timeZone} gewys."
@@ -10430,6 +10488,10 @@ msgstr "Onderstreep skakels"
 #: src/ui/overlays.tsx
 msgid "Undo"
 msgstr "Ongedaan maak"
+
+#: src/features/career/offer-entry.tsx
+msgid "Unknown"
+msgstr "Onbekend"
 
 #: src/features/career/offers.tsx
 msgid "Unknown · ask"
@@ -10735,6 +10797,7 @@ msgstr "Waarde"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "Wissel die openinge sodat die afdeling nie soos standaardteks lees nie."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "Mondelinge aanbod"
@@ -10840,6 +10903,10 @@ msgstr "Steminstellings"
 #: src/features/write/fields.ts
 msgid "Volunteer"
 msgstr "Vrywilliger"
+
+#: src/features/career/offer-entry.tsx
+msgid "Wait for your account timezone to load, retry if it failed, or clear the deadline."
+msgstr "Wag totdat jou rekening se tydsone gelaai is, probeer weer as dit misluk het, of maak die sperdatumveld leeg."
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Waiting for you"
@@ -11004,6 +11071,7 @@ msgstr "Waar aansoeke vandaan kom"
 msgid "Where you want to work"
 msgstr "Waar jy wil werk"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "Waar jy werk"
@@ -11138,6 +11206,7 @@ msgstr "Skryfwerk"
 msgid "Writing help, tailored suggestions and the assistant. The default provider is used wherever you don't pick one. Your keys stay encrypted."
 msgstr "Skryfhulp, aangepaste voorstelle en die assistent. Die verstekverskaffer word gebruik waar jy nie een kies nie. Jou sleutels bly geënkripteer."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "Skriftelike aanbod"

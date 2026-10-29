@@ -1285,6 +1285,7 @@ msgstr "เพิ่ม @ และโดเมน เช่น name@example.com
 msgid "Add an address."
 msgstr "เพิ่มที่อยู่"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first"
 msgstr "เพิ่มใบสมัครก่อน"
@@ -1379,6 +1380,14 @@ msgstr "เพิ่มคำค้นหา"
 #: src/features/resume/editor/write/outline.tsx
 msgid "Add language"
 msgstr "เพิ่มภาษา"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "เพิ่มข้อเสนอ"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "เพิ่มเงื่อนไขข้อเสนองานด้วยตัวเอง หรือเลือกใช้ AI สกัดข้อมูลในข้อความ"
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1878,6 +1887,7 @@ msgid "Applicant tracking systems turn your PDF into plain text before anyone re
 msgstr "ระบบติดตามผู้สมัครจะเปลี่ยน PDF ของคุณให้เป็นข้อความธรรมดาก่อนที่ใครก็ตามจะอ่าน ตัวตรวจสอบจะทำเช่นเดียวกัน โดยมีไลบรารี PDF.js ในเบราว์เซอร์ของคุณ จากนั้นจะให้คะแนนว่าเรซูเม่ของคุณยังคงอยู่ได้มากเพียงใด: 0 ถึง 100 โดยพิจารณาจากความน่าเชื่อถือของข้อความ ไม่ใช่จากโอกาสที่จะได้งาน"
 
 #: src/features/applications/components/interview-dialog.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/documents/documents-page.tsx
 #: src/features/documents/trash-page.tsx
@@ -2280,6 +2290,7 @@ msgstr "แถบข้าง"
 msgid "Barista, 2012"
 msgstr "บาริสต้า, 2012"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "เงินเดือนพื้นฐาน"
@@ -2343,9 +2354,14 @@ msgstr "ตั้งค่าข้อความเนื้อหาเป็
 msgid "Bold"
 msgstr "ตัวหนา"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "โบนัส"
+
+#: src/features/career/offer-entry.tsx
+msgid "Bonus conditions"
+msgstr "เงื่อนไขโบนัส"
 
 #: src/features/resume/editor/write/picture-settings.tsx
 msgid "Border color"
@@ -2472,6 +2488,7 @@ msgstr "ซอฟต์แวร์สามารถอ่านเรซูเ
 #: src/features/applications/components/manage-lanes-sheet.tsx
 #: src/features/career/knowledge/facts.tsx
 #: src/features/career/knowledge/stories.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/career/workspace/fit.tsx
 #: src/features/documents/new-document-dialog.tsx
@@ -2756,9 +2773,21 @@ msgstr "เลือกเรซูเม่ใน Write เพื่อให�
 msgid "Choose a stage"
 msgstr "เลือกขั้นตอน"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "เลือกวันที่และเวลาที่ถูกต้องในเขตเวลา {timeZone} หรือล้างกำหนดเวลา"
+
 #: src/features/career/workspace/practise.tsx
 msgid "Choose a WebM, MP4, MP3, WAV or Ogg file up to 2 MB."
 msgstr "เลือกไฟล์ WebM, MP4, MP3, WAV หรือ Ogg ขนาดไม่เกิน 2 MB"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application"
+msgstr "เลือกใบสมัคร"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "เลือกใบสมัครและแก้ไขช่องที่ไฮไลต์ก่อนบันทึก"
 
 #: src/features/applications/components/interview-dialog.tsx
 msgid "Choose an application…"
@@ -3702,6 +3731,10 @@ msgstr "บันทึกการติดตามผลไม่ได้ �
 msgid "Couldn't save the notes. Try again."
 msgstr "บันทึกโน้ตไม่ได้ ลองอีกครั้ง"
 
+#: src/features/career/offer-entry.tsx
+msgid "Couldn't save the offer. Your draft is still here. Try again."
+msgstr "บันทึกข้อเสนอไม่สำเร็จ ฉบับร่างของคุณยังอยู่ที่นี่ โปรดลองอีกครั้ง"
+
 #: src/features/resume/editor/check/job-match.tsx
 msgid "Couldn't save the posting. Try again."
 msgstr "บันทึกประกาศงานไม่ได้ ลองอีกครั้ง"
@@ -4045,6 +4078,7 @@ msgid "CSV data"
 msgstr "ข้อมูล CSV"
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 msgid "Currency"
 msgstr "สกุลเงิน"
 
@@ -4940,6 +4974,10 @@ msgstr "ชอบ Reactive Resume ไหม?"
 msgid "Enter a backup code."
 msgstr "ป้อนรหัสสำรอง"
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "กรอกจำนวนเงินเต็ม เช่น 95000 หรือเว้นว่างไว้"
+
 #: src/features/career/knowledge/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "ป้อนจำนวนเต็ม เช่น 95000 จำนวนเดิมของคุณไม่มีการเปลี่ยนแปลง"
@@ -4951,6 +4989,10 @@ msgstr "ป้อนชื่อ สูงสุด 64 อักขระ"
 #: src/features/auth/pages/reset-password.tsx
 msgid "Enter a new password for your account."
 msgstr "ป้อนรหัสผ่านใหม่สำหรับบัญชีของคุณ"
+
+#: src/features/career/offer-entry.tsx
+msgid "Enter a three-letter currency code."
+msgstr "ป้อนรหัสสกุลเงินที่มีตัวอักษรสามตัว"
 
 #: src/features/applications/components/detail/contacts.tsx
 #: src/features/auth/pages/forgot-password.tsx
@@ -4970,6 +5012,10 @@ msgstr "ป้อนรหัสรุ่นใดๆ ที่ตำแหน�
 #: src/features/auth/pages/verify-2fa.tsx
 msgid "Enter one of your saved backup codes to access your account."
 msgstr "กรอกรหัสสำรองที่คุณบันทึกไว้เพื่อเข้าถึงบัญชีของคุณ"
+
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "กรอกเงื่อนไขด้วยตัวเอง ไม่มีการส่งคำขอไปยัง AI เว้นจำนวนเงินที่ยังไม่ทราบไว้"
 
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/features/auth/pages/verify-2fa.tsx
@@ -5030,6 +5076,7 @@ msgstr "ลบรายการแล้ว"
 msgid "Entry options"
 msgstr "ตัวเลือกรายการ"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "หุ้น"
@@ -5065,11 +5112,6 @@ msgstr "ทุกคำที่ประกาศรับสมัครงา
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "ทุกสัปดาห์"
-
-#. placeholder {0}: application.company
-#: src/features/career/workspace/saved.tsx
-msgid "Everything the coach wrote for {0}, newest first."
-msgstr "ทุกอย่างที่โค้ชเขียนให้ {0} เรียงจากใหม่สุด"
 
 #: src/features/homepage/sections.tsx
 msgid "Exchange resume feedback, ask questions, and help shape Reactive Resume with the community."
@@ -5310,8 +5352,8 @@ msgid "Fit"
 msgstr "ความเหมาะสม"
 
 #: src/features/career/workspace/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "ผลตรวจความเหมาะสม สรุปย่อ คำติชมการฝึกซ้อม การสรุปผล คำตอบ และคำตอบกลับ จะมาอยู่ที่นี่เมื่อแท็บอื่นๆ สร้างขึ้น"
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "ผลตรวจความเหมาะสมกับตำแหน่ง สรุปย่อเพื่อเตรียมตัว คำติชมการฝึกซ้อมสัมภาษณ์ สรุปผลหลังสัมภาษณ์ คำตอบในแบบฟอร์ม คำตอบกลับข้อความ และข้อเสนองานจะปรากฏที่นี่เมื่อคุณบันทึก"
 
 #: src/features/resume/editor/chrome.tsx
 msgid "Fit page to width"
@@ -6638,10 +6680,12 @@ msgstr "นำไปสู่ผลลัพธ์และกำหนดระ
 msgid "Leads with why you fit"
 msgstr "นำไปสู่เหตุผลที่คุณเหมาะสม"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "งบประมาณการเรียนรู้"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "ออก"
@@ -8195,6 +8239,14 @@ msgstr "ปิดอยู่ เปิดตัวเลือกนี้เ�
 msgid "Offer"
 msgstr "ข้อเสนอ"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "บันทึกข้อเสนอแล้ว"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "ประเภทข้อเสนอ"
+
 #: src/routes/dashboard/career/route.tsx
 msgid "Offers"
 msgstr "ข้อเสนองาน"
@@ -8206,6 +8258,10 @@ msgstr "จำนวนวันเข้าออฟฟิศต่อสัป
 #: src/features/career/today.tsx
 msgid "Office days not stated"
 msgstr "ไม่ระบุจำนวนวันเข้าออฟฟิศ"
+
+#: src/features/career/offer-entry.tsx
+msgid "Office days per week"
+msgstr "จำนวนวันทำงานที่สำนักงานต่อสัปดาห์"
 
 #: src/features/resume/editor/save-status.tsx
 msgid "Offline · saved on this device"
@@ -8488,6 +8544,7 @@ msgstr "อื่นๆ"
 msgid "Other · OpenAI-compatible"
 msgstr "อื่นๆ · รองรับการใช้งาน OpenAI"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "สวัสดิการอื่นๆ"
@@ -8658,10 +8715,6 @@ msgstr "วางประกาศรับสมัครงาน..."
 msgid "Paste a message from {0}"
 msgstr "วางข้อความจาก {0}"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "วางข้อเสนอในแท็บข้อความของใบสมัคร"
-
 #: src/features/applications/components/add-application-dialog.tsx
 msgid "Paste description instead"
 msgstr "วางคำอธิบายแทน"
@@ -8716,6 +8769,7 @@ msgid "Paused schedules keep their settings."
 msgstr "กำหนดการที่หยุดชั่วคราวจะเก็บการตั้งค่าไว้"
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 msgid "Pay period"
 msgstr "รอบการจ่าย"
 
@@ -8734,6 +8788,18 @@ msgstr "PDF, Word หรือ JSON เราจะสร้างเรซู�
 #: src/features/homepage/sections.tsx
 msgid "People using it"
 msgstr "คนใช้มัน"
+
+#: src/features/career/offer-entry.tsx
+msgid "Per hour"
+msgstr "ต่อชั่วโมง"
+
+#: src/features/career/offer-entry.tsx
+msgid "Per month"
+msgstr "ต่อเดือน"
+
+#: src/features/career/offer-entry.tsx
+msgid "Per year"
+msgstr "ต่อปี"
 
 #: src/features/settings/account/data.tsx
 msgid "Permanently removes everything. Export first if you want a copy."
@@ -9872,6 +9938,7 @@ msgstr "กำลังรีเซ็ตรหัสผ่านของคุ
 msgid "Resources"
 msgstr "ทรัพยากร"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "ตอบกลับภายใน"
@@ -10275,6 +10342,10 @@ msgstr "บันทึกงาน"
 msgid "Save name"
 msgstr "บันทึกชื่อ"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "บันทึกข้อเสนอ"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Save schedule"
 msgstr "บันทึกกำหนดการ"
@@ -10363,6 +10434,10 @@ msgstr "บันทึกเป็นใบสมัครงานและเ
 msgid "Saved description"
 msgstr "คำอธิบายที่บันทึกไว้"
 
+#: src/features/career/workspace/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "รายการที่บันทึกไว้สำหรับ {company} เรียงจากใหม่สุด"
+
 #: src/features/career/knowledge/preferences.tsx
 msgid "Saved just now"
 msgstr "บันทึกเมื่อสักครู่"
@@ -10402,6 +10477,7 @@ msgid "Saving is taking longer than expected. Your changes are still open."
 msgstr "การออมใช้เวลานานกว่าที่คาดไว้ การเปลี่ยนแปลงของคุณยังคงเปิดอยู่"
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/resume/editor/save-status.tsx
 #: src/routes/builder/letter/-components/letter-bar.tsx
 msgid "Saving…"
@@ -12499,6 +12575,10 @@ msgstr "กระชับให้เหลือหนึ่งหน้า"
 msgid "Tightening"
 msgstr "กำลังกระชับ"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "เวลา"
+
 #. placeholder {0}: draft.timezone
 #: src/features/applications/components/interview-dialog.tsx
 msgid "Time · {0}"
@@ -12513,6 +12593,7 @@ msgid "Time, link, who, what you sent"
 msgstr "เวลา ลิงก์ ผู้ที่จะพบ สิ่งที่คุณส่งไป"
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "แสดงเวลาตาม {timeZone}"
 
@@ -12855,6 +12936,7 @@ msgstr "เลิกทำการเปลี่ยนแปลงประว
 msgid "University of Porto"
 msgstr "University of Porto"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Unknown"
 msgstr "ไม่ทราบ"
@@ -13180,6 +13262,7 @@ msgstr "มูลค่ายังไม่แน่นอน"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "เปลี่ยนคำขึ้นต้นให้หลากหลาย เพื่อไม่ให้ส่วนนี้ดูเหมือนข้อความสำเร็จรูป"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "ข้อเสนอด้วยวาจา"
@@ -13552,6 +13635,7 @@ msgstr "แหล่งที่มาของใบสมัคร"
 msgid "Where you want to work"
 msgstr "สถานที่ที่คุณอยากทำงาน"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "สถานที่ทำงาน"
@@ -13746,6 +13830,7 @@ msgstr "ความช่วยเหลือในการเขียน �
 msgid "writing, tailoring and sending"
 msgstr "การเขียน การปรับตัว และการส่ง"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "ข้อเสนอเป็นลายลักษณ์อักษร"

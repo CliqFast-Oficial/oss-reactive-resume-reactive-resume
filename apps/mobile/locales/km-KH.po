@@ -960,6 +960,10 @@ msgstr "បន្ថែម @ និងដែន ដូចជា name@example.com
 msgid "Add an address."
 msgstr "បន្ថែមអាសយដ្ឋាន។"
 
+#: src/features/career/offer-entry.tsx
+msgid "Add an application first"
+msgstr "បន្ថែមពាក្យសុំជាមុនសិន"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first."
 msgstr "បន្ថែមពាក្យសុំការងារជាមុនសិន។"
@@ -1044,6 +1048,14 @@ msgstr "បន្ថែមដំណាក់កាល"
 #: src/features/write/fields.ts
 msgid "Add language"
 msgstr "បន្ថែមភាសា"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "បន្ថែមសំណើការងារ"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "បញ្ចូលលក្ខខណ្ឌនៃសំណើការងារដោយដៃ ឬប្រើមុខងារស្រង់ព័ត៌មានដោយ AI តាមជម្រើសនៅក្នុងសារ។"
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1473,6 +1485,7 @@ msgstr "លេចឡើងនៅលើទំព័រនៅពេលដែលវ
 #: app/_layout.tsx
 #: src/features/application-detail/detail-screen.tsx
 #: src/features/applications-board/calendar-screen.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/letters/write.tsx
 #: src/shell/workspace-chrome.tsx
@@ -1806,6 +1819,7 @@ msgctxt "Entry header accent: a bar beside the header"
 msgid "Bar"
 msgstr "របារ"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "ប្រាក់ខែគោល"
@@ -1873,10 +1887,12 @@ msgstr "អត្ថបទតួត្រូវបានកំណត់ទៅ {m
 msgid "Bold"
 msgstr "អក្សរ​ដិត"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "ប្រាក់រង្វាន់"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus conditions"
 msgstr "លក្ខខណ្ឌប្រាក់រង្វាន់"
@@ -2219,6 +2235,10 @@ msgstr "ជ្រើសរើសអ្នកផ្តល់សេវា AI ដ�
 msgid "Choose a time"
 msgstr "ជ្រើសរើសពេលវេលាមួយ។"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "ជ្រើសរើសកាលបរិច្ឆេទ និងម៉ោងដែលត្រឹមត្រូវក្នុងតំបន់ពេលវេលា {timeZone} ឬសម្អាតកាលកំណត់។"
+
 #: src/features/applications/add-sheet.tsx
 msgid "Choose a valid follow-up date before saving."
 msgstr "ជ្រើសរើសកាលបរិច្ឆេទតាមដានដែលមានសុពលភាពមុនពេលរក្សាទុក។"
@@ -2234,6 +2254,10 @@ msgstr "ជ្រើសរើសឯកសារ WebM, MP4, MP3, WAV ឬ Ogg ដ�
 #: src/features/applications-board/calendar-screen.tsx
 msgid "Choose an application"
 msgstr "ជ្រើសរើសពាក្យសុំការងារ"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "ជ្រើសរើសការដាក់ពាក្យ និងកែតម្រូវវាលដែលបានរំលេច មុនពេលរក្សាទុក។"
 
 #: src/features/workspace/tabs/practise.tsx
 msgid "Choose an audio file"
@@ -3209,6 +3233,7 @@ msgstr "បានបង្កើត {0} · {1} បានប្រើចុងក
 msgid "Creating document…"
 msgstr "កំពុងបង្កើតឯកសារ…"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "រូបិយប័ណ្ណ"
@@ -3921,6 +3946,10 @@ msgstr "ការអានដែលប្រសើរឡើងបានបរា
 msgid "Enhanced reading unavailable; used the built-in reader."
 msgstr "មិន​អាច​អាន​បាន​ប្រសើរ​ឡើង​ទេ; បានប្រើកម្មវិធីអានដែលភ្ជាប់មកជាមួយ។"
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "បញ្ចូលចំនួនទឹកប្រាក់ពេញ ដូចជា 95000 ឬទុកឱ្យនៅទទេ។"
+
 #: src/features/career/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "បញ្ចូលចំនួនពេញ ដូចជា 95000។ ចំនួនពីមុនរបស់អ្នកមិនបានផ្លាស់ប្តូរទេ។"
@@ -3933,6 +3962,7 @@ msgstr "បញ្ចូលពណ៌ hex ដូចជា #1a1a1a ឬ rgba(…)។
 msgid "Enter a name, up to 64 characters."
 msgstr "បញ្ចូលឈ្មោះរហូតដល់ 64 តួអក្សរ។"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Enter a three-letter currency code."
 msgstr "បញ្ចូលកូដរូបិយប័ណ្ណមានបីអក្សរ។"
@@ -3965,6 +3995,10 @@ msgstr "បញ្ចូលអាសយដ្ឋានដូចជា resume.exam
 msgid "Enter any model ID supported by your endpoint."
 msgstr "បញ្ចូលលេខសម្គាល់គំរូណាមួយដែលគាំទ្រដោយចំណុចបញ្ចប់របស់អ្នក។"
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "បញ្ចូលលក្ខខណ្ឌដោយខ្លួនឯង។ មិនមានសំណើណាមួយត្រូវបានផ្ញើទៅ AI ទេ។ ទុកចំនួនទឹកប្រាក់ដែលមិនទាន់ដឹងឱ្យនៅទទេ។"
+
 #: app/(auth)/server.tsx
 msgid "Enter the address you open Reactive Resume at in a browser. The app checks it's a Reactive Resume server that allows app sign-in before you continue."
 msgstr "បញ្ចូលអាសយដ្ឋានដែលអ្នកបើក Reactive Resume នៅក្នុងកម្មវិធីរុករក។ កម្មវិធីនេះពិនិត្យមើលថាវាជាម៉ាស៊ីនមេ Reactive Resume ដែលអនុញ្ញាតឱ្យចូលកម្មវិធីមុនពេលអ្នកបន្ត។"
@@ -3991,6 +4025,7 @@ msgstr "ធាតុត្រូវបានលុប"
 msgid "Entry options"
 msgstr "ជម្រើសចូល"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "ភាគហ៊ុន"
@@ -4026,10 +4061,6 @@ msgstr "រាល់​ពាក្យ​ដែល​ប្រកាស​កា
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "រៀងរាល់សប្តាហ៍"
-
-#: src/features/workspace/tabs/saved.tsx
-msgid "Everything the coach wrote for {company}, newest first."
-msgstr "អ្វីគ្រប់យ៉ាងដែលគ្រូបង្វឹកបានសរសេរសម្រាប់ {company} ថ្មីបំផុតដំបូងគេ។"
 
 #: src/features/career/facts.tsx
 #: src/features/write/fields.ts
@@ -4182,8 +4213,8 @@ msgid "Fit"
 msgstr "ភាពសមស្រប"
 
 #: src/features/workspace/tabs/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "ការពិនិត្យភាពសមស្រប ឯកសារសង្ខេប មតិកែលម្អលើការហាត់សម ការសង្ខេបក្រោយសម្ភាសន៍ ចម្លើយ និងការឆ្លើយតប នឹងមកដល់ទីនេះ នៅពេលផ្ទាំងផ្សេងទៀតបង្កើតវា។"
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "ការពិនិត្យភាពសមស្របនឹងតួនាទី ឯកសារសង្ខេបសម្រាប់ត្រៀមខ្លួន មតិកែលម្អលើការហាត់សមសម្ភាសន៍ សេចក្តីសង្ខេបក្រោយសម្ភាសន៍ ចម្លើយក្នុងទម្រង់ ការឆ្លើយតបសារ និងការផ្តល់ការងារ នឹងបង្ហាញនៅទីនេះនៅពេលអ្នករក្សាទុកវា។"
 
 #: src/features/check/issues.ts
 msgid "Fix the date"
@@ -5136,10 +5167,12 @@ msgstr "ប្លង់"
 msgid "Leads with why you fit"
 msgstr "ដឹកនាំជាមួយនឹងមូលហេតុដែលអ្នកសម"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "ថវិកាសិក្សា"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "ចាកចេញ"
@@ -6462,6 +6495,14 @@ msgstr "បិទ។ មានតែអ្នកទេដែលអាចឃើ�
 msgid "Offer"
 msgstr "ផ្តល់ការងារ"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "បានរក្សាទុកសំណើការងារ"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "ប្រភេទសំណើការងារ"
+
 #: app/(tabs)/career/_layout.tsx
 msgid "Offers"
 msgstr "ការផ្តល់ការងារ"
@@ -6478,6 +6519,7 @@ msgstr "មិនស្គាល់ចំនួនថ្ងៃចូលការ
 msgid "Office days not stated"
 msgstr "មិនបានបញ្ជាក់ចំនួនថ្ងៃនៅការិយាល័យ"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Office days per week"
 msgstr "ថ្ងៃចូលការិយាល័យក្នុងមួយសប្តាហ៍"
@@ -6729,6 +6771,7 @@ msgstr "ទម្រង់តារាងដើមត្រូវបានរក
 msgid "Other"
 msgstr "ផ្សេងៗ"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "អត្ថប្រយោជន៍ផ្សេងទៀត"
@@ -6858,10 +6901,6 @@ msgstr "បិទភ្ជាប់ការប្រកាសការងារ
 msgid "Paste a message from {company}"
 msgstr "បិទភ្ជាប់សារពី {company}"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "បិទភ្ជាប់ការផ្តល់ការងារទៅក្នុងផ្ទាំង “សារ” នៃពាក្យសុំ។"
-
 #: src/features/workspace/tabs/messages.tsx
 msgid "Paste the email or message, without the signature."
 msgstr "បិទភ្ជាប់អ៊ីមែល ឬសារ ដោយគ្មានហត្ថលេខា។"
@@ -6888,6 +6927,7 @@ msgstr "បានបិទភ្ជាប់ការពិពណ៌នា"
 msgid "Paused"
 msgstr "ផ្អាក"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Pay period"
 msgstr "រយៈពេលបើកប្រាក់"
@@ -6921,16 +6961,19 @@ msgstr "PDF ប្រើអ្នកផ្តល់សេវា AI របស់�
 msgid "PDF, Word, Reactive Resume, JSON Resume or LinkedIn export."
 msgstr "PDF, Word, Reactive Resume, JSON Resume ឬ LinkedIn នាំចេញ។"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per hour"
 msgstr "ក្នុងមួយម៉ោង"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per month"
 msgstr "ក្នុងមួយខែ"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per year"
@@ -7847,6 +7890,7 @@ msgstr "ទុកអក្សរធំសម្រាប់ចំណងជើង
 msgid "Reset design defaults"
 msgstr "កំណត់លំនាំដើមនៃការរចនាឡើងវិញ"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "ឆ្លើយតបត្រឹម"
@@ -8255,6 +8299,10 @@ msgstr "រក្សាទុកការងារ"
 msgid "Save lane"
 msgstr "រក្សាទុកដំណាក់កាល"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "រក្សាទុកសំណើការងារ"
+
 #: src/features/share/files.ts
 msgid "Save or share file"
 msgstr "រក្សាទុក ឬចែករំលែកឯកសារ"
@@ -8320,6 +8368,10 @@ msgstr "បានរក្សាទុករឿង៖ {title}"
 msgid "Saved description"
 msgstr "ការពិពណ៌នាដែលបានរក្សាទុក"
 
+#: src/features/workspace/tabs/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "ធាតុដែលបានរក្សាទុកសម្រាប់ {company} ដោយបង្ហាញធាតុថ្មីបំផុតមុនគេ។"
+
 #: src/features/career/today.tsx
 msgid "Saved to Applications with the posting"
 msgstr "បានរក្សាទុកទៅពាក្យសុំ ជាមួយការប្រកាសការងារ"
@@ -8340,6 +8392,7 @@ msgstr "បានរក្សាទុកទៅ “បានរក្សាទ�
 msgid "Saving the job. Wait for confirmation before making another change."
 msgstr "ការរក្សាទុកការងារ។ រង់ចាំការបញ្ជាក់ មុនពេលធ្វើការផ្លាស់ប្តូរផ្សេងទៀត។"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 #: src/features/settings/profile.tsx
 #: src/shell/builder-chrome.tsx
@@ -10157,6 +10210,10 @@ msgstr "រឹតបន្តឹងទៅមួយទំព័រ"
 msgid "Tightening"
 msgstr "កំពុងបង្រួម"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "ម៉ោង"
+
 #. placeholder {0}: draft.timezone
 #: src/features/application-detail/interview-sheet.tsx
 msgid "Time · {0}"
@@ -10174,6 +10231,7 @@ msgstr "ពេលវេលា តំណ អ្នកដែលត្រូវជ�
 msgid "Timeline"
 msgstr "បន្ទាត់ពេលវេលា"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "ពេលវេលាត្រូវបានបង្ហាញតាម {timeZone}។"
@@ -10430,6 +10488,10 @@ msgstr "គូសបន្ទាត់ក្រោមតំណ"
 #: src/ui/overlays.tsx
 msgid "Undo"
 msgstr "មិនធ្វើវិញ"
+
+#: src/features/career/offer-entry.tsx
+msgid "Unknown"
+msgstr "មិនស្គាល់"
 
 #: src/features/career/offers.tsx
 msgid "Unknown · ask"
@@ -10735,6 +10797,7 @@ msgstr "តម្លៃ"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "ប្រែប្រួលការចាប់ផ្តើម ដើម្បីកុំឱ្យផ្នែកនេះមើលទៅដូចជាអត្ថបទគំរូ។"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "ការផ្តល់ការងារដោយផ្ទាល់មាត់"
@@ -10840,6 +10903,10 @@ msgstr "ការកំណត់សំឡេង"
 #: src/features/write/fields.ts
 msgid "Volunteer"
 msgstr "ស្ម័គ្រចិត្ត"
+
+#: src/features/career/offer-entry.tsx
+msgid "Wait for your account timezone to load, retry if it failed, or clear the deadline."
+msgstr "រង់ចាំឱ្យតំបន់ពេលវេលានៃគណនីរបស់អ្នកផ្ទុករួច សាកល្បងម្តងទៀតប្រសិនបើការផ្ទុកបរាជ័យ ឬសម្អាតកាលកំណត់។"
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Waiting for you"
@@ -11004,6 +11071,7 @@ msgstr "ពាក្យសុំមកពីណា"
 msgid "Where you want to work"
 msgstr "កន្លែងដែលអ្នកចង់ធ្វើការ"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "កន្លែងដែលអ្នកធ្វើការ"
@@ -11138,6 +11206,7 @@ msgstr "ការសរសេរ"
 msgid "Writing help, tailored suggestions and the assistant. The default provider is used wherever you don't pick one. Your keys stay encrypted."
 msgstr "ជំនួយការសរសេរ ការណែនាំដែលកែសម្រួលឱ្យសម និងជំនួយការ។ អ្នកផ្តល់សេវាលំនាំដើមត្រូវបានប្រើនៅកន្លែងណាដែលអ្នកមិនជ្រើសរើស។ កូនសោរបស់អ្នកនៅតែត្រូវបានអ៊ិនគ្រីប។"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "ការផ្តល់ការងារជាលាយលក្ខណ៍អក្សរ"

@@ -1285,6 +1285,7 @@ msgstr "@ və name@example.com kimi domen əlavə edin"
 msgid "Add an address."
 msgstr "Ünvan əlavə edin."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first"
 msgstr "Əvvəlcə müraciət əlavə edin"
@@ -1379,6 +1380,14 @@ msgstr "Açar söz əlavə et"
 #: src/features/resume/editor/write/outline.tsx
 msgid "Add language"
 msgstr "Dil əlavə edin"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "İş təklifi əlavə et"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "İş təklifinin şərtlərini əl ilə əlavə edin və ya istəsəniz, Mesajlar bölməsində süni intellektlə məlumat çıxarma funksiyasından istifadə edin."
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1878,6 +1887,7 @@ msgid "Applicant tracking systems turn your PDF into plain text before anyone re
 msgstr "Ərizəçi izləmə sistemləri PDF-nu hər kəs oxumazdan əvvəl düz mətnə ​​çevirir. Yoxlayıcı eyni şeyi brauzerinizdəki PDF.js kitabxanası ilə edir, sonra rezyumenizin nə qədər sağ qaldığını qiymətləndirir: 0-dan 100-ə qədər, mətnin nə dərəcədə etibarlı çıxdığına görə, işə qəbul olma şansınıza görə."
 
 #: src/features/applications/components/interview-dialog.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/documents/documents-page.tsx
 #: src/features/documents/trash-page.tsx
@@ -2280,6 +2290,7 @@ msgstr "Yan zolaq"
 msgid "Barista, 2012"
 msgstr "Barista, 2012"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "Əsas maaş"
@@ -2343,9 +2354,14 @@ msgstr "Əsas mətn {minimum} pt olaraq ayarlandı"
 msgid "Bold"
 msgstr "Qalın"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "Bonus"
+
+#: src/features/career/offer-entry.tsx
+msgid "Bonus conditions"
+msgstr "Bonus şərtləri"
 
 #: src/features/resume/editor/write/picture-settings.tsx
 msgid "Border color"
@@ -2472,6 +2488,7 @@ msgstr "Proqram sizin CV-nizi oxuya bilərmi?"
 #: src/features/applications/components/manage-lanes-sheet.tsx
 #: src/features/career/knowledge/facts.tsx
 #: src/features/career/knowledge/stories.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/career/workspace/fit.tsx
 #: src/features/documents/new-document-dialog.tsx
@@ -2756,9 +2773,21 @@ msgstr "Dizaynına uyğun yazmaq üçün CV seçin. O vaxta qədər məktubun ö
 msgid "Choose a stage"
 msgstr "Mərhələ seçin"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "{timeZone} saat qurşağında etibarlı tarix və vaxt seçin və ya son tarix sahəsini boşaldın."
+
 #: src/features/career/workspace/practise.tsx
 msgid "Choose a WebM, MP4, MP3, WAV or Ogg file up to 2 MB."
 msgstr "2 MB-a qədər WebM, MP4, MP3, WAV və ya Ogg faylı seçin."
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application"
+msgstr "Ərizə seçin"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "Yadda saxlamazdan əvvəl ərizə seçin və vurğulanmış sahələri düzəldin."
 
 #: src/features/applications/components/interview-dialog.tsx
 msgid "Choose an application…"
@@ -3702,6 +3731,10 @@ msgstr "İzləməni saxlamaq mümkün olmadı. Yenidən cəhd edin."
 msgid "Couldn't save the notes. Try again."
 msgstr "Qeydləri saxlamaq mümkün olmadı. Yenidən cəhd edin."
 
+#: src/features/career/offer-entry.tsx
+msgid "Couldn't save the offer. Your draft is still here. Try again."
+msgstr "İş təklifini yadda saxlamaq mümkün olmadı. Qaralamanız hələ də buradadır. Yenidən cəhd edin."
+
 #: src/features/resume/editor/check/job-match.tsx
 msgid "Couldn't save the posting. Try again."
 msgstr "İş elanını saxlamaq mümkün olmadı. Yenidən cəhd edin."
@@ -4045,6 +4078,7 @@ msgid "CSV data"
 msgstr "CSV məlumatları"
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 msgid "Currency"
 msgstr "Valyuta"
 
@@ -4940,6 +4974,10 @@ msgstr "Reactive Resume xoşunuza gəlir?"
 msgid "Enter a backup code."
 msgstr "Ehtiyat kodu daxil edin."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "95000 kimi tam məbləğ daxil edin və ya boş saxlayın."
+
 #: src/features/career/knowledge/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "Tam məbləği daxil edin, məsələn, 95000. Əvvəlki məbləğiniz dəyişməz qalır."
@@ -4951,6 +4989,10 @@ msgstr "64 simvola qədər ad daxil edin."
 #: src/features/auth/pages/reset-password.tsx
 msgid "Enter a new password for your account."
 msgstr "Hesabınız üçün yeni parol daxil edin."
+
+#: src/features/career/offer-entry.tsx
+msgid "Enter a three-letter currency code."
+msgstr "Üç əlifba simvolundan ibarət valyuta kodunu daxil edin."
 
 #: src/features/applications/components/detail/contacts.tsx
 #: src/features/auth/pages/forgot-password.tsx
@@ -4970,6 +5012,10 @@ msgstr "Son nöqtəniz tərəfindən dəstəklənən istənilən model ID-sini d
 #: src/features/auth/pages/verify-2fa.tsx
 msgid "Enter one of your saved backup codes to access your account."
 msgstr "Hesabınıza daxil olmaq üçün saxlanılmış ehtiyat kodlarınızdan birini daxil edin."
+
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "Şərtləri özünüz daxil edin. Süni intellektə sorğu göndərilmir. Naməlum məbləğləri boş saxlayın."
 
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/features/auth/pages/verify-2fa.tsx
@@ -5030,6 +5076,7 @@ msgstr "Giriş silindi"
 msgid "Entry options"
 msgstr "Giriş seçimləri"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "Pay"
@@ -5065,11 +5112,6 @@ msgstr "İş elanının vurğuladığı hər termin artıq var."
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "Hər həftə"
-
-#. placeholder {0}: application.company
-#: src/features/career/workspace/saved.tsx
-msgid "Everything the coach wrote for {0}, newest first."
-msgstr "Kouçun {0} üçün yazdığı hər şey, ən yenisi birinci."
 
 #: src/features/homepage/sections.tsx
 msgid "Exchange resume feedback, ask questions, and help shape Reactive Resume with the community."
@@ -5310,8 +5352,8 @@ msgid "Fit"
 msgstr "Uyğunluq"
 
 #: src/features/career/workspace/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "Uyğunluq yoxlamaları, brifinqlər, məşq rəyləri, təhlillər, cavablar və cavab mesajları digər tablar onları yaratdıqca bura düşür."
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "Uyğunluq yoxlamaları, brifinqlər, məşq rəyləri, müsahibə sonrası təhlillər, forma cavabları, cavab mesajları və iş təklifləri yadda saxladıqca burada görünür."
 
 #: src/features/resume/editor/chrome.tsx
 msgid "Fit page to width"
@@ -6638,10 +6680,12 @@ msgstr "Nəticə ilə rəhbərlik edin və bir miqyas verin."
 msgid "Leads with why you fit"
 msgstr "Niyə uyğun olduğunuzu izah edir"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "Təlim büdcəsi"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "Ayrıl"
@@ -8195,6 +8239,14 @@ msgstr "Söndürülüb. Bunu yandırsanız, işə götürənlər sizi Google-da 
 msgid "Offer"
 msgstr "Təklif"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "İş təklifi yadda saxlanıldı"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "İş təklifinin növü"
+
 #: src/routes/dashboard/career/route.tsx
 msgid "Offers"
 msgstr "Təkliflər"
@@ -8206,6 +8258,10 @@ msgstr "Həftədə ofis günləri, ən çox"
 #: src/features/career/today.tsx
 msgid "Office days not stated"
 msgstr "Ofis günləri göstərilməyib"
+
+#: src/features/career/offer-entry.tsx
+msgid "Office days per week"
+msgstr "Həftədə ofisdə iş günləri"
 
 #: src/features/resume/editor/save-status.tsx
 msgid "Offline · saved on this device"
@@ -8488,6 +8544,7 @@ msgstr "Digər"
 msgid "Other · OpenAI-compatible"
 msgstr "Digər · OpenAI uyğun"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "Digər imtiyazlar"
@@ -8658,10 +8715,6 @@ msgstr "İş elanını yerləşdirin..."
 msgid "Paste a message from {0}"
 msgstr "{0} şirkətindən mesajı yapışdırın"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "Təklifi müraciətin Mesajlar tabına yapışdırın."
-
 #: src/features/applications/components/add-application-dialog.tsx
 msgid "Paste description instead"
 msgstr "Əvəzinə təsviri yerləşdirin"
@@ -8716,6 +8769,7 @@ msgid "Paused schedules keep their settings."
 msgstr "Dayandırılmış cədvəllər parametrlərini saxlayır."
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 msgid "Pay period"
 msgstr "Ödəniş dövrü"
 
@@ -8734,6 +8788,18 @@ msgstr "PDF, Word və ya JSON. Biz ondan rezyume hazırlayacağıq."
 #: src/features/homepage/sections.tsx
 msgid "People using it"
 msgstr "İstifadə edən insanlar"
+
+#: src/features/career/offer-entry.tsx
+msgid "Per hour"
+msgstr "Saatlıq"
+
+#: src/features/career/offer-entry.tsx
+msgid "Per month"
+msgstr "Aylıq"
+
+#: src/features/career/offer-entry.tsx
+msgid "Per year"
+msgstr "İllik"
 
 #: src/features/settings/account/data.tsx
 msgid "Permanently removes everything. Export first if you want a copy."
@@ -9872,6 +9938,7 @@ msgstr "Parolunuz sıfırlanır..."
 msgid "Resources"
 msgstr "Resurslar"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "Cavab müddəti"
@@ -10275,6 +10342,10 @@ msgstr "İşə qənaət edin"
 msgid "Save name"
 msgstr "Adı saxla"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "İş təklifini yadda saxla"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Save schedule"
 msgstr "Cədvəli saxla"
@@ -10363,6 +10434,10 @@ msgstr "İş ərizəsi kimi saxlanılır və əlaqələndirilir"
 msgid "Saved description"
 msgstr "Saxlanmış təsvir"
 
+#: src/features/career/workspace/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "{company} üçün yadda saxlanmış elementlər, ən yenisi birinci."
+
 #: src/features/career/knowledge/preferences.tsx
 msgid "Saved just now"
 msgstr "İndicə saxlanıldı"
@@ -10402,6 +10477,7 @@ msgid "Saving is taking longer than expected. Your changes are still open."
 msgstr "Qənaət gözlənildiyindən daha uzun çəkir. Dəyişiklikləriniz hələ də açıqdır."
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/resume/editor/save-status.tsx
 #: src/routes/builder/letter/-components/letter-bar.tsx
 msgid "Saving…"
@@ -12499,6 +12575,10 @@ msgstr "Bir səhifəyə sıxın"
 msgid "Tightening"
 msgstr "Yığcamlaşdırılır"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "Vaxt"
+
 #. placeholder {0}: draft.timezone
 #: src/features/applications/components/interview-dialog.tsx
 msgid "Time · {0}"
@@ -12513,6 +12593,7 @@ msgid "Time, link, who, what you sent"
 msgstr "Vaxt, link, kim, nə göndərdiniz"
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "Vaxtlar {timeZone} üzrə göstərilir."
 
@@ -12855,6 +12936,7 @@ msgstr "Resume dəyişikliyini ləğv edin"
 msgid "University of Porto"
 msgstr "University of Porto"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Unknown"
 msgstr "Naməlum"
@@ -13180,6 +13262,7 @@ msgstr "Dəyər qeyri-müəyyəndir"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "Başlanğıcları müxtəlifləşdirin ki, bölmə şablon kimi oxunmasın."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "Şifahi təklif"
@@ -13552,6 +13635,7 @@ msgstr "Müraciətlər haradan gəlir"
 msgid "Where you want to work"
 msgstr "Harada işləmək istəyirsiniz"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "İş yeri"
@@ -13746,6 +13830,7 @@ msgstr "Yazı köməyi, fərdiləşdirilmiş təkliflər və köməkçi. Seçim 
 msgid "writing, tailoring and sending"
 msgstr "yazmaq, uyğunlaşdırmaq və göndərmək"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "Yazılı təklif"

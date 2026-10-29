@@ -960,6 +960,10 @@ msgstr "Add an @ and the domain, like name@example.com"
 msgid "Add an address."
 msgstr "Add an address."
 
+#: src/features/career/offer-entry.tsx
+msgid "Add an application first"
+msgstr "Add an application first"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first."
 msgstr "Add an application first."
@@ -1044,6 +1048,14 @@ msgstr "Add lane"
 #: src/features/write/fields.ts
 msgid "Add language"
 msgstr "Add language"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "Add offer"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "Add offer terms manually, or use optional AI extraction in Messages."
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1473,6 +1485,7 @@ msgstr "Appears on the page once it has an organization."
 #: app/_layout.tsx
 #: src/features/application-detail/detail-screen.tsx
 #: src/features/applications-board/calendar-screen.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/letters/write.tsx
 #: src/shell/workspace-chrome.tsx
@@ -1806,6 +1819,7 @@ msgctxt "Entry header accent: a bar beside the header"
 msgid "Bar"
 msgstr "Bar"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "Base salary"
@@ -1873,10 +1887,12 @@ msgstr "Body text set to {minimum} pt"
 msgid "Bold"
 msgstr "Bold"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "Bonus"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus conditions"
 msgstr "Bonus conditions"
@@ -2219,6 +2235,10 @@ msgstr "Choose a tested AI provider before sharing data."
 msgid "Choose a time"
 msgstr "Choose a time"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "Choose a valid date and time in {timeZone}, or clear the deadline."
+
 #: src/features/applications/add-sheet.tsx
 msgid "Choose a valid follow-up date before saving."
 msgstr "Choose a valid follow-up date before saving."
@@ -2234,6 +2254,10 @@ msgstr "Choose a WebM, MP4, MP3, WAV or Ogg file up to 2 MB."
 #: src/features/applications-board/calendar-screen.tsx
 msgid "Choose an application"
 msgstr "Choose an application"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "Choose an application and correct the highlighted fields before saving."
 
 #: src/features/workspace/tabs/practise.tsx
 msgid "Choose an audio file"
@@ -3209,6 +3233,7 @@ msgstr "Created {0} · Last used {1} · Expires {2}"
 msgid "Creating document…"
 msgstr "Creating document…"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "Currency"
@@ -3921,6 +3946,10 @@ msgstr "Enhanced reading failed"
 msgid "Enhanced reading unavailable; used the built-in reader."
 msgstr "Enhanced reading unavailable; used the built-in reader."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "Enter a full amount, such as 95000, or leave blank."
+
 #: src/features/career/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "Enter a full amount, such as 95000. Your previous amount is unchanged."
@@ -3933,6 +3962,7 @@ msgstr "Enter a hex colour like #1a1a1a, or rgba(…)."
 msgid "Enter a name, up to 64 characters."
 msgstr "Enter a name, up to 64 characters."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Enter a three-letter currency code."
 msgstr "Enter a three-letter currency code."
@@ -3965,6 +3995,10 @@ msgstr "Enter an address like resume.example.org."
 msgid "Enter any model ID supported by your endpoint."
 msgstr "Enter any model ID supported by your endpoint."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+
 #: app/(auth)/server.tsx
 msgid "Enter the address you open Reactive Resume at in a browser. The app checks it's a Reactive Resume server that allows app sign-in before you continue."
 msgstr "Enter the address you open Reactive Resume at in a browser. The app checks it's a Reactive Resume server that allows app sign-in before you continue."
@@ -3991,6 +4025,7 @@ msgstr "Entry deleted"
 msgid "Entry options"
 msgstr "Entry options"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "Equity"
@@ -4026,10 +4061,6 @@ msgstr "Every term the posting stresses is already there."
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "Every week"
-
-#: src/features/workspace/tabs/saved.tsx
-msgid "Everything the coach wrote for {company}, newest first."
-msgstr "Everything the coach wrote for {company}, newest first."
 
 #: src/features/career/facts.tsx
 #: src/features/write/fields.ts
@@ -4182,8 +4213,8 @@ msgid "Fit"
 msgstr "Fit"
 
 #: src/features/workspace/tabs/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
 
 #: src/features/check/issues.ts
 msgid "Fix the date"
@@ -5136,10 +5167,12 @@ msgstr "Layout"
 msgid "Leads with why you fit"
 msgstr "Leads with why you fit"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "Learning budget"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "Leave"
@@ -6462,6 +6495,14 @@ msgstr "Off. Only you can see this resume."
 msgid "Offer"
 msgstr "Offer"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "Offer saved"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "Offer type"
+
 #: app/(tabs)/career/_layout.tsx
 msgid "Offers"
 msgstr "Offers"
@@ -6478,6 +6519,7 @@ msgstr "Office days are unknown."
 msgid "Office days not stated"
 msgstr "Office days not stated"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Office days per week"
 msgstr "Office days per week"
@@ -6729,6 +6771,7 @@ msgstr "Original table formatting is preserved. This content is read-only becaus
 msgid "Other"
 msgstr "Other"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "Other benefits"
@@ -6858,10 +6901,6 @@ msgstr "Paste a job posting"
 msgid "Paste a message from {company}"
 msgstr "Paste a message from {company}"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "Paste an offer into an application's Messages tab."
-
 #: src/features/workspace/tabs/messages.tsx
 msgid "Paste the email or message, without the signature."
 msgstr "Paste the email or message, without the signature."
@@ -6888,6 +6927,7 @@ msgstr "Pasted description"
 msgid "Paused"
 msgstr "Paused"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Pay period"
 msgstr "Pay period"
@@ -6921,16 +6961,19 @@ msgstr "PDF uses your AI provider when one is ready. Turn off the AI switch to r
 msgid "PDF, Word, Reactive Resume, JSON Resume or LinkedIn export."
 msgstr "PDF, Word, Reactive Resume, JSON Resume or LinkedIn export."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per hour"
 msgstr "Per hour"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per month"
 msgstr "Per month"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per year"
@@ -7847,6 +7890,7 @@ msgstr "Reserve capitals for short headings. They slow reading and can defeat ca
 msgid "Reset design defaults"
 msgstr "Reset design defaults"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "Respond by"
@@ -8255,6 +8299,10 @@ msgstr "Save job"
 msgid "Save lane"
 msgstr "Save lane"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "Save offer"
+
 #: src/features/share/files.ts
 msgid "Save or share file"
 msgstr "Save or share file"
@@ -8320,6 +8368,10 @@ msgstr "Saved a story: {title}"
 msgid "Saved description"
 msgstr "Saved description"
 
+#: src/features/workspace/tabs/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "Saved items for {company}, newest first."
+
 #: src/features/career/today.tsx
 msgid "Saved to Applications with the posting"
 msgstr "Saved to Applications with the posting"
@@ -8340,6 +8392,7 @@ msgstr "Saved to Saved · Practice"
 msgid "Saving the job. Wait for confirmation before making another change."
 msgstr "Saving the job. Wait for confirmation before making another change."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 #: src/features/settings/profile.tsx
 #: src/shell/builder-chrome.tsx
@@ -10157,6 +10210,10 @@ msgstr "Tighten to one page"
 msgid "Tightening"
 msgstr "Tightening"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "Time"
+
 #. placeholder {0}: draft.timezone
 #: src/features/application-detail/interview-sheet.tsx
 msgid "Time · {0}"
@@ -10174,6 +10231,7 @@ msgstr "Time, link, who, what you sent"
 msgid "Timeline"
 msgstr "Timeline"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "Times are shown in {timeZone}."
@@ -10430,6 +10488,10 @@ msgstr "Underline links"
 #: src/ui/overlays.tsx
 msgid "Undo"
 msgstr "Undo"
+
+#: src/features/career/offer-entry.tsx
+msgid "Unknown"
+msgstr "Unknown"
 
 #: src/features/career/offers.tsx
 msgid "Unknown · ask"
@@ -10735,6 +10797,7 @@ msgstr "Value"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "Vary the openings so the section does not read as boilerplate."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "Verbal offer"
@@ -10840,6 +10903,10 @@ msgstr "Voice settings"
 #: src/features/write/fields.ts
 msgid "Volunteer"
 msgstr "Volunteer"
+
+#: src/features/career/offer-entry.tsx
+msgid "Wait for your account timezone to load, retry if it failed, or clear the deadline."
+msgstr "Wait for your account timezone to load, retry if it failed, or clear the deadline."
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Waiting for you"
@@ -11004,6 +11071,7 @@ msgstr "Where applications come from"
 msgid "Where you want to work"
 msgstr "Where you want to work"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "Where you work"
@@ -11138,6 +11206,7 @@ msgstr "Writing"
 msgid "Writing help, tailored suggestions and the assistant. The default provider is used wherever you don't pick one. Your keys stay encrypted."
 msgstr "Writing help, tailored suggestions and the assistant. The default provider is used wherever you don't pick one. Your keys stay encrypted."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "Written offer"

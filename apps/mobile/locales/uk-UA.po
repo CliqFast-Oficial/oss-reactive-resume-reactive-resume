@@ -960,6 +960,10 @@ msgstr "Додайте @ та домен, наприклад name@example.com"
 msgid "Add an address."
 msgstr "Додайте адресу."
 
+#: src/features/career/offer-entry.tsx
+msgid "Add an application first"
+msgstr "Спершу додайте заявку"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first."
 msgstr "Спочатку додайте заявку."
@@ -1044,6 +1048,14 @@ msgstr "Додати етап"
 #: src/features/write/fields.ts
 msgid "Add language"
 msgstr "Додайте мову"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "Додати пропозицію роботи"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "Введіть умови пропозиції роботи вручну або скористайтеся необов’язковим видобуванням даних за допомогою ШІ в розділі Повідомлення."
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1473,6 +1485,7 @@ msgstr "З’являється на сторінці, коли на ній є �
 #: app/_layout.tsx
 #: src/features/application-detail/detail-screen.tsx
 #: src/features/applications-board/calendar-screen.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/letters/write.tsx
 #: src/shell/workspace-chrome.tsx
@@ -1806,6 +1819,7 @@ msgctxt "Entry header accent: a bar beside the header"
 msgid "Bar"
 msgstr "Смужка"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "Базова зарплата"
@@ -1873,10 +1887,12 @@ msgstr "Основний текст встановлено на {minimum} пт"
 msgid "Bold"
 msgstr "Жирний"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "Бонус"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus conditions"
 msgstr "Бонусні умови"
@@ -2219,6 +2235,10 @@ msgstr "Перш ніж ділитися даними, виберіть пере
 msgid "Choose a time"
 msgstr "Виберіть час"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "Виберіть дійсні дату й час у часовому поясі {timeZone} або очистьте поле кінцевого терміну."
+
 #: src/features/applications/add-sheet.tsx
 msgid "Choose a valid follow-up date before saving."
 msgstr "Перш ніж зберегти, виберіть дійсну дату повторного огляду."
@@ -2234,6 +2254,10 @@ msgstr "Виберіть файл WebM, MP4, MP3, WAV або Ogg розміро�
 #: src/features/applications-board/calendar-screen.tsx
 msgid "Choose an application"
 msgstr "Вибрати заявку"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "Перед збереженням виберіть заявку й виправте виділені поля."
 
 #: src/features/workspace/tabs/practise.tsx
 msgid "Choose an audio file"
@@ -3209,6 +3233,7 @@ msgstr "Створено {0} · Останнє використання {1} · �
 msgid "Creating document…"
 msgstr "Створення документа…"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "Валюта"
@@ -3921,6 +3946,10 @@ msgstr "Помилка розширеного читання"
 msgid "Enhanced reading unavailable; used the built-in reader."
 msgstr "Розширене читання недоступне; користувався вбудованим рідером."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "Введіть повну суму, наприклад 95000, або залиште поле порожнім."
+
 #: src/features/career/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "Введіть повну суму, наприклад 95000. Попередня сума не змінилася."
@@ -3933,9 +3962,10 @@ msgstr "Введіть шістнадцятковий колір, наприкл
 msgid "Enter a name, up to 64 characters."
 msgstr "Введіть назву до 64 символів."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Enter a three-letter currency code."
-msgstr "Введіть код валюти з трьох супровідних листів."
+msgstr "Введіть код валюти з трьох літер."
 
 #: src/features/applications/add-sheet.tsx
 msgid "Enter a valid date."
@@ -3965,6 +3995,10 @@ msgstr "Введіть адресу на зразок resume.example.org."
 msgid "Enter any model ID supported by your endpoint."
 msgstr "Введіть будь-який ідентифікатор моделі, який підтримує ваша кінцева точка."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "Введіть умови самостійно. Запит до ШІ не надсилається. Залиште невідомі суми порожніми."
+
 #: app/(auth)/server.tsx
 msgid "Enter the address you open Reactive Resume at in a browser. The app checks it's a Reactive Resume server that allows app sign-in before you continue."
 msgstr "Введіть адресу, за якою ви відкриваєте Reactive Resume у браузері. Програма перевіряє, що це сервер Reactive Resume, який дозволяє ввійти в програму, перш ніж продовжити."
@@ -3991,6 +4025,7 @@ msgstr "Запис видалено"
 msgid "Entry options"
 msgstr "Параметри входу"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "Частка в капіталі"
@@ -4026,10 +4061,6 @@ msgstr "Кожен термін, на якому наголошується ог
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "Щотижня"
-
-#: src/features/workspace/tabs/saved.tsx
-msgid "Everything the coach wrote for {company}, newest first."
-msgstr "Все, що тренер написав для {company}, спочатку найновіше."
 
 #: src/features/career/facts.tsx
 #: src/features/write/fields.ts
@@ -4182,8 +4213,8 @@ msgid "Fit"
 msgstr "Відповідність"
 
 #: src/features/workspace/tabs/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "Перевірки відповідності, брифінги, відгуки на тренування, розбори, відповіді для заявок і відповіді на повідомлення з’являються тут, коли їх створюють інші вкладки."
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "Перевірки відповідності посаді, брифінги, відгуки на тренування, розбори співбесід, відповіді для форм, чернетки відповідей на повідомлення та пропозиції роботи з’являються тут, коли ви їх зберігаєте."
 
 #: src/features/check/issues.ts
 msgid "Fix the date"
@@ -5136,10 +5167,12 @@ msgstr "Макет"
 msgid "Leads with why you fit"
 msgstr "Підказує, чому ви підходите"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "Бюджет на навчання"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "Залишити"
@@ -6462,6 +6495,14 @@ msgstr "Вимкнено. Тільки ви можете бачити це ре�
 msgid "Offer"
 msgstr "Пропозиція"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "Пропозицію роботи збережено"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "Тип пропозиції роботи"
+
 #: app/(tabs)/career/_layout.tsx
 msgid "Offers"
 msgstr "Пропозиції"
@@ -6478,6 +6519,7 @@ msgstr "Офісні дні невідомі."
 msgid "Office days not stated"
 msgstr "Дні в офісі не вказано"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Office days per week"
 msgstr "Офісні дні на тиждень"
@@ -6729,6 +6771,7 @@ msgstr "Оригінальне форматування таблиці збер�
 msgid "Other"
 msgstr "Інше"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "Інші пільги"
@@ -6858,10 +6901,6 @@ msgstr "Вставте оголошення про роботу"
 msgid "Paste a message from {company}"
 msgstr "Вставте повідомлення від {company}"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "Вставте пропозицію на вкладку «Повідомлення» в заявці."
-
 #: src/features/workspace/tabs/messages.tsx
 msgid "Paste the email or message, without the signature."
 msgstr "Вставте лист або повідомлення без підпису."
@@ -6888,6 +6927,7 @@ msgstr "Вставлений опис"
 msgid "Paused"
 msgstr "Призупинено"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Pay period"
 msgstr "Період оплати"
@@ -6921,16 +6961,19 @@ msgstr "PDF використовує вашого постачальника AI,
 msgid "PDF, Word, Reactive Resume, JSON Resume or LinkedIn export."
 msgstr "PDF, Word, Reactive Resume, JSON Resume або експорт LinkedIn."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per hour"
 msgstr "за годину"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per month"
 msgstr "на місяць"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per year"
@@ -7847,6 +7890,7 @@ msgstr "Залиште великі літери для коротких заг�
 msgid "Reset design defaults"
 msgstr "Скинути стандартні налаштування дизайну"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "Відповісти до"
@@ -8255,6 +8299,10 @@ msgstr "Зберегти роботу"
 msgid "Save lane"
 msgstr "Зберегти етап"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "Зберегти пропозицію роботи"
+
 #: src/features/share/files.ts
 msgid "Save or share file"
 msgstr "Збережіть або поділіться файлом"
@@ -8320,6 +8368,10 @@ msgstr "Збережено історія: {title}"
 msgid "Saved description"
 msgstr "Збережений опис"
 
+#: src/features/workspace/tabs/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "Збережені елементи для компанії {company}, від найновішого."
+
 #: src/features/career/today.tsx
 msgid "Saved to Applications with the posting"
 msgstr "Збережено в Заявках разом з оголошенням"
@@ -8340,6 +8392,7 @@ msgstr "Додано до збереженого · Тренування"
 msgid "Saving the job. Wait for confirmation before making another change."
 msgstr "Збереження роботи. Зачекайте підтвердження, перш ніж вносити інші зміни."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 #: src/features/settings/profile.tsx
 #: src/shell/builder-chrome.tsx
@@ -10157,6 +10210,10 @@ msgstr "Підтягнути до однієї сторінки"
 msgid "Tightening"
 msgstr "Стискаю"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "Час"
+
 #. placeholder {0}: draft.timezone
 #: src/features/application-detail/interview-sheet.tsx
 msgid "Time · {0}"
@@ -10174,6 +10231,7 @@ msgstr "Час, посилання, хто, що ви надіслали"
 msgid "Timeline"
 msgstr "Хронологія"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "Час показано в поясі {timeZone}."
@@ -10430,6 +10488,10 @@ msgstr "Підкресліть посилання"
 #: src/ui/overlays.tsx
 msgid "Undo"
 msgstr "Скасувати"
+
+#: src/features/career/offer-entry.tsx
+msgid "Unknown"
+msgstr "Невідомо"
 
 #: src/features/career/offers.tsx
 msgid "Unknown · ask"
@@ -10735,6 +10797,7 @@ msgstr "Значення"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "Урізноманітнюйте початки, щоб розділ не читався як шаблонний текст."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "Усна пропозиція"
@@ -10840,6 +10903,10 @@ msgstr "Налаштування голосу"
 #: src/features/write/fields.ts
 msgid "Volunteer"
 msgstr "Волонтерство"
+
+#: src/features/career/offer-entry.tsx
+msgid "Wait for your account timezone to load, retry if it failed, or clear the deadline."
+msgstr "Дочекайтеся завантаження часового поясу вашого облікового запису, повторіть спробу, якщо завантаження не вдалося, або очистьте поле кінцевого терміну."
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Waiting for you"
@@ -11004,6 +11071,7 @@ msgstr "Звідки надходять заявки"
 msgid "Where you want to work"
 msgstr "Де ви хочете працювати"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "Місце роботи"
@@ -11138,6 +11206,7 @@ msgstr "Текст"
 msgid "Writing help, tailored suggestions and the assistant. The default provider is used wherever you don't pick one. Your keys stay encrypted."
 msgstr "Допомога з текстом, адаптовані пропозиції та помічник. Типовий постачальник використовується там, де ви не вибрали інший. Ваші ключі зберігаються зашифрованими."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "Письмова пропозиція"

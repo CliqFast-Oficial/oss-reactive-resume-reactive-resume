@@ -1285,6 +1285,7 @@ msgstr "新增 @ 和域名，例如 name@example.com"
 msgid "Add an address."
 msgstr "新增地址。"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first"
 msgstr "請先新增一筆應徵紀錄"
@@ -1379,6 +1380,14 @@ msgstr "新增關鍵字"
 #: src/features/resume/editor/write/outline.tsx
 msgid "Add language"
 msgstr "新增語言"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "新增錄取邀約"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "手動新增錄取邀約的條件，或選用「訊息」中的 AI 擷取功能。"
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1878,6 +1887,7 @@ msgid "Applicant tracking systems turn your PDF into plain text before anyone re
 msgstr "申請人追蹤系統會在任何人閱讀之前將您的 PDF 轉換為純文字。檢查器也會做同樣的事情，使用瀏覽器中的 PDF.js 庫，然後根據文字的可靠程度，而不是根據您獲得工作的機會，對您的履歷存活率進行評分：0 到 100。"
 
 #: src/features/applications/components/interview-dialog.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/documents/documents-page.tsx
 #: src/features/documents/trash-page.tsx
@@ -2280,6 +2290,7 @@ msgstr "色條"
 msgid "Barista, 2012"
 msgstr "咖啡師，2012"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "底薪"
@@ -2343,9 +2354,14 @@ msgstr "正文設定為 {minimum} pt"
 msgid "Bold"
 msgstr "粗體"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "獎金"
+
+#: src/features/career/offer-entry.tsx
+msgid "Bonus conditions"
+msgstr "獎金條件"
 
 #: src/features/resume/editor/write/picture-settings.tsx
 msgid "Border color"
@@ -2472,6 +2488,7 @@ msgstr "軟體可以讀取您的履歷嗎？"
 #: src/features/applications/components/manage-lanes-sheet.tsx
 #: src/features/career/knowledge/facts.tsx
 #: src/features/career/knowledge/stories.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/career/workspace/fit.tsx
 #: src/features/documents/new-document-dialog.tsx
@@ -2756,9 +2773,21 @@ msgstr "在 Write 中選擇一份與其設計相符的履歷。到那時，這�
 msgid "Choose a stage"
 msgstr "選擇階段"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "請選擇 {timeZone} 時區內有效的日期和時間，或清除截止期限。"
+
 #: src/features/career/workspace/practise.tsx
 msgid "Choose a WebM, MP4, MP3, WAV or Ogg file up to 2 MB."
 msgstr "選擇不超過 2 MB 的 WebM、MP4、MP3、WAV 或 Ogg 檔案。"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application"
+msgstr "選擇應徵紀錄"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "請選擇應徵紀錄並修正標示的欄位，再進行儲存。"
 
 #: src/features/applications/components/interview-dialog.tsx
 msgid "Choose an application…"
@@ -3702,6 +3731,10 @@ msgstr "無法儲存後續追蹤。請再試一次。"
 msgid "Couldn't save the notes. Try again."
 msgstr "無法儲存備註。請再試一次。"
 
+#: src/features/career/offer-entry.tsx
+msgid "Couldn't save the offer. Your draft is still here. Try again."
+msgstr "無法儲存錄取邀約。你的草稿仍保留在這裡。請再試一次。"
+
 #: src/features/resume/editor/check/job-match.tsx
 msgid "Couldn't save the posting. Try again."
 msgstr "無法儲存職缺公告。請再試一次。"
@@ -4045,6 +4078,7 @@ msgid "CSV data"
 msgstr "CSV 資料"
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 msgid "Currency"
 msgstr "幣別"
 
@@ -4940,6 +4974,10 @@ msgstr "喜歡 Reactive Resume 嗎？"
 msgid "Enter a backup code."
 msgstr "請輸入備份代碼。"
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "輸入完整金額，例如 95000，或留白。"
+
 #: src/features/career/knowledge/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "請輸入完整金額，例如 95000。您先前的金額未變更。"
@@ -4951,6 +4989,10 @@ msgstr "輸入名稱，最多 64 個字元。"
 #: src/features/auth/pages/reset-password.tsx
 msgid "Enter a new password for your account."
 msgstr "為您的帳戶輸入新密碼。"
+
+#: src/features/career/offer-entry.tsx
+msgid "Enter a three-letter currency code."
+msgstr "請輸入三個字母的貨幣代碼。"
 
 #: src/features/applications/components/detail/contacts.tsx
 #: src/features/auth/pages/forgot-password.tsx
@@ -4970,6 +5012,10 @@ msgstr "輸入您的終端支援的任何型號 ID。"
 #: src/features/auth/pages/verify-2fa.tsx
 msgid "Enter one of your saved backup codes to access your account."
 msgstr "請輸入其中一組已儲存的備份代碼以存取您的帳戶。"
+
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "自行輸入條件。系統不會向 AI 發出請求。未知的金額請留白。"
 
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/features/auth/pages/verify-2fa.tsx
@@ -5030,6 +5076,7 @@ msgstr "條目已刪除"
 msgid "Entry options"
 msgstr "參賽選項"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "股權"
@@ -5065,11 +5112,6 @@ msgstr "招聘啟事強調的每個術語都已經存在。"
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "每週"
-
-#. placeholder {0}: application.company
-#: src/features/career/workspace/saved.tsx
-msgid "Everything the coach wrote for {0}, newest first."
-msgstr "教練為 {0} 撰寫的所有內容，最新的在前。"
 
 #: src/features/homepage/sections.tsx
 msgid "Exchange resume feedback, ask questions, and help shape Reactive Resume with the community."
@@ -5310,8 +5352,8 @@ msgid "Fit"
 msgstr "契合度"
 
 #: src/features/career/workspace/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "契合度檢查、簡報、練習回饋、回顧、回答和回覆會在其他分頁產生後顯示在這裡。"
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "職位契合度檢查、準備簡報、面試練習回饋、面試後回顧、表單回答、訊息回覆和錄取通知，都會在您儲存後顯示在這裡。"
 
 #: src/features/resume/editor/chrome.tsx
 msgid "Fit page to width"
@@ -6638,10 +6680,12 @@ msgstr "以結果為主導並給出一個尺度。"
 msgid "Leads with why you fit"
 msgstr "引導您了解適合的原因"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "學習預算"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "離開"
@@ -8195,6 +8239,14 @@ msgstr "已關閉。開啟後，招募人員就能在 Google 上找到您。"
 msgid "Offer"
 msgstr "錄取"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "已儲存錄取邀約"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "錄取邀約類型"
+
 #: src/routes/dashboard/career/route.tsx
 msgid "Offers"
 msgstr "錄取通知"
@@ -8206,6 +8258,10 @@ msgstr "每週進辦公室天數上限"
 #: src/features/career/today.tsx
 msgid "Office days not stated"
 msgstr "未註明進辦公室天數"
+
+#: src/features/career/offer-entry.tsx
+msgid "Office days per week"
+msgstr "每週到辦公室工作的天數"
 
 #: src/features/resume/editor/save-status.tsx
 msgid "Offline · saved on this device"
@@ -8488,6 +8544,7 @@ msgstr "其他"
 msgid "Other · OpenAI-compatible"
 msgstr "其他·OpenAI相容"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "其他福利"
@@ -8658,10 +8715,6 @@ msgstr "貼上招募資訊..."
 msgid "Paste a message from {0}"
 msgstr "貼上來自 {0} 的訊息"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "將錄取通知貼到應徵紀錄的「訊息」分頁中。"
-
 #: src/features/applications/components/add-application-dialog.tsx
 msgid "Paste description instead"
 msgstr "改為貼上說明"
@@ -8716,6 +8769,7 @@ msgid "Paused schedules keep their settings."
 msgstr "暫停的排程會保留其設定。"
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 msgid "Pay period"
 msgstr "發薪週期"
 
@@ -8734,6 +8788,18 @@ msgstr "PDF、Word 或 JSON。我們將根據它建立一份簡歷。"
 #: src/features/homepage/sections.tsx
 msgid "People using it"
 msgstr "使用它的人"
+
+#: src/features/career/offer-entry.tsx
+msgid "Per hour"
+msgstr "每小時"
+
+#: src/features/career/offer-entry.tsx
+msgid "Per month"
+msgstr "每月"
+
+#: src/features/career/offer-entry.tsx
+msgid "Per year"
+msgstr "每年"
 
 #: src/features/settings/account/data.tsx
 msgid "Permanently removes everything. Export first if you want a copy."
@@ -9872,6 +9938,7 @@ msgstr "正在重設您的密碼…"
 msgid "Resources"
 msgstr "資源"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "答覆期限"
@@ -10275,6 +10342,10 @@ msgstr "保存工作"
 msgid "Save name"
 msgstr "儲存名稱"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "儲存錄取邀約"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Save schedule"
 msgstr "儲存排程"
@@ -10363,6 +10434,10 @@ msgstr "另存為職位申請並鏈接"
 msgid "Saved description"
 msgstr "已儲存的描述"
 
+#: src/features/career/workspace/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "{company} 的已儲存項目，依時間由新到舊排列。"
+
 #: src/features/career/knowledge/preferences.tsx
 msgid "Saved just now"
 msgstr "剛剛已儲存"
@@ -10402,6 +10477,7 @@ msgid "Saving is taking longer than expected. Your changes are still open."
 msgstr "儲存時間比預期更久。您的變更仍然保留。"
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/resume/editor/save-status.tsx
 #: src/routes/builder/letter/-components/letter-bar.tsx
 msgid "Saving…"
@@ -12499,6 +12575,10 @@ msgstr "收緊至一頁"
 msgid "Tightening"
 msgstr "正在精簡"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "時間"
+
 #. placeholder {0}: draft.timezone
 #: src/features/applications/components/interview-dialog.tsx
 msgid "Time · {0}"
@@ -12513,6 +12593,7 @@ msgid "Time, link, who, what you sent"
 msgstr "時間、連結、面試官、您寄出的內容"
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "時間依 {timeZone} 顯示。"
 
@@ -12855,6 +12936,7 @@ msgstr "撤銷履歷更改"
 msgid "University of Porto"
 msgstr "University of Porto"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Unknown"
 msgstr "未知"
@@ -13180,6 +13262,7 @@ msgstr "價值不確定"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "變換開頭方式，避免這部分讀起來像制式內容。"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "口頭錄取"
@@ -13552,6 +13635,7 @@ msgstr "應徵來源"
 msgid "Where you want to work"
 msgstr "您想在哪裡工作"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "工作地點"
@@ -13746,6 +13830,7 @@ msgstr "寫作協助、量身建議和助理。未另外選擇提供者的地方
 msgid "writing, tailoring and sending"
 msgstr "寫作、改編和發送"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "書面錄取"

@@ -960,6 +960,10 @@ msgstr "Добавете @ и домейна, като name@example.com"
 msgid "Add an address."
 msgstr "Добавяне на адрес."
 
+#: src/features/career/offer-entry.tsx
+msgid "Add an application first"
+msgstr "Първо добавете кандидатура"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first."
 msgstr "Първо добавете кандидатура."
@@ -1044,6 +1048,14 @@ msgstr "Добави етап"
 #: src/features/write/fields.ts
 msgid "Add language"
 msgstr "Добавете език"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "Добавяне на оферта"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "Добавете условията на офертата за работа ръчно или използвайте извличането с ИИ по желание в „Съобщения“."
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1473,6 +1485,7 @@ msgstr "Появява се на страницата, след като има 
 #: app/_layout.tsx
 #: src/features/application-detail/detail-screen.tsx
 #: src/features/applications-board/calendar-screen.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/letters/write.tsx
 #: src/shell/workspace-chrome.tsx
@@ -1806,6 +1819,7 @@ msgctxt "Entry header accent: a bar beside the header"
 msgid "Bar"
 msgstr "Странична лента"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "Основна заплата"
@@ -1873,10 +1887,12 @@ msgstr "Основният текст е зададен на {minimum} pt"
 msgid "Bold"
 msgstr "Удебелен"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "Бонус"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus conditions"
 msgstr "Бонус условия"
@@ -2219,6 +2235,10 @@ msgstr "Изберете тестван доставчик на AI, преди �
 msgid "Choose a time"
 msgstr "Изберете час"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "Изберете валидни дата и час в часовата зона {timeZone} или изчистете крайния срок."
+
 #: src/features/applications/add-sheet.tsx
 msgid "Choose a valid follow-up date before saving."
 msgstr "Изберете валидна дата за проследяване, преди да запазите."
@@ -2234,6 +2254,10 @@ msgstr "Изберете файл WebM, MP4, MP3, WAV или Ogg до 2 MB."
 #: src/features/applications-board/calendar-screen.tsx
 msgid "Choose an application"
 msgstr "Изберете кандидатура"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "Изберете кандидатура и коригирайте маркираните полета, преди да запазите."
 
 #: src/features/workspace/tabs/practise.tsx
 msgid "Choose an audio file"
@@ -3209,6 +3233,7 @@ msgstr "Създаден {0} · Последно използван {1} · Из�
 msgid "Creating document…"
 msgstr "Създаване на документ…"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "Валута"
@@ -3921,6 +3946,10 @@ msgstr "Подобреното четене не бе успешно"
 msgid "Enhanced reading unavailable; used the built-in reader."
 msgstr "Подобреното четене не е налично; използва вградения четец."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "Въведете пълна сума, например 95000, или оставете празно."
+
 #: src/features/career/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "Въведете пълна сума, например 95000. Предишната ви сума не е променена."
@@ -3933,6 +3962,7 @@ msgstr "Въведете шестнадесетичен цвят като #1a1a1
 msgid "Enter a name, up to 64 characters."
 msgstr "Въведете име, до 64 знака."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Enter a three-letter currency code."
 msgstr "Въведете трибуквен код на валутата."
@@ -3965,6 +3995,10 @@ msgstr "Въведете адрес като resume.example.org."
 msgid "Enter any model ID supported by your endpoint."
 msgstr "Въведете всеки ID на модел, поддържан от вашата крайна точка."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "Въведете условията сами. Не се изпраща заявка към ИИ. Оставете неизвестните суми празни."
+
 #: app/(auth)/server.tsx
 msgid "Enter the address you open Reactive Resume at in a browser. The app checks it's a Reactive Resume server that allows app sign-in before you continue."
 msgstr "Въведете адреса, на който отваряте Reactive Resume в браузър. Приложението проверява дали е Reactive Resume сървър, който позволява влизане в приложението, преди да продължите."
@@ -3991,6 +4025,7 @@ msgstr "Записът е изтрит"
 msgid "Entry options"
 msgstr "Опции за влизане"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "Дялово участие"
@@ -4026,10 +4061,6 @@ msgstr "Всеки термин, който обявата за работа п�
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "Всяка седмица"
-
-#: src/features/workspace/tabs/saved.tsx
-msgid "Everything the coach wrote for {company}, newest first."
-msgstr "Всичко, което консултантът е написал за {company}, първо най-новите."
 
 #: src/features/career/facts.tsx
 #: src/features/write/fields.ts
@@ -4182,8 +4213,8 @@ msgid "Fit"
 msgstr "Съответствие"
 
 #: src/features/workspace/tabs/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "Проверките за съответствие, брифингите, обратната връзка от упражненията, разборите, отговорите по формуляри и отговорите на съобщения се появяват тук, когато другите раздели ги създадат."
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "Проверките за съответствие с позицията, брифингите, обратната връзка от упражнения за интервю, разборите след интервю, отговорите по формуляри, отговорите на съобщения и офертите за работа се появяват тук, когато ги запазите."
 
 #: src/features/check/issues.ts
 msgid "Fix the date"
@@ -5136,10 +5167,12 @@ msgstr "Оформление"
 msgid "Leads with why you fit"
 msgstr "Води с това защо си пасваш"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "Бюджет за обучение"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "Напускане"
@@ -6462,6 +6495,14 @@ msgstr "Изкл. Само вие можете да видите това рез
 msgid "Offer"
 msgstr "Оферта"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "Офертата е запазена"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "Вид оферта"
+
 #: app/(tabs)/career/_layout.tsx
 msgid "Offers"
 msgstr "Оферти"
@@ -6478,6 +6519,7 @@ msgstr "Броят дни в офиса е неизвестен."
 msgid "Office days not stated"
 msgstr "Дните в офиса не са посочени"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Office days per week"
 msgstr "Дни в офиса седмично"
@@ -6729,6 +6771,7 @@ msgstr "Оригиналното форматиране на таблицата 
 msgid "Other"
 msgstr "Друго"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "Други придобивки"
@@ -6858,10 +6901,6 @@ msgstr "Поставете обява за работа"
 msgid "Paste a message from {company}"
 msgstr "Поставете съобщение от {company}"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "Поставете оферта в раздела Съобщения на кандидатура."
-
 #: src/features/workspace/tabs/messages.tsx
 msgid "Paste the email or message, without the signature."
 msgstr "Поставете имейла или съобщението без подписа."
@@ -6888,6 +6927,7 @@ msgstr "Поставено описание"
 msgid "Paused"
 msgstr "На пауза"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Pay period"
 msgstr "Период на плащане"
@@ -6921,16 +6961,19 @@ msgstr "За PDF се използва готовият ви доставчик 
 msgid "PDF, Word, Reactive Resume, JSON Resume or LinkedIn export."
 msgstr "PDF, Word, Reactive Resume, JSON Resume или LinkedIn експорт."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per hour"
 msgstr "На час"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per month"
 msgstr "На месец"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per year"
@@ -7847,6 +7890,7 @@ msgstr "Запазете главните букви за кратки загл�
 msgid "Reset design defaults"
 msgstr "Нулирайте настройките по подразбиране на дизайна"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "Срок за отговор"
@@ -8255,6 +8299,10 @@ msgstr "Запазване на работата"
 msgid "Save lane"
 msgstr "Запази етапа"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "Запазване на оферта"
+
 #: src/features/share/files.ts
 msgid "Save or share file"
 msgstr "Запазете или споделете файл"
@@ -8320,6 +8368,10 @@ msgstr "Запазена история: {title}"
 msgid "Saved description"
 msgstr "Запазено описание"
 
+#: src/features/workspace/tabs/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "Запазени елементи за {company}, най-новите първо."
+
 #: src/features/career/today.tsx
 msgid "Saved to Applications with the posting"
 msgstr "Запазено в Кандидатури заедно с обявата"
@@ -8340,6 +8392,7 @@ msgstr "Запазено в Запазени · Упражнение"
 msgid "Saving the job. Wait for confirmation before making another change."
 msgstr "Запазване на работата. Изчакайте потвърждение, преди да направите друга промяна."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 #: src/features/settings/profile.tsx
 #: src/shell/builder-chrome.tsx
@@ -10157,6 +10210,10 @@ msgstr "Стегнете до една страница"
 msgid "Tightening"
 msgstr "Стягане на текста"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "Час"
+
 #. placeholder {0}: draft.timezone
 #: src/features/application-detail/interview-sheet.tsx
 msgid "Time · {0}"
@@ -10174,6 +10231,7 @@ msgstr "Час, връзка, участници, изпратено"
 msgid "Timeline"
 msgstr "Времева линия"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "Часовете се показват в {timeZone}."
@@ -10430,6 +10488,10 @@ msgstr "Подчертайте връзките"
 #: src/ui/overlays.tsx
 msgid "Undo"
 msgstr "Отмяна"
+
+#: src/features/career/offer-entry.tsx
+msgid "Unknown"
+msgstr "Неизвестно"
 
 #: src/features/career/offers.tsx
 msgid "Unknown · ask"
@@ -10735,6 +10797,7 @@ msgstr "Стойност"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "Разнообразете началата, така че разделът да не звучи като шаблонен текст."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "Устна оферта"
@@ -10840,6 +10903,10 @@ msgstr "Настройки на гласа"
 #: src/features/write/fields.ts
 msgid "Volunteer"
 msgstr "Доброволчество"
+
+#: src/features/career/offer-entry.tsx
+msgid "Wait for your account timezone to load, retry if it failed, or clear the deadline."
+msgstr "Изчакайте да се зареди часовата зона на профила ви, опитайте отново при неуспех или изчистете крайния срок."
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Waiting for you"
@@ -11004,6 +11071,7 @@ msgstr "Откъде идват кандидатурите"
 msgid "Where you want to work"
 msgstr "Къде искате да работите"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "Място на работа"
@@ -11138,6 +11206,7 @@ msgstr "Текст"
 msgid "Writing help, tailored suggestions and the assistant. The default provider is used wherever you don't pick one. Your keys stay encrypted."
 msgstr "Помощ при писане, адаптирани предложения и помощникът. Доставчикът по подразбиране се използва навсякъде, където не изберете друг. Ключовете ви остават криптирани."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "Писмена оферта"

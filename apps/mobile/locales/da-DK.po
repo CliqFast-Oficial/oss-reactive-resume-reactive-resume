@@ -960,6 +960,10 @@ msgstr "Tilføj et @ og domænet, som name@example.com"
 msgid "Add an address."
 msgstr "Tilføj en adresse."
 
+#: src/features/career/offer-entry.tsx
+msgid "Add an application first"
+msgstr "Tilføj først en ansøgning"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first."
 msgstr "Tilføj en jobansøgning først."
@@ -1044,6 +1048,14 @@ msgstr "Tilføj fase"
 #: src/features/write/fields.ts
 msgid "Add language"
 msgstr "Tilføj sprog"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "Tilføj jobtilbud"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "Tilføj vilkårene for jobtilbuddet manuelt, eller brug valgfri AI-udtrækning i Beskeder."
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1473,6 +1485,7 @@ msgstr "Vises på siden, når den har en organisation."
 #: app/_layout.tsx
 #: src/features/application-detail/detail-screen.tsx
 #: src/features/applications-board/calendar-screen.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/letters/write.tsx
 #: src/shell/workspace-chrome.tsx
@@ -1806,6 +1819,7 @@ msgctxt "Entry header accent: a bar beside the header"
 msgid "Bar"
 msgstr "Sidelinje"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "Grundløn"
@@ -1873,10 +1887,12 @@ msgstr "Brødtekst sat til {minimum} pt"
 msgid "Bold"
 msgstr "Fed"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "Bonus"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus conditions"
 msgstr "Bonusbetingelser"
@@ -2219,6 +2235,10 @@ msgstr "Vælg en testet AI-udbyder, før du deler data."
 msgid "Choose a time"
 msgstr "Vælg et tidspunkt"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "Vælg en gyldig dato og et gyldigt klokkeslæt i tidszonen {timeZone}, eller fjern fristen."
+
 #: src/features/applications/add-sheet.tsx
 msgid "Choose a valid follow-up date before saving."
 msgstr "Vælg en gyldig opfølgningsdato, før du gemmer."
@@ -2234,6 +2254,10 @@ msgstr "Vælg en WebM-, MP4-, MP3-, WAV- eller Ogg-fil på op til 2 MB."
 #: src/features/applications-board/calendar-screen.tsx
 msgid "Choose an application"
 msgstr "Vælg en jobansøgning"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "Vælg en jobansøgning, og ret de markerede felter, før du gemmer."
 
 #: src/features/workspace/tabs/practise.tsx
 msgid "Choose an audio file"
@@ -3209,6 +3233,7 @@ msgstr "Oprettet {0} · Sidst brugt {1} · Udløber {2}"
 msgid "Creating document…"
 msgstr "Opretter dokument…"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "Valuta"
@@ -3921,6 +3946,10 @@ msgstr "Forbedret læsning mislykkedes"
 msgid "Enhanced reading unavailable; used the built-in reader."
 msgstr "Forbedret læsning er ikke tilgængelig; brugte den indbyggede læser."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "Indtast hele beløbet, f.eks. 95000, eller lad feltet stå tomt."
+
 #: src/features/career/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "Indtast et fuldt beløb, f.eks. 95000. Dit tidligere beløb er uændret."
@@ -3933,6 +3962,7 @@ msgstr "Indtast en hex-farve som #1a1a1a eller rgba(…)."
 msgid "Enter a name, up to 64 characters."
 msgstr "Indtast et navn på op til 64 tegn."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Enter a three-letter currency code."
 msgstr "Indtast en valutakode på tre bogstaver."
@@ -3965,6 +3995,10 @@ msgstr "Indtast en adresse som resume.example.org."
 msgid "Enter any model ID supported by your endpoint."
 msgstr "Indtast ethvert model-id, der understøttes af dit slutpunkt."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "Indtast selv vilkårene. Der sendes ingen AI-anmodning. Lad ukendte beløb stå tomme."
+
 #: app/(auth)/server.tsx
 msgid "Enter the address you open Reactive Resume at in a browser. The app checks it's a Reactive Resume server that allows app sign-in before you continue."
 msgstr "Indtast den adresse, hvor du åbner Reactive Resume i browseren. Appen kontrollerer, at serveren er en Reactive Resume-server, der tillader login fra appen, før du fortsætter."
@@ -3991,6 +4025,7 @@ msgstr "Indlæg slettet"
 msgid "Entry options"
 msgstr "Indgangsmuligheder"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "Aktier"
@@ -4026,10 +4061,6 @@ msgstr "Hvert udtryk, jobopslaget understreger, er der allerede."
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "Hver uge"
-
-#: src/features/workspace/tabs/saved.tsx
-msgid "Everything the coach wrote for {company}, newest first."
-msgstr "Alt, coachen skrev til {company}, nyeste først."
 
 #: src/features/career/facts.tsx
 #: src/features/write/fields.ts
@@ -4182,8 +4213,8 @@ msgid "Fit"
 msgstr "Match"
 
 #: src/features/workspace/tabs/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "Matchtjek, briefinger, feedback på øvelser, opsamlinger, formularsvar og svar på beskeder samles her, efterhånden som de andre faner opretter dem."
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "Matchtjek, briefinger, feedback på øvelser, opsamlinger, formularsvar, svar på beskeder og jobtilbud samles her, efterhånden som du gemmer dem."
 
 #: src/features/check/issues.ts
 msgid "Fix the date"
@@ -5136,10 +5167,12 @@ msgstr "Layout"
 msgid "Leads with why you fit"
 msgstr "Leder med hvorfor du passer"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "Uddannelsesbudget"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "Forlad"
@@ -6462,6 +6495,14 @@ msgstr "Slukket. Kun du kan se dette CV."
 msgid "Offer"
 msgstr "Tilbud"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "Jobtilbud gemt"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "Type af jobtilbud"
+
 #: app/(tabs)/career/_layout.tsx
 msgid "Offers"
 msgstr "Tilbud"
@@ -6478,6 +6519,7 @@ msgstr "Antal kontordage er ukendt."
 msgid "Office days not stated"
 msgstr "Kontordage ikke oplyst"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Office days per week"
 msgstr "Kontordage om ugen"
@@ -6729,6 +6771,7 @@ msgstr "Den oprindelige tabelformatering bevares. Dette indhold er skrivebeskytt
 msgid "Other"
 msgstr "Andet"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "Andre goder"
@@ -6858,10 +6901,6 @@ msgstr "Indsæt et jobopslag"
 msgid "Paste a message from {company}"
 msgstr "Indsæt en besked fra {company}"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "Indsæt et tilbud under fanen Beskeder i en ansøgning."
-
 #: src/features/workspace/tabs/messages.tsx
 msgid "Paste the email or message, without the signature."
 msgstr "Indsæt e-mailen eller beskeden uden signaturen."
@@ -6888,6 +6927,7 @@ msgstr "Indsat beskrivelse"
 msgid "Paused"
 msgstr "sat på pause"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Pay period"
 msgstr "Lønperiode"
@@ -6921,16 +6961,19 @@ msgstr "PDF bruger din AI-udbyder, når en er klar. Sluk for AI-kontakten for at
 msgid "PDF, Word, Reactive Resume, JSON Resume or LinkedIn export."
 msgstr "PDF, Word, Reactive Resume, JSON Resume eller LinkedIn eksport."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per hour"
 msgstr "i timen"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per month"
 msgstr "pr. måned"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per year"
@@ -7847,6 +7890,7 @@ msgstr "Reserver versaler til korte overskrifter. De sænker læsehastigheden og
 msgid "Reset design defaults"
 msgstr "Nulstil designstandarder"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "Svarfrist"
@@ -8255,6 +8299,10 @@ msgstr "Gem job"
 msgid "Save lane"
 msgstr "Gem fase"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "Gem jobtilbud"
+
 #: src/features/share/files.ts
 msgid "Save or share file"
 msgstr "Gem eller del fil"
@@ -8320,6 +8368,10 @@ msgstr "Gemt en historie: {title}"
 msgid "Saved description"
 msgstr "Gemt beskrivelse"
 
+#: src/features/workspace/tabs/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "Gemte elementer for {company}, nyeste først."
+
 #: src/features/career/today.tsx
 msgid "Saved to Applications with the posting"
 msgstr "Gemt i Ansøgninger med jobopslaget"
@@ -8340,6 +8392,7 @@ msgstr "Gemt under Gemt · Øvelse"
 msgid "Saving the job. Wait for confirmation before making another change."
 msgstr "Redder jobbet. Vent på bekræftelse, før du foretager en anden ændring."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 #: src/features/settings/profile.tsx
 #: src/shell/builder-chrome.tsx
@@ -10157,6 +10210,10 @@ msgstr "Stram til en side"
 msgid "Tightening"
 msgstr "Strammer op"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "Klokkeslæt"
+
 #. placeholder {0}: draft.timezone
 #: src/features/application-detail/interview-sheet.tsx
 msgid "Time · {0}"
@@ -10174,6 +10231,7 @@ msgstr "Tidspunkt, link, hvem, hvad du sendte"
 msgid "Timeline"
 msgstr "Tidslinje"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "Tidspunkter vises i {timeZone}."
@@ -10430,6 +10488,10 @@ msgstr "Understreg links"
 #: src/ui/overlays.tsx
 msgid "Undo"
 msgstr "Fortryd"
+
+#: src/features/career/offer-entry.tsx
+msgid "Unknown"
+msgstr "Ukendt"
 
 #: src/features/career/offers.tsx
 msgid "Unknown · ask"
@@ -10735,6 +10797,7 @@ msgstr "Værdi"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "Varier åbningerne, så afsnittet ikke virker som standardtekst."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "Mundtligt tilbud"
@@ -10840,6 +10903,10 @@ msgstr "Stemmeindstillinger"
 #: src/features/write/fields.ts
 msgid "Volunteer"
 msgstr "Frivillig"
+
+#: src/features/career/offer-entry.tsx
+msgid "Wait for your account timezone to load, retry if it failed, or clear the deadline."
+msgstr "Vent på, at din kontos tidszone indlæses, prøv igen, hvis indlæsningen mislykkedes, eller fjern fristen."
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Waiting for you"
@@ -11004,6 +11071,7 @@ msgstr "Hvor ansøgningerne kommer fra"
 msgid "Where you want to work"
 msgstr "Hvor du vil arbejde"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "Hvor du arbejder"
@@ -11138,6 +11206,7 @@ msgstr "Sprog"
 msgid "Writing help, tailored suggestions and the assistant. The default provider is used wherever you don't pick one. Your keys stay encrypted."
 msgstr "Skrivehjælp, skræddersyede forslag og assistenten. Standardudbyderen bruges overalt, hvor du ikke vælger en. Dine nøgler forbliver krypterede."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "Skriftligt tilbud"

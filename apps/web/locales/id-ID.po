@@ -1285,6 +1285,7 @@ msgstr "Tambahkan @ dan domain, seperti name@example.com"
 msgid "Add an address."
 msgstr "Tambahkan alamat."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first"
 msgstr "Tambahkan lamaran terlebih dahulu"
@@ -1379,6 +1380,14 @@ msgstr "Tambahkan kata kunci"
 #: src/features/resume/editor/write/outline.tsx
 msgid "Add language"
 msgstr "Tambahkan bahasa"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "Tambah penawaran"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "Tambahkan ketentuan penawaran kerja secara manual, atau gunakan ekstraksi AI opsional di Pesan."
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1878,6 +1887,7 @@ msgid "Applicant tracking systems turn your PDF into plain text before anyone re
 msgstr "Sistem pelacakan pelamar mengubah PDF Anda menjadi teks biasa sebelum ada yang membacanya. Pemeriksa melakukan hal yang sama, dengan perpustakaan PDF.js di browser Anda, lalu menilai seberapa banyak resume Anda bertahan: 0 hingga 100, berdasarkan seberapa andal teks yang dihasilkan, bukan dari peluang Anda mendapatkan pekerjaan."
 
 #: src/features/applications/components/interview-dialog.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/documents/documents-page.tsx
 #: src/features/documents/trash-page.tsx
@@ -2280,6 +2290,7 @@ msgstr "Batang"
 msgid "Barista, 2012"
 msgstr "Barista, 2012"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "Gaji pokok"
@@ -2343,9 +2354,14 @@ msgstr "Teks isi disetel ke {minimum} pt"
 msgid "Bold"
 msgstr "Tebal"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "Bonus"
+
+#: src/features/career/offer-entry.tsx
+msgid "Bonus conditions"
+msgstr "Ketentuan bonus"
 
 #: src/features/resume/editor/write/picture-settings.tsx
 msgid "Border color"
@@ -2472,6 +2488,7 @@ msgstr "Bisakah perangkat lunak membaca resume Anda?"
 #: src/features/applications/components/manage-lanes-sheet.tsx
 #: src/features/career/knowledge/facts.tsx
 #: src/features/career/knowledge/stories.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/career/workspace/fit.tsx
 #: src/features/documents/new-document-dialog.tsx
@@ -2756,9 +2773,21 @@ msgstr "Pilih resume di Write agar sesuai dengan desainnya. Sampai saat itu, sur
 msgid "Choose a stage"
 msgstr "Pilih tahap"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "Pilih tanggal dan waktu yang valid dalam zona waktu {timeZone}, atau kosongkan tenggat."
+
 #: src/features/career/workspace/practise.tsx
 msgid "Choose a WebM, MP4, MP3, WAV or Ogg file up to 2 MB."
 msgstr "Pilih file WebM, MP4, MP3, WAV, atau Ogg hingga 2 MB."
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application"
+msgstr "Pilih lamaran"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "Pilih lamaran dan perbaiki kolom yang disorot sebelum menyimpan."
 
 #: src/features/applications/components/interview-dialog.tsx
 msgid "Choose an application…"
@@ -3702,6 +3731,10 @@ msgstr "Tidak dapat menyimpan tindak lanjut. Coba lagi."
 msgid "Couldn't save the notes. Try again."
 msgstr "Tidak dapat menyimpan catatan. Coba lagi."
 
+#: src/features/career/offer-entry.tsx
+msgid "Couldn't save the offer. Your draft is still here. Try again."
+msgstr "Penawaran tidak dapat disimpan. Draf Anda masih ada di sini. Coba lagi."
+
 #: src/features/resume/editor/check/job-match.tsx
 msgid "Couldn't save the posting. Try again."
 msgstr "Tidak dapat menyimpan postingan pekerjaan. Coba lagi."
@@ -4045,6 +4078,7 @@ msgid "CSV data"
 msgstr "Data CSV"
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 msgid "Currency"
 msgstr "Mata uang"
 
@@ -4940,6 +4974,10 @@ msgstr "Suka dengan Reactive Resume?"
 msgid "Enter a backup code."
 msgstr "Masukkan kode cadangan."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "Masukkan nominal lengkap, misalnya 95000, atau biarkan kosong."
+
 #: src/features/career/knowledge/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "Masukkan jumlah lengkap, misalnya 95000. Jumlah sebelumnya tidak berubah."
@@ -4951,6 +4989,10 @@ msgstr "Masukkan nama, maksimal 64 karakter."
 #: src/features/auth/pages/reset-password.tsx
 msgid "Enter a new password for your account."
 msgstr "Masukkan kata sandi baru untuk akun Anda."
+
+#: src/features/career/offer-entry.tsx
+msgid "Enter a three-letter currency code."
+msgstr "Masukkan kode mata uang tiga huruf."
 
 #: src/features/applications/components/detail/contacts.tsx
 #: src/features/auth/pages/forgot-password.tsx
@@ -4970,6 +5012,10 @@ msgstr "Masukkan ID model apa pun yang didukung oleh titik akhir Anda."
 #: src/features/auth/pages/verify-2fa.tsx
 msgid "Enter one of your saved backup codes to access your account."
 msgstr "Masukkan salah satu kode cadangan tersimpan Anda untuk mengakses akun."
+
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "Masukkan ketentuan sendiri. Tidak ada permintaan yang dikirim ke AI. Biarkan nominal yang belum diketahui kosong."
 
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/features/auth/pages/verify-2fa.tsx
@@ -5030,6 +5076,7 @@ msgstr "Entri dihapus"
 msgid "Entry options"
 msgstr "Opsi masuk"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "Ekuitas"
@@ -5065,11 +5112,6 @@ msgstr "Setiap istilah yang ditekankan dalam lowongan pekerjaan sudah ada."
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "Setiap minggu"
-
-#. placeholder {0}: application.company
-#: src/features/career/workspace/saved.tsx
-msgid "Everything the coach wrote for {0}, newest first."
-msgstr "Semua yang ditulis coach untuk {0}, yang terbaru di atas."
 
 #: src/features/homepage/sections.tsx
 msgid "Exchange resume feedback, ask questions, and help shape Reactive Resume with the community."
@@ -5310,8 +5352,8 @@ msgid "Fit"
 msgstr "Kecocokan"
 
 #: src/features/career/workspace/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "Pemeriksaan kecocokan, briefing, masukan latihan, evaluasi, jawaban, dan balasan masuk ke sini saat tab lain membuatnya."
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "Pemeriksaan kecocokan dengan posisi, briefing persiapan, masukan latihan wawancara, evaluasi setelah wawancara, jawaban formulir, balasan pesan, dan penawaran kerja muncul di sini saat Anda menyimpannya."
 
 #: src/features/resume/editor/chrome.tsx
 msgid "Fit page to width"
@@ -6638,10 +6680,12 @@ msgstr "Pimpin dengan hasil dan berikan skala."
 msgid "Leads with why you fit"
 msgstr "Pimpin dengan alasan mengapa Anda cocok"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "Anggaran belajar"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "Tinggalkan"
@@ -8195,6 +8239,14 @@ msgstr "Nonaktif. Aktifkan agar perekrut dapat menemukan Anda di Google."
 msgid "Offer"
 msgstr "Penawaran"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "Penawaran disimpan"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "Jenis penawaran"
+
 #: src/routes/dashboard/career/route.tsx
 msgid "Offers"
 msgstr "Penawaran"
@@ -8206,6 +8258,10 @@ msgstr "Hari di kantor per minggu, maksimal"
 #: src/features/career/today.tsx
 msgid "Office days not stated"
 msgstr "Hari di kantor tidak disebutkan"
+
+#: src/features/career/offer-entry.tsx
+msgid "Office days per week"
+msgstr "Hari kerja di kantor per minggu"
 
 #: src/features/resume/editor/save-status.tsx
 msgid "Offline · saved on this device"
@@ -8488,6 +8544,7 @@ msgstr "Lainnya"
 msgid "Other · OpenAI-compatible"
 msgstr "Lainnya · Kompatibel dengan OpenAI"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "Tunjangan lainnya"
@@ -8658,10 +8715,6 @@ msgstr "Tempelkan postingan pekerjaan…"
 msgid "Paste a message from {0}"
 msgstr "Tempel pesan dari {0}"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "Tempel penawaran ke tab Pesan pada lamaran."
-
 #: src/features/applications/components/add-application-dialog.tsx
 msgid "Paste description instead"
 msgstr "Tempelkan deskripsi sebagai gantinya"
@@ -8716,6 +8769,7 @@ msgid "Paused schedules keep their settings."
 msgstr "Jadwal yang dijeda tetap menyimpan pengaturannya."
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 msgid "Pay period"
 msgstr "Periode pembayaran"
 
@@ -8734,6 +8788,18 @@ msgstr "PDF, Word atau JSON. Kami akan membuat resume darinya."
 #: src/features/homepage/sections.tsx
 msgid "People using it"
 msgstr "Orang yang menggunakannya"
+
+#: src/features/career/offer-entry.tsx
+msgid "Per hour"
+msgstr "Per jam"
+
+#: src/features/career/offer-entry.tsx
+msgid "Per month"
+msgstr "Per bulan"
+
+#: src/features/career/offer-entry.tsx
+msgid "Per year"
+msgstr "Per tahun"
 
 #: src/features/settings/account/data.tsx
 msgid "Permanently removes everything. Export first if you want a copy."
@@ -9872,6 +9938,7 @@ msgstr "Mengatur ulang kata sandi Anda..."
 msgid "Resources"
 msgstr "Sumber Daya"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "Tanggapi paling lambat"
@@ -10275,6 +10342,10 @@ msgstr "Simpan pekerjaan"
 msgid "Save name"
 msgstr "Simpan nama"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "Simpan penawaran"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Save schedule"
 msgstr "Simpan jadwal"
@@ -10363,6 +10434,10 @@ msgstr "Disimpan sebagai lamaran pekerjaan dan ditautkan"
 msgid "Saved description"
 msgstr "Deskripsi tersimpan"
 
+#: src/features/career/workspace/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "Item tersimpan untuk {company}, yang terbaru di atas."
+
 #: src/features/career/knowledge/preferences.tsx
 msgid "Saved just now"
 msgstr "Baru saja disimpan"
@@ -10402,6 +10477,7 @@ msgid "Saving is taking longer than expected. Your changes are still open."
 msgstr "Penghematan membutuhkan waktu lebih lama dari yang diperkirakan. Perubahan Anda masih terbuka."
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/resume/editor/save-status.tsx
 #: src/routes/builder/letter/-components/letter-bar.tsx
 msgid "Saving…"
@@ -12499,6 +12575,10 @@ msgstr "Kencangkan menjadi satu halaman"
 msgid "Tightening"
 msgstr "Memadatkan"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "Waktu"
+
 #. placeholder {0}: draft.timezone
 #: src/features/applications/components/interview-dialog.tsx
 msgid "Time · {0}"
@@ -12513,6 +12593,7 @@ msgid "Time, link, who, what you sent"
 msgstr "Waktu, tautan, siapa, apa yang Anda kirim"
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "Waktu ditampilkan dalam {timeZone}."
 
@@ -12855,6 +12936,7 @@ msgstr "Membatalkan perubahan resume"
 msgid "University of Porto"
 msgstr "University of Porto"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Unknown"
 msgstr "Tidak diketahui"
@@ -13180,6 +13262,7 @@ msgstr "Nilai tidak pasti"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "Variasikan kalimat pembuka agar bagian ini tidak terasa seperti teks baku."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "Penawaran lisan"
@@ -13552,6 +13635,7 @@ msgstr "Dari mana lamaran berasal"
 msgid "Where you want to work"
 msgstr "Tempat Anda ingin bekerja"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "Lokasi kerja"
@@ -13746,6 +13830,7 @@ msgstr "Bantuan menulis, saran yang disesuaikan, dan asisten. Penyedia default d
 msgid "writing, tailoring and sending"
 msgstr "menulis, mengadaptasi, dan mengirim"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "Penawaran tertulis"

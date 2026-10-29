@@ -1285,6 +1285,7 @@ msgstr "Добавьте @ и домен, например name@example.com."
 msgid "Add an address."
 msgstr "Добавьте адрес."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first"
 msgstr "Сначала добавьте заявку"
@@ -1379,6 +1380,14 @@ msgstr "Добавьте ключевое слово"
 #: src/features/resume/editor/write/outline.tsx
 msgid "Add language"
 msgstr "Добавить язык"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "Добавить предложение о работе"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "Добавьте условия предложения о работе вручную или воспользуйтесь необязательным извлечением с помощью ИИ в разделе «Сообщения»."
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1878,6 +1887,7 @@ msgid "Applicant tracking systems turn your PDF into plain text before anyone re
 msgstr "Системы отслеживания кандидатов преобразуют ваш PDF в обычный текст, прежде чем кто-либо его прочитает. Программа проверки делает то же самое, используя библиотеку PDF.js в вашем браузере, а затем оценивает, какая часть вашего резюме сохранилась: от 0 до 100, исходя из того, насколько достоверен текст, а не из ваших шансов получить работу."
 
 #: src/features/applications/components/interview-dialog.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/documents/documents-page.tsx
 #: src/features/documents/trash-page.tsx
@@ -2280,6 +2290,7 @@ msgstr "Полоса"
 msgid "Barista, 2012"
 msgstr "Бариста, 2012 г."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "Базовый оклад"
@@ -2343,9 +2354,14 @@ msgstr "Основной текст установлен на {minimum} pt."
 msgid "Bold"
 msgstr "Полужирный"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "Бонус"
+
+#: src/features/career/offer-entry.tsx
+msgid "Bonus conditions"
+msgstr "Условия премии"
 
 #: src/features/resume/editor/write/picture-settings.tsx
 msgid "Border color"
@@ -2472,6 +2488,7 @@ msgstr "Может ли программное обеспечение прочи
 #: src/features/applications/components/manage-lanes-sheet.tsx
 #: src/features/career/knowledge/facts.tsx
 #: src/features/career/knowledge/stories.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/career/workspace/fit.tsx
 #: src/features/documents/new-document-dialog.tsx
@@ -2756,9 +2773,21 @@ msgstr "Выберите резюме в Write, чтобы оно соответ
 msgid "Choose a stage"
 msgstr "Выберите этап"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "Выберите допустимые дату и время в часовом поясе {timeZone} или уберите крайний срок."
+
 #: src/features/career/workspace/practise.tsx
 msgid "Choose a WebM, MP4, MP3, WAV or Ogg file up to 2 MB."
 msgstr "Выберите файл WebM, MP4, MP3, WAV или Ogg размером до 2 МБ."
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application"
+msgstr "Выберите заявку"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "Выберите заявку на работу и исправьте выделенные поля перед сохранением."
 
 #: src/features/applications/components/interview-dialog.tsx
 msgid "Choose an application…"
@@ -3702,6 +3731,10 @@ msgstr "Не удалось сохранить напоминание. Попр�
 msgid "Couldn't save the notes. Try again."
 msgstr "Не удалось сохранить заметки. Попробуйте еще раз."
 
+#: src/features/career/offer-entry.tsx
+msgid "Couldn't save the offer. Your draft is still here. Try again."
+msgstr "Не удалось сохранить предложение о работе. Ваш черновик на месте. Попробуйте ещё раз."
+
 #: src/features/resume/editor/check/job-match.tsx
 msgid "Couldn't save the posting. Try again."
 msgstr "Не удалось сохранить вакансию. Попробуйте еще раз."
@@ -4045,6 +4078,7 @@ msgid "CSV data"
 msgstr "CSV-данные"
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 msgid "Currency"
 msgstr "Валюта"
 
@@ -4940,6 +4974,10 @@ msgstr "Нравится Reactive Resume?"
 msgid "Enter a backup code."
 msgstr "Введите резервный код."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "Введите полную сумму, например 95000, или оставьте поле пустым."
+
 #: src/features/career/knowledge/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "Введите полную сумму, например 95000. Предыдущая сумма не изменилась."
@@ -4951,6 +4989,10 @@ msgstr "Введите имя длиной до 64 символов."
 #: src/features/auth/pages/reset-password.tsx
 msgid "Enter a new password for your account."
 msgstr "Введите новый пароль для своей учетной записи."
+
+#: src/features/career/offer-entry.tsx
+msgid "Enter a three-letter currency code."
+msgstr "Введите трёхбуквенный код валюты."
 
 #: src/features/applications/components/detail/contacts.tsx
 #: src/features/auth/pages/forgot-password.tsx
@@ -4970,6 +5012,10 @@ msgstr "Введите любой идентификатор модели, по�
 #: src/features/auth/pages/verify-2fa.tsx
 msgid "Enter one of your saved backup codes to access your account."
 msgstr "Введите один из сохраненных резервных кодов, чтобы войти в учетную запись."
+
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "Введите условия самостоятельно. Запрос к ИИ отправляться не будет. Неизвестные суммы оставьте пустыми."
 
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/features/auth/pages/verify-2fa.tsx
@@ -5030,6 +5076,7 @@ msgstr "Запись удалена"
 msgid "Entry options"
 msgstr "Варианты входа"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "Акции"
@@ -5065,11 +5112,6 @@ msgstr "Каждый термин, который подчеркивается �
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "Каждую неделю"
-
-#. placeholder {0}: application.company
-#: src/features/career/workspace/saved.tsx
-msgid "Everything the coach wrote for {0}, newest first."
-msgstr "Все, что коуч написал для {0}, — сначала новое."
 
 #: src/features/homepage/sections.tsx
 msgid "Exchange resume feedback, ask questions, and help shape Reactive Resume with the community."
@@ -5310,8 +5352,8 @@ msgid "Fit"
 msgstr "Соответствие"
 
 #: src/features/career/workspace/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "Проверки соответствия, брифинги, обратная связь по тренировкам, разборы, ответы и черновики ответов появляются здесь по мере того, как их создают другие вкладки."
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "Проверки соответствия, брифинги, обратная связь по тренировкам, разборы собеседований, ответы на вопросы анкет, черновики ответов на сообщения и предложения о работе появляются здесь по мере сохранения."
 
 #: src/features/resume/editor/chrome.tsx
 msgid "Fit page to width"
@@ -6638,10 +6680,12 @@ msgstr "Ориентируйтесь на результат и придавай
 msgid "Leads with why you fit"
 msgstr "Объясняет, почему вы подходите"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "Бюджет на обучение"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "Покинуть"
@@ -8195,6 +8239,14 @@ msgstr "Выключено. Включите, чтобы рекрутеры мо
 msgid "Offer"
 msgstr "Предложение"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "Предложение о работе сохранено"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "Тип предложения о работе"
+
 #: src/routes/dashboard/career/route.tsx
 msgid "Offers"
 msgstr "Предложения"
@@ -8206,6 +8258,10 @@ msgstr "Дней в офисе в неделю, не более"
 #: src/features/career/today.tsx
 msgid "Office days not stated"
 msgstr "Дни в офисе не указаны"
+
+#: src/features/career/offer-entry.tsx
+msgid "Office days per week"
+msgstr "Рабочих дней в офисе в неделю"
 
 #: src/features/resume/editor/save-status.tsx
 msgid "Offline · saved on this device"
@@ -8488,6 +8544,7 @@ msgstr "Другое"
 msgid "Other · OpenAI-compatible"
 msgstr "Другое · OpenAI-совместимый"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "Другие льготы"
@@ -8658,10 +8715,6 @@ msgstr "Вставить объявление о вакансии…"
 msgid "Paste a message from {0}"
 msgstr "Вставьте сообщение от {0}"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "Вставьте предложение во вкладку «Сообщения» заявки."
-
 #: src/features/applications/components/add-application-dialog.tsx
 msgid "Paste description instead"
 msgstr "Вместо этого вставьте описание"
@@ -8716,6 +8769,7 @@ msgid "Paused schedules keep their settings."
 msgstr "Приостановленные расписания сохраняют свои настройки."
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 msgid "Pay period"
 msgstr "Период оплаты"
 
@@ -8734,6 +8788,18 @@ msgstr "PDF, Word или JSON. На основе этого мы состави�
 #: src/features/homepage/sections.tsx
 msgid "People using it"
 msgstr "Люди, использующие это"
+
+#: src/features/career/offer-entry.tsx
+msgid "Per hour"
+msgstr "В час"
+
+#: src/features/career/offer-entry.tsx
+msgid "Per month"
+msgstr "В месяц"
+
+#: src/features/career/offer-entry.tsx
+msgid "Per year"
+msgstr "В год"
 
 #: src/features/settings/account/data.tsx
 msgid "Permanently removes everything. Export first if you want a copy."
@@ -9872,6 +9938,7 @@ msgstr "Сброс пароля..."
 msgid "Resources"
 msgstr "Ресурсы"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "Ответить до"
@@ -10275,6 +10342,10 @@ msgstr "Сохранить работу"
 msgid "Save name"
 msgstr "Сохранить название"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "Сохранить предложение о работе"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Save schedule"
 msgstr "Сохранить расписание"
@@ -10363,6 +10434,10 @@ msgstr "Сохранено как заявление о приеме на раб
 msgid "Saved description"
 msgstr "Сохраненное описание"
 
+#: src/features/career/workspace/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "Сохранённые материалы для {company}, сначала новые."
+
 #: src/features/career/knowledge/preferences.tsx
 msgid "Saved just now"
 msgstr "Сохранено только что"
@@ -10402,6 +10477,7 @@ msgid "Saving is taking longer than expected. Your changes are still open."
 msgstr "Экономия занимает больше времени, чем ожидалось. Ваши изменения все еще открыты."
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/resume/editor/save-status.tsx
 #: src/routes/builder/letter/-components/letter-bar.tsx
 msgid "Saving…"
@@ -12499,6 +12575,10 @@ msgstr "Ужать до одной страницы"
 msgid "Tightening"
 msgstr "Сокращаем"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "Время"
+
 #. placeholder {0}: draft.timezone
 #: src/features/applications/components/interview-dialog.tsx
 msgid "Time · {0}"
@@ -12513,6 +12593,7 @@ msgid "Time, link, who, what you sent"
 msgstr "Время, ссылка, участники, что вы отправили"
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "Время указано в часовом поясе {timeZone}."
 
@@ -12855,6 +12936,7 @@ msgstr "Отменить изменение резюме"
 msgid "University of Porto"
 msgstr "University of Porto"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Unknown"
 msgstr "Неизвестно"
@@ -13180,6 +13262,7 @@ msgstr "Стоимость не определена"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "Разнообразьте начала фраз, чтобы раздел не читался как шаблон."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "Устное предложение"
@@ -13552,6 +13635,7 @@ msgstr "Откуда приходят заявки"
 msgid "Where you want to work"
 msgstr "Где вы хотите работать"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "Где вы будете работать"
@@ -13746,6 +13830,7 @@ msgstr "Помощь в написании, персональные предл�
 msgid "writing, tailoring and sending"
 msgstr "написание, адаптация и отправка"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "Письменное предложение"

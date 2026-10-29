@@ -960,6 +960,10 @@ msgstr "Adăugați un @ și domeniul, cum ar fi name@example.com"
 msgid "Add an address."
 msgstr "Adăugați o adresă."
 
+#: src/features/career/offer-entry.tsx
+msgid "Add an application first"
+msgstr "Adăugați mai întâi o candidatură"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first."
 msgstr "Adăugați mai întâi o candidatură."
@@ -1044,6 +1048,14 @@ msgstr "Adăugați etapa"
 #: src/features/write/fields.ts
 msgid "Add language"
 msgstr "Adăugați limba"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "Adaugă ofertă"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "Adaugă manual condițiile ofertei de angajare sau folosește extragerea opțională cu IA din Mesaje."
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1473,6 +1485,7 @@ msgstr "Apare pe pagină odată ce are o organizație."
 #: app/_layout.tsx
 #: src/features/application-detail/detail-screen.tsx
 #: src/features/applications-board/calendar-screen.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/letters/write.tsx
 #: src/shell/workspace-chrome.tsx
@@ -1806,6 +1819,7 @@ msgctxt "Entry header accent: a bar beside the header"
 msgid "Bar"
 msgstr "Bară"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "Salariu de bază"
@@ -1873,10 +1887,12 @@ msgstr "Textul corpului setat la {minimum} pt"
 msgid "Bold"
 msgstr "Aldin"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "Bonus"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus conditions"
 msgstr "Condiții bonus"
@@ -2219,6 +2235,10 @@ msgstr "Alegeți un furnizor de AI testat înainte de a partaja date."
 msgid "Choose a time"
 msgstr "Alegeți o oră"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "Alege o dată și o oră valide în fusul orar {timeZone} sau șterge termenul-limită."
+
 #: src/features/applications/add-sheet.tsx
 msgid "Choose a valid follow-up date before saving."
 msgstr "Alegeți o dată de urmărire validă înainte de a salva."
@@ -2234,6 +2254,10 @@ msgstr "Alegeți un fișier WebM, MP4, MP3, WAV sau Ogg de până la 2 MB."
 #: src/features/applications-board/calendar-screen.tsx
 msgid "Choose an application"
 msgstr "Alegeți o candidatură"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "Alege o candidatură și corectează câmpurile evidențiate înainte de a salva."
 
 #: src/features/workspace/tabs/practise.tsx
 msgid "Choose an audio file"
@@ -3209,6 +3233,7 @@ msgstr "Creat {0} · Ultima utilizare {1} · Expiră {2}"
 msgid "Creating document…"
 msgstr "Se creează documentul..."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "Monedă"
@@ -3921,6 +3946,10 @@ msgstr "Citirea îmbunătățită a eșuat"
 msgid "Enhanced reading unavailable; used the built-in reader."
 msgstr "Citirea îmbunătățită indisponibilă; a folosit cititorul încorporat."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "Introdu o sumă completă, cum ar fi 95000, sau lasă câmpul necompletat."
+
 #: src/features/career/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "Introduceți o sumă întreagă, de exemplu 95000. Suma anterioară nu s-a schimbat."
@@ -3933,9 +3962,10 @@ msgstr "Introdu o culoare hex, de exemplu #1a1a1a, sau rgba(…)."
 msgid "Enter a name, up to 64 characters."
 msgstr "Introduceți un nume, până la 64 de caractere."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Enter a three-letter currency code."
-msgstr "Introduceți un cod de monedă format din trei litere de intentie."
+msgstr "Introduceți un cod valutar format din trei litere."
 
 #: src/features/applications/add-sheet.tsx
 msgid "Enter a valid date."
@@ -3965,6 +3995,10 @@ msgstr "Introdu o adresă precum resume.example.org."
 msgid "Enter any model ID supported by your endpoint."
 msgstr "Introduceți orice ID de model acceptat de punctul final."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "Introdu condițiile manual. Nu se trimite nicio solicitare către IA. Lasă sumele necunoscute necompletate."
+
 #: app/(auth)/server.tsx
 msgid "Enter the address you open Reactive Resume at in a browser. The app checks it's a Reactive Resume server that allows app sign-in before you continue."
 msgstr "Introduceți adresa la care deschideți Reactive Resume într-un browser. Aplicația verifică dacă este un server Reactive Resume care permite conectarea la aplicație înainte de a continua."
@@ -3991,6 +4025,7 @@ msgstr "Intrarea a fost ștearsă"
 msgid "Entry options"
 msgstr "Opțiuni de intrare"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "Acțiuni"
@@ -4026,10 +4061,6 @@ msgstr "Fiecare termen pe care îl subliniază postarea de locuri de muncă exis
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "În fiecare săptămână"
-
-#: src/features/workspace/tabs/saved.tsx
-msgid "Everything the coach wrote for {company}, newest first."
-msgstr "Tot ce a scris antrenorul pentru {company}, cel mai nou primul."
 
 #: src/features/career/facts.tsx
 #: src/features/write/fields.ts
@@ -4182,8 +4213,8 @@ msgid "Fit"
 msgstr "Potrivire"
 
 #: src/features/workspace/tabs/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "Verificările de potrivire, briefingurile, feedbackul de exersare, bilanțurile, răspunsurile și mesajele de răspuns apar aici pe măsură ce celelalte file le creează."
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "Verificările de potrivire cu postul, briefingurile de pregătire, feedbackul din simulările de interviu, bilanțurile de după interviu, răspunsurile la formulare, mesajele de răspuns și ofertele de muncă apar aici pe măsură ce le salvezi."
 
 #: src/features/check/issues.ts
 msgid "Fix the date"
@@ -5136,10 +5167,12 @@ msgstr "Layout"
 msgid "Leads with why you fit"
 msgstr "Conduce cu motivul pentru care vă potriviți"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "Buget pentru formare"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "Pleacă"
@@ -6462,6 +6495,14 @@ msgstr "Oprit. Numai tu poți vedea acest CV."
 msgid "Offer"
 msgstr "Ofertă"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "Ofertă salvată"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "Tipul ofertei"
+
 #: app/(tabs)/career/_layout.tsx
 msgid "Offers"
 msgstr "Oferte"
@@ -6478,6 +6519,7 @@ msgstr "Numărul zilelor la birou este necunoscut."
 msgid "Office days not stated"
 msgstr "Zile la birou nespecificate"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Office days per week"
 msgstr "Zile la birou pe săptămână"
@@ -6729,6 +6771,7 @@ msgstr "Formatarea originală a tabelului este păstrată. Acest conținut este 
 msgid "Other"
 msgstr "Altul"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "Alte beneficii"
@@ -6858,10 +6901,6 @@ msgstr "Lipiți o postare de locuri de muncă"
 msgid "Paste a message from {company}"
 msgstr "Inserați un mesaj de la {company}"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "Lipiți o ofertă în fila Mesaje a unei candidaturi."
-
 #: src/features/workspace/tabs/messages.tsx
 msgid "Paste the email or message, without the signature."
 msgstr "Lipiți e-mailul sau mesajul, fără semnătură."
@@ -6888,6 +6927,7 @@ msgstr "Descriere lipită"
 msgid "Paused"
 msgstr "Întrerupt"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Pay period"
 msgstr "Perioadă de plată"
@@ -6921,16 +6961,19 @@ msgstr "PDF folosește furnizorul AI dacă este pregătit. Oprește AI pentru a 
 msgid "PDF, Word, Reactive Resume, JSON Resume or LinkedIn export."
 msgstr "Exportați PDF, Word, Reactive Resume, JSON Resume sau LinkedIn."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per hour"
 msgstr "Pe oră"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per month"
 msgstr "Pe lună"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per year"
@@ -7847,6 +7890,7 @@ msgstr "Rezervați majusculele pentru titluri scurte. Acestea încetinesc citire
 msgid "Reset design defaults"
 msgstr "Resetați setările implicite de design"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "Răspuns până la"
@@ -8255,6 +8299,10 @@ msgstr "Salvați locul de muncă"
 msgid "Save lane"
 msgstr "Salvați etapa"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "Salvează oferta"
+
 #: src/features/share/files.ts
 msgid "Save or share file"
 msgstr "Salvați sau partajați fișierul"
@@ -8320,6 +8368,10 @@ msgstr "Salvat o poveste: {title}"
 msgid "Saved description"
 msgstr "Descrierea salvată"
 
+#: src/features/workspace/tabs/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "Elemente salvate pentru {company}, cele mai noi primele."
+
 #: src/features/career/today.tsx
 msgid "Saved to Applications with the posting"
 msgstr "Salvat în Candidaturi cu anunțul"
@@ -8340,6 +8392,7 @@ msgstr "Salvat în Salvat · Exersare"
 msgid "Saving the job. Wait for confirmation before making another change."
 msgstr "Salvarea jobului. Așteptați confirmarea înainte de a face o altă modificare."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 #: src/features/settings/profile.tsx
 #: src/shell/builder-chrome.tsx
@@ -10157,6 +10210,10 @@ msgstr "Strângeți la o pagină"
 msgid "Tightening"
 msgstr "Se condensează"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "Ora"
+
 #. placeholder {0}: draft.timezone
 #: src/features/application-detail/interview-sheet.tsx
 msgid "Time · {0}"
@@ -10174,6 +10231,7 @@ msgstr "Ora, linkul, cine, ce ați trimis"
 msgid "Timeline"
 msgstr "Cronologie"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "Orele sunt afișate în {timeZone}."
@@ -10430,6 +10488,10 @@ msgstr "Subliniați linkurile"
 #: src/ui/overlays.tsx
 msgid "Undo"
 msgstr "Anula"
+
+#: src/features/career/offer-entry.tsx
+msgid "Unknown"
+msgstr "Necunoscut"
 
 #: src/features/career/offers.tsx
 msgid "Unknown · ask"
@@ -10735,6 +10797,7 @@ msgstr "Valoare"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "Variați începuturile, astfel încât secțiunea să nu pară generică."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "Ofertă verbală"
@@ -10840,6 +10903,10 @@ msgstr "Setări de voce"
 #: src/features/write/fields.ts
 msgid "Volunteer"
 msgstr "Voluntariat"
+
+#: src/features/career/offer-entry.tsx
+msgid "Wait for your account timezone to load, retry if it failed, or clear the deadline."
+msgstr "Așteaptă să se încarce fusul orar al contului, încearcă din nou dacă încărcarea a eșuat sau șterge termenul-limită."
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Waiting for you"
@@ -11004,6 +11071,7 @@ msgstr "De unde vin candidaturile"
 msgid "Where you want to work"
 msgstr "Unde doriți să lucrați"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "Unde lucrați"
@@ -11138,6 +11206,7 @@ msgstr "Scriere"
 msgid "Writing help, tailored suggestions and the assistant. The default provider is used wherever you don't pick one. Your keys stay encrypted."
 msgstr "Ajutor la scriere, sugestii adaptate și asistentul. Furnizorul implicit este folosit oriunde nu alegeți altul. Cheile dvs. rămân criptate."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "Ofertă scrisă"

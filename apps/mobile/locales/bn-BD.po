@@ -960,6 +960,10 @@ msgstr "একটি @ এবং ডোমেন যোগ করুন, যে�
 msgid "Add an address."
 msgstr "একটি ঠিকানা যোগ করুন."
 
+#: src/features/career/offer-entry.tsx
+msgid "Add an application first"
+msgstr "আগে একটি আবেদন যোগ করুন"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first."
 msgstr "প্রথমে একটি আবেদন যোগ করুন।"
@@ -1044,6 +1048,14 @@ msgstr "পর্যায় যোগ করুন"
 #: src/features/write/fields.ts
 msgid "Add language"
 msgstr "ভাষা যোগ করুন"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "চাকরির অফার যোগ করুন"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "চাকরির অফারের শর্ত নিজে যোগ করুন, অথবা বার্তায় ঐচ্ছিক এআই নিষ্কাশন ব্যবহার করুন।"
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1473,6 +1485,7 @@ msgstr "এটি একটি প্রতিষ্ঠান আছে এক�
 #: app/_layout.tsx
 #: src/features/application-detail/detail-screen.tsx
 #: src/features/applications-board/calendar-screen.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/letters/write.tsx
 #: src/shell/workspace-chrome.tsx
@@ -1806,6 +1819,7 @@ msgctxt "Entry header accent: a bar beside the header"
 msgid "Bar"
 msgstr "পাশের দণ্ড"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "মূল বেতন"
@@ -1873,10 +1887,12 @@ msgstr "বডি টেক্সট {minimum} pt এ সেট করা হয
 msgid "Bold"
 msgstr "বোল্ড"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "বোনাস"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus conditions"
 msgstr "বোনাস শর্ত"
@@ -2219,6 +2235,10 @@ msgstr "ডেটা শেয়ার করার আগে একটি প�
 msgid "Choose a time"
 msgstr "একটি সময় চয়ন করুন"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "{timeZone} টাইমজোনে একটি বৈধ তারিখ ও সময় বেছে নিন, অথবা সময়সীমা মুছে দিন।"
+
 #: src/features/applications/add-sheet.tsx
 msgid "Choose a valid follow-up date before saving."
 msgstr "সংরক্ষণ করার আগে একটি বৈধ ফলো-আপ তারিখ বেছে নিন।"
@@ -2234,6 +2254,10 @@ msgstr "2 MB পর্যন্ত একটি WebM, MP4, MP3, WAV বা Ogg �
 #: src/features/applications-board/calendar-screen.tsx
 msgid "Choose an application"
 msgstr "একটি আবেদন চয়ন করুন"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "একটি চাকরির আবেদন বেছে নিন এবং সংরক্ষণ করার আগে চিহ্নিত ঘরগুলো সংশোধন করুন।"
 
 #: src/features/workspace/tabs/practise.tsx
 msgid "Choose an audio file"
@@ -3209,6 +3233,7 @@ msgstr "তৈরি করা হয়েছে {0} · সর্বশেষ �
 msgid "Creating document…"
 msgstr "নথি তৈরি করা হচ্ছে..."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "মুদ্রা"
@@ -3921,6 +3946,10 @@ msgstr "উন্নত পড়া ব্যর্থ হয়েছে"
 msgid "Enhanced reading unavailable; used the built-in reader."
 msgstr "উন্নত পড়া অনুপলব্ধ; বিল্ট-ইন রিডার ব্যবহার করা হয়েছে।"
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "পুরো অর্থের পরিমাণ লিখুন, যেমন 95000, অথবা ফাঁকা রাখুন।"
+
 #: src/features/career/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "পুরো অঙ্ক লিখুন, যেমন 95000। আপনার আগের অঙ্ক অপরিবর্তিত আছে।"
@@ -3933,6 +3962,7 @@ msgstr "#1a1a1a বা rgba(…)-এর মতো একটি hex রং লি
 msgid "Enter a name, up to 64 characters."
 msgstr "একটি নাম লিখুন, 64টি অক্ষর পর্যন্ত।"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Enter a three-letter currency code."
 msgstr "তিন অক্ষরের মুদ্রা কোড লিখুন।"
@@ -3965,6 +3995,10 @@ msgstr "resume.example.org এর মতো একটি ঠিকানা ল�
 msgid "Enter any model ID supported by your endpoint."
 msgstr "আপনার এন্ডপয়েন্ট দ্বারা সমর্থিত যেকোন মডেল আইডি লিখুন।"
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "শর্তগুলো নিজে লিখুন। এআইকে কোনো অনুরোধ পাঠানো হবে না। অজানা অর্থের পরিমাণ ফাঁকা রাখুন।"
+
 #: app/(auth)/server.tsx
 msgid "Enter the address you open Reactive Resume at in a browser. The app checks it's a Reactive Resume server that allows app sign-in before you continue."
 msgstr "ব্রাউজারে আপনি Reactive Resume যে ঠিকানাটি খুলছেন সেটি লিখুন৷ অ্যাপটি চেক করে যে এটি একটি Reactive Resume সার্ভার যা আপনি চালিয়ে যাওয়ার আগে অ্যাপ সাইন-ইন করার অনুমতি দেয়।"
@@ -3991,6 +4025,7 @@ msgstr "এন্ট্রি মুছে ফেলা হয়েছে"
 msgid "Entry options"
 msgstr "প্রবেশের বিকল্প"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "ইকুইটি"
@@ -4026,10 +4061,6 @@ msgstr "চাকরির বিজ্ঞপ্তিতে জোর দেও
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "প্রতি সপ্তাহে"
-
-#: src/features/workspace/tabs/saved.tsx
-msgid "Everything the coach wrote for {company}, newest first."
-msgstr "কর্মজীবন উপদেষ্টা {company}-এর জন্য যা লিখেছেন সবই নতুন, প্রথমে।"
 
 #: src/features/career/facts.tsx
 #: src/features/write/fields.ts
@@ -4182,8 +4213,8 @@ msgid "Fit"
 msgstr "উপযুক্ততা"
 
 #: src/features/workspace/tabs/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "উপযুক্ততা যাচাই, ব্রিফিং, অনুশীলনের মতামত, ফিরে দেখা, উত্তর ও জবাব অন্য ট্যাবগুলো তৈরি করার সাথে সাথে এখানে চলে আসে।"
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "উপযুক্ততা যাচাই, ব্রিফিং, সাক্ষাৎকার অনুশীলনের মতামত, সাক্ষাৎকারের পর ফিরে দেখা, ফর্মের উত্তর, জবাব ও চাকরির অফার সংরক্ষণ করলে এখানে দেখা যাবে।"
 
 #: src/features/check/issues.ts
 msgid "Fix the date"
@@ -5136,10 +5167,12 @@ msgstr "লেআউট"
 msgid "Leads with why you fit"
 msgstr "কেন আপনি ফিট সঙ্গে বাড়ে"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "শেখার বাজেট"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "ত্যাগ করুন"
@@ -6462,6 +6495,14 @@ msgstr "বন্ধ শুধুমাত্র আপনি এই জীব�
 msgid "Offer"
 msgstr "অফার"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "চাকরির অফার সংরক্ষিত হয়েছে"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "চাকরির অফারের ধরন"
+
 #: app/(tabs)/career/_layout.tsx
 msgid "Offers"
 msgstr "অফারসমূহ"
@@ -6478,6 +6519,7 @@ msgstr "অফিসে যাওয়ার দিন জানা নেই�
 msgid "Office days not stated"
 msgstr "অফিস দিনের উল্লেখ নেই"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Office days per week"
 msgstr "সপ্তাহে অফিসে যাওয়ার দিন"
@@ -6729,6 +6771,7 @@ msgstr "মূল টেবিল বিন্যাস সংরক্ষিত
 msgid "Other"
 msgstr "অন্যান্য"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "অন্যান্য সুবিধা"
@@ -6858,10 +6901,6 @@ msgstr "একটি কাজের পোস্টিং আটকান"
 msgid "Paste a message from {company}"
 msgstr "{company} থেকে একটি বার্তা আটকান"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "কোনো আবেদনের বার্তা ট্যাবে একটি অফার পেস্ট করুন।"
-
 #: src/features/workspace/tabs/messages.tsx
 msgid "Paste the email or message, without the signature."
 msgstr "স্বাক্ষর ছাড়া ইমেইল বা বার্তাটি পেস্ট করুন।"
@@ -6888,6 +6927,7 @@ msgstr "বর্ণনা আটকানো হয়েছে"
 msgid "Paused"
 msgstr "বিরতি দেওয়া হয়েছে"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Pay period"
 msgstr "বেতনের মেয়াদ"
@@ -6921,16 +6961,19 @@ msgstr "একটি প্রস্তুত হলে PDF আপনার AI �
 msgid "PDF, Word, Reactive Resume, JSON Resume or LinkedIn export."
 msgstr "PDF, Word, Reactive Resume, JSON Resume বা LinkedIn এক্সপোর্ট।"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per hour"
 msgstr "প্রতি ঘণ্টায়"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per month"
 msgstr "প্রতি মাসে"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per year"
@@ -7847,6 +7890,7 @@ msgstr "সংক্ষিপ্ত শিরোনামের জন্য ব
 msgid "Reset design defaults"
 msgstr "ডিজাইন ডিফল্ট রিসেট করুন"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "উত্তর দেওয়ার শেষ সময়"
@@ -8255,6 +8299,10 @@ msgstr "চাকরি বাঁচান"
 msgid "Save lane"
 msgstr "পর্যায় সংরক্ষণ করুন"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "চাকরির অফার সংরক্ষণ করুন"
+
 #: src/features/share/files.ts
 msgid "Save or share file"
 msgstr "ফাইল সংরক্ষণ বা শেয়ার করুন"
@@ -8320,6 +8368,10 @@ msgstr "গল্প সংরক্ষিত: {title}"
 msgid "Saved description"
 msgstr "সংরক্ষিত বিবরণ"
 
+#: src/features/workspace/tabs/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "{company}-এর জন্য সংরক্ষিত আইটেম, নতুনগুলো আগে।"
+
 #: src/features/career/today.tsx
 msgid "Saved to Applications with the posting"
 msgstr "চাকরির বিজ্ঞপ্তিসহ আবেদনে সংরক্ষিত হয়েছে"
@@ -8340,6 +8392,7 @@ msgstr "সংরক্ষিত ট্যাবে সংরক্ষিত হ
 msgid "Saving the job. Wait for confirmation before making another change."
 msgstr "চাকরি বাঁচাচ্ছে। অন্য পরিবর্তন করার আগে নিশ্চিতকরণের জন্য অপেক্ষা করুন।"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 #: src/features/settings/profile.tsx
 #: src/shell/builder-chrome.tsx
@@ -10157,6 +10210,10 @@ msgstr "এক পৃষ্ঠায় শক্ত করুন"
 msgid "Tightening"
 msgstr "আঁটসাঁট করা হচ্ছে"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "সময়"
+
 #. placeholder {0}: draft.timezone
 #: src/features/application-detail/interview-sheet.tsx
 msgid "Time · {0}"
@@ -10174,6 +10231,7 @@ msgstr "সময়, লিংক, কারা থাকবেন, কী প�
 msgid "Timeline"
 msgstr "টাইমলাইন"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "সময়গুলো {timeZone}-এ দেখানো হয়।"
@@ -10430,6 +10488,10 @@ msgstr "আন্ডারলাইন লিঙ্ক"
 #: src/ui/overlays.tsx
 msgid "Undo"
 msgstr "পূর্বাবস্থায় ফেরান"
+
+#: src/features/career/offer-entry.tsx
+msgid "Unknown"
+msgstr "অজানা"
 
 #: src/features/career/offers.tsx
 msgid "Unknown · ask"
@@ -10735,6 +10797,7 @@ msgstr "মান"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "শুরুটা বিভিন্নভাবে করুন, যাতে সেকশনটি সাধারণ টেমপ্লেট টেক্সটের মতো না লাগে।"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "মৌখিক অফার"
@@ -10840,6 +10903,10 @@ msgstr "কণ্ঠের সেটিংস"
 #: src/features/write/fields.ts
 msgid "Volunteer"
 msgstr "স্বেচ্ছাসেবী"
+
+#: src/features/career/offer-entry.tsx
+msgid "Wait for your account timezone to load, retry if it failed, or clear the deadline."
+msgstr "আপনার অ্যাকাউন্টের টাইমজোন লোড হওয়া পর্যন্ত অপেক্ষা করুন, লোড না হলে আবার চেষ্টা করুন, অথবা সময়সীমা মুছে দিন।"
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Waiting for you"
@@ -11004,6 +11071,7 @@ msgstr "আবেদনপত্রগুলো কোথা থেকে আস
 msgid "Where you want to work"
 msgstr "যেখানে আপনি কাজ করতে চান"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "কাজের স্থান"
@@ -11138,6 +11206,7 @@ msgstr "লেখা"
 msgid "Writing help, tailored suggestions and the assistant. The default provider is used wherever you don't pick one. Your keys stay encrypted."
 msgstr "লেখায় সহায়তা, মানানসই পরামর্শ এবং সহকারী। যেখানে আপনি কোনো প্রদানকারী বেছে নেন না, সেখানে ডিফল্ট প্রদানকারী ব্যবহৃত হয়। আপনার কী এনক্রিপ্টেড থাকে।"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "লিখিত অফার"

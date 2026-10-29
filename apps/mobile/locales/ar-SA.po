@@ -960,6 +960,10 @@ msgstr "أضف @ والمجال، مثل name@example.com"
 msgid "Add an address."
 msgstr "أضف عنوانا."
 
+#: src/features/career/offer-entry.tsx
+msgid "Add an application first"
+msgstr "أضف طلبًا أولًا"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first."
 msgstr "أضف طلب وظيفة أولاً."
@@ -1044,6 +1048,14 @@ msgstr "إضافة مرحلة"
 #: src/features/write/fields.ts
 msgid "Add language"
 msgstr "أضف لغة"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "إضافة عرض وظيفي"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "أضف شروط العرض الوظيفي يدويًا، أو استخدم الاستخراج الاختياري بالذكاء الاصطناعي في الرسائل."
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1473,6 +1485,7 @@ msgstr "يظهر على الصفحة بمجرد أن يكون لها مؤسسة.
 #: app/_layout.tsx
 #: src/features/application-detail/detail-screen.tsx
 #: src/features/applications-board/calendar-screen.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/letters/write.tsx
 #: src/shell/workspace-chrome.tsx
@@ -1806,6 +1819,7 @@ msgctxt "Entry header accent: a bar beside the header"
 msgid "Bar"
 msgstr "شريط جانبي"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "الراتب الأساسي"
@@ -1873,10 +1887,12 @@ msgstr "تم ضبط النص الأساسي على {minimum} نقطة"
 msgid "Bold"
 msgstr "عريض"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "المكافأة"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus conditions"
 msgstr "شروط الحصول على المكافأة"
@@ -2219,6 +2235,10 @@ msgstr "اختر مزود الذكاء الاصطناعي الذي تم اختب
 msgid "Choose a time"
 msgstr "اختر الوقت"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "اختر تاريخًا ووقتًا صالحين بتوقيت {timeZone}، أو أزل الموعد النهائي."
+
 #: src/features/applications/add-sheet.tsx
 msgid "Choose a valid follow-up date before saving."
 msgstr "اختر تاريخ متابعة صالحًا قبل الحفظ."
@@ -2234,6 +2254,10 @@ msgstr "اختر ملف WebM أو MP4 أو MP3 أو WAV أو Ogg بحجم يصل
 #: src/features/applications-board/calendar-screen.tsx
 msgid "Choose an application"
 msgstr "اختر طلب وظيفة"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "اختر طلب توظيف وصحّح الحقول المميّزة قبل الحفظ."
 
 #: src/features/workspace/tabs/practise.tsx
 msgid "Choose an audio file"
@@ -3209,6 +3233,7 @@ msgstr "تم إنشاء {0} · آخر استخدام {1} · انتهاء الص�
 msgid "Creating document…"
 msgstr "جارٍ إنشاء المستند…"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "العملة"
@@ -3921,6 +3946,10 @@ msgstr "فشلت القراءة المحسنة"
 msgid "Enhanced reading unavailable; used the built-in reader."
 msgstr "القراءة المحسنة غير متوفرة؛ استخدم القارئ المدمج."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "أدخل المبلغ كاملًا، مثل 95000، أو اترك الحقل فارغًا."
+
 #: src/features/career/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "أدخل مبلغًا كاملًا، مثل 95000. لم يتغيّر مبلغك السابق."
@@ -3933,6 +3962,7 @@ msgstr "أدخل لونًا سداسيًا عشريًا مثل #1a1a1a، أو rg
 msgid "Enter a name, up to 64 characters."
 msgstr "أدخل اسمًا يصل إلى 64 حرفًا."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Enter a three-letter currency code."
 msgstr "أدخل رمز عملة من ثلاثة أحرف."
@@ -3965,6 +3995,10 @@ msgstr "أدخل عنوانًا مثل resume.example.org."
 msgid "Enter any model ID supported by your endpoint."
 msgstr "أدخل أي معرف نموذج تدعمه نقطة النهاية الخاصة بك."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "أدخل الشروط بنفسك. لن يُرسل أي طلب إلى الذكاء الاصطناعي. اترك المبالغ غير المعروفة فارغة."
+
 #: app/(auth)/server.tsx
 msgid "Enter the address you open Reactive Resume at in a browser. The app checks it's a Reactive Resume server that allows app sign-in before you continue."
 msgstr "أدخل العنوان الذي تستخدمه لفتح Reactive Resume في المتصفح. قبل المتابعة، يتحقق تطبيق الهاتف المحمول من أن هذا هو خادم Reactive Resume مع تمكين تسجيل الدخول عبر الهاتف المحمول."
@@ -3991,6 +4025,7 @@ msgstr "تم حذف الإدخال"
 msgid "Entry options"
 msgstr "خيارات الدخول"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "الأسهم"
@@ -4026,10 +4061,6 @@ msgstr "كل مصطلح يشدد عليه الإعلان الوظيفي موجو
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "كل أسبوع"
-
-#: src/features/workspace/tabs/saved.tsx
-msgid "Everything the coach wrote for {company}, newest first."
-msgstr "كل ما كتبه المدرب المهني لـ {company}، مع الأحدث أولاً."
 
 #: src/features/career/facts.tsx
 #: src/features/write/fields.ts
@@ -4182,8 +4213,8 @@ msgid "Fit"
 msgstr "الملاءمة"
 
 #: src/features/workspace/tabs/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "فحوص الملاءمة والإحاطات وملاحظات التمرين ومراجعات ما بعد المقابلة والإجابات والردود تصل إلى هنا كلما أنشأتها علامات التبويب الأخرى."
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "تظهر هنا فحوص الملاءمة والإحاطات وملاحظات التمرين ومراجعات ما بعد المقابلة والإجابات والردود والعروض الوظيفية كلما حفظتها."
 
 #: src/features/check/issues.ts
 msgid "Fix the date"
@@ -5136,10 +5167,12 @@ msgstr "التخطيط"
 msgid "Leads with why you fit"
 msgstr "يؤدي إلى سبب ملاءمتك"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "ميزانية التعلّم"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "مغادرة"
@@ -6462,6 +6495,14 @@ msgstr "عن. أنت فقط من يمكنه رؤية هذه السيرة الذ�
 msgid "Offer"
 msgstr "عرض وظيفي"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "تم حفظ العرض الوظيفي"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "نوع العرض الوظيفي"
+
 #: app/(tabs)/career/_layout.tsx
 msgid "Offers"
 msgstr "العروض"
@@ -6478,6 +6519,7 @@ msgstr "أيام الحضور إلى المكتب غير معروفة."
 msgid "Office days not stated"
 msgstr "أيام المكتب غير مذكورة"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Office days per week"
 msgstr "أيام الحضور إلى المكتب أسبوعيًا"
@@ -6729,6 +6771,7 @@ msgstr "يتم الحفاظ على تنسيق الجدول الأصلي. هذا 
 msgid "Other"
 msgstr "أخرى"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "مزايا أخرى"
@@ -6858,10 +6901,6 @@ msgstr "قم بلصق إعلان الوظيفة"
 msgid "Paste a message from {company}"
 msgstr "الصق رسالة من {company}"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "الصق عرضًا في علامة تبويب الرسائل الخاصة بأحد الطلبات."
-
 #: src/features/workspace/tabs/messages.tsx
 msgid "Paste the email or message, without the signature."
 msgstr "الصق البريد الإلكتروني أو الرسالة، دون التوقيع."
@@ -6888,6 +6927,7 @@ msgstr "تم لصق الوصف"
 msgid "Paused"
 msgstr "متوقف مؤقتًا"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Pay period"
 msgstr "فترة الدفع"
@@ -6921,16 +6961,19 @@ msgstr "يستخدم PDF مزود AI لديك عند توفره. أوقف خيا
 msgid "PDF, Word, Reactive Resume, JSON Resume or LinkedIn export."
 msgstr "تصدير PDF أو Word أو Reactive Resume أو JSON Resume أو LinkedIn."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per hour"
 msgstr "في الساعة"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per month"
 msgstr "شهريا"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per year"
@@ -7847,6 +7890,7 @@ msgstr "اقصر الأحرف الكبيرة على العناوين القصي�
 msgid "Reset design defaults"
 msgstr "إعادة تعيين الإعدادات الافتراضية للتصميم"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "الرد قبل"
@@ -8255,6 +8299,10 @@ msgstr "حفظ الوظيفة"
 msgid "Save lane"
 msgstr "حفظ المرحلة"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "حفظ العرض الوظيفي"
+
 #: src/features/share/files.ts
 msgid "Save or share file"
 msgstr "حفظ الملف أو مشاركته"
@@ -8320,6 +8368,10 @@ msgstr "المحفوظات قصة: {title}"
 msgid "Saved description"
 msgstr "الوصف المحفوظ"
 
+#: src/features/workspace/tabs/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "العناصر المحفوظة لـ {company}، الأحدث أولًا."
+
 #: src/features/career/today.tsx
 msgid "Saved to Applications with the posting"
 msgstr "تم الحفظ في الطلبات مع إعلان الوظيفة"
@@ -8340,6 +8392,7 @@ msgstr "تم الحفظ في المحفوظات · تمرين"
 msgid "Saving the job. Wait for confirmation before making another change."
 msgstr "حفظ الوظيفة. انتظر التأكيد قبل إجراء تغيير آخر."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 #: src/features/settings/profile.tsx
 #: src/shell/builder-chrome.tsx
@@ -10157,6 +10210,10 @@ msgstr "تشديد إلى صفحة واحدة"
 msgid "Tightening"
 msgstr "جارٍ الإيجاز"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "الوقت"
+
 #. placeholder {0}: draft.timezone
 #: src/features/application-detail/interview-sheet.tsx
 msgid "Time · {0}"
@@ -10174,6 +10231,7 @@ msgstr "الوقت، الرابط، من، ما أرسلته"
 msgid "Timeline"
 msgstr "الجدول الزمني"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "تُعرض الأوقات بتوقيت {timeZone}."
@@ -10430,6 +10488,10 @@ msgstr "تسطير الروابط"
 #: src/ui/overlays.tsx
 msgid "Undo"
 msgstr "التراجع"
+
+#: src/features/career/offer-entry.tsx
+msgid "Unknown"
+msgstr "غير معروف"
 
 #: src/features/career/offers.tsx
 msgid "Unknown · ask"
@@ -10735,6 +10797,7 @@ msgstr "القيمة"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "نوّع بدايات الجمل حتى لا يبدو القسم نمطيًا مكررًا."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "عرض شفهي"
@@ -10840,6 +10903,10 @@ msgstr "إعدادات الصوت"
 #: src/features/write/fields.ts
 msgid "Volunteer"
 msgstr "التطوع"
+
+#: src/features/career/offer-entry.tsx
+msgid "Wait for your account timezone to load, retry if it failed, or clear the deadline."
+msgstr "انتظر تحميل المنطقة الزمنية لحسابك، أو أعد المحاولة إذا فشل التحميل، أو أزل الموعد النهائي."
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Waiting for you"
@@ -11004,6 +11071,7 @@ msgstr "من أين تأتي الطلبات"
 msgid "Where you want to work"
 msgstr "أين تريد أن تعمل"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "مكان العمل"
@@ -11138,6 +11206,7 @@ msgstr "الكتابة"
 msgid "Writing help, tailored suggestions and the assistant. The default provider is used wherever you don't pick one. Your keys stay encrypted."
 msgstr "مساعدة في الكتابة، واقتراحات مخصّصة، والمساعد. يُستخدم المزوّد الافتراضي حيثما لا تختار واحدًا. تبقى مفاتيحك مشفّرة."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "عرض مكتوب"

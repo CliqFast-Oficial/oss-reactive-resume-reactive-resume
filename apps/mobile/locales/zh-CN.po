@@ -960,6 +960,10 @@ msgstr "添加 @ 和域名，例如 name@example.com"
 msgid "Add an address."
 msgstr "添加地址。"
 
+#: src/features/career/offer-entry.tsx
+msgid "Add an application first"
+msgstr "请先添加一个申请"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first."
 msgstr "首先添加申请。"
@@ -1044,6 +1048,14 @@ msgstr "添加阶段"
 #: src/features/write/fields.ts
 msgid "Add language"
 msgstr "添加语言"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "添加录用通知"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "手动添加录用条件，或在“消息”中按需使用 AI 提取功能。"
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1473,6 +1485,7 @@ msgstr "一旦有组织就会出现在页面上。"
 #: app/_layout.tsx
 #: src/features/application-detail/detail-screen.tsx
 #: src/features/applications-board/calendar-screen.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/letters/write.tsx
 #: src/shell/workspace-chrome.tsx
@@ -1806,6 +1819,7 @@ msgctxt "Entry header accent: a bar beside the header"
 msgid "Bar"
 msgstr "色条"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "基本工资"
@@ -1873,10 +1887,12 @@ msgstr "正文设置为 {minimum} pt"
 msgid "Bold"
 msgstr "加粗"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "奖金"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus conditions"
 msgstr "奖金条件"
@@ -2219,6 +2235,10 @@ msgstr "在共享数据之前选择经过测试的人工智能提供商。"
 msgid "Choose a time"
 msgstr "选择时间"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "请选择在 {timeZone} 时区内有效的日期和时间，或清空截止日期字段。"
+
 #: src/features/applications/add-sheet.tsx
 msgid "Choose a valid follow-up date before saving."
 msgstr "保存前选择有效的后续日期。"
@@ -2234,6 +2254,10 @@ msgstr "选择不超过 2 MB 的 WebM、MP4、MP3、WAV 或 Ogg 文件。"
 #: src/features/applications-board/calendar-screen.tsx
 msgid "Choose an application"
 msgstr "选择申请"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "保存前，请选择一项申请并更正突出显示的字段。"
 
 #: src/features/workspace/tabs/practise.tsx
 msgid "Choose an audio file"
@@ -3209,6 +3233,7 @@ msgstr "创建 {0} · 上次使用 {1} · 过期 {2}"
 msgid "Creating document…"
 msgstr "正在创建文档…"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "币种"
@@ -3921,6 +3946,10 @@ msgstr "增强阅读失败"
 msgid "Enhanced reading unavailable; used the built-in reader."
 msgstr "增强阅读不可用；使用内置阅读器。"
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "请输入完整金额，例如 95000，或留空。"
+
 #: src/features/career/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "请输入完整金额，例如 95000。您之前的金额未更改。"
@@ -3933,6 +3962,7 @@ msgstr "输入十六进制颜色，例如 #1a1a1a 或 rgba(…)。"
 msgid "Enter a name, up to 64 characters."
 msgstr "输入名称，最多 64 个字符。"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Enter a three-letter currency code."
 msgstr "请输入三字母货币代码。"
@@ -3965,6 +3995,10 @@ msgstr "请输入类似resume.example.org的地址。"
 msgid "Enter any model ID supported by your endpoint."
 msgstr "输入您的终端支持的任何型号 ID。"
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "自行填写条件。不会发送 AI 请求。未知金额请留空。"
+
 #: app/(auth)/server.tsx
 msgid "Enter the address you open Reactive Resume at in a browser. The app checks it's a Reactive Resume server that allows app sign-in before you continue."
 msgstr "输入您在浏览器中打开 Reactive Resume 的地址。在您继续之前，应用会检查其是否是允许应用登录的 Reactive Resume 服务器。"
@@ -3991,6 +4025,7 @@ msgstr "条目已删除"
 msgid "Entry options"
 msgstr "参赛选项"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "股权"
@@ -4026,10 +4061,6 @@ msgstr "招聘启事强调的每个术语都已经存在。"
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "每周"
-
-#: src/features/workspace/tabs/saved.tsx
-msgid "Everything the coach wrote for {company}, newest first."
-msgstr "教练为 {company} 写的所有内容，最新的在前。"
 
 #: src/features/career/facts.tsx
 #: src/features/write/fields.ts
@@ -4182,8 +4213,8 @@ msgid "Fit"
 msgstr "匹配度"
 
 #: src/features/workspace/tabs/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "匹配度检查、简报、练习反馈、复盘、回答和回复会在其他标签页生成后显示在这里。"
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "匹配度检查、简报、练习反馈、面试复盘、申请表答案、回复草稿和录用通知会在保存后显示在这里。"
 
 #: src/features/check/issues.ts
 msgid "Fix the date"
@@ -5136,10 +5167,12 @@ msgstr "布局"
 msgid "Leads with why you fit"
 msgstr "引导您了解适合的原因"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "学习预算"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "离开"
@@ -6462,6 +6495,14 @@ msgstr "离开。只有您可以看到这份简历。"
 msgid "Offer"
 msgstr "录用"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "录用通知已保存"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "录用通知类型"
+
 #: app/(tabs)/career/_layout.tsx
 msgid "Offers"
 msgstr "录用通知"
@@ -6478,6 +6519,7 @@ msgstr "到岗天数未知。"
 msgid "Office days not stated"
 msgstr "未注明到办公室天数"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Office days per week"
 msgstr "每周到岗天数"
@@ -6729,6 +6771,7 @@ msgstr "原始表格格式已保留。由于无法安全编辑，此内容为只
 msgid "Other"
 msgstr "其他"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "其他福利"
@@ -6858,10 +6901,6 @@ msgstr "粘贴职位发布"
 msgid "Paste a message from {company}"
 msgstr "粘贴来自 {company} 的消息"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "将录用通知粘贴到申请的“消息”标签页中。"
-
 #: src/features/workspace/tabs/messages.tsx
 msgid "Paste the email or message, without the signature."
 msgstr "粘贴邮件或消息，不含签名。"
@@ -6888,6 +6927,7 @@ msgstr "粘贴说明"
 msgid "Paused"
 msgstr "已暂停"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Pay period"
 msgstr "发薪周期"
@@ -6921,16 +6961,19 @@ msgstr "PDF导入会使用已就绪的AI提供商。关闭AI开关后，将在�
 msgid "PDF, Word, Reactive Resume, JSON Resume or LinkedIn export."
 msgstr "PDF、Word、Reactive Resume、JSON Resume 或 LinkedIn 导出。"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per hour"
 msgstr "每小时"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per month"
 msgstr "每月"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per year"
@@ -7847,6 +7890,7 @@ msgstr "全大写只用于简短的标题。它会拖慢阅读速度，还可能
 msgid "Reset design defaults"
 msgstr "重置设计默认值"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "答复截止"
@@ -8255,6 +8299,10 @@ msgstr "保存工作"
 msgid "Save lane"
 msgstr "保存阶段"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "保存录用通知"
+
 #: src/features/share/files.ts
 msgid "Save or share file"
 msgstr "保存或共享文件"
@@ -8320,6 +8368,10 @@ msgstr "已保存一个故事：{title}"
 msgid "Saved description"
 msgstr "已保存的描述"
 
+#: src/features/workspace/tabs/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "{company} 的已保存项目，按从新到旧的顺序排列。"
+
 #: src/features/career/today.tsx
 msgid "Saved to Applications with the posting"
 msgstr "已连同职位公告保存到“申请”"
@@ -8340,6 +8392,7 @@ msgstr "已保存到“已保存” · 练习"
 msgid "Saving the job. Wait for confirmation before making another change."
 msgstr "拯救工作。等待确认后再进行另一次更改。"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 #: src/features/settings/profile.tsx
 #: src/shell/builder-chrome.tsx
@@ -10157,6 +10210,10 @@ msgstr "收紧至一页"
 msgid "Tightening"
 msgstr "正在精简"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "时间"
+
 #. placeholder {0}: draft.timezone
 #: src/features/application-detail/interview-sheet.tsx
 msgid "Time · {0}"
@@ -10174,6 +10231,7 @@ msgstr "时间、链接、面试官、您发送的内容"
 msgid "Timeline"
 msgstr "时间轴"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "时间按 {timeZone} 显示。"
@@ -10430,6 +10488,10 @@ msgstr "下划线链接"
 #: src/ui/overlays.tsx
 msgid "Undo"
 msgstr "撤销"
+
+#: src/features/career/offer-entry.tsx
+msgid "Unknown"
+msgstr "未知"
 
 #: src/features/career/offers.tsx
 msgid "Unknown · ask"
@@ -10735,6 +10797,7 @@ msgstr "记录值"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "变换开头方式，避免这部分读起来像套话。"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "口头录用"
@@ -10840,6 +10903,10 @@ msgstr "语音设置"
 #: src/features/write/fields.ts
 msgid "Volunteer"
 msgstr "志愿者经历"
+
+#: src/features/career/offer-entry.tsx
+msgid "Wait for your account timezone to load, retry if it failed, or clear the deadline."
+msgstr "请等待账户时区加载完成；如果加载失败，请重试，或清空截止日期字段。"
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Waiting for you"
@@ -11004,6 +11071,7 @@ msgstr "申请来源"
 msgid "Where you want to work"
 msgstr "您想在哪里工作"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "工作地点"
@@ -11138,6 +11206,7 @@ msgstr "文案"
 msgid "Writing help, tailored suggestions and the assistant. The default provider is used wherever you don't pick one. Your keys stay encrypted."
 msgstr "写作帮助、定制建议和助手。未单独选择提供商的地方都会使用默认提供商。您的密钥会加密保存。"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "书面录用"

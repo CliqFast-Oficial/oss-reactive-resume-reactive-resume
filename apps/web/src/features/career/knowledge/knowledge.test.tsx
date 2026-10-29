@@ -11,6 +11,7 @@ const api = vi.hoisted(() => ({
 	fail: new Set<string>(),
 	read: vi.fn(),
 	saveProfile: vi.fn(),
+	createOffer: vi.fn(),
 	saveStory: vi.fn(),
 	saveFact: vi.fn(),
 	navigate: vi.fn(),
@@ -29,15 +30,30 @@ vi.mock("@/libs/orpc/client", () => {
 			retry: false,
 		}),
 		mutationOptions: () => ({
-			mutationFn: name === "saveStory" ? api.saveStory : name === "saveFact" ? api.saveFact : api.saveProfile,
+			mutationFn:
+				name === "createOffer"
+					? api.createOffer
+					: name === "saveStory"
+						? api.saveStory
+						: name === "saveFact"
+							? api.saveFact
+							: api.saveProfile,
 		}),
 	});
 	return {
 		orpc: {
 			career: Object.fromEntries(
-				["facts", "stories", "profile", "savedItems", "saveStory", "saveProfile", "saveFact", "updateFact"].map(
-					(name) => [name, endpoint(name)],
-				),
+				[
+					"facts",
+					"stories",
+					"profile",
+					"savedItems",
+					"saveStory",
+					"saveProfile",
+					"saveFact",
+					"updateFact",
+					"createOffer",
+				].map((name) => [name, endpoint(name)]),
 			),
 		},
 		client: { career: { saveProfile: api.saveProfile } },
@@ -75,6 +91,7 @@ vi.mock("@/features/applications/queries", () => ({
 }));
 vi.mock("@reactive-resume/ui/components/toast", () => ({ toast: { add: vi.fn() } }));
 
+import { OfferEntry } from "../offer-entry";
 import { OffersPage } from "../offers";
 import { FactsPage } from "./facts";
 import { PreferencesPage } from "./preferences";
@@ -378,6 +395,70 @@ it.each([
 	await waitFor(() =>
 		expect(api.saveProfile).toHaveBeenCalledWith(
 			expect.objectContaining({ minBase: { amount, currency: "EUR", period: "year" } }),
+		),
+	);
+});
+
+it("validates manual amounts and retains the draft after a failed save", async () => {
+	api.data.applications = [
+		{ id: "job-a", company: "Acme", role: "Engineer" },
+		{ id: "job-b", company: "Birch", role: "Engineer" },
+	];
+	api.createOffer.mockRejectedValueOnce(new Error("Offline"));
+	const view = mount(<OfferEntry application={{ id: "job-a", company: "Acme", role: "Engineer" }} />);
+	fireEvent.click(screen.getByRole("button", { name: "Add offer" }));
+	fireEvent.change(screen.getByLabelText("Currency"), { target: { value: "eur" } });
+	fireEvent.change(screen.getByLabelText("Base salary"), { target: { value: "95k" } });
+	expect(screen.getByLabelText("Base salary").getAttribute("aria-invalid")).not.toBe("true");
+	fireEvent.blur(screen.getByLabelText("Base salary"));
+	expect(screen.getByLabelText("Base salary").getAttribute("aria-invalid")).toBe("true");
+	fireEvent.click(screen.getByRole("button", { name: "Save offer" }));
+	expect(api.createOffer).not.toHaveBeenCalled();
+	fireEvent.change(screen.getByLabelText("Base salary"), { target: { value: "95,000" } });
+	fireEvent.click(screen.getByRole("button", { name: "Save offer" }));
+	await screen.findByText("Couldn't save the offer. Your draft is still here. Try again.");
+	expect((screen.getByLabelText("Base salary") as HTMLInputElement).value).toBe("95,000");
+	api.createOffer.mockResolvedValue(null);
+	fireEvent.click(screen.getByRole("button", { name: "Save offer" }));
+	await waitFor(() => expect(screen.queryByRole("button", { name: "Save offer" })).toBeNull());
+	const first = api.createOffer.mock.calls.at(-1)?.[0];
+	expect(first).toMatchObject({
+		applicationId: "job-a",
+		currency: "EUR",
+		period: "year",
+		base: 95000,
+		variable: null,
+		learning: null,
+	});
+	view.unmount();
+});
+
+it("blocks invalid optional learning and skipped DST deadlines without losing the draft", async () => {
+	mount(<OfferEntry application={{ id: "job-a", company: "Acme", role: "Engineer" }} />);
+	fireEvent.click(screen.getByRole("button", { name: "Add offer" }));
+	fireEvent.change(screen.getByLabelText("Currency"), { target: { value: "EUR" } });
+	const learning = screen.getByLabelText("Learning budget");
+	fireEvent.change(learning, { target: { value: "95k" } });
+	expect(learning.getAttribute("aria-invalid")).not.toBe("true");
+	expect(screen.queryByText("Enter a full amount, such as 95000, or leave blank.")).toBeNull();
+	fireEvent.click(screen.getByRole("button", { name: "Save offer" }));
+	expect(learning.getAttribute("aria-invalid")).toBe("true");
+	expect(api.createOffer).not.toHaveBeenCalled();
+	expect((learning as HTMLInputElement).value).toBe("95k");
+	fireEvent.change(learning, { target: { value: "" } });
+	fireEvent.change(screen.getByLabelText("Respond by"), { target: { value: "2027-03-28" } });
+	fireEvent.change(screen.getByLabelText("Time"), { target: { value: "02:30" } });
+	fireEvent.click(screen.getByRole("button", { name: "Save offer" }));
+	expect(api.createOffer).not.toHaveBeenCalled();
+	expect(screen.getByText("Choose a valid date and time in Europe/Berlin, or clear the deadline.")).toBeTruthy();
+	expect((screen.getByLabelText("Time") as HTMLInputElement).value).toBe("02:30");
+	fireEvent.change(screen.getByLabelText("Respond by"), { target: { value: "" } });
+	api.createOffer.mockResolvedValue(null);
+	fireEvent.click(screen.getByRole("button", { name: "Save offer" }));
+	await waitFor(() =>
+		expect(api.createOffer).toHaveBeenCalledWith(
+			expect.objectContaining({ base: null, variable: null, learning: null, respondBy: null }),
+			expect.anything(),
 		),
 	);
 });

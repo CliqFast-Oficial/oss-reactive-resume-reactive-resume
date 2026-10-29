@@ -960,6 +960,10 @@ msgstr "name@example.com सारखे @ आणि डोमेन जोड�
 msgid "Add an address."
 msgstr "पत्ता जोडा."
 
+#: src/features/career/offer-entry.tsx
+msgid "Add an application first"
+msgstr "आधी एक अर्ज जोडा"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first."
 msgstr "प्रथम नोकरीसाठी अर्ज जोडा."
@@ -1044,6 +1048,14 @@ msgstr "टप्पा जोडा"
 #: src/features/write/fields.ts
 msgid "Add language"
 msgstr "भाषा जोडा"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "ऑफर जोडा"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "नोकरीच्या ऑफरच्या अटी स्वतः भरा किंवा संदेशांमधील ऐच्छिक AI माहिती काढण्याची सुविधा वापरा."
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1473,6 +1485,7 @@ msgstr "एकदा त्याची संघटना असल्यास
 #: app/_layout.tsx
 #: src/features/application-detail/detail-screen.tsx
 #: src/features/applications-board/calendar-screen.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/letters/write.tsx
 #: src/shell/workspace-chrome.tsx
@@ -1806,6 +1819,7 @@ msgctxt "Entry header accent: a bar beside the header"
 msgid "Bar"
 msgstr "उभी पट्टी"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "मूळ पगार"
@@ -1873,10 +1887,12 @@ msgstr "मुख्य मजकूर {minimum} pt वर सेट केल�
 msgid "Bold"
 msgstr "जाड (Bold)"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "बोनस"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus conditions"
 msgstr "बोनस अटी"
@@ -2219,6 +2235,10 @@ msgstr "डेटा शेअर करण्यापूर्वी चाच
 msgid "Choose a time"
 msgstr "एक वेळ निवडा"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "{timeZone} टाइमझोनमधील वैध तारीख आणि वेळ निवडा किंवा अंतिम मुदत काढून टाका."
+
 #: src/features/applications/add-sheet.tsx
 msgid "Choose a valid follow-up date before saving."
 msgstr "जतन करण्यापूर्वी वैध फॉलो-अप तारीख निवडा."
@@ -2234,6 +2254,10 @@ msgstr "2 MB पर्यंतची WebM, MP4, MP3, WAV किंवा Ogg �
 #: src/features/applications-board/calendar-screen.tsx
 msgid "Choose an application"
 msgstr "नोकरीसाठी अर्ज निवडा"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "जतन करण्यापूर्वी अर्ज निवडा आणि ठळक केलेल्या फील्डमधील चुका दुरुस्त करा."
 
 #: src/features/workspace/tabs/practise.tsx
 msgid "Choose an audio file"
@@ -3209,6 +3233,7 @@ msgstr "{0} तयार केले · शेवटचे वापरले�
 msgid "Creating document…"
 msgstr "दस्तऐवज तयार करत आहे…"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "चलन"
@@ -3921,6 +3946,10 @@ msgstr "वर्धित वाचन अयशस्वी"
 msgid "Enhanced reading unavailable; used the built-in reader."
 msgstr "वर्धित वाचन अनुपलब्ध; अंगभूत रीडर वापरले."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "95000 यासारखी पूर्ण रक्कम भरा किंवा रिकामे ठेवा."
+
 #: src/features/career/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "95000 सारखी पूर्ण रक्कम टाका. तुमची आधीची रक्कम बदललेली नाही."
@@ -3933,6 +3962,7 @@ msgstr "#1a1a1a, किंवा rgba(…) सारखा हेक्स र�
 msgid "Enter a name, up to 64 characters."
 msgstr "64 वर्णांपर्यंत नाव एंटर करा."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Enter a three-letter currency code."
 msgstr "तीन अक्षरांचा चलन कोड द्या."
@@ -3965,6 +3995,10 @@ msgstr "resume.example.org सारखा पत्ता द्या."
 msgid "Enter any model ID supported by your endpoint."
 msgstr "तुमच्या एंडपॉईंटद्वारे समर्थित कोणताही मॉडेल आयडी एंटर करा."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "अटी स्वतः भरा. AI ला कोणतीही विनंती पाठवली जात नाही. माहीत नसलेल्या रकमा रिकाम्या ठेवा."
+
 #: app/(auth)/server.tsx
 msgid "Enter the address you open Reactive Resume at in a browser. The app checks it's a Reactive Resume server that allows app sign-in before you continue."
 msgstr "ब्राउझरमध्ये तुम्ही Reactive Resume उघडलेला पत्ता एंटर करा. ॲप हे Reactive Resume सर्व्हर असल्याचे तपासते जे तुम्ही सुरू ठेवण्यापूर्वी ॲपला साइन इन करण्यास अनुमती देते."
@@ -3991,6 +4025,7 @@ msgstr "एंट्री हटवली"
 msgid "Entry options"
 msgstr "प्रवेश पर्याय"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "इक्विटी"
@@ -4026,10 +4061,6 @@ msgstr "प्रत्येक टर्म जॉब पोस्टिंग
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "दर आठवड्याला"
-
-#: src/features/workspace/tabs/saved.tsx
-msgid "Everything the coach wrote for {company}, newest first."
-msgstr "प्रशिक्षकाने {company} साठी लिहिलेले सर्व काही, सर्वात नवीन."
 
 #: src/features/career/facts.tsx
 #: src/features/write/fields.ts
@@ -4182,8 +4213,8 @@ msgid "Fit"
 msgstr "जुळणी"
 
 #: src/features/workspace/tabs/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "जुळणी तपासण्या, ब्रीफिंग, सरावावरील अभिप्राय, आढावे, उत्तरे आणि प्रत्युत्तरे इतर टॅब तयार करतात तशी येथे येतात."
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "पदाशी जुळणीच्या तपासण्या, तयारीसाठी ब्रीफिंग, मुलाखतीच्या सरावावरील अभिप्राय, मुलाखतीनंतरचे आढावे, फॉर्ममधील उत्तरे, संदेशांना प्रत्युत्तरे आणि नोकरीच्या ऑफर्स तुम्ही जतन केल्यावर येथे दिसतात."
 
 #: src/features/check/issues.ts
 msgid "Fix the date"
@@ -5136,10 +5167,12 @@ msgstr "मांडणी"
 msgid "Leads with why you fit"
 msgstr "तुम्ही फिट का आहात यासह लीड्स"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "शिक्षण बजेट"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "सोडा"
@@ -6462,6 +6495,14 @@ msgstr "बंद. हा रेझ्युमे फक्त तुम्ह�
 msgid "Offer"
 msgstr "ऑफर"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "ऑफर जतन केली"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "ऑफरचा प्रकार"
+
 #: app/(tabs)/career/_layout.tsx
 msgid "Offers"
 msgstr "ऑफर्स"
@@ -6478,6 +6519,7 @@ msgstr "कार्यालयातील दिवस माहीत ना
 msgid "Office days not stated"
 msgstr "ऑफिसचे दिवस नमूद नाहीत"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Office days per week"
 msgstr "आठवड्यातील कार्यालयीन दिवस"
@@ -6729,6 +6771,7 @@ msgstr "मूळ तक्ता स्वरूप जतन केले आ�
 msgid "Other"
 msgstr "इतर"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "इतर लाभ"
@@ -6858,10 +6901,6 @@ msgstr "नोकरीची जाहिरात पेस्ट करा"
 msgid "Paste a message from {company}"
 msgstr "{company} चा संदेश पेस्ट करा"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "ऑफर एखाद्या अर्जाच्या “संदेश” टॅबमध्ये पेस्ट करा."
-
 #: src/features/workspace/tabs/messages.tsx
 msgid "Paste the email or message, without the signature."
 msgstr "ईमेल किंवा संदेश सहीशिवाय पेस्ट करा."
@@ -6888,6 +6927,7 @@ msgstr "वर्णन पेस्ट केले"
 msgid "Paused"
 msgstr "विराम दिला"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Pay period"
 msgstr "वेतन कालावधी"
@@ -6921,16 +6961,19 @@ msgstr "तयार असलेला AI प्रदाता PDF साठ�
 msgid "PDF, Word, Reactive Resume, JSON Resume or LinkedIn export."
 msgstr "PDF, Word, Reactive Resume, JSON Resume किंवा LinkedIn निर्यात."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per hour"
 msgstr "प्रतितास"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per month"
 msgstr "दरमहा"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per year"
@@ -7847,6 +7890,7 @@ msgstr "कॅपिटल्स फक्त लहान शीर्षका
 msgid "Reset design defaults"
 msgstr "डिझाइन डीफॉल्ट रीसेट करा"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "उत्तर देण्याची अंतिम तारीख"
@@ -8255,6 +8299,10 @@ msgstr "नोकरी वाचवा"
 msgid "Save lane"
 msgstr "टप्पा जतन करा"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "ऑफर जतन करा"
+
 #: src/features/share/files.ts
 msgid "Save or share file"
 msgstr "फाइल जतन किंवा शेअर करा"
@@ -8320,6 +8368,10 @@ msgstr "कथा जतन केली: {title}"
 msgid "Saved description"
 msgstr "जतन केलेले वर्णन"
 
+#: src/features/workspace/tabs/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "{company} साठी जतन केलेल्या बाबी, नवीनतम आधी."
+
 #: src/features/career/today.tsx
 msgid "Saved to Applications with the posting"
 msgstr "जॉब पोस्टिंगसह अर्जांमध्ये जतन केले"
@@ -8340,6 +8392,7 @@ msgstr "“जतन केलेले · सराव” मध्ये ज�
 msgid "Saving the job. Wait for confirmation before making another change."
 msgstr "नोकरी वाचवत आहे. दुसरा बदल करण्यापूर्वी पुष्टीकरणाची प्रतीक्षा करा."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 #: src/features/settings/profile.tsx
 #: src/shell/builder-chrome.tsx
@@ -10157,6 +10210,10 @@ msgstr "एका पानावर घट्ट करा"
 msgid "Tightening"
 msgstr "संक्षिप्त करत आहे"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "वेळ"
+
 #. placeholder {0}: draft.timezone
 #: src/features/application-detail/interview-sheet.tsx
 msgid "Time · {0}"
@@ -10174,6 +10231,7 @@ msgstr "वेळ, लिंक, कोण, तुम्ही काय पा�
 msgid "Timeline"
 msgstr "घटनाक्रम"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "वेळा {timeZone} मध्ये दाखवल्या जातात."
@@ -10430,6 +10488,10 @@ msgstr "दुवे अधोरेखित करा"
 #: src/ui/overlays.tsx
 msgid "Undo"
 msgstr "पूर्ववत करा"
+
+#: src/features/career/offer-entry.tsx
+msgid "Unknown"
+msgstr "अज्ञात"
 
 #: src/features/career/offers.tsx
 msgid "Unknown · ask"
@@ -10735,6 +10797,7 @@ msgstr "मूल्य"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "विभाग साचेबद्ध वाटू नये म्हणून सुरुवाती वेगवेगळ्या ठेवा."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "तोंडी ऑफर"
@@ -10840,6 +10903,10 @@ msgstr "आवाज सेटिंग्ज"
 #: src/features/write/fields.ts
 msgid "Volunteer"
 msgstr "स्वयंसेवा"
+
+#: src/features/career/offer-entry.tsx
+msgid "Wait for your account timezone to load, retry if it failed, or clear the deadline."
+msgstr "तुमच्या खात्याचा टाइमझोन लोड होईपर्यंत थांबा, लोड न झाल्यास पुन्हा प्रयत्न करा किंवा अंतिम मुदत काढून टाका."
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Waiting for you"
@@ -11004,6 +11071,7 @@ msgstr "अर्ज कुठून येतात"
 msgid "Where you want to work"
 msgstr "तुम्हाला कुठे काम करायचे आहे"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "कामाचे ठिकाण"
@@ -11138,6 +11206,7 @@ msgstr "लेखन"
 msgid "Writing help, tailored suggestions and the assistant. The default provider is used wherever you don't pick one. Your keys stay encrypted."
 msgstr "लेखन मदत, जुळवलेल्या सूचना आणि सहाय्यक. तुम्ही प्रदाता न निवडल्यास सर्वत्र डीफॉल्ट प्रदाता वापरला जातो. तुमच्या की एनक्रिप्टेड राहतात."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "लेखी ऑफर"

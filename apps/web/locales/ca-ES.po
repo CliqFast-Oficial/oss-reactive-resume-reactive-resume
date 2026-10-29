@@ -1285,6 +1285,7 @@ msgstr "Afegiu una @ i el domini, com ara name@example.com"
 msgid "Add an address."
 msgstr "Afegeix una adreça."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first"
 msgstr "Primer afegiu una candidatura"
@@ -1379,6 +1380,14 @@ msgstr "Afegeix paraula clau"
 #: src/features/resume/editor/write/outline.tsx
 msgid "Add language"
 msgstr "Afegeix un idioma"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "Afegeix una oferta laboral"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "Afegeix les condicions d'una oferta laboral manualment o utilitza l'extracció opcional amb IA a Missatges."
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1878,6 +1887,7 @@ msgid "Applicant tracking systems turn your PDF into plain text before anyone re
 msgstr "Els sistemes de seguiment de sol·licitants converteixen el vostre PDF en text sense format abans que ningú el llegeixi. El verificador fa el mateix, amb la biblioteca PDF.js al vostre navegador, després puntua la quantitat del vostre currículum que sobreviu: de 0 a 100, per la fiabilitat que surt el text, no per les vostres possibilitats d'aconseguir la feina."
 
 #: src/features/applications/components/interview-dialog.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/documents/documents-page.tsx
 #: src/features/documents/trash-page.tsx
@@ -2280,6 +2290,7 @@ msgstr "Barra lateral"
 msgid "Barista, 2012"
 msgstr "Barista, 2012"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "Salari base"
@@ -2343,9 +2354,14 @@ msgstr "El text del cos s'ha definit en {minimum} pt"
 msgid "Bold"
 msgstr "Negreta"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "Prima"
+
+#: src/features/career/offer-entry.tsx
+msgid "Bonus conditions"
+msgstr "Condicions de la bonificació"
 
 #: src/features/resume/editor/write/picture-settings.tsx
 msgid "Border color"
@@ -2472,6 +2488,7 @@ msgstr "El programari pot llegir el vostre currículum?"
 #: src/features/applications/components/manage-lanes-sheet.tsx
 #: src/features/career/knowledge/facts.tsx
 #: src/features/career/knowledge/stories.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/career/workspace/fit.tsx
 #: src/features/documents/new-document-dialog.tsx
@@ -2756,9 +2773,21 @@ msgstr "Trieu un currículum a Write que coincideixi amb el seu disseny. Fins al
 msgid "Choose a stage"
 msgstr "Trieu una etapa"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "Trieu una data i una hora vàlides al fus horari {timeZone}, o buideu el camp de la data límit."
+
 #: src/features/career/workspace/practise.tsx
 msgid "Choose a WebM, MP4, MP3, WAV or Ogg file up to 2 MB."
 msgstr "Trieu un fitxer WebM, MP4, MP3, WAV o Ogg de fins a 2 MB."
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application"
+msgstr "Tria una candidatura"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "Trieu una candidatura i corregiu els camps ressaltats abans de desar."
 
 #: src/features/applications/components/interview-dialog.tsx
 msgid "Choose an application…"
@@ -3702,6 +3731,10 @@ msgstr "No s'ha pogut desar el seguiment. Torneu-ho a provar."
 msgid "Couldn't save the notes. Try again."
 msgstr "No s'han pogut desar les notes. Torneu-ho a provar."
 
+#: src/features/career/offer-entry.tsx
+msgid "Couldn't save the offer. Your draft is still here. Try again."
+msgstr "No s'ha pogut desar l'oferta laboral. L'esborrany continua aquí. Torna-ho a provar."
+
 #: src/features/resume/editor/check/job-match.tsx
 msgid "Couldn't save the posting. Try again."
 msgstr "No s'ha pogut desar l'anunci. Torneu-ho a provar."
@@ -4045,6 +4078,7 @@ msgid "CSV data"
 msgstr "Dades CSV"
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 msgid "Currency"
 msgstr "Moneda"
 
@@ -4940,6 +4974,10 @@ msgstr "Us agrada Reactive Resume?"
 msgid "Enter a backup code."
 msgstr "Introduïu un codi de seguretat."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "Introdueix un import complet, com ara 95000, o deixa el camp en blanc."
+
 #: src/features/career/knowledge/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "Introduïu un import complet, com ara 95000. L'import anterior no ha canviat."
@@ -4951,6 +4989,10 @@ msgstr "Introduïu un nom, fins a 64 caràcters."
 #: src/features/auth/pages/reset-password.tsx
 msgid "Enter a new password for your account."
 msgstr "Introduïu una contrasenya nova per al vostre compte."
+
+#: src/features/career/offer-entry.tsx
+msgid "Enter a three-letter currency code."
+msgstr "Introduïu un codi de moneda de tres lletres."
 
 #: src/features/applications/components/detail/contacts.tsx
 #: src/features/auth/pages/forgot-password.tsx
@@ -4970,6 +5012,10 @@ msgstr "Introduïu qualsevol ID de model compatible amb el vostre punt final."
 #: src/features/auth/pages/verify-2fa.tsx
 msgid "Enter one of your saved backup codes to access your account."
 msgstr "Introduïu un dels codis de seguretat desats per accedir al vostre compte."
+
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "Introdueix les condicions manualment. No s'envia cap sol·licitud a la IA. Deixa en blanc els imports desconeguts."
 
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/features/auth/pages/verify-2fa.tsx
@@ -5030,6 +5076,7 @@ msgstr "S'ha suprimit l'entrada"
 msgid "Entry options"
 msgstr "Opcions d'entrada"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "Accions"
@@ -5065,11 +5112,6 @@ msgstr "Tots els termes que subratlla la publicació de feina ja hi són."
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "Cada setmana"
-
-#. placeholder {0}: application.company
-#: src/features/career/workspace/saved.tsx
-msgid "Everything the coach wrote for {0}, newest first."
-msgstr "Tot el que l'orientador ha escrit per a {0}, del més nou al més antic."
 
 #: src/features/homepage/sections.tsx
 msgid "Exchange resume feedback, ask questions, and help shape Reactive Resume with the community."
@@ -5310,8 +5352,8 @@ msgid "Fit"
 msgstr "Encaix"
 
 #: src/features/career/workspace/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "Les comprovacions d'encaix, els dossiers, els comentaris d'assaig, els balanços i les respostes a formularis i a missatges arriben aquí a mesura que les altres pestanyes els creen."
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "Les comprovacions d’encaix, els dossiers, els comentaris d’assaig, els balanços, les respostes a formularis i a missatges i les ofertes de feina apareixen aquí a mesura que els deseu."
 
 #: src/features/resume/editor/chrome.tsx
 msgid "Fit page to width"
@@ -6638,10 +6680,12 @@ msgstr "Dirigir amb el resultat i donar-li una escala."
 msgid "Leads with why you fit"
 msgstr "Coneix per què encaixa"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "Pressupost de formació"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "Surt"
@@ -8195,6 +8239,14 @@ msgstr "Desactivat. Activeu-ho perquè els reclutadors us trobin a Google."
 msgid "Offer"
 msgstr "Oferta"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "Oferta laboral desada"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "Tipus d'oferta laboral"
+
 #: src/routes/dashboard/career/route.tsx
 msgid "Offers"
 msgstr "Ofertes"
@@ -8206,6 +8258,10 @@ msgstr "Dies d'oficina a la setmana, com a màxim"
 #: src/features/career/today.tsx
 msgid "Office days not stated"
 msgstr "Dies d'oficina no indicats"
+
+#: src/features/career/offer-entry.tsx
+msgid "Office days per week"
+msgstr "Dies de treball a l'oficina per setmana"
 
 #: src/features/resume/editor/save-status.tsx
 msgid "Offline · saved on this device"
@@ -8488,6 +8544,7 @@ msgstr "Altres"
 msgid "Other · OpenAI-compatible"
 msgstr "Altres · Compatible amb OpenAI"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "Altres beneficis"
@@ -8658,10 +8715,6 @@ msgstr "Enganxa una publicació de feina..."
 msgid "Paste a message from {0}"
 msgstr "Enganxeu un missatge de {0}"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "Enganxeu una oferta a la pestanya Missatges d'una candidatura."
-
 #: src/features/applications/components/add-application-dialog.tsx
 msgid "Paste description instead"
 msgstr "Enganxeu la descripció"
@@ -8716,6 +8769,7 @@ msgid "Paused schedules keep their settings."
 msgstr "Les programacions en pausa conserven la seva configuració."
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 msgid "Pay period"
 msgstr "Període de pagament"
 
@@ -8734,6 +8788,18 @@ msgstr "PDF, Word o JSON. Construirem un currículum a partir d'ell."
 #: src/features/homepage/sections.tsx
 msgid "People using it"
 msgstr "Persones que l'utilitzen"
+
+#: src/features/career/offer-entry.tsx
+msgid "Per hour"
+msgstr "Per hora"
+
+#: src/features/career/offer-entry.tsx
+msgid "Per month"
+msgstr "Per mes"
+
+#: src/features/career/offer-entry.tsx
+msgid "Per year"
+msgstr "Per any"
 
 #: src/features/settings/account/data.tsx
 msgid "Permanently removes everything. Export first if you want a copy."
@@ -9872,6 +9938,7 @@ msgstr "S’està restablint la contrasenya..."
 msgid "Resources"
 msgstr "Recursos"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "Termini de resposta"
@@ -10275,6 +10342,10 @@ msgstr "Guarda feina"
 msgid "Save name"
 msgstr "Desa el nom"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "Desa l'oferta laboral"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Save schedule"
 msgstr "Desa la programació"
@@ -10363,6 +10434,10 @@ msgstr "Desat com a sol·licitud de feina i enllaçat"
 msgid "Saved description"
 msgstr "Descripció desada"
 
+#: src/features/career/workspace/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "Elements desats per a {company}, del més nou al més antic."
+
 #: src/features/career/knowledge/preferences.tsx
 msgid "Saved just now"
 msgstr "Desat fa un moment"
@@ -10402,6 +10477,7 @@ msgid "Saving is taking longer than expected. Your changes are still open."
 msgstr "El desament està trigant més del previst. Els teus canvis continuen oberts."
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/resume/editor/save-status.tsx
 #: src/routes/builder/letter/-components/letter-bar.tsx
 msgid "Saving…"
@@ -12499,6 +12575,10 @@ msgstr "Apretar a una pàgina"
 msgid "Tightening"
 msgstr "Condensant"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "Hora"
+
 #. placeholder {0}: draft.timezone
 #: src/features/applications/components/interview-dialog.tsx
 msgid "Time · {0}"
@@ -12513,6 +12593,7 @@ msgid "Time, link, who, what you sent"
 msgstr "Hora, enllaç, participants, què heu enviat"
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "Les hores es mostren en {timeZone}."
 
@@ -12855,6 +12936,7 @@ msgstr "Desfés el canvi de currículum"
 msgid "University of Porto"
 msgstr "University of Porto"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Unknown"
 msgstr "Desconegut"
@@ -13180,6 +13262,7 @@ msgstr "Valor incert"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "Varia els inicis perquè la secció no soni genèrica."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "Oferta verbal"
@@ -13552,6 +13635,7 @@ msgstr "D'on provenen les sol·licituds"
 msgid "Where you want to work"
 msgstr "On voleu treballar"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "On treballaríeu"
@@ -13746,6 +13830,7 @@ msgstr "Ajuda per escriure, suggeriments adaptats i l'assistent. El proveïdor p
 msgid "writing, tailoring and sending"
 msgstr "escriure, adaptar i enviar"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "Oferta per escrit"

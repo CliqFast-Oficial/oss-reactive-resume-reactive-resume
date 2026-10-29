@@ -960,6 +960,10 @@ msgstr "Pridėkite @ ir domeną, pvz., name@example.com"
 msgid "Add an address."
 msgstr "Pridėkite adresą."
 
+#: src/features/career/offer-entry.tsx
+msgid "Add an application first"
+msgstr "Pirmiausia pridėkite paraišką"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first."
 msgstr "Pirmiausia pridėkite darbo paraišką."
@@ -1044,6 +1048,14 @@ msgstr "Pridėti etapą"
 #: src/features/write/fields.ts
 msgid "Add language"
 msgstr "Pridėti kalbą"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "Pridėti pasiūlymą"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "Darbo pasiūlymo sąlygas įveskite rankiniu būdu arba pasinaudokite pasirenkamu išgavimu naudojant DI skiltyje „Žinutės“."
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1473,6 +1485,7 @@ msgstr "Rodomas puslapyje, kai tik turi organizaciją."
 #: app/_layout.tsx
 #: src/features/application-detail/detail-screen.tsx
 #: src/features/applications-board/calendar-screen.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/letters/write.tsx
 #: src/shell/workspace-chrome.tsx
@@ -1806,6 +1819,7 @@ msgctxt "Entry header accent: a bar beside the header"
 msgid "Bar"
 msgstr "Vertikali linija"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "Bazinis atlyginimas"
@@ -1873,10 +1887,12 @@ msgstr "Turinio tekstas nustatytas į {minimum} pt"
 msgid "Bold"
 msgstr "Pusjuodis"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "Premija"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus conditions"
 msgstr "Premijos sąlygos"
@@ -2219,6 +2235,10 @@ msgstr "Prieš dalindamiesi duomenimis, pasirinkite patikrintą AI teikėją."
 msgid "Choose a time"
 msgstr "Pasirinkite laiką"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "Pasirinkite tinkamą datą ir laiką laiko juostoje {timeZone} arba išvalykite terminą."
+
 #: src/features/applications/add-sheet.tsx
 msgid "Choose a valid follow-up date before saving."
 msgstr "Prieš išsaugodami pasirinkite tinkamą sekimo datą."
@@ -2234,6 +2254,10 @@ msgstr "Pasirinkite WebM, MP4, MP3, WAV arba Ogg failą iki 2 MB."
 #: src/features/applications-board/calendar-screen.tsx
 msgid "Choose an application"
 msgstr "Pasirinkite darbo paraišką"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "Prieš išsaugodami pasirinkite paraišką ir pataisykite paryškintus laukus."
 
 #: src/features/workspace/tabs/practise.tsx
 msgid "Choose an audio file"
@@ -3209,6 +3233,7 @@ msgstr "Sukurta {0} · Paskutinį kartą naudota {1} · Baigiasi {2}"
 msgid "Creating document…"
 msgstr "Kuriamas dokumentas…"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "Valiuta"
@@ -3921,6 +3946,10 @@ msgstr "Patobulintas skaitymas nepavyko"
 msgid "Enhanced reading unavailable; used the built-in reader."
 msgstr "Patobulintas skaitymas nepasiekiamas; naudojo įmontuotą skaitytuvą."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "Įveskite visą sumą, pavyzdžiui, 95000, arba palikite tuščią."
+
 #: src/features/career/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "Įveskite visą sumą, pvz., 95000. Ankstesnė suma nepakeista."
@@ -3933,9 +3962,10 @@ msgstr "Įveskite hex spalvą, pvz., #1a1a1a, arba rgba(…)."
 msgid "Enter a name, up to 64 characters."
 msgstr "Įveskite pavadinimą, iki 64 simbolių."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Enter a three-letter currency code."
-msgstr "Įveskite trijų motyvacinių raidžių valiutos kodą."
+msgstr "Įveskite trijų raidžių valiutos kodą."
 
 #: src/features/applications/add-sheet.tsx
 msgid "Enter a valid date."
@@ -3965,6 +3995,10 @@ msgstr "Įveskite adresą, pvz., resume.example.org."
 msgid "Enter any model ID supported by your endpoint."
 msgstr "Įveskite bet kokį modelio ID, kurį palaiko jūsų galutinis taškas."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "Sąlygas įveskite patys. Užklausa DI nesiunčiama. Nežinomas sumas palikite tuščias."
+
 #: app/(auth)/server.tsx
 msgid "Enter the address you open Reactive Resume at in a browser. The app checks it's a Reactive Resume server that allows app sign-in before you continue."
 msgstr "Įveskite adresą, kuriuo atidarote Reactive Resume naršyklėje. Prieš tęsiant programa patikrina, ar tai Reactive Resume serveris, leidžiantis prisijungti prie programos."
@@ -3991,6 +4025,7 @@ msgstr "Įrašas ištrintas"
 msgid "Entry options"
 msgstr "Įėjimo parinktys"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "Akcijos"
@@ -4026,10 +4061,6 @@ msgstr "Kiekvienas terminas, kurį pabrėžia darbo skelbimas, jau yra."
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "Kas savaitę"
-
-#: src/features/workspace/tabs/saved.tsx
-msgid "Everything the coach wrote for {company}, newest first."
-msgstr "Viskas, ką treneris parašė {company}, pirmiausia naujausi."
 
 #: src/features/career/facts.tsx
 #: src/features/write/fields.ts
@@ -4182,8 +4213,8 @@ msgid "Fit"
 msgstr "Atitiktis"
 
 #: src/features/workspace/tabs/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "Atitikties patikros, atmintinės, praktikos atsiliepimai, aptarimai, atsakymai ir atsakymai į žinutes atsiranda čia, kai juos sukuria kiti skirtukai."
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "Atitikties pareigoms patikros, pasiruošimo atmintinės, atsiliepimai apie pokalbio repeticijas, aptarimai po pokalbių, atsakymai į formų klausimus, atsakymai į žinutes ir darbo pasiūlymai čia pasirodo, kai juos išsaugote."
 
 #: src/features/check/issues.ts
 msgid "Fix the date"
@@ -5136,10 +5167,12 @@ msgstr "Išdėstymas"
 msgid "Leads with why you fit"
 msgstr "Nurodo, kodėl tu tinka"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "Mokymosi biudžetas"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "Išeiti"
@@ -6462,6 +6495,14 @@ msgstr "Išjungta. Tik jūs galite matyti šį gyvenimo aprašymą."
 msgid "Offer"
 msgstr "Pasiūlymas"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "Pasiūlymas išsaugotas"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "Pasiūlymo tipas"
+
 #: app/(tabs)/career/_layout.tsx
 msgid "Offers"
 msgstr "Pasiūlymai"
@@ -6478,6 +6519,7 @@ msgstr "Dienų biure skaičius nežinomas."
 msgid "Office days not stated"
 msgstr "Dienos biure nenurodytos"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Office days per week"
 msgstr "Dienos biure per savaitę"
@@ -6729,6 +6771,7 @@ msgstr "Išsaugotas originalus lentelės formatas. Šis turinys yra tik skaitoma
 msgid "Other"
 msgstr "Kita"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "Kitos naudos"
@@ -6858,10 +6901,6 @@ msgstr "Įklijuokite darbo skelbimą"
 msgid "Paste a message from {company}"
 msgstr "Įklijuokite pranešimą nuo {company}"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "Įklijuokite pasiūlymą į paraiškos skirtuką „Žinutės“."
-
 #: src/features/workspace/tabs/messages.tsx
 msgid "Paste the email or message, without the signature."
 msgstr "Įklijuokite el. laišką ar žinutę be parašo."
@@ -6888,6 +6927,7 @@ msgstr "Įklijuotas aprašymas"
 msgid "Paused"
 msgstr "Pristabdyta"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Pay period"
 msgstr "Mokėjimo laikotarpis"
@@ -6921,16 +6961,19 @@ msgstr "PDF naudoja paruoštą AI teikėją. Išjunkite AI, kad teksto sluoksnis
 msgid "PDF, Word, Reactive Resume, JSON Resume or LinkedIn export."
 msgstr "Eksportuoti PDF, Word, Reactive Resume, JSON Resume arba LinkedIn."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per hour"
 msgstr "Per valandą"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per month"
 msgstr "Per mėnesį"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per year"
@@ -7847,6 +7890,7 @@ msgstr "Didžiąsias raides naudokite tik trumpoms antraštėms. Jos lėtina ska
 msgid "Reset design defaults"
 msgstr "Iš naujo nustatyti numatytuosius dizaino nustatymus"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "Atsakyti iki"
@@ -8255,6 +8299,10 @@ msgstr "Išsaugoti darbą"
 msgid "Save lane"
 msgstr "Išsaugoti etapą"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "Išsaugoti pasiūlymą"
+
 #: src/features/share/files.ts
 msgid "Save or share file"
 msgstr "Išsaugokite arba bendrinkite failą"
@@ -8320,6 +8368,10 @@ msgstr "Išsaugota istorija: {title}"
 msgid "Saved description"
 msgstr "Išsaugotas aprašymas"
 
+#: src/features/workspace/tabs/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "Išsaugoti įrašai, susiję su {company}, naujausi viršuje."
+
 #: src/features/career/today.tsx
 msgid "Saved to Applications with the posting"
 msgstr "Išsaugota paraiškose kartu su skelbimu"
@@ -8340,6 +8392,7 @@ msgstr "Išsaugota skiltyje „Išsaugota · Praktika“"
 msgid "Saving the job. Wait for confirmation before making another change."
 msgstr "Darbo išsaugojimas. Prieš atlikdami kitą pakeitimą, palaukite patvirtinimo."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 #: src/features/settings/profile.tsx
 #: src/shell/builder-chrome.tsx
@@ -10157,6 +10210,10 @@ msgstr "Priveržkite iki vieno puslapio"
 msgid "Tightening"
 msgstr "Trumpinama"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "Laikas"
+
 #. placeholder {0}: draft.timezone
 #: src/features/application-detail/interview-sheet.tsx
 msgid "Time · {0}"
@@ -10174,6 +10231,7 @@ msgstr "Laikas, nuoroda, su kuo, ką išsiuntėte"
 msgid "Timeline"
 msgstr "Laiko juosta"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "Laikas rodomas laiko juostoje {timeZone}."
@@ -10430,6 +10488,10 @@ msgstr "Pabraukite nuorodas"
 #: src/ui/overlays.tsx
 msgid "Undo"
 msgstr "Atšaukti"
+
+#: src/features/career/offer-entry.tsx
+msgid "Unknown"
+msgstr "Nežinoma"
 
 #: src/features/career/offers.tsx
 msgid "Unknown · ask"
@@ -10735,6 +10797,7 @@ msgstr "Reikšmė"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "Įvairinkite pradžias, kad skyrius neskambėtų kaip šablonas."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "Žodinis pasiūlymas"
@@ -10840,6 +10903,10 @@ msgstr "Balso nustatymai"
 #: src/features/write/fields.ts
 msgid "Volunteer"
 msgstr "Savanorystė"
+
+#: src/features/career/offer-entry.tsx
+msgid "Wait for your account timezone to load, retry if it failed, or clear the deadline."
+msgstr "Palaukite, kol bus įkelta jūsų paskyros laiko juosta, bandykite dar kartą, jei įkelti nepavyko, arba išvalykite terminą."
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Waiting for you"
@@ -11004,6 +11071,7 @@ msgstr "Iš kur ateina paraiškos"
 msgid "Where you want to work"
 msgstr "Kur norite dirbti"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "Darbo vieta"
@@ -11138,6 +11206,7 @@ msgstr "Tekstas"
 msgid "Writing help, tailored suggestions and the assistant. The default provider is used wherever you don't pick one. Your keys stay encrypted."
 msgstr "Pagalba rašant, pritaikyti pasiūlymai ir padėjėjas. Kur nepasirenkate teikėjo, naudojamas numatytasis. Jūsų raktai lieka užšifruoti."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "Rašytinis pasiūlymas"

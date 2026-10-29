@@ -1285,6 +1285,7 @@ msgstr "name@example.com のように、@ とドメインを追加します。"
 msgid "Add an address."
 msgstr "アドレスを追加します。"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first"
 msgstr "先に応募を追加してください"
@@ -1379,6 +1380,14 @@ msgstr "キーワードの追加"
 #: src/features/resume/editor/write/outline.tsx
 msgid "Add language"
 msgstr "言語を追加する"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "オファーを追加"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "オファーの条件を手動で入力するか、必要に応じて「メッセージ」でAIによる抽出を利用してください。"
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1878,6 +1887,7 @@ msgid "Applicant tracking systems turn your PDF into plain text before anyone re
 msgstr "応募者追跡システムは、誰かが読む前にあなたの PDF をプレーンテキストに変換します。チェッカーは、ブラウザの PDF.js ライブラリを使用して同様のことを行い、就職の可能性ではなく、履歴書がどれだけ残っているかを 0 から 100 までのスコアで評価します。これは、テキストがどれだけ確実に出力されるかによって決まります。"
 
 #: src/features/applications/components/interview-dialog.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/documents/documents-page.tsx
 #: src/features/documents/trash-page.tsx
@@ -2280,6 +2290,7 @@ msgstr "バー"
 msgid "Barista, 2012"
 msgstr "バリスタ、2012"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "基本給"
@@ -2343,9 +2354,14 @@ msgstr "本文テキストを {minimum} pt に設定"
 msgid "Bold"
 msgstr "太字"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "ボーナス"
+
+#: src/features/career/offer-entry.tsx
+msgid "Bonus conditions"
+msgstr "賞与の条件"
 
 #: src/features/resume/editor/write/picture-settings.tsx
 msgid "Border color"
@@ -2472,6 +2488,7 @@ msgstr "ソフトウェアはあなたの履歴書を読み取ることができ
 #: src/features/applications/components/manage-lanes-sheet.tsx
 #: src/features/career/knowledge/facts.tsx
 #: src/features/career/knowledge/stories.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/career/workspace/fit.tsx
 #: src/features/documents/new-document-dialog.tsx
@@ -2756,9 +2773,21 @@ msgstr "デザインに合わせて Write で履歴書を選択します。そ�
 msgid "Choose a stage"
 msgstr "ステージを選択"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "タイムゾーン{timeZone}で有効な日時を選択するか、期限欄を空にしてください。"
+
 #: src/features/career/workspace/practise.tsx
 msgid "Choose a WebM, MP4, MP3, WAV or Ogg file up to 2 MB."
 msgstr "2 MBまでのWebM、MP4、MP3、WAV、Oggファイルを選択してください。"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application"
+msgstr "応募を選択"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "保存する前に、応募を選択し、強調表示された項目を修正してください。"
 
 #: src/features/applications/components/interview-dialog.tsx
 msgid "Choose an application…"
@@ -3702,6 +3731,10 @@ msgstr "フォローアップを保存できませんでした。もう一度お
 msgid "Couldn't save the notes. Try again."
 msgstr "メモを保存できませんでした。もう一度お試しください。"
 
+#: src/features/career/offer-entry.tsx
+msgid "Couldn't save the offer. Your draft is still here. Try again."
+msgstr "オファーを保存できませんでした。下書きはそのまま残っています。もう一度お試しください。"
+
 #: src/features/resume/editor/check/job-match.tsx
 msgid "Couldn't save the posting. Try again."
 msgstr "求人情報を保存できませんでした。もう一度お試しください。"
@@ -4045,6 +4078,7 @@ msgid "CSV data"
 msgstr "CSV データ"
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 msgid "Currency"
 msgstr "通貨"
 
@@ -4940,6 +4974,10 @@ msgstr "Reactive Resumeを気に入っていただけましたか？"
 msgid "Enter a backup code."
 msgstr "バックアップコードを入力してください。"
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "95000のように省略せずに金額を入力するか、空欄にしてください。"
+
 #: src/features/career/knowledge/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "95000のように、金額を省略せずに入力してください。以前の金額は変更されていません。"
@@ -4951,6 +4989,10 @@ msgstr "名前を 64 文字以内で入力します。"
 #: src/features/auth/pages/reset-password.tsx
 msgid "Enter a new password for your account."
 msgstr "アカウントの新しいパスワードを入力してください。"
+
+#: src/features/career/offer-entry.tsx
+msgid "Enter a three-letter currency code."
+msgstr "アルファベット3文字からなる通貨コードを入力します。"
 
 #: src/features/applications/components/detail/contacts.tsx
 #: src/features/auth/pages/forgot-password.tsx
@@ -4970,6 +5012,10 @@ msgstr "エンドポイントでサポートされているモデル ID を入�
 #: src/features/auth/pages/verify-2fa.tsx
 msgid "Enter one of your saved backup codes to access your account."
 msgstr "保存してあるバックアップコードのうち 1 つを入力して、アカウントにアクセスしてください。"
+
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "条件を自分で入力してください。AIへのリクエストは送信されません。不明な金額は空欄にしてください。"
 
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/features/auth/pages/verify-2fa.tsx
@@ -5030,6 +5076,7 @@ msgstr "エントリが削除されました"
 msgid "Entry options"
 msgstr "エントリーオプション"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "株式報酬"
@@ -5065,11 +5112,6 @@ msgstr "求人情報で強調されているすべての用語はすでに存在
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "毎週"
-
-#. placeholder {0}: application.company
-#: src/features/career/workspace/saved.tsx
-msgid "Everything the coach wrote for {0}, newest first."
-msgstr "コーチが{0}向けに書いたすべての内容（新しい順）。"
 
 #: src/features/homepage/sections.tsx
 msgid "Exchange resume feedback, ask questions, and help shape Reactive Resume with the community."
@@ -5310,8 +5352,8 @@ msgid "Fit"
 msgstr "適合度"
 
 #: src/features/career/workspace/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "適合度チェック、ブリーフィング、練習のフィードバック、振り返り、回答、返信は、ほかのタブで作成されるとここに表示されます。"
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "適合度チェック、ブリーフィング、練習のフィードバック、面接の振り返り、応募フォームへの回答、返信の下書き、内定は、保存するとここに表示されます。"
 
 #: src/features/resume/editor/chrome.tsx
 msgid "Fit page to width"
@@ -6638,10 +6680,12 @@ msgstr "結果を主導し、それにスケールを与えます。"
 msgid "Leads with why you fit"
 msgstr "あなたが適合する理由を導きます"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "学習予算"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "離れる"
@@ -8195,6 +8239,14 @@ msgstr "オフ。オンにすると、採用担当者が Google であなたを�
 msgid "Offer"
 msgstr "内定"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "オファーを保存しました"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "オファーの種類"
+
 #: src/routes/dashboard/career/route.tsx
 msgid "Offers"
 msgstr "オファー"
@@ -8206,6 +8258,10 @@ msgstr "週あたりの出社日数（上限）"
 #: src/features/career/today.tsx
 msgid "Office days not stated"
 msgstr "出社日数の記載なし"
+
+#: src/features/career/offer-entry.tsx
+msgid "Office days per week"
+msgstr "週の出社日数"
 
 #: src/features/resume/editor/save-status.tsx
 msgid "Offline · saved on this device"
@@ -8488,6 +8544,7 @@ msgstr "その他"
 msgid "Other · OpenAI-compatible"
 msgstr "その他・OpenAI対応"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "その他の福利厚生"
@@ -8658,10 +8715,6 @@ msgstr "求人情報を貼り付け…"
 msgid "Paste a message from {0}"
 msgstr "{0}からのメッセージを貼り付け"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "オファーを応募の「メッセージ」タブに貼り付けてください。"
-
 #: src/features/applications/components/add-application-dialog.tsx
 msgid "Paste description instead"
 msgstr "代わりに説明を貼り付けます"
@@ -8716,6 +8769,7 @@ msgid "Paused schedules keep their settings."
 msgstr "一時停止したスケジュールの設定は保持されます。"
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 msgid "Pay period"
 msgstr "支払い期間"
 
@@ -8734,6 +8788,18 @@ msgstr "PDF、Word、または JSON。それをもとに履歴書を作成して
 #: src/features/homepage/sections.tsx
 msgid "People using it"
 msgstr "使っている人たち"
+
+#: src/features/career/offer-entry.tsx
+msgid "Per hour"
+msgstr "時給"
+
+#: src/features/career/offer-entry.tsx
+msgid "Per month"
+msgstr "月給"
+
+#: src/features/career/offer-entry.tsx
+msgid "Per year"
+msgstr "年俸"
 
 #: src/features/settings/account/data.tsx
 msgid "Permanently removes everything. Export first if you want a copy."
@@ -9872,6 +9938,7 @@ msgstr "パスワードをリセットしています..."
 msgid "Resources"
 msgstr "リソース"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "回答期限"
@@ -10275,6 +10342,10 @@ msgstr "ジョブの保存"
 msgid "Save name"
 msgstr "名前を保存"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "オファーを保存"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Save schedule"
 msgstr "スケジュールを保存"
@@ -10363,6 +10434,10 @@ msgstr "求人応募として保存され、リンクされました"
 msgid "Saved description"
 msgstr "保存された説明"
 
+#: src/features/career/workspace/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "{company}に関する保存済みの項目（新しい順）。"
+
 #: src/features/career/knowledge/preferences.tsx
 msgid "Saved just now"
 msgstr "たった今保存しました"
@@ -10402,6 +10477,7 @@ msgid "Saving is taking longer than expected. Your changes are still open."
 msgstr "保存に予想以上に時間がかかっています。変更は保持されています。"
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/resume/editor/save-status.tsx
 #: src/routes/builder/letter/-components/letter-bar.tsx
 msgid "Saving…"
@@ -12499,6 +12575,10 @@ msgstr "1ページに絞る"
 msgid "Tightening"
 msgstr "簡潔にしています"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "時刻"
+
 #. placeholder {0}: draft.timezone
 #: src/features/applications/components/interview-dialog.tsx
 msgid "Time · {0}"
@@ -12513,6 +12593,7 @@ msgid "Time, link, who, what you sent"
 msgstr "時間、リンク、面接相手、送信した内容"
 
 #: src/features/career/knowledge/preferences.tsx
+#: src/features/career/offer-entry.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "時刻は{timeZone}で表示されます。"
 
@@ -12855,6 +12936,7 @@ msgstr "履歴書の変更を元に戻す"
 msgid "University of Porto"
 msgstr "University of Porto"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Unknown"
 msgstr "不明"
@@ -13180,6 +13262,7 @@ msgstr "価値は不確実"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "書き出しにバリエーションを持たせ、定型文のように読まれないようにしてください。"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "口頭でのオファー"
@@ -13552,6 +13635,7 @@ msgstr "応募の流入元"
 msgid "Where you want to work"
 msgstr "働きたい場所"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "勤務場所"
@@ -13746,6 +13830,7 @@ msgstr "文章作成の支援、カスタマイズされた提案、アシスタ
 msgid "writing, tailoring and sending"
 msgstr "執筆、翻案、送信"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "書面でのオファー"

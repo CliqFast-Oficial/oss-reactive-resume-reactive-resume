@@ -960,6 +960,10 @@ msgstr "@ மற்றும் name@example.com போன்ற டொமைன
 msgid "Add an address."
 msgstr "முகவரியைச் சேர்க்கவும்."
 
+#: src/features/career/offer-entry.tsx
+msgid "Add an application first"
+msgstr "முதலில் ஒரு விண்ணப்பத்தைச் சேர்க்கவும்"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first."
 msgstr "முதலில் வேலை விண்ணப்பத்தைச் சேர்க்கவும்."
@@ -1044,6 +1048,14 @@ msgstr "நிலையைச் சேர்க்கவும்"
 #: src/features/write/fields.ts
 msgid "Add language"
 msgstr "மொழியைச் சேர்க்கவும்"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "வேலைவாய்ப்புச் சலுகையைச் சேர்"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "வேலைவாய்ப்புச் சலுகையின் நிபந்தனைகளை நீங்களே சேர்க்கவும் அல்லது செய்திகளில் விருப்பமான AI பிரித்தெடுத்தலைப் பயன்படுத்தவும்."
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1473,6 +1485,7 @@ msgstr "அது ஒரு அமைப்பைப் பெற்றவுட
 #: app/_layout.tsx
 #: src/features/application-detail/detail-screen.tsx
 #: src/features/applications-board/calendar-screen.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/letters/write.tsx
 #: src/shell/workspace-chrome.tsx
@@ -1806,6 +1819,7 @@ msgctxt "Entry header accent: a bar beside the header"
 msgid "Bar"
 msgstr "பக்கப் பட்டை"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "அடிப்படைச் சம்பளம்"
@@ -1873,10 +1887,12 @@ msgstr "உடல் உரை {minimum} pt என அமைக்கப்ப�
 msgid "Bold"
 msgstr "தடித்த"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "போனஸ்"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus conditions"
 msgstr "போனஸ் பெறுவதற்கான நிபந்தனைகள்"
@@ -2219,6 +2235,10 @@ msgstr "தரவைப் பகிர்வதற்கு முன் சோ
 msgid "Choose a time"
 msgstr "நேரத்தைத் தேர்ந்தெடுக்கவும்"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "{timeZone} நேர மண்டலத்தில் செல்லுபடியாகும் தேதி மற்றும் நேரத்தைத் தேர்ந்தெடுங்கள் அல்லது காலக்கெடுவை அகற்றுங்கள்."
+
 #: src/features/applications/add-sheet.tsx
 msgid "Choose a valid follow-up date before saving."
 msgstr "சேமிப்பதற்கு முன் சரியான பின்தொடர்தல் தேதியைத் தேர்வு செய்யவும்."
@@ -2234,6 +2254,10 @@ msgstr "2 MB வரையிலான WebM, MP4, MP3, WAV அல்லது Ogg
 #: src/features/applications-board/calendar-screen.tsx
 msgid "Choose an application"
 msgstr "வேலை விண்ணப்பத்தைத் தேர்வு செய்யவும்"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "வேலைக்கான விண்ணப்பத்தைத் தேர்ந்தெடுத்து, சேமிப்பதற்கு முன் முன்னிலைப்படுத்தப்பட்ட புலங்களைத் திருத்துங்கள்."
 
 #: src/features/workspace/tabs/practise.tsx
 msgid "Choose an audio file"
@@ -3209,6 +3233,7 @@ msgstr "உருவாக்கப்பட்டது {0} · கடைசி�
 msgid "Creating document…"
 msgstr "ஆவணத்தை உருவாக்குகிறது…"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "நாணயம்"
@@ -3921,6 +3946,10 @@ msgstr "மேம்படுத்தப்பட்ட வாசிப்ப�
 msgid "Enhanced reading unavailable; used the built-in reader."
 msgstr "மேம்படுத்தப்பட்ட வாசிப்பு கிடைக்கவில்லை; உள்ளமைக்கப்பட்ட ரீடரைப் பயன்படுத்தியது."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "95000 போன்ற முழுத் தொகையை உள்ளிடவும் அல்லது காலியாக விடவும்."
+
 #: src/features/career/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "95000 போன்ற முழுத் தொகையை உள்ளிடவும். உங்கள் முந்தைய தொகை மாறவில்லை."
@@ -3933,6 +3962,7 @@ msgstr "#1a1a1a போன்ற ஹெக்ஸ் நிறத்தை அல�
 msgid "Enter a name, up to 64 characters."
 msgstr "64 எழுத்துகள் வரை ஒரு பெயரை உள்ளிடவும்."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Enter a three-letter currency code."
 msgstr "மூன்றெழுத்து நாணயக் குறியீட்டை உள்ளிடவும்."
@@ -3965,6 +3995,10 @@ msgstr "resume.example.org போன்ற முகவரியை உள்ள
 msgid "Enter any model ID supported by your endpoint."
 msgstr "உங்கள் இறுதிப்புள்ளியால் ஆதரிக்கப்படும் எந்த மாதிரி ஐடியையும் உள்ளிடவும்."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "நிபந்தனைகளை நீங்களே உள்ளிடவும். AI-க்கு எந்தக் கோரிக்கையும் அனுப்பப்படாது. தெரியாத தொகைகளைக் காலியாக விடவும்."
+
 #: app/(auth)/server.tsx
 msgid "Enter the address you open Reactive Resume at in a browser. The app checks it's a Reactive Resume server that allows app sign-in before you continue."
 msgstr "உலாவியில் Reactive Resume ஐ திறக்க நீங்கள் பயன்படுத்தும் முகவரியை உள்ளிடவும். நீங்கள் தொடர்வதற்கு முன், இது மொபைல் உள்நுழைவு இயக்கப்பட்ட Reactive Resume சேவையகம் என்பதை மொபைல் பயன்பாடு சரிபார்க்கிறது."
@@ -3991,6 +4025,7 @@ msgstr "நுழைவு நீக்கப்பட்டது"
 msgid "Entry options"
 msgstr "நுழைவு விருப்பங்கள்"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "பங்குகள்"
@@ -4026,10 +4061,6 @@ msgstr "வேலை இடுகை வலியுறுத்தும் ஒ
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "ஒவ்வொரு வாரமும்"
-
-#: src/features/workspace/tabs/saved.tsx
-msgid "Everything the coach wrote for {company}, newest first."
-msgstr "{company}க்காக பயிற்சியாளர் எழுதிய அனைத்தும், புதியவை முதலில்."
 
 #: src/features/career/facts.tsx
 #: src/features/write/fields.ts
@@ -4182,8 +4213,8 @@ msgid "Fit"
 msgstr "பொருத்தம்"
 
 #: src/features/workspace/tabs/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "பொருத்தச் சரிபார்ப்புகள், சுருக்கக் குறிப்புகள், பயிற்சிக் கருத்துகள், மீளாய்வுகள், பதில்கள், மறுமொழிகள் ஆகியவை மற்ற தாவல்கள் உருவாக்கும்போது இங்கே வந்துசேரும்."
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "பொருத்தச் சரிபார்ப்புகள், சுருக்கக் குறிப்புகள், நேர்காணல் பயிற்சிக் கருத்துகள், நேர்காணலுக்குப் பிந்தைய மீளாய்வுகள், படிவப் பதில்கள், மறுமொழிகள், வேலைவாய்ப்புச் சலுகைகள் ஆகியவற்றை நீங்கள் சேமிக்கும்போது அவை இங்கே தோன்றும்."
 
 #: src/features/check/issues.ts
 msgid "Fix the date"
@@ -5136,10 +5167,12 @@ msgstr "லேயவுட்"
 msgid "Leads with why you fit"
 msgstr "நீங்கள் ஏன் பொருந்துகிறீர்கள் என்பதை வழிநடத்துகிறது"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "கற்றல் பட்ஜெட்"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "வெளியேறு"
@@ -6462,6 +6495,14 @@ msgstr "ஆஃப். இந்த ரெஸ்யூமேவை நீங்�
 msgid "Offer"
 msgstr "சலுகை"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "வேலைவாய்ப்புச் சலுகை சேமிக்கப்பட்டது"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "வேலைவாய்ப்புச் சலுகையின் வகை"
+
 #: app/(tabs)/career/_layout.tsx
 msgid "Offers"
 msgstr "சலுகைகள்"
@@ -6478,6 +6519,7 @@ msgstr "அலுவலக நாட்கள் தெரியவில்ல�
 msgid "Office days not stated"
 msgstr "அலுவலக நாட்கள் குறிப்பிடப்படவில்லை"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Office days per week"
 msgstr "வாரத்திற்கு அலுவலக நாட்கள்"
@@ -6729,6 +6771,7 @@ msgstr "அசல் அட்டவணை வடிவமைப்பு பா
 msgid "Other"
 msgstr "மற்றவை"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "பிற நன்மைகள்"
@@ -6858,10 +6901,6 @@ msgstr "வேலை இடுகையை ஒட்டவும்"
 msgid "Paste a message from {company}"
 msgstr "{company} இலிருந்து ஒரு செய்தியை ஒட்டவும்"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "ஒரு விண்ணப்பத்தின் செய்திகள் தாவலில் சலுகையை ஒட்டவும்."
-
 #: src/features/workspace/tabs/messages.tsx
 msgid "Paste the email or message, without the signature."
 msgstr "கையொப்பம் இல்லாமல், மின்னஞ்சல் அல்லது செய்தியை ஒட்டவும்."
@@ -6888,6 +6927,7 @@ msgstr "ஒட்டப்பட்ட விளக்கம்"
 msgid "Paused"
 msgstr "இடைநிறுத்தப்பட்டது"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Pay period"
 msgstr "ஊதியக் காலம்"
@@ -6921,16 +6961,19 @@ msgstr "AI வழங்குநர் கிடைக்கும்போத�
 msgid "PDF, Word, Reactive Resume, JSON Resume or LinkedIn export."
 msgstr "PDF, Word, Reactive Resume, JSON Resume அல்லது LinkedIn ஏற்றுமதி."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per hour"
 msgstr "ஒரு மணி நேரத்திற்கு"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per month"
 msgstr "மாதத்திற்கு"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per year"
@@ -7847,6 +7890,7 @@ msgstr "பெரிய எழுத்துக்களை குறுகி�
 msgid "Reset design defaults"
 msgstr "வடிவமைப்பு இயல்புநிலைகளை மீட்டமைக்கவும்"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "பதிலளிக்க வேண்டிய நாள்"
@@ -8255,6 +8299,10 @@ msgstr "வேலையை காப்பாற்றுங்கள்"
 msgid "Save lane"
 msgstr "நிலையைச் சேமிக்கவும்"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "வேலைவாய்ப்புச் சலுகையைச் சேமி"
+
 #: src/features/share/files.ts
 msgid "Save or share file"
 msgstr "கோப்பை சேமிக்கவும் அல்லது பகிரவும்"
@@ -8320,6 +8368,10 @@ msgstr "சேமிக்கப்பட்டது ஒரு கதை: {titl
 msgid "Saved description"
 msgstr "சேமிக்கப்பட்ட விளக்கம்"
 
+#: src/features/workspace/tabs/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "{company}-க்காகச் சேமித்தவை, புதியவை முதலில்."
+
 #: src/features/career/today.tsx
 msgid "Saved to Applications with the posting"
 msgstr "வேலை அறிவிப்புடன் விண்ணப்பங்களில் சேமிக்கப்பட்டது"
@@ -8340,6 +8392,7 @@ msgstr "‘சேமிக்கப்பட்டது’ · பயிற்�
 msgid "Saving the job. Wait for confirmation before making another change."
 msgstr "வேலையை காப்பாற்றுதல். மற்றொரு மாற்றத்தை செய்வதற்கு முன் உறுதிப்படுத்தலுக்காக காத்திருக்கவும்."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 #: src/features/settings/profile.tsx
 #: src/shell/builder-chrome.tsx
@@ -10157,6 +10210,10 @@ msgstr "ஒரு பக்கமாக இறுக்கவும்"
 msgid "Tightening"
 msgstr "சுருக்குகிறது"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "நேரம்"
+
 #. placeholder {0}: draft.timezone
 #: src/features/application-detail/interview-sheet.tsx
 msgid "Time · {0}"
@@ -10174,6 +10231,7 @@ msgstr "நேரம், இணைப்பு, யார், நீங்கள
 msgid "Timeline"
 msgstr "காலவரிசை"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "நேரங்கள் {timeZone}-இல் காட்டப்படுகின்றன."
@@ -10430,6 +10488,10 @@ msgstr "இணைப்புகளை அடிக்கோடிடவும�
 #: src/ui/overlays.tsx
 msgid "Undo"
 msgstr "செயல்தவிர்"
+
+#: src/features/career/offer-entry.tsx
+msgid "Unknown"
+msgstr "தெரியவில்லை"
 
 #: src/features/career/offers.tsx
 msgid "Unknown · ask"
@@ -10735,6 +10797,7 @@ msgstr "மதிப்பு"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "பிரிவு வழக்கமான உரையாகத் தெரியாமல் இருக்க தொடக்கங்களை மாற்றி மாற்றி வையுங்கள்."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "வாய்மொழிச் சலுகை"
@@ -10840,6 +10903,10 @@ msgstr "குரல் அமைப்புகள்"
 #: src/features/write/fields.ts
 msgid "Volunteer"
 msgstr "தன்னார்வம்"
+
+#: src/features/career/offer-entry.tsx
+msgid "Wait for your account timezone to load, retry if it failed, or clear the deadline."
+msgstr "உங்கள் கணக்கின் நேர மண்டலம் ஏற்றப்படும் வரை காத்திருங்கள், ஏற்றப்படாவிட்டால் மீண்டும் முயலுங்கள் அல்லது காலக்கெடுவை அகற்றுங்கள்."
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Waiting for you"
@@ -11004,6 +11071,7 @@ msgstr "விண்ணப்பங்கள் எங்கிருந்த�
 msgid "Where you want to work"
 msgstr "நீங்கள் வேலை செய்ய விரும்பும் இடம்"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "வேலை செய்யும் இடம்"
@@ -11138,6 +11206,7 @@ msgstr "எழுத்து நடை"
 msgid "Writing help, tailored suggestions and the assistant. The default provider is used wherever you don't pick one. Your keys stay encrypted."
 msgstr "எழுத்து உதவி, ஏற்ப மாற்றிய பரிந்துரைகள், உதவியாளர். நீங்கள் தேர்ந்தெடுக்காத இடங்களில் இயல்புநிலை வழங்குநர் பயன்படுத்தப்படும். உங்கள் விசைகள் குறியாக்கம் செய்யப்பட்டே இருக்கும்."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "எழுத்துப்பூர்வச் சலுகை"

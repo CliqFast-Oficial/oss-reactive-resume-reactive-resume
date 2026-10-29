@@ -960,6 +960,10 @@ msgstr "Thêm @ và tên miền, như name@example.com"
 msgid "Add an address."
 msgstr "Thêm một địa chỉ."
 
+#: src/features/career/offer-entry.tsx
+msgid "Add an application first"
+msgstr "Hãy thêm hồ sơ ứng tuyển trước"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first."
 msgstr "Thêm hồ sơ ứng tuyển trước."
@@ -1044,6 +1048,14 @@ msgstr "Thêm giai đoạn"
 #: src/features/write/fields.ts
 msgid "Add language"
 msgstr "Thêm ngôn ngữ"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "Thêm đề nghị tuyển dụng"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "Thêm điều khoản của đề nghị tuyển dụng theo cách thủ công hoặc dùng tính năng trích xuất bằng AI tùy chọn trong Tin nhắn."
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1473,6 +1485,7 @@ msgstr "Xuất hiện trên trang khi nó có một tổ chức."
 #: app/_layout.tsx
 #: src/features/application-detail/detail-screen.tsx
 #: src/features/applications-board/calendar-screen.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/letters/write.tsx
 #: src/shell/workspace-chrome.tsx
@@ -1806,6 +1819,7 @@ msgctxt "Entry header accent: a bar beside the header"
 msgid "Bar"
 msgstr "Thanh"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "Lương cơ bản"
@@ -1873,10 +1887,12 @@ msgstr "Văn bản nội dung được đặt thành {minimum} pt"
 msgid "Bold"
 msgstr "Đậm"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "Thưởng"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus conditions"
 msgstr "Điều kiện để nhận tiền thưởng"
@@ -2219,6 +2235,10 @@ msgstr "Chọn nhà cung cấp AI đã được thử nghiệm trước khi chia
 msgid "Choose a time"
 msgstr "Chọn thời gian"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "Chọn ngày và giờ hợp lệ theo múi giờ {timeZone}, hoặc xóa hạn chót."
+
 #: src/features/applications/add-sheet.tsx
 msgid "Choose a valid follow-up date before saving."
 msgstr "Chọn ngày theo dõi hợp lệ trước khi lưu."
@@ -2234,6 +2254,10 @@ msgstr "Chọn tệp WebM, MP4, MP3, WAV hoặc Ogg tối đa 2 MB."
 #: src/features/applications-board/calendar-screen.tsx
 msgid "Choose an application"
 msgstr "Chọn hồ sơ ứng tuyển"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "Chọn hồ sơ ứng tuyển và sửa các trường được tô sáng trước khi lưu."
 
 #: src/features/workspace/tabs/practise.tsx
 msgid "Choose an audio file"
@@ -3209,6 +3233,7 @@ msgstr "Đã tạo {0} · {1} được sử dụng lần cuối · Hết hạn {
 msgid "Creating document…"
 msgstr "Đang tạo tài liệu…"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "Tiền tệ"
@@ -3921,6 +3946,10 @@ msgstr "Đọc nâng cao không thành công"
 msgid "Enhanced reading unavailable; used the built-in reader."
 msgstr "Tính năng đọc nâng cao không có sẵn; đã sử dụng trình đọc tích hợp."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "Nhập số tiền đầy đủ, chẳng hạn 95000, hoặc để trống."
+
 #: src/features/career/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "Nhập số tiền đầy đủ, ví dụ 95000. Số tiền trước đó của bạn không thay đổi."
@@ -3933,6 +3962,7 @@ msgstr "Nhập màu hex như #1a1a1a hoặc rgba(…)."
 msgid "Enter a name, up to 64 characters."
 msgstr "Nhập tên, tối đa 64 ký tự."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Enter a three-letter currency code."
 msgstr "Nhập mã tiền tệ gồm ba chữ cái."
@@ -3965,6 +3995,10 @@ msgstr "Nhập địa chỉ như resume.example.org."
 msgid "Enter any model ID supported by your endpoint."
 msgstr "Nhập bất kỳ ID mẫu nào được điểm cuối của bạn hỗ trợ."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "Tự nhập các điều khoản. Không có yêu cầu nào được gửi đến AI. Để trống các khoản tiền chưa biết."
+
 #: app/(auth)/server.tsx
 msgid "Enter the address you open Reactive Resume at in a browser. The app checks it's a Reactive Resume server that allows app sign-in before you continue."
 msgstr "Nhập địa chỉ bạn sử dụng để mở Reactive Resume trong trình duyệt. Trước khi bạn tiếp tục, ứng dụng di động sẽ xác minh rằng đây là máy chủ Reactive Resume đã bật đăng nhập trên thiết bị di động."
@@ -3991,6 +4025,7 @@ msgstr "Đã xóa mục nhập"
 msgid "Entry options"
 msgstr "Tùy chọn đầu vào"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "Cổ phần"
@@ -4026,10 +4061,6 @@ msgstr "Mọi từ khóa mà tin tuyển dụng nhấn mạnh đều đã có s�
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "Hằng tuần"
-
-#: src/features/workspace/tabs/saved.tsx
-msgid "Everything the coach wrote for {company}, newest first."
-msgstr "Mọi thứ mà huấn luyện viên sự nghiệp đã viết cho {company}, với cái mới nhất đầu tiên."
 
 #: src/features/career/facts.tsx
 #: src/features/write/fields.ts
@@ -4182,8 +4213,8 @@ msgid "Fit"
 msgstr "Phù hợp"
 
 #: src/features/workspace/tabs/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "Kiểm tra độ phù hợp, bản tóm tắt, nhận xét luyện tập, tổng kết, câu trả lời và thư trả lời sẽ xuất hiện ở đây khi các thẻ khác tạo ra chúng."
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "Kiểm tra độ phù hợp, bản tóm tắt, nhận xét luyện tập, tổng kết sau phỏng vấn, câu trả lời trong biểu mẫu, thư trả lời và lời đề nghị làm việc sẽ xuất hiện ở đây khi bạn lưu chúng."
 
 #: src/features/check/issues.ts
 msgid "Fix the date"
@@ -5136,10 +5167,12 @@ msgstr "Bố cục"
 msgid "Leads with why you fit"
 msgstr "Dẫn đến lý do tại sao bạn phù hợp"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "Ngân sách học tập"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "Rời đi"
@@ -6462,6 +6495,14 @@ msgstr "Tắt. Chỉ có bạn mới có thể xem sơ yếu lý lịch này."
 msgid "Offer"
 msgstr "Đề nghị"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "Đã lưu đề nghị tuyển dụng"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "Loại đề nghị tuyển dụng"
+
 #: app/(tabs)/career/_layout.tsx
 msgid "Offers"
 msgstr "Lời đề nghị"
@@ -6478,6 +6519,7 @@ msgstr "Chưa rõ số ngày làm tại văn phòng."
 msgid "Office days not stated"
 msgstr "Chưa nêu số ngày lên văn phòng"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Office days per week"
 msgstr "Số ngày tại văn phòng mỗi tuần"
@@ -6729,6 +6771,7 @@ msgstr "Định dạng bảng gốc được giữ nguyên. Nội dung này ở 
 msgid "Other"
 msgstr "Khác"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "Phúc lợi khác"
@@ -6858,10 +6901,6 @@ msgstr "Dán tin tuyển dụng"
 msgid "Paste a message from {company}"
 msgstr "Dán tin nhắn từ {company}"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "Dán lời đề nghị vào thẻ Tin nhắn của hồ sơ ứng tuyển."
-
 #: src/features/workspace/tabs/messages.tsx
 msgid "Paste the email or message, without the signature."
 msgstr "Dán email hoặc tin nhắn, không kèm chữ ký."
@@ -6888,6 +6927,7 @@ msgstr "Đã dán mô tả"
 msgid "Paused"
 msgstr "Đã tạm dừng"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Pay period"
 msgstr "Kỳ trả lương"
@@ -6921,16 +6961,19 @@ msgstr "Khi có nhà cung cấp AI, nó sẽ đọc các tệp PDF đã nhập. 
 msgid "PDF, Word, Reactive Resume, JSON Resume or LinkedIn export."
 msgstr "Xuất PDF, Word, Reactive Resume, JSON Resume hoặc LinkedIn."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per hour"
 msgstr "Mỗi giờ"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per month"
 msgstr "mỗi tháng"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per year"
@@ -7847,6 +7890,7 @@ msgstr "Chỉ dùng chữ hoa cho các tiêu đề ngắn. Chữ hoa làm chậm
 msgid "Reset design defaults"
 msgstr "Đặt lại mặc định thiết kế"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "Hạn trả lời"
@@ -8255,6 +8299,10 @@ msgstr "Lưu công việc"
 msgid "Save lane"
 msgstr "Lưu giai đoạn"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "Lưu đề nghị tuyển dụng"
+
 #: src/features/share/files.ts
 msgid "Save or share file"
 msgstr "Lưu hoặc chia sẻ tập tin"
@@ -8320,6 +8368,10 @@ msgstr "Đã lưu một câu chuyện: {title}"
 msgid "Saved description"
 msgstr "Mô tả đã lưu"
 
+#: src/features/workspace/tabs/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "Các mục đã lưu cho {company}, mới nhất trước."
+
 #: src/features/career/today.tsx
 msgid "Saved to Applications with the posting"
 msgstr "Đã lưu vào Hồ sơ ứng tuyển kèm tin tuyển dụng"
@@ -8340,6 +8392,7 @@ msgstr "Đã lưu vào Đã lưu · Luyện tập"
 msgid "Saving the job. Wait for confirmation before making another change."
 msgstr "Tiết kiệm công việc. Chờ xác nhận trước khi thực hiện thay đổi khác."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 #: src/features/settings/profile.tsx
 #: src/shell/builder-chrome.tsx
@@ -10157,6 +10210,10 @@ msgstr "Thắt chặt vào một trang"
 msgid "Tightening"
 msgstr "Đang rút gọn"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "Giờ"
+
 #. placeholder {0}: draft.timezone
 #: src/features/application-detail/interview-sheet.tsx
 msgid "Time · {0}"
@@ -10174,6 +10231,7 @@ msgstr "Thời gian, liên kết, người gặp, những gì bạn đã gửi"
 msgid "Timeline"
 msgstr "Dòng thời gian"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "Thời gian được hiển thị theo {timeZone}."
@@ -10430,6 +10488,10 @@ msgstr "Gạch chân các liên kết"
 #: src/ui/overlays.tsx
 msgid "Undo"
 msgstr "Hoàn tác"
+
+#: src/features/career/offer-entry.tsx
+msgid "Unknown"
+msgstr "Không rõ"
 
 #: src/features/career/offers.tsx
 msgid "Unknown · ask"
@@ -10735,6 +10797,7 @@ msgstr "Giá trị"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "Thay đổi cách mở đầu để phần này không đọc như một mẫu có sẵn."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "Đề nghị bằng lời"
@@ -10840,6 +10903,10 @@ msgstr "Cài đặt giọng nói"
 #: src/features/write/fields.ts
 msgid "Volunteer"
 msgstr "Tình nguyện viên"
+
+#: src/features/career/offer-entry.tsx
+msgid "Wait for your account timezone to load, retry if it failed, or clear the deadline."
+msgstr "Chờ múi giờ tài khoản của bạn tải xong, thử lại nếu tải không thành công, hoặc xóa hạn chót."
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Waiting for you"
@@ -11004,6 +11071,7 @@ msgstr "Hồ sơ ứng tuyển đến từ đâu"
 msgid "Where you want to work"
 msgstr "Nơi bạn muốn làm việc"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "Nơi làm việc"
@@ -11138,6 +11206,7 @@ msgstr "Văn phong"
 msgid "Writing help, tailored suggestions and the assistant. The default provider is used wherever you don't pick one. Your keys stay encrypted."
 msgstr "Hỗ trợ viết, gợi ý được điều chỉnh và trợ lý. Nhà cung cấp mặc định được dùng ở bất cứ đâu bạn không chọn. Khóa của bạn luôn được mã hóa."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "Đề nghị bằng văn bản"

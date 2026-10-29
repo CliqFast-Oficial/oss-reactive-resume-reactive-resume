@@ -960,6 +960,10 @@ msgstr "Adjon hozzá egy @ jelet és a domaint, például name@example.com"
 msgid "Add an address."
 msgstr "Adjon hozzá egy címet."
 
+#: src/features/career/offer-entry.tsx
+msgid "Add an application first"
+msgstr "Előbb adj hozzá egy jelentkezést"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first."
 msgstr "Először adjon hozzá jelentkezést."
@@ -1044,6 +1048,14 @@ msgstr "Szakasz hozzáadása"
 #: src/features/write/fields.ts
 msgid "Add language"
 msgstr "Nyelv hozzáadása"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "Állásajánlat hozzáadása"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "Add meg kézzel az állásajánlat feltételeit, vagy használd az Üzenetek lapon az opcionális MI-alapú adatkinyerést."
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1473,6 +1485,7 @@ msgstr "Megjelenik az oldalon, ha van szervezete."
 #: app/_layout.tsx
 #: src/features/application-detail/detail-screen.tsx
 #: src/features/applications-board/calendar-screen.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/letters/write.tsx
 #: src/shell/workspace-chrome.tsx
@@ -1806,6 +1819,7 @@ msgctxt "Entry header accent: a bar beside the header"
 msgid "Bar"
 msgstr "Függőleges vonal"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "Alapfizetés"
@@ -1873,10 +1887,12 @@ msgstr "Törzsszöveg beállítása {minimum} pt"
 msgid "Bold"
 msgstr "Félkövér"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "Bónusz"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus conditions"
 msgstr "Bónusz feltételek"
@@ -2219,6 +2235,10 @@ msgstr "Az adatok megosztása előtt válasszon tesztelt AI-szolgáltatót."
 msgid "Choose a time"
 msgstr "Válasszon időpontot"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "Válassz érvényes dátumot és időpontot a(z) {timeZone} időzónában, vagy ürítsd ki a határidő mezőjét."
+
 #: src/features/applications/add-sheet.tsx
 msgid "Choose a valid follow-up date before saving."
 msgstr "Mentés előtt válasszon érvényes követési dátumot."
@@ -2234,6 +2254,10 @@ msgstr "Válassz egy legfeljebb 2 MB-os WebM, MP4, MP3, WAV vagy Ogg fájlt."
 #: src/features/applications-board/calendar-screen.tsx
 msgid "Choose an application"
 msgstr "Jelentkezés kiválasztása"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "Mentés előtt válassz egy jelentkezést, és javítsd ki a kiemelt mezőket."
 
 #: src/features/workspace/tabs/practise.tsx
 msgid "Choose an audio file"
@@ -3209,6 +3233,7 @@ msgstr "Létrehozva: {0} · Utoljára használt: {1} · Lejár: {2}"
 msgid "Creating document…"
 msgstr "Dokumentum létrehozása…"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "Pénznem"
@@ -3921,6 +3946,10 @@ msgstr "A továbbfejlesztett olvasás sikertelen"
 msgid "Enhanced reading unavailable; used the built-in reader."
 msgstr "A továbbfejlesztett olvasás nem érhető el; a beépített olvasót használta."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "Teljes összeget adj meg, például 95000, vagy hagyd üresen a mezőt."
+
 #: src/features/career/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "Adj meg teljes összeget, például 95000. A korábbi összeged nem változott."
@@ -3933,9 +3962,10 @@ msgstr "Adj meg egy hex színkódot, például #1a1a1a, vagy rgba(…) értéket
 msgid "Enter a name, up to 64 characters."
 msgstr "Adjon meg egy nevet, legfeljebb 64 karakterből."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Enter a three-letter currency code."
-msgstr "Adjon meg egy három fedőlapból álló pénznemkódot."
+msgstr "Adjon meg egy hárombetűs pénznemkódot."
 
 #: src/features/applications/add-sheet.tsx
 msgid "Enter a valid date."
@@ -3965,6 +3995,10 @@ msgstr "Adjon meg egy címet, például resume.example.org."
 msgid "Enter any model ID supported by your endpoint."
 msgstr "Adja meg a végpontja által támogatott bármely modellazonosítót."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "Add meg magad a feltételeket. Nem küldünk MI-kérést. Az ismeretlen összegeket hagyd üresen."
+
 #: app/(auth)/server.tsx
 msgid "Enter the address you open Reactive Resume at in a browser. The app checks it's a Reactive Resume server that allows app sign-in before you continue."
 msgstr "Adja meg a címet, ahol a Reactive Resume-ot böngészőben megnyitja. Folytatás előtt az alkalmazás ellenőrzi, hogy ez egy Reactive Resume-szerver, amely engedi az alkalmazásból történő bejelentkezést."
@@ -3991,6 +4025,7 @@ msgstr "Bejegyzés törölve"
 msgid "Entry options"
 msgstr "Belépési lehetőségek"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "Részesedés"
@@ -4026,10 +4061,6 @@ msgstr "Az álláshirdetés minden kifejezése már ott van."
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "Hetente"
-
-#: src/features/workspace/tabs/saved.tsx
-msgid "Everything the coach wrote for {company}, newest first."
-msgstr "Minden, amit az edző írt a {company} számára, a legújabbak először."
 
 #: src/features/career/facts.tsx
 #: src/features/write/fields.ts
@@ -4182,8 +4213,8 @@ msgid "Fit"
 msgstr "Illeszkedés"
 
 #: src/features/workspace/tabs/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "Az illeszkedés-ellenőrzések, eligazítások, gyakorlási visszajelzések, kiértékelések, válaszok és válaszüzenetek ide kerülnek, ahogy a többi lap létrehozza őket."
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "Az álláshoz való illeszkedés ellenőrzései, eligazítások, gyakorlási visszajelzések, interjú utáni kiértékelések, űrlapválaszok, válaszüzenetek és állásajánlatok mentéskor ide kerülnek."
 
 #: src/features/check/issues.ts
 msgid "Fix the date"
@@ -5136,10 +5167,12 @@ msgstr "Elrendezés"
 msgid "Leads with why you fit"
 msgstr "Megmutatja, hogy miért illik"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "Képzési keret"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "Elhagyás"
@@ -6462,6 +6495,14 @@ msgstr "Le. Ezt az önéletrajzot csak Ön láthatja."
 msgid "Offer"
 msgstr "Ajánlat"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "Állásajánlat mentve"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "Állásajánlat típusa"
+
 #: app/(tabs)/career/_layout.tsx
 msgid "Offers"
 msgstr "Ajánlatok"
@@ -6478,6 +6519,7 @@ msgstr "Az iroda napjai ismeretlenek."
 msgid "Office days not stated"
 msgstr "Irodai napok nincsenek megadva"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Office days per week"
 msgstr "Irodai napok hetente"
@@ -6729,6 +6771,7 @@ msgstr "A táblázat eredeti formázása megmarad. Ez a tartalom csak olvasható
 msgid "Other"
 msgstr "Egyéb"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "Egyéb juttatások"
@@ -6858,10 +6901,6 @@ msgstr "Illesszen be egy álláshirdetést"
 msgid "Paste a message from {company}"
 msgstr "Üzenet beillesztése a következőtől: {company}"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "Illessz be egy ajánlatot egy jelentkezés Üzenetek lapjára."
-
 #: src/features/workspace/tabs/messages.tsx
 msgid "Paste the email or message, without the signature."
 msgstr "Illeszd be az e-mailt vagy üzenetet, aláírás nélkül."
@@ -6888,6 +6927,7 @@ msgstr "Leírás beillesztve"
 msgid "Paused"
 msgstr "Szüneteltetve"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Pay period"
 msgstr "Fizetési időszak"
@@ -6921,16 +6961,19 @@ msgstr "A PDF az Ön mesterséges intelligencia-szolgáltatóját használja, am
 msgid "PDF, Word, Reactive Resume, JSON Resume or LinkedIn export."
 msgstr "PDF, Word, Reactive Resume, JSON Resume vagy LinkedIn-export."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per hour"
 msgstr "Óránként"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per month"
 msgstr "havonta"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per year"
@@ -7847,6 +7890,7 @@ msgstr "Tartsd fenn a nagybetűket rövid címsoroknak. Lassítják az olvasást
 msgid "Reset design defaults"
 msgstr "Állítsa vissza a tervezési alapértékeket"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "Válaszhatáridő"
@@ -8255,6 +8299,10 @@ msgstr "Munka mentése"
 msgid "Save lane"
 msgstr "Szakasz mentése"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "Állásajánlat mentése"
+
 #: src/features/share/files.ts
 msgid "Save or share file"
 msgstr "Fájl mentése vagy megosztása"
@@ -8320,6 +8368,10 @@ msgstr "Mentett egy történet: {title}"
 msgid "Saved description"
 msgstr "Leírás mentve"
 
+#: src/features/workspace/tabs/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "A(z) {company} kapcsán mentett elemek, a legújabb elöl."
+
 #: src/features/career/today.tsx
 msgid "Saved to Applications with the posting"
 msgstr "Mentve a Jelentkezésekbe a hirdetéssel együtt"
@@ -8340,6 +8392,7 @@ msgstr "Mentve a Mentett lapra · Gyakorlás"
 msgid "Saving the job. Wait for confirmation before making another change."
 msgstr "A munka mentése. Mielőtt újabb módosítást hajtana végre, várja meg a megerősítést."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 #: src/features/settings/profile.tsx
 #: src/shell/builder-chrome.tsx
@@ -10157,6 +10210,10 @@ msgstr "Húzza meg egy oldalra"
 msgid "Tightening"
 msgstr "Tömörítés"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "Időpont"
+
 #. placeholder {0}: draft.timezone
 #: src/features/application-detail/interview-sheet.tsx
 msgid "Time · {0}"
@@ -10174,6 +10231,7 @@ msgstr "Időpont, link, kivel, mit küldtél"
 msgid "Timeline"
 msgstr "Idővonal"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "Az időpontok ebben az időzónában jelennek meg: {timeZone}."
@@ -10430,6 +10488,10 @@ msgstr "A hivatkozások aláhúzása"
 #: src/ui/overlays.tsx
 msgid "Undo"
 msgstr "Visszavonás"
+
+#: src/features/career/offer-entry.tsx
+msgid "Unknown"
+msgstr "Ismeretlen"
 
 #: src/features/career/offers.tsx
 msgid "Unknown · ask"
@@ -10735,6 +10797,7 @@ msgstr "Érték"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "Változtasd a mondatkezdéseket, hogy a szakasz ne hasson sablonosnak."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "Szóbeli ajánlat"
@@ -10840,6 +10903,10 @@ msgstr "Hangbeállítások"
 #: src/features/write/fields.ts
 msgid "Volunteer"
 msgstr "Önkéntesség"
+
+#: src/features/career/offer-entry.tsx
+msgid "Wait for your account timezone to load, retry if it failed, or clear the deadline."
+msgstr "Várd meg, amíg betöltődik a fiókod időzónája, sikertelen betöltés esetén próbáld újra, vagy ürítsd ki a határidő mezőjét."
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Waiting for you"
@@ -11004,6 +11071,7 @@ msgstr "Honnan érkeznek a jelentkezések"
 msgid "Where you want to work"
 msgstr "Ahol dolgozni szeretnél"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "Munkavégzés helye"
@@ -11138,6 +11206,7 @@ msgstr "Szövegezés"
 msgid "Writing help, tailored suggestions and the assistant. The default provider is used wherever you don't pick one. Your keys stay encrypted."
 msgstr "Írássegítség, testreszabott javaslatok és az asszisztens. Ahol nem választasz szolgáltatót, ott az alapértelmezettet használjuk. A kulcsaid titkosítva maradnak."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "Írásos ajánlat"

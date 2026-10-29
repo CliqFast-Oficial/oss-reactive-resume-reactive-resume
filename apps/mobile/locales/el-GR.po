@@ -960,6 +960,10 @@ msgstr "Προσθέστε ένα @ και τον τομέα, όπως name@exam
 msgid "Add an address."
 msgstr "Προσθέστε μια διεύθυνση."
 
+#: src/features/career/offer-entry.tsx
+msgid "Add an application first"
+msgstr "Προσθέστε πρώτα μια αίτηση"
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Add an application first."
 msgstr "Προσθέστε πρώτα μια αίτηση."
@@ -1044,6 +1048,14 @@ msgstr "Προσθήκη σταδίου"
 #: src/features/write/fields.ts
 msgid "Add language"
 msgstr "Προσθήκη γλώσσας"
+
+#: src/features/career/offer-entry.tsx
+msgid "Add offer"
+msgstr "Προσθήκη προσφοράς"
+
+#: src/features/career/offers.tsx
+msgid "Add offer terms manually, or use optional AI extraction in Messages."
+msgstr "Προσθέστε χειροκίνητα τους όρους της προσφοράς εργασίας ή χρησιμοποιήστε την προαιρετική εξαγωγή με τεχνητή νοημοσύνη στα Μηνύματα."
 
 #: src/features/ats-checker/messages.ts
 msgid "Add one link that shows your work."
@@ -1473,6 +1485,7 @@ msgstr "Εμφανίζεται στη σελίδα μόλις έχει έναν 
 #: app/_layout.tsx
 #: src/features/application-detail/detail-screen.tsx
 #: src/features/applications-board/calendar-screen.tsx
+#: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/letters/write.tsx
 #: src/shell/workspace-chrome.tsx
@@ -1806,6 +1819,7 @@ msgctxt "Entry header accent: a bar beside the header"
 msgid "Bar"
 msgstr "Πλαϊνή γραμμή"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Base salary"
 msgstr "Βασικός μισθός"
@@ -1873,10 +1887,12 @@ msgstr "Το κύριο κείμενο ορίστηκε σε {minimum} pt"
 msgid "Bold"
 msgstr "Έντονα"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus"
 msgstr "Μπόνους"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Bonus conditions"
 msgstr "Προϋποθέσεις μπόνους"
@@ -2219,6 +2235,10 @@ msgstr "Επιλέξτε έναν δοκιμασμένο πάροχο τεχνη
 msgid "Choose a time"
 msgstr "Επιλέξτε ώρα"
 
+#: src/features/career/offer-entry.tsx
+msgid "Choose a valid date and time in {timeZone}, or clear the deadline."
+msgstr "Επιλέξτε έγκυρη ημερομηνία και ώρα στη ζώνη ώρας {timeZone} ή καταργήστε την προθεσμία."
+
 #: src/features/applications/add-sheet.tsx
 msgid "Choose a valid follow-up date before saving."
 msgstr "Επιλέξτε μια έγκυρη ημερομηνία παρακολούθησης πριν την αποθήκευση."
@@ -2234,6 +2254,10 @@ msgstr "Επιλέξτε αρχείο WebM, MP4, MP3, WAV ή Ogg έως 2 MB."
 #: src/features/applications-board/calendar-screen.tsx
 msgid "Choose an application"
 msgstr "Επιλέξτε μια αίτηση"
+
+#: src/features/career/offer-entry.tsx
+msgid "Choose an application and correct the highlighted fields before saving."
+msgstr "Επιλέξτε αίτηση και διορθώστε τα επισημασμένα πεδία πριν από την αποθήκευση."
 
 #: src/features/workspace/tabs/practise.tsx
 msgid "Choose an audio file"
@@ -3209,6 +3233,7 @@ msgstr "Δημιουργήθηκε {0} · Τελευταία χρήση {1} · �
 msgid "Creating document…"
 msgstr "Δημιουργία εγγράφου…"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "Νόμισμα"
@@ -3921,6 +3946,10 @@ msgstr "Η βελτιωμένη ανάγνωση απέτυχε"
 msgid "Enhanced reading unavailable; used the built-in reader."
 msgstr "Η βελτιωμένη ανάγνωση δεν είναι διαθέσιμη. χρησιμοποίησε τον ενσωματωμένο αναγνώστη."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter a full amount, such as 95000, or leave blank."
+msgstr "Εισαγάγετε ολόκληρο το ποσό, όπως 95000, ή αφήστε το πεδίο κενό."
+
 #: src/features/career/preferences.tsx
 msgid "Enter a full amount, such as 95000. Your previous amount is unchanged."
 msgstr "Εισαγάγετε ολόκληρο το ποσό, π.χ. 95000. Το προηγούμενο ποσό σας δεν άλλαξε."
@@ -3933,6 +3962,7 @@ msgstr "Εισαγάγετε δεκαεξαδικό χρώμα όπως #1a1a1a 
 msgid "Enter a name, up to 64 characters."
 msgstr "Εισαγάγετε ένα όνομα, έως 64 χαρακτήρες."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Enter a three-letter currency code."
 msgstr "Εισαγάγετε τριγράμματο κωδικό νομίσματος."
@@ -3965,6 +3995,10 @@ msgstr "Εισαγάγετε διεύθυνση όπως resume.example.org."
 msgid "Enter any model ID supported by your endpoint."
 msgstr "Εισαγάγετε οποιοδήποτε αναγνωριστικό μοντέλου που υποστηρίζεται από το τελικό σημείο σας."
 
+#: src/features/career/offer-entry.tsx
+msgid "Enter terms yourself. No AI request is made. Leave unknown amounts blank."
+msgstr "Εισαγάγετε τους όρους εσείς. Δεν αποστέλλεται αίτημα σε τεχνητή νοημοσύνη. Αφήστε κενά τα άγνωστα ποσά."
+
 #: app/(auth)/server.tsx
 msgid "Enter the address you open Reactive Resume at in a browser. The app checks it's a Reactive Resume server that allows app sign-in before you continue."
 msgstr "Εισαγάγετε τη διεύθυνση στην οποία ανοίγετε το Reactive Resume σε ένα πρόγραμμα περιήγησης. Η εφαρμογή ελέγχει ότι είναι διακομιστής Reactive Resume που επιτρέπει τη σύνδεση στην εφαρμογή προτού συνεχίσετε."
@@ -3991,6 +4025,7 @@ msgstr "Η καταχώριση διαγράφηκε"
 msgid "Entry options"
 msgstr "Επιλογές εισόδου"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Equity"
 msgstr "Μετοχές"
@@ -4026,10 +4061,6 @@ msgstr "Κάθε θητεία που τονίζει η αγγελία εργασ
 #: src/features/career/schedule-sheet.tsx
 msgid "Every week"
 msgstr "Κάθε εβδομάδα"
-
-#: src/features/workspace/tabs/saved.tsx
-msgid "Everything the coach wrote for {company}, newest first."
-msgstr "Όλα όσα έγραψε ο σύμβουλος καριέρας για το {company}, πρώτα τα νεότερα."
 
 #: src/features/career/facts.tsx
 #: src/features/write/fields.ts
@@ -4182,8 +4213,8 @@ msgid "Fit"
 msgstr "Καταλληλότητα"
 
 #: src/features/workspace/tabs/saved.tsx
-msgid "Fit checks, briefings, practice feedback, debriefs, answers and replies land here as the other tabs create them."
-msgstr "Έλεγχοι καταλληλότητας, ενημερωτικά, ανατροφοδότηση εξάσκησης, απολογισμοί, απαντήσεις φορμών και απαντήσεις σε μηνύματα εμφανίζονται εδώ καθώς τα δημιουργούν οι άλλες καρτέλες."
+msgid "Fit checks, briefings, practice feedback, debriefs, answers, replies and offers land here as you save them."
+msgstr "Έλεγχοι καταλληλότητας για τη θέση, ενημερωτικά προετοιμασίας, ανατροφοδότηση από εξάσκηση συνέντευξης, απολογισμοί συνεντεύξεων, απαντήσεις φορμών, απαντήσεις σε μηνύματα και προσφορές εργασίας εμφανίζονται εδώ καθώς τα αποθηκεύετε."
 
 #: src/features/check/issues.ts
 msgid "Fix the date"
@@ -5136,10 +5167,12 @@ msgstr "Διάταξη"
 msgid "Leads with why you fit"
 msgstr "Οδηγεί με το γιατί ταιριάζεις"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Learning budget"
 msgstr "Προϋπολογισμός εκπαίδευσης"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Leave"
 msgstr "Αποχώρηση"
@@ -6462,6 +6495,14 @@ msgstr "Μακριά από. Μόνο εσείς μπορείτε να δείτ�
 msgid "Offer"
 msgstr "Προσφορά"
 
+#: src/features/career/offer-entry.tsx
+msgid "Offer saved"
+msgstr "Η προσφορά αποθηκεύτηκε"
+
+#: src/features/career/offer-entry.tsx
+msgid "Offer type"
+msgstr "Τύπος προσφοράς"
+
 #: app/(tabs)/career/_layout.tsx
 msgid "Offers"
 msgstr "Προσφορές"
@@ -6478,6 +6519,7 @@ msgstr "Οι ημέρες γραφείου είναι άγνωστες."
 msgid "Office days not stated"
 msgstr "Οι ημέρες γραφείου δεν αναφέρονται"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Office days per week"
 msgstr "Ημέρες γραφείου την εβδομάδα"
@@ -6729,6 +6771,7 @@ msgstr "Η αρχική μορφοποίηση του πίνακα διατηρ�
 msgid "Other"
 msgstr "Άλλη"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Other benefits"
 msgstr "Άλλες παροχές"
@@ -6858,10 +6901,6 @@ msgstr "Επικολλήστε μια αγγελία εργασίας"
 msgid "Paste a message from {company}"
 msgstr "Επικολλήστε ένα μήνυμα από το {company}"
 
-#: src/features/career/offers.tsx
-msgid "Paste an offer into an application's Messages tab."
-msgstr "Επικολλήστε μια προσφορά στην καρτέλα Μηνύματα μιας αίτησης."
-
 #: src/features/workspace/tabs/messages.tsx
 msgid "Paste the email or message, without the signature."
 msgstr "Επικολλήστε το email ή το μήνυμα χωρίς την υπογραφή."
@@ -6888,6 +6927,7 @@ msgstr "Επικολλημένη περιγραφή"
 msgid "Paused"
 msgstr "Παύση"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Pay period"
 msgstr "Περίοδος πληρωμής"
@@ -6921,16 +6961,19 @@ msgstr "Τα PDF χρησιμοποιούν τον πάροχο AI όταν εί
 msgid "PDF, Word, Reactive Resume, JSON Resume or LinkedIn export."
 msgstr "Εξαγωγή PDF, Word, Reactive Resume, JSON Resume ή LinkedIn."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per hour"
 msgstr "Ανά ώρα"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per month"
 msgstr "Ανά μήνα"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 #: src/features/career/preferences.tsx
 msgid "Per year"
@@ -7847,6 +7890,7 @@ msgstr "Χρησιμοποιήστε τα κεφαλαία μόνο για σύ�
 msgid "Reset design defaults"
 msgstr "Επαναφορά προεπιλογών σχεδίασης"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Respond by"
 msgstr "Απάντηση έως"
@@ -8255,6 +8299,10 @@ msgstr "Αποθήκευση εργασίας"
 msgid "Save lane"
 msgstr "Αποθήκευση σταδίου"
 
+#: src/features/career/offer-entry.tsx
+msgid "Save offer"
+msgstr "Αποθήκευση προσφοράς"
+
 #: src/features/share/files.ts
 msgid "Save or share file"
 msgstr "Αποθήκευση ή κοινή χρήση αρχείου"
@@ -8320,6 +8368,10 @@ msgstr "Αποθηκεύτηκε μια ιστορία: {title}"
 msgid "Saved description"
 msgstr "Αποθηκευμένη περιγραφή"
 
+#: src/features/workspace/tabs/saved.tsx
+msgid "Saved items for {company}, newest first."
+msgstr "Αποθηκευμένα στοιχεία για την εταιρεία {company}, με τα νεότερα πρώτα."
+
 #: src/features/career/today.tsx
 msgid "Saved to Applications with the posting"
 msgstr "Αποθηκεύτηκε στις Αιτήσεις μαζί με την αγγελία"
@@ -8340,6 +8392,7 @@ msgstr "Αποθηκεύτηκε στην καρτέλα \"Αποθηκευμέ�
 msgid "Saving the job. Wait for confirmation before making another change."
 msgstr "Σώζοντας τη δουλειά. Περιμένετε για επιβεβαίωση πριν κάνετε άλλη αλλαγή."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 #: src/features/settings/profile.tsx
 #: src/shell/builder-chrome.tsx
@@ -10157,6 +10210,10 @@ msgstr "Σφίξτε σε μία σελίδα"
 msgid "Tightening"
 msgstr "Σύμπτυξη κειμένου"
 
+#: src/features/career/offer-entry.tsx
+msgid "Time"
+msgstr "Ώρα"
+
 #. placeholder {0}: draft.timezone
 #: src/features/application-detail/interview-sheet.tsx
 msgid "Time · {0}"
@@ -10174,6 +10231,7 @@ msgstr "Ώρα, σύνδεσμος, ποιοι, τι στείλατε"
 msgid "Timeline"
 msgstr "Χρονολόγιο"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/preferences.tsx
 msgid "Times are shown in {timeZone}."
 msgstr "Οι ώρες εμφανίζονται σε {timeZone}."
@@ -10430,6 +10488,10 @@ msgstr "Υπογράμμισε συνδέσμους"
 #: src/ui/overlays.tsx
 msgid "Undo"
 msgstr "Ξεκάνω"
+
+#: src/features/career/offer-entry.tsx
+msgid "Unknown"
+msgstr "Άγνωστο"
 
 #: src/features/career/offers.tsx
 msgid "Unknown · ask"
@@ -10735,6 +10797,7 @@ msgstr "Τιμή"
 msgid "Vary the openings so the section does not read as boilerplate."
 msgstr "Ποικίλετε τις εναρκτήριες φράσεις ώστε η ενότητα να μη διαβάζεται ως τυποποιημένο κείμενο."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Verbal offer"
 msgstr "Προφορική προσφορά"
@@ -10840,6 +10903,10 @@ msgstr "Ρυθμίσεις φωνής"
 #: src/features/write/fields.ts
 msgid "Volunteer"
 msgstr "Εθελοντική εργασία"
+
+#: src/features/career/offer-entry.tsx
+msgid "Wait for your account timezone to load, retry if it failed, or clear the deadline."
+msgstr "Περιμένετε να φορτωθεί η ζώνη ώρας του λογαριασμού σας, δοκιμάστε ξανά αν η φόρτωση απέτυχε ή καταργήστε την προθεσμία."
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Waiting for you"
@@ -11004,6 +11071,7 @@ msgstr "Από πού προέρχονται οι αιτήσεις"
 msgid "Where you want to work"
 msgstr "Πού θέλετε να εργαστείτε"
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Where you work"
 msgstr "Πού εργάζεστε"
@@ -11138,6 +11206,7 @@ msgstr "Γραφή"
 msgid "Writing help, tailored suggestions and the assistant. The default provider is used wherever you don't pick one. Your keys stay encrypted."
 msgstr "Βοήθεια γραφής, προσαρμοσμένες προτάσεις και ο βοηθός. Ο προεπιλεγμένος πάροχος χρησιμοποιείται όπου δεν επιλέγετε κάποιον. Τα κλειδιά σας παραμένουν κρυπτογραφημένα."
 
+#: src/features/career/offer-entry.tsx
 #: src/features/career/offers.tsx
 msgid "Written offer"
 msgstr "Γραπτή προσφορά"
