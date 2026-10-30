@@ -117,7 +117,7 @@ const readResponse = (provider: WebAccessProvider, content = "# Designer\nAccess
 	if (provider === "firecrawl")
 		return {
 			success: true,
-			data: { markdown: content, metadata: { url: URL } },
+			data: { markdown: content, metadata: { url: URL, cachedAt: "2026-09-29T12:00:00Z" } },
 		};
 	if (provider === "tavily")
 		return {
@@ -164,7 +164,7 @@ const server = createServer(async (request, result) => {
 /** Today's search body for "designer", which a search with no regions must send byte for byte. */
 const plainSearchBody = (provider: WebAccessProvider) =>
 	provider === "firecrawl"
-		? { query: "designer", sources: ["web"], limit: 5, timeout: 14_000 }
+		? { query: "designer", sources: ["web"], limit: 5, timeout: 14_000, integration: "_reactive-resume" }
 		: provider === "tavily"
 			? {
 					query: "designer",
@@ -289,7 +289,10 @@ describe.each(PROVIDERS)("%s adapter at shared boundary", (provider) => {
 		});
 		expect(result.content).toHaveLength(20_000);
 		expect(result.retrievedAt).toMatch(/^\d{4}-\d{2}-\d{2}T/);
-		if (provider === "exa") {
+		if (provider === "firecrawl") {
+			expect(result.providerFetchedAt).toBe("2026-09-29T12:00:00Z");
+			expect(requests[0]?.body).toMatchObject({ integration: "_reactive-resume" });
+		} else if (provider === "exa") {
 			expect(result.providerFetchedAt).toBe("2026-09-29T12:00:00Z");
 			expect(requests[0]?.body).toMatchObject({
 				text: { maxCharacters: 20_001 },
