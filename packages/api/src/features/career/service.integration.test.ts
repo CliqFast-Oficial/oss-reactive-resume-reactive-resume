@@ -991,8 +991,67 @@ describe.skipIf(!databaseUrl)("career knowledge, context and data lifecycle", ()
 			style: { basics: { headline: "LIVE UNSUBMITTED DRAFT" } },
 		});
 		expect(await service.savedItems({ userId: "alice", applicationId: "alice-app", kind: "answers" })).toMatchObject([
-			{ data: { answers }, outdated: false },
+			{ data: { answers }, outdated: false, submission: true },
 		]);
+		await getDb()
+			.insert(tables.careerArtifact)
+			.values({
+				userId: "alice",
+				applicationId: "alice-app",
+				title: "Later generated draft",
+				data: { kind: "answers", answers: [{ question: "Why ACME?", answer: "Later draft" }] },
+				evidence: { factIds: [], storyIds: [] },
+				inputVersion: "later-context",
+				createdAt: new Date(Date.now() + 1000),
+			});
+		const saved = await service.savedItems({ userId: "alice", applicationId: "alice-app", kind: "answers" });
+		expect(saved[0]).toMatchObject({ submission: false, data: { answers: [{ answer: "Later draft" }] } });
+		expect(saved.filter((item) => item.submission)).toMatchObject([{ data: { answers }, submission: true }]);
+	});
+
+	it("clears document reviews when a saved application changes its selected resume", async () => {
+		await getDb()
+			.update(tables.application)
+			.set({ sentResumeVersionId: null })
+			.where(eq(tables.application.id, "alice-app"));
+		await service.saveWorkspace("alice", "alice-app", { checklist: [0, 1, 2, 3] }, { checklist: [] });
+		await applications.update({ userId: "alice", id: "alice-app", resumeId: null });
+		expect((await service.workspace("alice", "alice-app")).checklist).toEqual([2, 3]);
+	});
+
+	it("keeps legacy capture of unchanged pre-submission answers immutable", async () => {
+		const answers = [{ id: "why", question: "Why this role?", answer: "Original answer", factIds: [] }];
+		await service.saveWorkspace("alice", "alice-app", { answers }, { answers: [] });
+		await applications.update({ userId: "alice", id: "alice-app", status: "applied" });
+		await service.snapshotAnswers("alice", "alice-app");
+		await service.saveWorkspace(
+			"alice",
+			"alice-app",
+			{ answers: answers.map((answer) => ({ ...answer, answer: "Later draft" })) },
+			{ answers },
+		);
+		await service.snapshotAnswers("alice", "alice-app");
+		expect(await service.savedItems({ userId: "alice", applicationId: "alice-app", kind: "answers" })).toMatchObject([
+			{ data: { answers }, submission: true },
+		]);
+	});
+
+	it("never records answers written after an empty submission as sent", async () => {
+		await service.submitApplication("alice", "alice-app", [], []);
+		await service.saveWorkspace(
+			"alice",
+			"alice-app",
+			{
+				answers: [{ id: "later", question: "Later question", answer: "Later draft", factIds: [] }],
+			},
+			{ answers: [] },
+		);
+		await getDb()
+			.update(tables.careerWorkspace)
+			.set({ updatedAt: new Date(Date.now() + 1000) })
+			.where(eq(tables.careerWorkspace.applicationId, "alice-app"));
+		await expect(service.snapshotAnswers("alice", "alice-app")).rejects.toMatchObject({ code: "CONFLICT" });
+		expect(await service.savedItems({ userId: "alice", applicationId: "alice-app", kind: "answers" })).toEqual([]);
 	});
 
 	it("rejects a stale submit after another tab closes a never-submitted application", async () => {
@@ -1002,6 +1061,19 @@ describe.skipIf(!databaseUrl)("career knowledge, context and data lifecycle", ()
 		expect(application.status).toBe("closed");
 		expect(application.activity.some((entry) => entry.type === "stage" && entry.stage === "applied")).toBe(false);
 		expect(await service.savedItems({ userId: "alice", applicationId: "alice-app", kind: "answers" })).toEqual([]);
+	});
+
+	it("rejects submission when the selected documents changed in another client", async () => {
+		await expect(
+			service.submitApplication("alice", "alice-app", [], [], { resumeId: "old-selection", coverLetterId: null }),
+		).rejects.toMatchObject({ code: "CONFLICT" });
+		await expect(
+			service.submitApplication("alice", "alice-app", [], [], {
+				resumeId: "shared-resume",
+				coverLetterId: "old-letter",
+			}),
+		).rejects.toMatchObject({ code: "CONFLICT" });
+		expect((await applications.getById({ userId: "alice", id: "alice-app" })).status).toBe("saved");
 	});
 
 	it("requires the immutable submission for a retry, while allowing soft-trashed live documents", async () => {

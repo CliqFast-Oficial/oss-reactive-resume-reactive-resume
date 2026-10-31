@@ -128,6 +128,8 @@ msgid "{0, plural, one {{count} of # application changed.} other {{count} of # a
 msgstr "{0, plural, one {Pakeista {count} iš # paraiškos.} few {Pakeista {count} iš # paraiškų.} many {Pakeista {count} iš # paraiškos.} other {Pakeista {count} iš # paraiškų.}}"
 
 #. placeholder {0}: data.answers.length
+#. placeholder {0}: written.length
+#: src/features/workspace/tabs/apply.tsx
 #: src/features/workspace/tabs/saved.tsx
 msgid "{0, plural, one {# answer} other {# answers}}"
 msgstr "{0, plural, one {# atsakymas} few {# atsakymai} many {# atsakymo} other {# atsakymų}}"
@@ -1069,6 +1071,10 @@ msgstr "Pridėkite jį su šalies kodu – kai kurios paraiškų formos jo reika
 msgid "Add page"
 msgstr "Pridėti puslapį"
 
+#: src/features/workspace/preparation.tsx
+msgid "Add posting"
+msgstr ""
+
 #: src/features/write/fields.ts
 msgid "Add profile"
 msgstr "Pridėti profilį"
@@ -1220,6 +1226,10 @@ msgstr "Pagal jūsų reikalavimus"
 #: src/features/search/search-screen.tsx
 msgid "AI & developer"
 msgstr "AI ir kūrėjas"
+
+#: src/features/workspace/preparation.tsx
+msgid "AI availability couldn't be confirmed. Prepare manually; nothing here is sent to the employer or marks the job applied."
+msgstr ""
 
 #: src/features/career/schedule-sheet.tsx
 msgid "AI connection"
@@ -1495,6 +1505,10 @@ msgstr "Paraiška"
 #: src/features/application-detail/sheets.tsx
 msgid "Application closed"
 msgstr "darbo paraiška uždaryta"
+
+#: src/features/workspace/preparation.tsx
+msgid "Application closed. Current drafts remain available."
+msgstr ""
 
 #: src/features/application-detail/sheets.tsx
 #: src/features/applications/add-sheet.tsx
@@ -1844,10 +1858,6 @@ msgstr "Prieš pokalbį"
 msgid "Before restore"
 msgstr "Prieš atkūrimą"
 
-#: src/features/workspace/tabs/apply.tsx
-msgid "Before you submit"
-msgstr "Prieš pateikdami"
-
 #: src/features/application-detail/hooks.ts
 #: src/features/applications/next-step.ts
 msgid "Behavioral"
@@ -1981,6 +1991,7 @@ msgstr "Ar programinė įranga gali nuskaityti jūsų gyvenimo aprašymą?"
 #: src/features/check/parser.tsx
 #: src/features/check/writing.tsx
 #: src/features/search/search-screen.tsx
+#: src/features/workspace/preparation.tsx
 #: src/features/workspace/tabs/fit.tsx
 #: src/features/write/improve.tsx
 #: src/features/write/pickers.tsx
@@ -2174,10 +2185,6 @@ msgstr "Tikrinami jūsų pageidavimai"
 msgid "Checking… Copy is available after saving."
 msgstr "Tikrinama... Išsaugojus galima kopijuoti."
 
-#: src/features/workspace/tabs/apply.tsx
-msgid "Checklist progress"
-msgstr "Kontrolinio sąrašo eiga"
-
 #: src/features/assistant/assistant-screen.tsx
 msgid "Checks every bullet for action and result"
 msgstr "Tikrina kiekvieną sąrašo įrašą dėl veiksmų ir rezultatų"
@@ -2189,6 +2196,10 @@ msgstr "Kinų (supaprastinta)"
 #: src/features/settings/locale-names.ts
 msgid "Chinese (Traditional)"
 msgstr "Kinų (tradicinė)"
+
+#: src/features/workspace/preparation.tsx
+msgid "Choose a base resume"
+msgstr ""
 
 #: src/features/application-detail/date-field.tsx
 msgid "Choose a date"
@@ -2314,6 +2325,10 @@ msgstr "Švarus stilius"
 msgid "Clear"
 msgstr "Išvalyti"
 
+#: src/features/workspace/preparation.tsx
+msgid "Clear cover letter"
+msgstr ""
+
 #: src/features/application-detail/date-field.tsx
 msgid "Clear date"
 msgstr "Aiški data"
@@ -2323,6 +2338,10 @@ msgstr "Aiški data"
 #: src/features/documents/library.tsx
 msgid "Clear filters"
 msgstr "Išvalyti filtrai"
+
+#: src/features/workspace/preparation.tsx
+msgid "Clear resume"
+msgstr ""
 
 #: src/features/write/section-sheet.tsx
 msgid "Clear section"
@@ -2581,10 +2600,6 @@ msgstr "Sutalpinti"
 msgid "Content is laid out in a grid."
 msgstr "Turinys sumaketuotas tinkleliu."
 
-#: src/features/workspace/tabs/apply.tsx
-msgid "Content review"
-msgstr "Turinio patikra"
-
 #: src/preview/page.tsx
 msgid "Content still runs over. Hide a section or shorten entries."
 msgstr "Turinys vis tiek baigiasi. Slėpti skyrių arba sutrumpinti įrašus."
@@ -2657,6 +2672,10 @@ msgstr "Nukopijuoja tekstą"
 #: src/features/share/link.tsx
 msgid "Copy"
 msgstr "Kopijuoti"
+
+#: src/features/workspace/preparation.tsx
+msgid "Copy a base resume for this job"
+msgstr ""
 
 #: src/features/documents/new-document.tsx
 msgid "Copy a resume for a job"
@@ -2760,6 +2779,7 @@ msgid "Couldn't copy the transcript. Try again."
 msgstr "Nepavyko nukopijuoti nuorašo. Bandykite dar kartą."
 
 #: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Couldn't create the letter. Try again."
 msgstr "Nepavyko sukurti laiško. Bandykite dar kartą."
 
@@ -2779,6 +2799,11 @@ msgstr "Nepavyko ištrinti pokalbio. Bandykite dar kartą."
 #: src/features/share/download.tsx
 msgid "Couldn't export. Try again."
 msgstr "Nepavyko eksportuoti. Bandykite dar kartą."
+
+#: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
+msgid "Couldn't generate the PDF. Try again."
+msgstr "Nepavyko sugeneruoti PDF. Bandykite dar kartą."
 
 #: src/features/share/files.ts
 msgid "Couldn't generate this file. Try again, or download PDF instead."
@@ -2978,6 +3003,10 @@ msgstr "Nepavyko išsaugoti šio pakeitimo. Patikrinkite interneto ryšį ir ban
 msgid "Couldn't save that change. The item is restored; try again."
 msgstr "Nepavyko išsaugoti šio pakeitimo. Elementas atkurtas; bandykite dar kartą."
 
+#: src/features/workspace/preparation.tsx
+msgid "Couldn't save that change. Try again."
+msgstr "Nepavyko išsaugoti šio pakeitimo. Bandykite dar kartą."
+
 #: src/features/workspace/tabs/debrief.tsx
 #: src/features/workspace/tabs/fit.tsx
 msgid "Couldn't save that to Knowledge. Try again."
@@ -3158,6 +3187,7 @@ msgstr "Užpildyti"
 #: app/letter/[id]/_layout.tsx
 #: src/features/application-detail/sections.tsx
 #: src/features/career/facts.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Cover letter"
 msgstr "Motyvacinis laiškas"
 
@@ -3167,12 +3197,19 @@ msgstr "Motyvacinis laiškas"
 
 #. placeholder {0}: application.company
 #: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Cover letter — {0}"
 msgstr "Motyvacinis laiškas – {0}"
 
 #: src/features/application-detail/sections.tsx
+#: src/features/workspace/tabs/apply.tsx
 msgid "Cover letter file"
 msgstr "Motyvacinio laiško failas"
+
+#: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
+msgid "Cover letter options"
+msgstr ""
 
 #: src/features/application-detail/sheets.tsx
 #: src/features/applications/add-sheet.tsx
@@ -3232,6 +3269,10 @@ msgstr "Kuriamas dokumentas…"
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "Valiuta"
+
+#: src/features/workspace/preparation.tsx
+msgid "Current drafts"
+msgstr ""
 
 #: src/features/design/advanced.tsx
 #: src/features/design/style-groups.tsx
@@ -3681,6 +3722,10 @@ msgstr "Atsisiuntimai ir istorija"
 msgid "Download both PDFs"
 msgstr "Atsisiųsti abu PDF"
 
+#: src/features/application-detail/sections.tsx
+msgid "Download current PDF"
+msgstr ""
+
 #: src/features/letters/share.tsx
 msgid "Download failed. Try again."
 msgstr "Atsisiųsti nepavyko. Bandykite dar kartą."
@@ -3692,6 +3737,10 @@ msgstr "Atsisiuntimas atveria sistemos bendrinimo meniu. Pasirinkite saugyklos t
 #: src/features/share/download.tsx
 msgid "Download opens the system share sheet. Choose a storage provider to save the file. A linked letter opens as a second file."
 msgstr "Atsisiuntimas atidaro sistemos bendrinimo lapą. Norėdami išsaugoti failą, pasirinkite saugyklos teikėją. Susietas motyvacinis laiškas atidaromas kaip antrasis failas."
+
+#: src/features/workspace/preparation.tsx
+msgid "Download PDF"
+msgstr "Atsisiųsti PDF"
 
 #: src/features/letters/share.tsx
 msgid "Download PDF instead"
@@ -3836,6 +3885,14 @@ msgstr "Redaguoti"
 msgid "Edit {0}: {1}"
 msgstr "Redaguoti {0}: {1}"
 
+#: src/features/workspace/preparation.tsx
+msgid "Edit cover letter"
+msgstr ""
+
+#: src/features/application-detail/sections.tsx
+msgid "Edit current draft"
+msgstr ""
+
 #: src/features/application-detail/sheets.tsx
 msgid "Edit date"
 msgstr "Redaguoti datą"
@@ -3859,9 +3916,17 @@ msgstr "Redaguoti nuorodą"
 msgid "Edit note"
 msgstr "Redaguoti pastabą"
 
+#: src/features/workspace/preparation.tsx
+msgid "Edit posting"
+msgstr ""
+
 #: src/features/workspace/tabs/apply.tsx
 msgid "Edit question"
 msgstr "Redaguoti klausimą"
+
+#: src/features/workspace/preparation.tsx
+msgid "Edit resume"
+msgstr ""
 
 #: src/features/career/schedule-sheet.tsx
 msgid "Edit schedule"
@@ -4344,6 +4409,10 @@ msgstr "Pamiršti"
 msgid "Forgetting unlinks this fact from stories and saved items. The original source stays unchanged."
 msgstr "Pamiršus šis faktas atsiejamas nuo istorijų ir išsaugotų elementų. Pradinis šaltinis lieka nepakitęs."
 
+#: src/features/workspace/tabs/apply.tsx
+msgid "Form answers"
+msgstr ""
+
 #: src/features/letters/rich-text-field.tsx
 #: src/features/write/rich-text-field.tsx
 msgid "Formatting"
@@ -4388,6 +4457,11 @@ msgstr "Pilnas vardas"
 #: src/features/design/layout-screen.tsx
 msgid "Full width"
 msgstr "Visas plotis"
+
+#: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
+msgid "Generating PDF…"
+msgstr "Generuojamas PDF…"
 
 #: src/features/settings/locale-names.ts
 msgid "German"
@@ -4583,6 +4657,10 @@ msgstr "Slėpti skaitytus elementus"
 #: src/features/check/issues.ts
 msgid "Hide the photo"
 msgstr "Paslėpti nuotrauką"
+
+#: src/features/workspace/preparation.tsx
+msgid "Hides all steps"
+msgstr ""
 
 #: src/features/settings/locale-names.ts
 msgid "Hindi"
@@ -4940,6 +5018,7 @@ msgid "Job"
 msgstr "Darbas"
 
 #: src/features/application-detail/sheets.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Job description"
 msgstr "Darbo aprašymas"
 
@@ -5365,6 +5444,18 @@ msgstr "Susietos paskyros"
 msgid "Linked application"
 msgstr "Susieta darbo paraiška"
 
+#: src/features/workspace/preparation.tsx
+msgid "Linked document unavailable"
+msgstr ""
+
+#: src/features/workspace/preparation.tsx
+msgid "Linked document unavailable. Choose another document or restore it from Trash."
+msgstr ""
+
+#: src/features/workspace/preparation.tsx
+msgid "Linked documents couldn't be loaded."
+msgstr "Nepavyko įkelti susietų dokumentų."
+
 #: src/features/application-detail/sections.tsx
 msgid "Linked resume"
 msgstr "Susietas CV"
@@ -5438,6 +5529,10 @@ msgstr "Prieš siunčiant įkeliamos Žinios…"
 #: src/features/documents/thumbnail.tsx
 msgid "Loading letter…"
 msgstr "Įkeliamas motyvacinis laiškas…"
+
+#: src/features/workspace/preparation.tsx
+msgid "Loading linked documents…"
+msgstr "Įkeliami susieti dokumentai…"
 
 #: src/features/ai/provider-editor.tsx
 msgid "Loading model suggestions… You can also enter any model ID."
@@ -5642,10 +5737,6 @@ msgstr "Pažymėti kaip perskaitytą"
 #: src/features/workspace/tabs/messages.tsx
 msgid "Mark it as applied in Apply first."
 msgstr "Pirmiausia skiltyje „Teikimas“ pažymėkite kaip pateiktą."
-
-#: src/features/workspace/tabs/apply.tsx
-msgid "Mark the application as applied to keep the versions you sent."
-msgstr "Pažymėkite paraišką kaip pateiktą, kad išsaugotumėte išsiųstas versijas."
 
 #: src/features/letters/share.tsx
 #: src/features/share/download.tsx
@@ -6106,6 +6197,10 @@ msgstr "Kitas veiksmas: {note}. Prideda priminimą prie Šiandien."
 msgid "Next workspace tabs"
 msgstr "Kiti darbo srities skirtukai"
 
+#: src/features/workspace/preparation.tsx
+msgid "No AI needed. Edit documents and write answers yourself; nothing here is sent to the employer or marks the job applied."
+msgstr ""
+
 #: src/features/ai/provider-list.tsx
 msgid "No AI provider yet"
 msgstr "Dar nėra AI teikėjo"
@@ -6151,6 +6246,10 @@ msgstr "Be datos"
 #: src/features/ats-checker/messages.ts
 msgid "No dates were found."
 msgstr "Datų nerasta."
+
+#: src/features/workspace/tabs/apply.tsx
+msgid "no documents"
+msgstr ""
 
 #: src/features/assistant/threads.tsx
 msgid "no edits"
@@ -6251,6 +6350,10 @@ msgstr "Šiuo adresu neatsiliepė joks Reactive Resume serveris. Patikrinkite ra
 msgid "No recognizable terms in this posting."
 msgstr "Šiame darbo skelbime nėra atpažįstamų terminų."
 
+#: src/features/workspace/tabs/apply.tsx
+msgid "No recorded answers are available."
+msgstr ""
+
 #: src/features/career/today.tsx
 msgid "No reply yet"
 msgstr "Atsakymo dar nėra"
@@ -6330,6 +6433,10 @@ msgstr "Nėra"
 msgid "None of your AI connections can transcribe speech (OpenAI, Google Gemini, Mistral, xAI, Groq or Vercel AI Gateway can). Add one, or type your answer."
 msgstr "Nė viena iš AI jungčių negali transkribuoti kalbos (OpenAI, Google Gemini, Mistral, xAI, Groq arba Vercel AI Gateway gali). Pridėkite vieną arba įveskite savo atsakymą."
 
+#: src/features/workspace/preparation.tsx
+msgid "None selected"
+msgstr ""
+
 #: src/features/design/style-groups.tsx
 #: src/features/letters/design.tsx
 msgid "Normal"
@@ -6384,6 +6491,10 @@ msgstr "Dar neįrašyta. Palikite tuščią, kol galėsite jį palaikyti."
 #: src/shell/builder-chrome.tsx
 msgid "Not saved"
 msgstr "Neišsaugota"
+
+#: src/features/workspace/preparation.tsx
+msgid "Not saved yet"
+msgstr ""
 
 #: src/features/applications/stages.ts
 msgid "Not selected"
@@ -6730,6 +6841,10 @@ msgstr "Atidaromas gyvenimo aprašymas…"
 msgid "Opens in Career → Offers."
 msgstr "Atidaroma skiltyje Karjera → Pasiūlymai."
 
+#: src/features/application-detail/sections.tsx
+msgid "Opens the version you sent, read-only"
+msgstr ""
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Opportunity discovery"
 msgstr "Galimybių paieška"
@@ -6737,6 +6852,14 @@ msgstr "Galimybių paieška"
 #: src/features/ai/web-access.tsx
 msgid "Optional"
 msgstr "Neprivaloma"
+
+#: src/features/workspace/preparation.tsx
+msgid "Optional · none selected"
+msgstr ""
+
+#: src/features/workspace/preparation.tsx
+msgid "Optional AI help in the editors; review edits before accepting. Nothing here is sent to the employer or marks the job applied."
+msgstr ""
 
 #: src/features/ai/provider-editor.tsx
 msgid "Optional for local Ollama"
@@ -7105,6 +7228,7 @@ msgstr "Pareigos"
 msgid "posting"
 msgstr "skelbimas"
 
+#: src/features/workspace/preparation.tsx
 #: src/features/workspace/tabs/fit.tsx
 msgid "Posting"
 msgstr "Darbo skelbimas"
@@ -7592,6 +7716,10 @@ msgstr "Įrašymas sustabdytas pasiekus 2 minučių ribą. Transkribuojama, ką 
 msgid "Recording time"
 msgstr "Įrašymo laikas"
 
+#: src/features/workspace/tabs/apply.tsx
+msgid "Records {records} as sent. You submit on the employer's site yourself."
+msgstr ""
+
 #: src/features/application-detail/sheets.tsx
 msgid "Recruiter"
 msgstr "Verbuotojas"
@@ -7941,6 +8069,7 @@ msgstr "Rezultatas"
 #: src/features/career/facts.tsx
 #: src/features/documents/library.tsx
 #: src/features/letters/write.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Resume"
 msgstr "Gyvenimo aprašymas"
 
@@ -7957,8 +8086,14 @@ msgid "Resume feedback, product help, and community ideas."
 msgstr "Atsiliepimai apie gyvenimo aprašymą, pagalba dėl produkto ir bendruomenės idėjos."
 
 #: src/features/application-detail/sections.tsx
+#: src/features/workspace/tabs/apply.tsx
 msgid "Resume file"
 msgstr "Gyvenimo aprašymo failas"
+
+#: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
+msgid "Resume options"
+msgstr ""
 
 #. placeholder {0}: pageIndex + 1
 #: src/features/check/page.tsx
@@ -8083,6 +8218,14 @@ msgstr "Peržiūrėkite paraišką"
 msgid "Review Check"
 msgstr "Peržiūrėti Patikrą"
 
+#: src/features/workspace/tabs/apply.tsx
+msgid "Review checks"
+msgstr ""
+
+#: src/features/workspace/tabs/apply.tsx
+msgid "Review checks only reflect what you checked yourself."
+msgstr ""
+
 #: src/features/career/today.tsx
 msgid "Review draft"
 msgstr "Peržiūrėti juodraštį"
@@ -8103,6 +8246,10 @@ msgstr "Įvertinti mano atsakymą"
 msgid "Review my answer sends the question, what you said, this posting and your Knowledge to {providerName}."
 msgstr "Paspaudus „Įvertinti mano atsakymą“, {providerName} gaus klausimą, tai, ką pasakėte, šį skelbimą ir jūsų Žinias."
 
+#: src/features/workspace/preparation.tsx
+msgid "Review readiness and record your submission"
+msgstr ""
+
 #: src/features/workspace/tabs/apply.tsx
 msgid "Review required form answers and remove unsupported claims."
 msgstr "Peržiūrėkite privalomus formos atsakymus ir pašalinkite nepagrįstus teiginius."
@@ -8114,6 +8261,10 @@ msgstr "Prieš išsaugodami peržiūrėkite išsamią informaciją. Gautas turin
 #: src/features/workspace/tabs/apply.tsx
 msgid "Review the selected resume and cover letter in their editors."
 msgstr "Peržiūrėkite pasirinktą gyvenimo aprašymą ir motyvacinį laišką jų redaktoriuose."
+
+#: src/features/workspace/preparation.tsx
+msgid "Review with assistant"
+msgstr ""
 
 #: src/features/check/writing.tsx
 msgid "Review writing"
@@ -8311,6 +8462,10 @@ msgstr "Išsaugoti pasiūlymą"
 msgid "Save or share file"
 msgstr "Išsaugokite arba bendrinkite failą"
 
+#: src/features/workspace/preparation.tsx
+msgid "Save posting"
+msgstr ""
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Save schedule"
 msgstr "Išsaugoti tvarkaraštį"
@@ -8331,6 +8486,10 @@ msgstr "Prieš siųsdami išsaugokite dokumentą."
 #: src/features/ats-checker/messages.ts
 msgid "Save the file with every page upright."
 msgstr "Išsaugokite failą, kad visi puslapiai būtų tiesūs."
+
+#: src/features/workspace/preparation.tsx
+msgid "Save the job posting"
+msgstr ""
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Save these offer terms to compare"
@@ -8894,6 +9053,10 @@ msgstr "Rodoma išsaugota informacija. Jų nepavyko atnaujinti."
 msgid "Shown in your timezone."
 msgstr "Rodoma jūsų laiko juostoje."
 
+#: src/features/workspace/preparation.tsx
+msgid "Shows all steps"
+msgstr ""
+
 #: src/features/documents/document-sheets.tsx
 msgid "Shows shared tags. Add or remove tags without changing each document's other tags."
 msgstr "Rodo bendrinamas žymas. Pridėkite arba pašalinkite žymas nekeisdami kitų kiekvieno dokumento žymų."
@@ -9289,6 +9452,12 @@ msgstr "Prasideda dabar"
 msgid "Stay in Documents"
 msgstr "Apsistokite Dokumentai"
 
+#. placeholder {0}: stepIndex + 1
+#. placeholder {1}: STEPS.length
+#: src/features/workspace/preparation.tsx
+msgid "Step {0} of {1}"
+msgstr ""
+
 #: src/features/assistant/chat-view.tsx
 #: src/features/letters/write.tsx
 msgid "Stop"
@@ -9339,9 +9508,13 @@ msgstr "Perbraukta"
 msgid "Stronger verb"
 msgstr "Stipresnis veiksmažodis"
 
-#: src/features/workspace/tabs/apply.tsx
-msgid "Submission is recorded. Review checks only reflect what you checked yourself."
-msgstr "Pateikimas užregistruotas. Patikros žymos atspindi tik tai, ką patikrinote patys."
+#: src/features/application-detail/sections.tsx
+msgid "Submission recorded {date}. The sent versions never change; current drafts stay editable. This record does not confirm employer receipt."
+msgstr ""
+
+#: src/features/workspace/preparation.tsx
+msgid "Submission recorded. Current drafts are separate from what you sent."
+msgstr ""
 
 #: src/features/workspace/tabs/apply.tsx
 msgid "Submit through the employer's application page yourself."
@@ -9364,10 +9537,6 @@ msgstr "Pateiktas pridėtas gyvenimo aprašymas"
 #: src/features/application-detail/sheets.tsx
 msgid "Submitted attached resume: {0}"
 msgstr "Pateiktas pridedamas gyvenimo aprašymas: {0}"
-
-#: src/features/workspace/tabs/apply.tsx
-msgid "Submitted on {appliedOn}."
-msgstr "Pateikta {appliedOn}."
 
 #: src/features/workspace/tabs/prepare.tsx
 msgid "Success at 90 days · next step"
@@ -9476,6 +9645,14 @@ msgstr "Žymos programinei įrangai nurodo aiškią skaitymo tvarką. Jei jūsų
 #: src/features/documents/document-sheets.tsx
 msgid "Tags…"
 msgstr "Žymos…"
+
+#: src/features/workspace/preparation.tsx
+msgid "Tailor and review your resume"
+msgstr ""
+
+#: src/features/workspace/preparation.tsx
+msgid "Tailor the resume"
+msgstr ""
 
 #: src/features/assistant/assistant-screen.tsx
 msgid "Tailor to the {company} posting"
@@ -9878,10 +10055,6 @@ msgstr "Tekstas, kurį reikia skaityti garsiai, per jūsų serverį siunčiamas 
 msgid "The top of the first page does not look like a name."
 msgstr "Pirmo puslapio viršus nepanašus į vardą."
 
-#: src/features/workspace/tabs/apply.tsx
-msgid "The versions you sent are kept in Saved. Edits here don't change what {company} received."
-msgstr "Jūsų išsiųstos versijos saugomos Išsaugota. Čia atlikti pakeitimai nepakeičia to, ką gavo {company}."
-
 #: app/(tabs)/settings/preferences.tsx
 #: src/features/search/search-screen.tsx
 msgid "Theme"
@@ -9898,6 +10071,10 @@ msgstr "Nėra nuorodos į profilį, portfolio ar saugyklą."
 #: src/features/ats-checker/messages.ts
 msgid "There is no summary paragraph."
 msgstr "Nėra apibendrinančios pastraipos."
+
+#: src/features/workspace/tabs/apply.tsx
+msgid "These are saved draft answers."
+msgstr ""
 
 #: src/features/workspace/tabs/apply.tsx
 msgid "These are the answers saved when you applied."
@@ -10366,6 +10543,7 @@ msgstr "Išbandykite {suggestion}"
 #: src/features/letters/write.tsx
 #: src/features/settings/api-keys.tsx
 #: src/features/workspace/parts.tsx
+#: src/features/workspace/preparation.tsx
 #: src/features/workspace/shell.tsx
 #: src/features/workspace/tabs/practise.tsx
 #: src/features/write/improve.tsx
@@ -10870,6 +11048,10 @@ msgstr "Peržiūrėkite darbo paraišką"
 msgid "View posting"
 msgstr "Peržiūrėkite darbo skelbimą"
 
+#: src/features/workspace/tabs/apply.tsx
+msgid "View recorded answers"
+msgstr ""
+
 #: src/features/application-detail/sections.tsx
 msgid "View saved work"
 msgstr "Peržiūrėkite išsaugotus darbus"
@@ -11155,9 +11337,18 @@ msgstr "Rašymas"
 msgid "Write \"Present\" as the end date of your current role."
 msgstr "Dabartinės pareigybės pabaigos datai rašykite „Present“."
 
+#: src/features/workspace/preparation.tsx
+msgid "Write a cover letter if required"
+msgstr ""
+
 #: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Write a letter"
 msgstr "Parašyk laišką"
+
+#: src/features/workspace/preparation.tsx
+msgid "Write and review form answers"
+msgstr ""
 
 #: src/features/workspace/tabs/prepare.tsx
 msgid "Write down what they asked while it's fresh. The coach compares your answers with your stories."
@@ -11254,10 +11445,6 @@ msgstr "Turite neišsaugotų pakeitimų."
 #: src/features/workspace/tabs/messages.tsx
 msgid "You send it from your own email."
 msgstr "Siunčiate patys iš savo el. pašto."
-
-#: src/features/workspace/tabs/apply.tsx
-msgid "You submit on the employer's site yourself. Marking it applied keeps the exact versions you sent."
-msgstr "Paraišką pateikiate patys darbdavio svetainėje. Pažymėjus ją kaip pateiktą, išsaugomos tikslios išsiųstos versijos."
 
 #: src/features/settings/sign-out.tsx
 msgid "You will be signed out of {server}. Any edits not yet synced from this device will be lost."

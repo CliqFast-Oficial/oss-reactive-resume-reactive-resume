@@ -128,6 +128,8 @@ msgid "{0, plural, one {{count} of # application changed.} other {{count} of # a
 msgstr "{0, plural, one {Άλλαξαν {count} από # αίτηση.} other {Άλλαξαν {count} από # αιτήσεις.}}"
 
 #. placeholder {0}: data.answers.length
+#. placeholder {0}: written.length
+#: src/features/workspace/tabs/apply.tsx
 #: src/features/workspace/tabs/saved.tsx
 msgid "{0, plural, one {# answer} other {# answers}}"
 msgstr "{0, plural, one {# απάντηση} other {# απαντήσεις}}"
@@ -1069,6 +1071,10 @@ msgstr "Προσθέστε έναν με τον κωδικό χώρας του·
 msgid "Add page"
 msgstr "Προσθήκη σελίδας"
 
+#: src/features/workspace/preparation.tsx
+msgid "Add posting"
+msgstr ""
+
 #: src/features/write/fields.ts
 msgid "Add profile"
 msgstr "Προσθήκη προφίλ"
@@ -1220,6 +1226,10 @@ msgstr "Σε σχέση με τις απαιτήσεις σας"
 #: src/features/search/search-screen.tsx
 msgid "AI & developer"
 msgstr "AI & προγραμματιστής"
+
+#: src/features/workspace/preparation.tsx
+msgid "AI availability couldn't be confirmed. Prepare manually; nothing here is sent to the employer or marks the job applied."
+msgstr ""
 
 #: src/features/career/schedule-sheet.tsx
 msgid "AI connection"
@@ -1495,6 +1505,10 @@ msgstr "Αίτηση"
 #: src/features/application-detail/sheets.tsx
 msgid "Application closed"
 msgstr "η αίτηση εργασίας έκλεισε"
+
+#: src/features/workspace/preparation.tsx
+msgid "Application closed. Current drafts remain available."
+msgstr ""
 
 #: src/features/application-detail/sheets.tsx
 #: src/features/applications/add-sheet.tsx
@@ -1844,10 +1858,6 @@ msgstr "Πριν από τη συνέντευξη"
 msgid "Before restore"
 msgstr "Πριν την επαναφορά"
 
-#: src/features/workspace/tabs/apply.tsx
-msgid "Before you submit"
-msgstr "Πριν από την υποβολή"
-
 #: src/features/application-detail/hooks.ts
 #: src/features/applications/next-step.ts
 msgid "Behavioral"
@@ -1981,6 +1991,7 @@ msgstr "Μπορεί το λογισμικό να διαβάσει το βιογ
 #: src/features/check/parser.tsx
 #: src/features/check/writing.tsx
 #: src/features/search/search-screen.tsx
+#: src/features/workspace/preparation.tsx
 #: src/features/workspace/tabs/fit.tsx
 #: src/features/write/improve.tsx
 #: src/features/write/pickers.tsx
@@ -2174,10 +2185,6 @@ msgstr "Έλεγχος των προτιμήσεών σας"
 msgid "Checking… Copy is available after saving."
 msgstr "Έλεγχος… Η αντιγραφή είναι διαθέσιμη μετά την αποθήκευση."
 
-#: src/features/workspace/tabs/apply.tsx
-msgid "Checklist progress"
-msgstr "Πρόοδος λίστας ελέγχου"
-
 #: src/features/assistant/assistant-screen.tsx
 msgid "Checks every bullet for action and result"
 msgstr "Ελέγχει κάθε καταχώρηση λίστας για δράση και αποτέλεσμα"
@@ -2189,6 +2196,10 @@ msgstr "Κινέζικα (Απλοποιημένα)"
 #: src/features/settings/locale-names.ts
 msgid "Chinese (Traditional)"
 msgstr "Κινέζικα (Παραδοσιακά)"
+
+#: src/features/workspace/preparation.tsx
+msgid "Choose a base resume"
+msgstr ""
 
 #: src/features/application-detail/date-field.tsx
 msgid "Choose a date"
@@ -2314,6 +2325,10 @@ msgstr "Καθαρό"
 msgid "Clear"
 msgstr "Εκκαθάριση"
 
+#: src/features/workspace/preparation.tsx
+msgid "Clear cover letter"
+msgstr ""
+
 #: src/features/application-detail/date-field.tsx
 msgid "Clear date"
 msgstr "Καθαρή ημερομηνία"
@@ -2323,6 +2338,10 @@ msgstr "Καθαρή ημερομηνία"
 #: src/features/documents/library.tsx
 msgid "Clear filters"
 msgstr "Διαγραφή φίλτρων"
+
+#: src/features/workspace/preparation.tsx
+msgid "Clear resume"
+msgstr ""
 
 #: src/features/write/section-sheet.tsx
 msgid "Clear section"
@@ -2581,10 +2600,6 @@ msgstr "Εντός πλαισίου"
 msgid "Content is laid out in a grid."
 msgstr "Το περιεχόμενο είναι διατεταγμένο σε πλέγμα."
 
-#: src/features/workspace/tabs/apply.tsx
-msgid "Content review"
-msgstr "Έλεγχος περιεχομένου"
-
 #: src/preview/page.tsx
 msgid "Content still runs over. Hide a section or shorten entries."
 msgstr "Το περιεχόμενο εξακολουθεί να ξεχειλίζει. Κρύψτε μια ενότητα ή συντομεύστε τις καταχωρίσεις."
@@ -2657,6 +2672,10 @@ msgstr "Αντιγράφει το κείμενο"
 #: src/features/share/link.tsx
 msgid "Copy"
 msgstr "Αντιγραφή"
+
+#: src/features/workspace/preparation.tsx
+msgid "Copy a base resume for this job"
+msgstr ""
 
 #: src/features/documents/new-document.tsx
 msgid "Copy a resume for a job"
@@ -2760,6 +2779,7 @@ msgid "Couldn't copy the transcript. Try again."
 msgstr "Δεν ήταν δυνατή η αντιγραφή της μεταγραφής. Προσπαθήστε ξανά."
 
 #: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Couldn't create the letter. Try again."
 msgstr "Δεν ήταν δυνατή η δημιουργία του γράμματος. Προσπαθήστε ξανά."
 
@@ -2779,6 +2799,11 @@ msgstr "Δεν ήταν δυνατή η διαγραφή της συνέντευ
 #: src/features/share/download.tsx
 msgid "Couldn't export. Try again."
 msgstr "Δεν ήταν δυνατή η εξαγωγή. Προσπαθήστε ξανά."
+
+#: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
+msgid "Couldn't generate the PDF. Try again."
+msgstr "Δεν ήταν δυνατή η δημιουργία του PDF. Προσπαθήστε ξανά."
 
 #: src/features/share/files.ts
 msgid "Couldn't generate this file. Try again, or download PDF instead."
@@ -2978,6 +3003,10 @@ msgstr "Δεν ήταν δυνατή η αποθήκευση της αλλαγή
 msgid "Couldn't save that change. The item is restored; try again."
 msgstr "Δεν ήταν δυνατή η αποθήκευση αυτής της αλλαγής. Το στοιχείο αποκαταστάθηκε· προσπαθήστε ξανά."
 
+#: src/features/workspace/preparation.tsx
+msgid "Couldn't save that change. Try again."
+msgstr "Δεν ήταν δυνατή η αποθήκευση αυτής της αλλαγής. Προσπαθήστε ξανά."
+
 #: src/features/workspace/tabs/debrief.tsx
 #: src/features/workspace/tabs/fit.tsx
 msgid "Couldn't save that to Knowledge. Try again."
@@ -3158,6 +3187,7 @@ msgstr "Κάλυψη"
 #: app/letter/[id]/_layout.tsx
 #: src/features/application-detail/sections.tsx
 #: src/features/career/facts.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Cover letter"
 msgstr "Συνοδευτική επιστολή"
 
@@ -3167,12 +3197,19 @@ msgstr "Συνοδευτική επιστολή"
 
 #. placeholder {0}: application.company
 #: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Cover letter — {0}"
 msgstr "Συνοδευτική επιστολή — {0}"
 
 #: src/features/application-detail/sections.tsx
+#: src/features/workspace/tabs/apply.tsx
 msgid "Cover letter file"
 msgstr "Αρχείο συνοδευτικής επιστολής"
+
+#: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
+msgid "Cover letter options"
+msgstr ""
 
 #: src/features/application-detail/sheets.tsx
 #: src/features/applications/add-sheet.tsx
@@ -3232,6 +3269,10 @@ msgstr "Δημιουργία εγγράφου…"
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "Νόμισμα"
+
+#: src/features/workspace/preparation.tsx
+msgid "Current drafts"
+msgstr ""
 
 #: src/features/design/advanced.tsx
 #: src/features/design/style-groups.tsx
@@ -3681,6 +3722,10 @@ msgstr "Λήψη και ιστορικό"
 msgid "Download both PDFs"
 msgstr "Λήψη και των δύο PDF"
 
+#: src/features/application-detail/sections.tsx
+msgid "Download current PDF"
+msgstr ""
+
 #: src/features/letters/share.tsx
 msgid "Download failed. Try again."
 msgstr "Η λήψη απέτυχε. Προσπαθήστε ξανά."
@@ -3692,6 +3737,10 @@ msgstr "Η λήψη ανοίγει το μενού κοινοποίησης το
 #: src/features/share/download.tsx
 msgid "Download opens the system share sheet. Choose a storage provider to save the file. A linked letter opens as a second file."
 msgstr "Η λήψη ανοίγει το φύλλο κοινής χρήσης συστήματος. Επιλέξτε έναν πάροχο αποθήκευσης για να αποθηκεύσετε το αρχείο. Μια συνδεδεμένη συνοδευτική επιστολή ανοίγει ως δεύτερο αρχείο."
+
+#: src/features/workspace/preparation.tsx
+msgid "Download PDF"
+msgstr "Λήψη PDF"
 
 #: src/features/letters/share.tsx
 msgid "Download PDF instead"
@@ -3836,6 +3885,14 @@ msgstr "Εκδίδω"
 msgid "Edit {0}: {1}"
 msgstr "Επεξεργασία {0}: {1}"
 
+#: src/features/workspace/preparation.tsx
+msgid "Edit cover letter"
+msgstr ""
+
+#: src/features/application-detail/sections.tsx
+msgid "Edit current draft"
+msgstr ""
+
 #: src/features/application-detail/sheets.tsx
 msgid "Edit date"
 msgstr "Επεξεργασία ημερομηνίας"
@@ -3859,9 +3916,17 @@ msgstr "Επεξεργασία συνδέσμου"
 msgid "Edit note"
 msgstr "Επεξεργασία σημείωσης"
 
+#: src/features/workspace/preparation.tsx
+msgid "Edit posting"
+msgstr ""
+
 #: src/features/workspace/tabs/apply.tsx
 msgid "Edit question"
 msgstr "Επεξεργασία ερώτησης"
+
+#: src/features/workspace/preparation.tsx
+msgid "Edit resume"
+msgstr ""
 
 #: src/features/career/schedule-sheet.tsx
 msgid "Edit schedule"
@@ -4344,6 +4409,10 @@ msgstr "Ξεχάστε"
 msgid "Forgetting unlinks this fact from stories and saved items. The original source stays unchanged."
 msgstr "Η λήθη αποσυνδέει αυτό το γεγονός από ιστορίες και αποθηκευμένα αντικείμενα. Η αρχική πηγή παραμένει αμετάβλητη."
 
+#: src/features/workspace/tabs/apply.tsx
+msgid "Form answers"
+msgstr ""
+
 #: src/features/letters/rich-text-field.tsx
 #: src/features/write/rich-text-field.tsx
 msgid "Formatting"
@@ -4388,6 +4457,11 @@ msgstr "Ονοματεπώνυμο"
 #: src/features/design/layout-screen.tsx
 msgid "Full width"
 msgstr "Πλήρες πλάτος"
+
+#: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
+msgid "Generating PDF…"
+msgstr "Δημιουργία PDF…"
 
 #: src/features/settings/locale-names.ts
 msgid "German"
@@ -4583,6 +4657,10 @@ msgstr "Απόκρυψη διαβασμένων"
 #: src/features/check/issues.ts
 msgid "Hide the photo"
 msgstr "Απόκρυψη της φωτογραφίας"
+
+#: src/features/workspace/preparation.tsx
+msgid "Hides all steps"
+msgstr ""
 
 #: src/features/settings/locale-names.ts
 msgid "Hindi"
@@ -4940,6 +5018,7 @@ msgid "Job"
 msgstr "Δουλειά"
 
 #: src/features/application-detail/sheets.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Job description"
 msgstr "Περιγραφή θέσης"
 
@@ -5365,6 +5444,18 @@ msgstr "Συνδεδεμένοι λογαριασμοί"
 msgid "Linked application"
 msgstr "Συνδεδεμένη αίτηση"
 
+#: src/features/workspace/preparation.tsx
+msgid "Linked document unavailable"
+msgstr ""
+
+#: src/features/workspace/preparation.tsx
+msgid "Linked document unavailable. Choose another document or restore it from Trash."
+msgstr ""
+
+#: src/features/workspace/preparation.tsx
+msgid "Linked documents couldn't be loaded."
+msgstr "Δεν ήταν δυνατή η φόρτωση των συνδεδεμένων εγγράφων."
+
 #: src/features/application-detail/sections.tsx
 msgid "Linked resume"
 msgstr "Συνδεδεμένο βιογραφικό"
@@ -5438,6 +5529,10 @@ msgstr "Φόρτωση της Γνώσης πριν από την αποστολ
 #: src/features/documents/thumbnail.tsx
 msgid "Loading letter…"
 msgstr "Φόρτωση συνοδευτικής επιστολής…"
+
+#: src/features/workspace/preparation.tsx
+msgid "Loading linked documents…"
+msgstr "Φόρτωση συνδεδεμένων εγγράφων…"
 
 #: src/features/ai/provider-editor.tsx
 msgid "Loading model suggestions… You can also enter any model ID."
@@ -5642,10 +5737,6 @@ msgstr "Σήμανση ως αναγνωσμένο"
 #: src/features/workspace/tabs/messages.tsx
 msgid "Mark it as applied in Apply first."
 msgstr "Σημειώστε την πρώτα ως υποβληθείσα στην καρτέλα Αίτηση."
-
-#: src/features/workspace/tabs/apply.tsx
-msgid "Mark the application as applied to keep the versions you sent."
-msgstr "Σημειώστε την αίτηση ως υποβληθείσα για να κρατήσετε τις εκδόσεις που στείλατε."
 
 #: src/features/letters/share.tsx
 #: src/features/share/download.tsx
@@ -6106,6 +6197,10 @@ msgstr "Επόμενο βήμα: {note}. Προσθέτει μια υπενθύ�
 msgid "Next workspace tabs"
 msgstr "Επόμενες καρτέλες χώρου εργασίας"
 
+#: src/features/workspace/preparation.tsx
+msgid "No AI needed. Edit documents and write answers yourself; nothing here is sent to the employer or marks the job applied."
+msgstr ""
+
 #: src/features/ai/provider-list.tsx
 msgid "No AI provider yet"
 msgstr "Δεν υπάρχει ακόμη πάροχος AI"
@@ -6151,6 +6246,10 @@ msgstr "Χωρίς ημερομηνία"
 #: src/features/ats-checker/messages.ts
 msgid "No dates were found."
 msgstr "Δεν βρέθηκαν ημερομηνίες."
+
+#: src/features/workspace/tabs/apply.tsx
+msgid "no documents"
+msgstr ""
 
 #: src/features/assistant/threads.tsx
 msgid "no edits"
@@ -6251,6 +6350,10 @@ msgstr "Δεν απαντήθηκε διακομιστής Reactive Resume σε 
 msgid "No recognizable terms in this posting."
 msgstr "Δεν υπάρχουν αναγνωρίσιμοι όροι σε αυτήν την αγγελία εργασίας."
 
+#: src/features/workspace/tabs/apply.tsx
+msgid "No recorded answers are available."
+msgstr ""
+
 #: src/features/career/today.tsx
 msgid "No reply yet"
 msgstr "Δεν έχει απαντηθεί ακόμη"
@@ -6330,6 +6433,10 @@ msgstr "Κανένας"
 msgid "None of your AI connections can transcribe speech (OpenAI, Google Gemini, Mistral, xAI, Groq or Vercel AI Gateway can). Add one, or type your answer."
 msgstr "Καμία από τις συνδέσεις AI δεν μπορεί να μεταγράψει ομιλία (το OpenAI, Google Gemini, Mistral, xAI, Groq ή Vercel AI Gateway μπορεί). Προσθέστε ένα ή πληκτρολογήστε την απάντησή σας."
 
+#: src/features/workspace/preparation.tsx
+msgid "None selected"
+msgstr ""
+
 #: src/features/design/style-groups.tsx
 #: src/features/letters/design.tsx
 msgid "Normal"
@@ -6384,6 +6491,10 @@ msgstr "Δεν έχει καταγραφεί ακόμη. Αφήστε το κε�
 #: src/shell/builder-chrome.tsx
 msgid "Not saved"
 msgstr "Δεν αποθηκεύτηκε"
+
+#: src/features/workspace/preparation.tsx
+msgid "Not saved yet"
+msgstr ""
 
 #: src/features/applications/stages.ts
 msgid "Not selected"
@@ -6730,6 +6841,10 @@ msgstr "Άνοιγμα βιογραφικού…"
 msgid "Opens in Career → Offers."
 msgstr "Ανοίγει στην Καριέρα → Προσφορές."
 
+#: src/features/application-detail/sections.tsx
+msgid "Opens the version you sent, read-only"
+msgstr ""
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Opportunity discovery"
 msgstr "Αναζήτηση ευκαιριών"
@@ -6737,6 +6852,14 @@ msgstr "Αναζήτηση ευκαιριών"
 #: src/features/ai/web-access.tsx
 msgid "Optional"
 msgstr "Προαιρετικός"
+
+#: src/features/workspace/preparation.tsx
+msgid "Optional · none selected"
+msgstr ""
+
+#: src/features/workspace/preparation.tsx
+msgid "Optional AI help in the editors; review edits before accepting. Nothing here is sent to the employer or marks the job applied."
+msgstr ""
 
 #: src/features/ai/provider-editor.tsx
 msgid "Optional for local Ollama"
@@ -7105,6 +7228,7 @@ msgstr "Θέση"
 msgid "posting"
 msgstr "αγγελία"
 
+#: src/features/workspace/preparation.tsx
 #: src/features/workspace/tabs/fit.tsx
 msgid "Posting"
 msgstr "Αγγελία εργασίας"
@@ -7592,6 +7716,10 @@ msgstr "Η ηχογράφηση σταμάτησε στο όριο των 2 λε
 msgid "Recording time"
 msgstr "Χρόνος ηχογράφησης"
 
+#: src/features/workspace/tabs/apply.tsx
+msgid "Records {records} as sent. You submit on the employer's site yourself."
+msgstr ""
+
 #: src/features/application-detail/sheets.tsx
 msgid "Recruiter"
 msgstr "Στρατολογών"
@@ -7941,6 +8069,7 @@ msgstr "Αποτέλεσμα"
 #: src/features/career/facts.tsx
 #: src/features/documents/library.tsx
 #: src/features/letters/write.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Resume"
 msgstr "Βιογραφικό σημείωμα"
 
@@ -7957,8 +8086,14 @@ msgid "Resume feedback, product help, and community ideas."
 msgstr "Σχόλια για βιογραφικά, βοήθεια για το προϊόν και ιδέες της κοινότητας."
 
 #: src/features/application-detail/sections.tsx
+#: src/features/workspace/tabs/apply.tsx
 msgid "Resume file"
 msgstr "Αρχείο βιογραφικού"
+
+#: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
+msgid "Resume options"
+msgstr ""
 
 #. placeholder {0}: pageIndex + 1
 #: src/features/check/page.tsx
@@ -8083,6 +8218,14 @@ msgstr "Αναθεώρηση της αίτησης"
 msgid "Review Check"
 msgstr "Προβολή Ελέγχου"
 
+#: src/features/workspace/tabs/apply.tsx
+msgid "Review checks"
+msgstr ""
+
+#: src/features/workspace/tabs/apply.tsx
+msgid "Review checks only reflect what you checked yourself."
+msgstr ""
+
 #: src/features/career/today.tsx
 msgid "Review draft"
 msgstr "Έλεγχος προσχεδίου"
@@ -8103,6 +8246,10 @@ msgstr "Έλεγχος της απάντησής μου"
 msgid "Review my answer sends the question, what you said, this posting and your Knowledge to {providerName}."
 msgstr "Ο \"Έλεγχος της απάντησής μου\" στέλνει την ερώτηση, όσα είπατε, αυτή την αγγελία και τη Γνώση σας προς {providerName}."
 
+#: src/features/workspace/preparation.tsx
+msgid "Review readiness and record your submission"
+msgstr ""
+
 #: src/features/workspace/tabs/apply.tsx
 msgid "Review required form answers and remove unsupported claims."
 msgstr "Ελέγξτε τις υποχρεωτικές απαντήσεις της φόρμας και αφαιρέστε ισχυρισμούς χωρίς τεκμήρια."
@@ -8114,6 +8261,10 @@ msgstr "Ελέγξτε τις λεπτομέρειες πριν από την α
 #: src/features/workspace/tabs/apply.tsx
 msgid "Review the selected resume and cover letter in their editors."
 msgstr "Ελέγξτε το επιλεγμένο βιογραφικό και τη συνοδευτική επιστολή στους επεξεργαστές τους."
+
+#: src/features/workspace/preparation.tsx
+msgid "Review with assistant"
+msgstr ""
 
 #: src/features/check/writing.tsx
 msgid "Review writing"
@@ -8311,6 +8462,10 @@ msgstr "Αποθήκευση προσφοράς"
 msgid "Save or share file"
 msgstr "Αποθήκευση ή κοινή χρήση αρχείου"
 
+#: src/features/workspace/preparation.tsx
+msgid "Save posting"
+msgstr ""
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Save schedule"
 msgstr "Αποθήκευση προγράμματος"
@@ -8331,6 +8486,10 @@ msgstr "Αποθήκευσε το έγγραφο πριν από την αποσ
 #: src/features/ats-checker/messages.ts
 msgid "Save the file with every page upright."
 msgstr "Αποθηκεύστε το αρχείο με κάθε σελίδα σε όρθια θέση."
+
+#: src/features/workspace/preparation.tsx
+msgid "Save the job posting"
+msgstr ""
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Save these offer terms to compare"
@@ -8894,6 +9053,10 @@ msgstr "Εμφάνιση αποθηκευμένων στοιχείων. Δεν �
 msgid "Shown in your timezone."
 msgstr "Εμφανίζεται στη ζώνη ώρας σας."
 
+#: src/features/workspace/preparation.tsx
+msgid "Shows all steps"
+msgstr ""
+
 #: src/features/documents/document-sheets.tsx
 msgid "Shows shared tags. Add or remove tags without changing each document's other tags."
 msgstr "Εμφανίζει κοινόχρηστες ετικέτες. Προσθέστε ή αφαιρέστε ετικέτες χωρίς να αλλάξετε τις άλλες ετικέτες κάθε εγγράφου."
@@ -9289,6 +9452,12 @@ msgstr "Ξεκινά τώρα"
 msgid "Stay in Documents"
 msgstr "Παραμονή στα Έγγραφα"
 
+#. placeholder {0}: stepIndex + 1
+#. placeholder {1}: STEPS.length
+#: src/features/workspace/preparation.tsx
+msgid "Step {0} of {1}"
+msgstr ""
+
 #: src/features/assistant/chat-view.tsx
 #: src/features/letters/write.tsx
 msgid "Stop"
@@ -9339,9 +9508,13 @@ msgstr "Διακριτή διαγραφή"
 msgid "Stronger verb"
 msgstr "Ισχυρότερο ρήμα"
 
-#: src/features/workspace/tabs/apply.tsx
-msgid "Submission is recorded. Review checks only reflect what you checked yourself."
-msgstr "Η υποβολή έχει καταγραφεί. Οι σημειωμένοι έλεγχοι αντιστοιχούν μόνο σε όσα ελέγξατε εσείς."
+#: src/features/application-detail/sections.tsx
+msgid "Submission recorded {date}. The sent versions never change; current drafts stay editable. This record does not confirm employer receipt."
+msgstr ""
+
+#: src/features/workspace/preparation.tsx
+msgid "Submission recorded. Current drafts are separate from what you sent."
+msgstr ""
 
 #: src/features/workspace/tabs/apply.tsx
 msgid "Submit through the employer's application page yourself."
@@ -9364,10 +9537,6 @@ msgstr "Υποβλήθηκε συνημμένο βιογραφικό"
 #: src/features/application-detail/sheets.tsx
 msgid "Submitted attached resume: {0}"
 msgstr "Υποβλήθηκε συνημμένο βιογραφικό: {0}"
-
-#: src/features/workspace/tabs/apply.tsx
-msgid "Submitted on {appliedOn}."
-msgstr "Υποβλήθηκε στις {appliedOn}."
 
 #: src/features/workspace/tabs/prepare.tsx
 msgid "Success at 90 days · next step"
@@ -9476,6 +9645,14 @@ msgstr "Οι ετικέτες δίνουν στο λογισμικό ρητή σ
 #: src/features/documents/document-sheets.tsx
 msgid "Tags…"
 msgstr "Ετικέτες…"
+
+#: src/features/workspace/preparation.tsx
+msgid "Tailor and review your resume"
+msgstr ""
+
+#: src/features/workspace/preparation.tsx
+msgid "Tailor the resume"
+msgstr ""
 
 #: src/features/assistant/assistant-screen.tsx
 msgid "Tailor to the {company} posting"
@@ -9878,10 +10055,6 @@ msgstr "Το κείμενο προς ανάγνωση αποστέλλεται �
 msgid "The top of the first page does not look like a name."
 msgstr "Η κορυφή της πρώτης σελίδας δεν μοιάζει με όνομα."
 
-#: src/features/workspace/tabs/apply.tsx
-msgid "The versions you sent are kept in Saved. Edits here don't change what {company} received."
-msgstr "Οι εκδόσεις που στείλατε διατηρούνται στο Αποθηκευμένο. Οι αλλαγές εδώ δεν αλλάζουν αυτό που έλαβε το {company}."
-
 #: app/(tabs)/settings/preferences.tsx
 #: src/features/search/search-screen.tsx
 msgid "Theme"
@@ -9898,6 +10071,10 @@ msgstr "Δεν υπάρχει σύνδεσμος προς προφίλ, portfoli
 #: src/features/ats-checker/messages.ts
 msgid "There is no summary paragraph."
 msgstr "Δεν υπάρχει παράγραφος περίληψης."
+
+#: src/features/workspace/tabs/apply.tsx
+msgid "These are saved draft answers."
+msgstr ""
 
 #: src/features/workspace/tabs/apply.tsx
 msgid "These are the answers saved when you applied."
@@ -10366,6 +10543,7 @@ msgstr "Δοκιμάστε το {suggestion}"
 #: src/features/letters/write.tsx
 #: src/features/settings/api-keys.tsx
 #: src/features/workspace/parts.tsx
+#: src/features/workspace/preparation.tsx
 #: src/features/workspace/shell.tsx
 #: src/features/workspace/tabs/practise.tsx
 #: src/features/write/improve.tsx
@@ -10870,6 +11048,10 @@ msgstr "Δείτε την αίτηση εργασίας"
 msgid "View posting"
 msgstr "Προβολή αγγελίας εργασίας"
 
+#: src/features/workspace/tabs/apply.tsx
+msgid "View recorded answers"
+msgstr ""
+
 #: src/features/application-detail/sections.tsx
 msgid "View saved work"
 msgstr "Προβολή αποθηκευμένης εργασίας"
@@ -11155,9 +11337,18 @@ msgstr "Συγγραφή"
 msgid "Write \"Present\" as the end date of your current role."
 msgstr "Γράψτε «Present» ως ημερομηνία λήξης του τρέχοντος ρόλου σας."
 
+#: src/features/workspace/preparation.tsx
+msgid "Write a cover letter if required"
+msgstr ""
+
 #: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Write a letter"
 msgstr "Γράψε ένα γράμμα"
+
+#: src/features/workspace/preparation.tsx
+msgid "Write and review form answers"
+msgstr ""
 
 #: src/features/workspace/tabs/prepare.tsx
 msgid "Write down what they asked while it's fresh. The coach compares your answers with your stories."
@@ -11254,10 +11445,6 @@ msgstr "Έχετε μη αποθηκευμένες αλλαγές."
 #: src/features/workspace/tabs/messages.tsx
 msgid "You send it from your own email."
 msgstr "Τη στέλνετε από το δικό σας email."
-
-#: src/features/workspace/tabs/apply.tsx
-msgid "You submit on the employer's site yourself. Marking it applied keeps the exact versions you sent."
-msgstr "Υποβάλλετε την αίτηση μόνοι σας στον ιστότοπο του εργοδότη. Η σήμανση ως υποβληθείσα κρατά ακριβώς τις εκδόσεις που στείλατε."
 
 #: src/features/settings/sign-out.tsx
 msgid "You will be signed out of {server}. Any edits not yet synced from this device will be lost."

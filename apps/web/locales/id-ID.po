@@ -112,6 +112,8 @@ msgid "{0, plural, one {# active application} other {# active applications}}"
 msgstr "{0, plural, one {# lamaran aktif} other {# lamaran aktif}}"
 
 #. placeholder {0}: data.answers.length
+#. placeholder {0}: written.length
+#: src/features/career/workspace/apply.tsx
 #: src/features/career/workspace/saved.tsx
 msgid "{0, plural, one {# answer} other {# answers}}"
 msgstr "{0, plural, other {# jawaban}}"
@@ -833,12 +835,6 @@ msgstr "Aktivasi +13 poin"
 msgid "<0>Nothing to fix.</0> Every check passes."
 msgstr "<0>Tidak ada yang perlu diperbaiki.</0> Setiap pemeriksaan lolos."
 
-#. placeholder {0}: day(application.appliedAt)
-#. placeholder {1}: application.company
-#: src/features/career/workspace/apply.tsx
-msgid "<0>Submitted on {0}.</0> The versions you sent are kept in Saved. Edits here don't change what {1} received."
-msgstr "<0>Dikirim pada {0}.</0> Versi yang Anda kirim disimpan di Tersimpan. Perubahan di sini tidak mengubah apa yang diterima {1}."
-
 #: src/features/career/offers.tsx
 msgid "<0>Totals aren't added up on purpose.</0> Bonus and equity depend on conditions, and equity value is uncertain for both. Read the original offer documents before comparing totals."
 msgstr "<0>Total sengaja tidak dijumlahkan.</0> Bonus dan ekuitas bergantung pada syarat tertentu, dan nilai ekuitas tidak pasti untuk keduanya. Baca dokumen penawaran asli sebelum membandingkan total."
@@ -1405,6 +1401,10 @@ msgstr "Tambah halaman"
 msgid "Add passkey"
 msgstr "Tambahkan kunci sandi"
 
+#: src/features/career/workspace/preparation.tsx
+msgid "Add posting"
+msgstr ""
+
 #: src/features/resume/editor/write/outline.tsx
 msgid "Add profile"
 msgstr "Tambahkan profil"
@@ -1596,6 +1596,10 @@ msgstr "Dibandingkan dengan persyaratan Anda"
 #: src/routes/dashboard/settings/route.tsx
 msgid "AI & developer"
 msgstr "AI & pengembang"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "AI availability couldn't be confirmed. Prepare manually; nothing here is sent to the employer or marks the job applied."
+msgstr ""
 
 #: src/features/career/schedule-sheet.tsx
 msgid "AI connection"
@@ -1906,6 +1910,10 @@ msgstr "Jawaban lamaran"
 msgid "Application closed"
 msgstr "lamaran pekerjaan ditutup"
 
+#: src/features/career/workspace/preparation.tsx
+msgid "Application closed. Current drafts remain available."
+msgstr ""
+
 #: src/features/applications/components/add-application-dialog.tsx
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Application date"
@@ -1930,6 +1938,10 @@ msgstr "Detail lamaran"
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Application options"
 msgstr "pilihan lamaran pekerjaan"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Application preparation"
+msgstr ""
 
 #: src/features/career/coach.tsx
 msgid "application summaries"
@@ -2309,10 +2321,6 @@ msgstr "Dasar"
 msgid "Before restore"
 msgstr "Sebelum memulihkan"
 
-#: src/features/career/workspace/apply.tsx
-msgid "Before you submit"
-msgstr "Sebelum Anda mengirim"
-
 #: src/features/applications/components/interview-dialog.tsx
 msgid "Behavioral"
 msgstr "Perilaku"
@@ -2491,6 +2499,7 @@ msgstr "Bisakah perangkat lunak membaca resume Anda?"
 #: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/career/workspace/fit.tsx
+#: src/features/career/workspace/preparation.tsx
 #: src/features/documents/new-document-dialog.tsx
 #: src/features/resume/builder/password-dialog.tsx
 #: src/features/resume/editor/check/job-match.tsx
@@ -2728,10 +2737,6 @@ msgstr "Memeriksa preferensi Anda"
 msgid "Checking… Copy is available after saving."
 msgstr "Memeriksa… Salinan tersedia setelah disimpan."
 
-#: src/features/career/workspace/apply.tsx
-msgid "Checklist progress"
-msgstr "Progres daftar periksa"
-
 #: src/features/resume/editor/check/check-panel.tsx
 msgid "Checks by category"
 msgstr "Cek berdasarkan kategori"
@@ -2747,6 +2752,10 @@ msgstr "Cina (Sederhana)"
 #: src/libs/locale.ts
 msgid "Chinese (Traditional)"
 msgstr "Cina (Tradisional)"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Choose a base resume"
+msgstr ""
 
 #: src/features/documents/documents-page.tsx
 msgid "Choose a file"
@@ -2830,9 +2839,17 @@ msgstr "Claude Desktop"
 msgid "Clear"
 msgstr "Bersihkan"
 
+#: src/features/career/workspace/preparation.tsx
+msgid "Clear cover letter"
+msgstr ""
+
 #: src/features/resume/editor/write/rich-text-editor-field.tsx
 msgid "Clear formatting"
 msgstr "Hapus pemformatan"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Clear resume"
+msgstr ""
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "Clear search"
@@ -3206,10 +3223,6 @@ msgstr "Konten"
 msgid "Content is laid out in a grid."
 msgstr "Konten ditata dalam bentuk kisi."
 
-#: src/features/career/workspace/apply.tsx
-msgid "Content review"
-msgstr "Pemeriksaan konten"
-
 #. Button label to continue to dashboard after successful registration
 #. Final action button after saving backup codes
 #. Primary action button to proceed to next step in two-factor setup
@@ -3281,6 +3294,10 @@ msgstr "Salin"
 #: src/features/resume/share/copy-text.tsx
 msgid "Copy {value}"
 msgstr "Salin {value}"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Copy a base resume for this job"
+msgstr ""
 
 #: src/features/documents/new-document-dialog.tsx
 msgid "Copy a resume for a job"
@@ -3443,6 +3460,7 @@ msgid "Couldn't create the key. Try again."
 msgstr "Tidak dapat membuat kunci. Coba lagi."
 
 #: src/features/applications/components/detail/sent-documents.tsx
+#: src/features/career/workspace/preparation.tsx
 msgid "Couldn't create the letter. Try again."
 msgstr "Tidak dapat membuat surat. Coba lagi."
 
@@ -3509,6 +3527,7 @@ msgstr "Tidak dapat mengisi kolom. Coba lagi, atau isi sendiri."
 msgid "Couldn't forget that fact. Try again."
 msgstr "Tidak dapat melupakan fakta itu. Coba lagi."
 
+#: src/features/applications/use-document-download.ts
 #: src/features/resume/export/use-resume-export.ts
 #: src/routes/builder/letter/-components/letter-bar.tsx
 msgid "Couldn't generate the PDF. Try again."
@@ -3697,6 +3716,7 @@ msgid "Couldn't save that change. Check your connection and try again."
 msgstr "Tidak dapat menyimpan perubahan itu. Periksa koneksi Anda dan coba lagi."
 
 #: src/features/career/knowledge/facts.tsx
+#: src/features/career/workspace/preparation.tsx
 #: src/routes/builder/letter/-components/write-panel.tsx
 msgid "Couldn't save that change. Try again."
 msgstr "Tidak dapat menyimpan perubahan itu. Coba lagi."
@@ -3965,6 +3985,7 @@ msgstr "Penuhi"
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/detail/sent-documents.tsx
 #: src/features/applications/components/list-view.tsx
+#: src/features/career/workspace/preparation.tsx
 msgid "Cover letter"
 msgstr "Surat lamaran"
 
@@ -3974,6 +3995,7 @@ msgstr "Surat Lamaran"
 
 #. placeholder {0}: application.company
 #: src/features/applications/components/detail/sent-documents.tsx
+#: src/features/career/workspace/preparation.tsx
 msgid "Cover letter — {0}"
 msgstr "Surat lamaran — {0}"
 
@@ -3982,12 +4004,18 @@ msgid "Cover letter · Fieldnote"
 msgstr "Surat lamaran · Fieldnote"
 
 #: src/features/applications/components/detail/sent-documents.tsx
+#: src/features/career/workspace/apply.tsx
 msgid "Cover letter file"
 msgstr "Berkas surat lamaran"
 
 #: src/features/documents/new-document-dialog.tsx
 msgid "Cover letter imported"
 msgstr "Surat lamaran diimpor"
+
+#: src/features/applications/components/detail/sent-documents.tsx
+#: src/features/career/workspace/preparation.tsx
+msgid "Cover letter options"
+msgstr ""
 
 #: src/features/applications/components/add-application-dialog.tsx
 #: src/features/applications/components/application-detail-sheet.tsx
@@ -4076,6 +4104,10 @@ msgstr "Data CSV"
 #: src/features/career/offer-entry.tsx
 msgid "Currency"
 msgstr "Mata uang"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Current drafts"
+msgstr ""
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Current filters"
@@ -4580,11 +4612,16 @@ msgstr "Unduh kode"
 msgid "Download CSV"
 msgstr "Unduh CSV"
 
+#: src/features/applications/components/detail/sent-documents.tsx
+msgid "Download current PDF"
+msgstr ""
+
 #: src/features/resume/share/download-tab.tsx
 #: src/routes/builder/letter/-components/download-sheet.tsx
 msgid "Download failed. Try again."
 msgstr "Pengunduhan gagal. Coba lagi."
 
+#: src/features/career/workspace/preparation.tsx
 #: src/features/resume/editor/chrome/bar.tsx
 #: src/features/resume/share/web-page-text.ts
 msgid "Download PDF"
@@ -4777,6 +4814,7 @@ msgstr "pesan sebelumnya di chat ini"
 #: src/components/input/chip-input.tsx
 #: src/features/applications/components/detail/next-step-card.tsx
 #: src/features/career/knowledge/stories.tsx
+#: src/features/career/workspace/preparation.tsx
 #: src/features/career/workspace/shell.tsx
 #: src/features/resume/editor/write/basics-card.tsx
 #: src/features/settings/ai/providers.tsx
@@ -4804,6 +4842,14 @@ msgstr "Pengeditan diterapkan"
 #: src/features/resume/stylesheet/editor.tsx
 msgid "Edit color {0}"
 msgstr "Edit warna {0}"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Edit cover letter"
+msgstr ""
+
+#: src/features/applications/components/detail/sent-documents.tsx
+msgid "Edit current draft"
+msgstr ""
 
 #: src/features/applications/components/detail/activity.tsx
 msgid "Edit date"
@@ -4837,9 +4883,17 @@ msgstr "Sunting tautan"
 msgid "Edit note"
 msgstr "Edit catatan"
 
+#: src/features/career/workspace/preparation.tsx
+msgid "Edit posting"
+msgstr ""
+
 #: src/features/career/workspace/apply.tsx
 msgid "Edit question"
 msgstr "Edit pertanyaan"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Edit resume"
+msgstr ""
 
 #: src/features/career/schedule-sheet.tsx
 msgid "Edit schedule"
@@ -5506,6 +5560,10 @@ msgstr "Lupa kata sandi?"
 msgid "Forgot your password?"
 msgstr "Lupa kata sandi Anda?"
 
+#: src/features/career/workspace/apply.tsx
+msgid "Form answers"
+msgstr ""
+
 #: src/features/resume/share/download-tab.tsx
 msgid "Format"
 msgstr "Format"
@@ -5627,6 +5685,8 @@ msgstr "Lebar penuh"
 msgid "Generate a random name"
 msgstr "Hasilkan nama acak"
 
+#: src/features/applications/components/detail/sent-documents.tsx
+#: src/features/career/workspace/preparation.tsx
 #: src/features/resume/export/use-resume-export.ts
 #: src/routes/builder/letter/-components/letter-bar.tsx
 msgid "Generating PDF…"
@@ -5710,6 +5770,10 @@ msgstr "Pulang"
 #: src/routes/_home/-sections/header.tsx
 msgid "Go to dashboard"
 msgstr "Pergi ke dasbor"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Go to form answers"
+msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Go to…"
@@ -6378,6 +6442,7 @@ msgstr "Pekerjaan"
 
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/import-applications-sheet.tsx
+#: src/features/career/workspace/preparation.tsx
 msgid "Job description"
 msgstr "Deskripsi pekerjaan"
 
@@ -6783,9 +6848,10 @@ msgstr "Letter"
 msgid "Letter · not sent yet"
 msgstr "Surat · belum dikirim"
 
+#. placeholder {0}: date(application.appliedAt)
 #: src/features/career/workspace/shell.tsx
-msgid "Letter · version sent"
-msgstr "Surat · versi terkirim"
+msgid "Letter · version sent {0}"
+msgstr ""
 
 #: src/routes/builder/letter/-components/write-panel.tsx
 msgid "Letter body"
@@ -6909,6 +6975,15 @@ msgstr "Tautan diperbarui"
 msgid "Linked · not sent yet"
 msgstr "Tertaut · belum terkirim"
 
+#: src/features/career/workspace/preparation.tsx
+msgid "Linked document unavailable"
+msgstr ""
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Linked document unavailable. Choose another document or restore it from Trash."
+msgstr ""
+
+#: src/features/career/workspace/preparation.tsx
 #: src/features/career/workspace/shell.tsx
 msgid "Linked documents couldn't be loaded."
 msgstr "Dokumen tertaut tidak dapat dimuat."
@@ -7023,6 +7098,7 @@ msgstr "Memuat wawancara…"
 msgid "Loading Knowledge before you send…"
 msgstr "Memuat Pengetahuan sebelum Anda mengirim…"
 
+#: src/features/career/workspace/preparation.tsx
 #: src/features/career/workspace/shell.tsx
 msgid "Loading linked documents…"
 msgstr "Memuat dokumen tertaut…"
@@ -7236,10 +7312,6 @@ msgstr "Tandai sudah dibaca"
 #: src/features/career/workspace/messages.tsx
 msgid "Mark it as applied in Apply first."
 msgstr "Tandai sudah melamar di Lamar terlebih dahulu."
-
-#: src/features/career/workspace/apply.tsx
-msgid "Mark the application as applied to keep the versions you sent."
-msgstr "Tandai sudah melamar untuk menyimpan versi yang Anda kirim."
 
 #: src/features/career/workspace/apply.tsx
 msgid "Markdown (.md)"
@@ -7756,6 +7828,10 @@ msgstr "Lain kali, saya akan menyepakati cara mengukur keberhasilan sebelum prot
 msgid "No active applications."
 msgstr "Tidak ada lamaran pekerjaan yang aktif."
 
+#: src/features/career/workspace/preparation.tsx
+msgid "No AI needed. Edit documents and write answers yourself; nothing here is sent to the employer or marks the job applied."
+msgstr ""
+
 #: src/routes/builder/letter/-components/write-panel.tsx
 msgid "No application"
 msgstr "Tidak ada lamaran kerja"
@@ -7814,6 +7890,10 @@ msgstr "Tidak ada negara yang ditemukan."
 #: src/features/ats-checker/messages.ts
 msgid "No dates were found."
 msgstr "Tidak ditemukan tanggal."
+
+#: src/features/career/workspace/apply.tsx
+msgid "no documents"
+msgstr ""
 
 #: src/features/assistant/assistant-panel.tsx
 msgid "no edits"
@@ -7911,6 +7991,10 @@ msgstr "Tidak ada foto. Kebanyakan ATS mengabaikan foto; beberapa daerah menghar
 msgid "No postings found. Try different keywords."
 msgstr "Tidak ada lowongan pekerjaan yang ditemukan. Coba kata kunci yang berbeda."
 
+#: src/features/career/workspace/apply.tsx
+msgid "No recorded answers are available."
+msgstr ""
+
 #: src/features/applications/stages.ts
 msgid "No response"
 msgstr "Tidak ada tanggapan"
@@ -7995,6 +8079,10 @@ msgstr "Tidak ada"
 msgctxt "Entry header accent"
 msgid "None"
 msgstr "Tidak ada"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "None selected"
+msgstr ""
 
 #: src/features/resume/editor/design/fit.ts
 #: src/features/resume/editor/design/style-groups.tsx
@@ -8084,6 +8172,10 @@ msgstr "Tidak disimpan"
 #: src/features/career/coach-chat.tsx
 msgid "Not saved — this fact was forgotten before."
 msgstr "Tidak disimpan — fakta ini sudah pernah dilupakan."
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Not saved yet"
+msgstr ""
 
 #: src/features/resume/editor/check/job-match.tsx
 msgid "not scored"
@@ -8421,6 +8513,10 @@ msgstr "Buka di Penawaran"
 msgid "Open preferences"
 msgstr "Buka preferensi"
 
+#: src/features/applications/components/detail/sent-documents.tsx
+msgid "Open sent version"
+msgstr ""
+
 #: src/features/career/workspace/prepare.tsx
 msgid "Open story"
 msgstr "Buka cerita"
@@ -8474,6 +8570,14 @@ msgstr "Pencarian peluang"
 #: src/features/settings/ai/web-access.tsx
 msgid "Optional"
 msgstr "Opsional"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Optional · none selected"
+msgstr ""
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Optional AI help in the editors; review edits before accepting. Nothing here is sent to the employer or marks the job applied."
+msgstr ""
 
 #: src/features/settings/ai/providers.tsx
 msgid "Optional for local Ollama"
@@ -8937,6 +9041,7 @@ msgstr "lowongan"
 
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/career/workspace/fit.tsx
+#: src/features/career/workspace/preparation.tsx
 #: src/features/homepage/tailor.tsx
 msgid "Posting"
 msgstr "Lowongan kerja"
@@ -9588,6 +9693,11 @@ msgstr "Perekaman berhenti pada batas 2 menit. Mentranskripsi ucapan Anda."
 msgid "Recording time"
 msgstr "Waktu rekaman"
 
+#. placeholder {0}: records.join(" · ")
+#: src/features/career/workspace/apply.tsx
+msgid "Records {0} as sent. You submit on the employer's site yourself."
+msgstr ""
+
 #: src/features/applications/components/detail/contacts.tsx
 msgid "Recruiter"
 msgstr "Perekrut"
@@ -9986,6 +10096,7 @@ msgstr "melanjutkan"
 
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/list-view.tsx
+#: src/features/career/workspace/preparation.tsx
 #: src/features/documents/document-card.tsx
 #: src/routes/builder/letter/-components/write-panel.tsx
 msgid "Resume"
@@ -9995,9 +10106,10 @@ msgstr "CV"
 msgid "Resume · not sent yet"
 msgstr "CV · belum dikirim"
 
+#. placeholder {0}: date(application.appliedAt)
 #: src/features/career/workspace/shell.tsx
-msgid "Resume · version sent"
-msgstr "CV · versi terkirim"
+msgid "Resume · version sent {0}"
+msgstr ""
 
 #: src/features/applications/components/add-application-dialog.tsx
 msgid "Resume (optional)"
@@ -10029,8 +10141,14 @@ msgid "Resume details"
 msgstr "rincian resume"
 
 #: src/features/applications/components/detail/sent-documents.tsx
+#: src/features/career/workspace/apply.tsx
 msgid "Resume file"
 msgstr "File resume"
+
+#: src/features/applications/components/detail/sent-documents.tsx
+#: src/features/career/workspace/preparation.tsx
+msgid "Resume options"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-components/page-canvas.tsx
 msgid "Resume page"
@@ -10096,6 +10214,14 @@ msgstr "Mencoba lagi…"
 msgid "Review"
 msgstr "Tinjauan"
 
+#: src/features/career/workspace/apply.tsx
+msgid "Review checks"
+msgstr ""
+
+#: src/features/career/workspace/apply.tsx
+msgid "Review checks only reflect what you checked yourself."
+msgstr ""
+
 #: src/features/career/today.tsx
 msgid "Review draft"
 msgstr "Tinjau draf"
@@ -10112,6 +10238,10 @@ msgstr "Tinjau jawaban saya"
 msgid "Review my answer sends the question, what you said, this posting and your Knowledge to {providerName}."
 msgstr "Tinjau jawaban saya mengirim pertanyaan, apa yang Anda ucapkan, lowongan ini, dan Pengetahuan Anda ke {providerName}."
 
+#: src/features/career/workspace/preparation.tsx
+msgid "Review readiness and record your submission"
+msgstr ""
+
 #: src/features/career/workspace/apply.tsx
 msgid "Review required form answers and remove unsupported claims."
 msgstr "Tinjau jawaban formulir yang wajib dan hapus klaim yang tidak didukung."
@@ -10119,6 +10249,10 @@ msgstr "Tinjau jawaban formulir yang wajib dan hapus klaim yang tidak didukung."
 #: src/features/career/workspace/apply.tsx
 msgid "Review the selected resume and cover letter in their editors."
 msgstr "Tinjau CV dan surat lamaran yang dipilih di editornya masing-masing."
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Review with assistant"
+msgstr ""
 
 #: src/features/resume/editor/check/writing-tab.tsx
 msgid "Review writing"
@@ -10344,6 +10478,10 @@ msgstr "Simpan nama"
 msgid "Save offer"
 msgstr "Simpan penawaran"
 
+#: src/features/career/workspace/preparation.tsx
+msgid "Save posting"
+msgstr ""
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Save schedule"
 msgstr "Simpan jadwal"
@@ -10360,6 +10498,10 @@ msgstr "Simpan tag"
 #: src/features/ats-checker/messages.ts
 msgid "Save the file with every page upright."
 msgstr "Simpan file dengan setiap halaman tegak."
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Save the job posting"
+msgstr ""
 
 #: src/features/career/workspace/messages.tsx
 msgid "Save these offer terms to compare"
@@ -11518,6 +11660,12 @@ msgstr "Status"
 msgid "Stay here"
 msgstr "Tetap di sini"
 
+#. placeholder {0}: stepIndex + 1
+#. placeholder {1}: STEPS.length
+#: src/features/career/workspace/preparation.tsx
+msgid "Step {0} of {1}"
+msgstr ""
+
 #: src/features/assistant/conversation.tsx
 #: src/features/career/coach-thread.tsx
 #: src/features/homepage/prepare.tsx
@@ -11600,9 +11748,13 @@ msgstr "Editor lembar gaya"
 msgid "Subject"
 msgstr "Subjek"
 
-#: src/features/career/workspace/apply.tsx
-msgid "Submission is recorded. Review checks only reflect what you checked yourself."
-msgstr "Pengiriman lamaran telah dicatat. Tanda centang pemeriksaan hanya mencerminkan hal yang Anda periksa sendiri."
+#: src/features/applications/components/detail/sent-documents.tsx
+msgid "Submission recorded {date}. The sent versions never change; current drafts stay editable. This record does not confirm employer receipt."
+msgstr ""
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Submission recorded. Current drafts are separate from what you sent."
+msgstr ""
 
 #: src/features/career/workspace/apply.tsx
 msgid "Submit through the employer's application page yourself."
@@ -11783,6 +11935,14 @@ msgstr "Tag…"
 #: src/features/homepage/tailor.tsx
 msgid "Tailor"
 msgstr "Sesuaikan dengan deskripsi pekerjaan"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Tailor and review your resume"
+msgstr ""
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Tailor the resume"
+msgstr ""
 
 #. placeholder {0}: document.posting.company
 #: src/features/assistant/assistant-panel.tsx
@@ -12297,6 +12457,10 @@ msgid "There is no summary paragraph."
 msgstr "Tidak ada paragraf ringkasan."
 
 #: src/features/career/workspace/apply.tsx
+msgid "These are saved draft answers."
+msgstr ""
+
+#: src/features/career/workspace/apply.tsx
 msgid "These are the answers saved when you applied."
 msgstr "Ini adalah jawaban yang disimpan saat Anda melamar."
 
@@ -12730,6 +12894,7 @@ msgstr "Coba sampel"
 #: src/features/career/coach-chat.tsx
 #: src/features/career/load-state.tsx
 #: src/features/career/workspace/practise.tsx
+#: src/features/career/workspace/preparation.tsx
 #: src/features/career/workspace/shell.tsx
 #: src/features/documents/library-error.tsx
 #: src/features/resume/editor/write/improve.tsx
@@ -13357,6 +13522,10 @@ msgstr "Lihat lamaran kerja"
 msgid "View posting"
 msgstr "Lihat postingan pekerjaan"
 
+#: src/features/career/workspace/apply.tsx
+msgid "View recorded answers"
+msgstr ""
+
 #. placeholder {0}: formatVersionTime(viewing.createdAt, i18n.locale)
 #. placeholder {0}: when(selected)
 #. placeholder {1}: getVersionTitle(selected)
@@ -13601,13 +13770,9 @@ msgid "What you did: {0}"
 msgstr "Yang Anda lakukan: {0}"
 
 #: src/features/applications/components/detail/sent-documents.tsx
+#: src/features/career/workspace/shell.tsx
 msgid "What you sent"
 msgstr "Apa yang Anda kirimkan"
-
-#. placeholder {0}: date(application.appliedAt)
-#: src/features/career/workspace/shell.tsx
-msgid "What you sent · {0}"
-msgstr "Yang Anda kirim · {0}"
 
 #: src/features/career/knowledge/preferences.tsx
 msgid "What you're looking for"
@@ -13754,13 +13919,22 @@ msgstr "Tulis"
 msgid "Write \"Present\" as the end date of your current role."
 msgstr "Tulis \"Present\" sebagai tanggal akhir untuk peran Anda saat ini."
 
+#: src/features/career/workspace/preparation.tsx
+msgid "Write a cover letter if required"
+msgstr ""
+
 #: src/features/applications/components/detail/sent-documents.tsx
+#: src/features/career/workspace/preparation.tsx
 msgid "Write a letter"
 msgstr "Tulis surat"
 
 #: src/features/homepage/remember.tsx
 msgid "Write a story once, with the facts behind it, and the coach uses it in 3 places. Switch a fact off and nothing leans on it."
 msgstr "Tulis cerita sekali, beserta fakta di baliknya, dan coach memakainya di 3 tempat. Nonaktifkan sebuah fakta, dan tidak ada yang bergantung padanya."
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Write and review form answers"
+msgstr ""
 
 #: src/features/homepage/write.tsx
 msgid "Write beside a live page. It saves as you type and keeps every version. Ask the assistant for a sharper line: it suggests, you decide."
@@ -13927,10 +14101,6 @@ msgstr "Anda mengirimnya dari email Anda sendiri."
 #: src/features/settings/account/security.tsx
 msgid "You sign in without one"
 msgstr "Anda masuk tanpa satu pun"
-
-#: src/features/career/workspace/apply.tsx
-msgid "You submit on the employer's site yourself. Marking it applied keeps the exact versions you sent."
-msgstr "Anda sendiri yang mengirim di situs pemberi kerja. Menandainya sudah melamar akan menyimpan versi persis yang Anda kirim."
 
 #: src/features/career/schedule-sheet.tsx
 msgid "You'll always see it in Today. Email depends on your server's mail setup."

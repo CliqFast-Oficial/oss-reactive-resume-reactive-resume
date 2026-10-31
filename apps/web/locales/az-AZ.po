@@ -112,6 +112,8 @@ msgid "{0, plural, one {# active application} other {# active applications}}"
 msgstr "{0, plural, one {# aktiv müraciət} other {# aktiv müraciət}}"
 
 #. placeholder {0}: data.answers.length
+#. placeholder {0}: written.length
+#: src/features/career/workspace/apply.tsx
 #: src/features/career/workspace/saved.tsx
 msgid "{0, plural, one {# answer} other {# answers}}"
 msgstr "{0, plural, one {# cavab} other {# cavab}}"
@@ -833,12 +835,6 @@ msgstr "+13 xal aktivləşdirmə"
 msgid "<0>Nothing to fix.</0> Every check passes."
 msgstr "<0>Düzəlmək üçün heç nə yoxdur.</0> Hər yoxlamadan keçir."
 
-#. placeholder {0}: day(application.appliedAt)
-#. placeholder {1}: application.company
-#: src/features/career/workspace/apply.tsx
-msgid "<0>Submitted on {0}.</0> The versions you sent are kept in Saved. Edits here don't change what {1} received."
-msgstr "<0>{0} tarixində göndərildi.</0> Göndərdiyiniz versiyalar Saxlanılanlar bölməsində qalır. Burada etdiyiniz dəyişikliklər {1} şirkətinin aldığını dəyişmir."
-
 #: src/features/career/offers.tsx
 msgid "<0>Totals aren't added up on purpose.</0> Bonus and equity depend on conditions, and equity value is uncertain for both. Read the original offer documents before comparing totals."
 msgstr "<0>Cəmlər qəsdən toplanmır.</0> Bonus və pay şərtlərdən asılıdır, payın dəyəri isə hər ikisində qeyri-müəyyəndir. Cəmləri müqayisə etməzdən əvvəl orijinal təklif sənədlərini oxuyun."
@@ -1405,6 +1401,10 @@ msgstr "Səhifə əlavə et"
 msgid "Add passkey"
 msgstr "Keçid açarı əlavə edin"
 
+#: src/features/career/workspace/preparation.tsx
+msgid "Add posting"
+msgstr ""
+
 #: src/features/resume/editor/write/outline.tsx
 msgid "Add profile"
 msgstr "Profil əlavə edin"
@@ -1596,6 +1596,10 @@ msgstr "Tələblərinizlə müqayisədə"
 #: src/routes/dashboard/settings/route.tsx
 msgid "AI & developer"
 msgstr "AI və inkişaf etdirici"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "AI availability couldn't be confirmed. Prepare manually; nothing here is sent to the employer or marks the job applied."
+msgstr ""
 
 #: src/features/career/schedule-sheet.tsx
 msgid "AI connection"
@@ -1906,6 +1910,10 @@ msgstr "Müraciət cavabı"
 msgid "Application closed"
 msgstr "Müraciət bağlandı"
 
+#: src/features/career/workspace/preparation.tsx
+msgid "Application closed. Current drafts remain available."
+msgstr ""
+
 #: src/features/applications/components/add-application-dialog.tsx
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Application date"
@@ -1930,6 +1938,10 @@ msgstr "Müraciət təfərrüatları"
 #: src/features/applications/components/application-detail-sheet.tsx
 msgid "Application options"
 msgstr "Müraciət seçimləri"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Application preparation"
+msgstr ""
 
 #: src/features/career/coach.tsx
 msgid "application summaries"
@@ -2309,10 +2321,6 @@ msgstr "Əsas məlumatlar"
 msgid "Before restore"
 msgstr "Bərpa etməzdən əvvəl"
 
-#: src/features/career/workspace/apply.tsx
-msgid "Before you submit"
-msgstr "Göndərməzdən əvvəl"
-
 #: src/features/applications/components/interview-dialog.tsx
 msgid "Behavioral"
 msgstr "Davranış"
@@ -2491,6 +2499,7 @@ msgstr "Proqram sizin CV-nizi oxuya bilərmi?"
 #: src/features/career/offer-entry.tsx
 #: src/features/career/schedule-sheet.tsx
 #: src/features/career/workspace/fit.tsx
+#: src/features/career/workspace/preparation.tsx
 #: src/features/documents/new-document-dialog.tsx
 #: src/features/resume/builder/password-dialog.tsx
 #: src/features/resume/editor/check/job-match.tsx
@@ -2728,10 +2737,6 @@ msgstr "Tərcihləriniz yoxlanılır"
 msgid "Checking… Copy is available after saving."
 msgstr "Yoxlanılır... Kopya saxladıqdan sonra əlçatandır."
 
-#: src/features/career/workspace/apply.tsx
-msgid "Checklist progress"
-msgstr "Yoxlama siyahısının gedişi"
-
 #: src/features/resume/editor/check/check-panel.tsx
 msgid "Checks by category"
 msgstr "Kateqoriyaya görə yoxlayır"
@@ -2747,6 +2752,10 @@ msgstr "Çin (Sadələşdirilmiş)"
 #: src/libs/locale.ts
 msgid "Chinese (Traditional)"
 msgstr "Çin (Ənənəvi)"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Choose a base resume"
+msgstr ""
 
 #: src/features/documents/documents-page.tsx
 msgid "Choose a file"
@@ -2830,9 +2839,17 @@ msgstr "Claude Desktop"
 msgid "Clear"
 msgstr "Təmizlə"
 
+#: src/features/career/workspace/preparation.tsx
+msgid "Clear cover letter"
+msgstr ""
+
 #: src/features/resume/editor/write/rich-text-editor-field.tsx
 msgid "Clear formatting"
 msgstr "Formatlaşdırmanı təmizləyin"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Clear resume"
+msgstr ""
 
 #: src/routes/dashboard/applications/index.tsx
 msgid "Clear search"
@@ -3206,10 +3223,6 @@ msgstr "Məzmun"
 msgid "Content is laid out in a grid."
 msgstr "Məzmun cədvəl (grid) şəklində düzülüb."
 
-#: src/features/career/workspace/apply.tsx
-msgid "Content review"
-msgstr "Məzmunun yoxlanması"
-
 #. Button label to continue to dashboard after successful registration
 #. Final action button after saving backup codes
 #. Primary action button to proceed to next step in two-factor setup
@@ -3281,6 +3294,10 @@ msgstr "Kopyala"
 #: src/features/resume/share/copy-text.tsx
 msgid "Copy {value}"
 msgstr "Kopyala: {value}"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Copy a base resume for this job"
+msgstr ""
 
 #: src/features/documents/new-document-dialog.tsx
 msgid "Copy a resume for a job"
@@ -3443,6 +3460,7 @@ msgid "Couldn't create the key. Try again."
 msgstr "Açarı yaratmaq mümkün olmadı. Yenidən cəhd edin."
 
 #: src/features/applications/components/detail/sent-documents.tsx
+#: src/features/career/workspace/preparation.tsx
 msgid "Couldn't create the letter. Try again."
 msgstr "Məktubu yaratmaq mümkün olmadı. Yenidən cəhd edin."
 
@@ -3509,6 +3527,7 @@ msgstr "Sahələri doldurmaq mümkün olmadı. Yenidən cəhd edin və ya onlar�
 msgid "Couldn't forget that fact. Try again."
 msgstr "Həmin faktı unutmaq mümkün olmadı. Yenidən cəhd edin."
 
+#: src/features/applications/use-document-download.ts
 #: src/features/resume/export/use-resume-export.ts
 #: src/routes/builder/letter/-components/letter-bar.tsx
 msgid "Couldn't generate the PDF. Try again."
@@ -3697,6 +3716,7 @@ msgid "Couldn't save that change. Check your connection and try again."
 msgstr "Həmin dəyişikliyi saxlamaq mümkün olmadı. Bağlantınızı yoxlayıb yenidən cəhd edin."
 
 #: src/features/career/knowledge/facts.tsx
+#: src/features/career/workspace/preparation.tsx
 #: src/routes/builder/letter/-components/write-panel.tsx
 msgid "Couldn't save that change. Try again."
 msgstr "Həmin dəyişikliyi saxlamaq mümkün olmadı. Yenidən cəhd edin."
@@ -3965,6 +3985,7 @@ msgstr "Doldur"
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/detail/sent-documents.tsx
 #: src/features/applications/components/list-view.tsx
+#: src/features/career/workspace/preparation.tsx
 msgid "Cover letter"
 msgstr "Müşayiət məktubu"
 
@@ -3974,6 +3995,7 @@ msgstr "Müraciət məktubu"
 
 #. placeholder {0}: application.company
 #: src/features/applications/components/detail/sent-documents.tsx
+#: src/features/career/workspace/preparation.tsx
 msgid "Cover letter — {0}"
 msgstr "Qapaq məktubu — {0}"
 
@@ -3982,12 +4004,18 @@ msgid "Cover letter · Fieldnote"
 msgstr "Qapaq məktubu · Fieldnote"
 
 #: src/features/applications/components/detail/sent-documents.tsx
+#: src/features/career/workspace/apply.tsx
 msgid "Cover letter file"
 msgstr "Qapaq məktubu faylı"
 
 #: src/features/documents/new-document-dialog.tsx
 msgid "Cover letter imported"
 msgstr "Əhatə məktubu idxal edildi"
+
+#: src/features/applications/components/detail/sent-documents.tsx
+#: src/features/career/workspace/preparation.tsx
+msgid "Cover letter options"
+msgstr ""
 
 #: src/features/applications/components/add-application-dialog.tsx
 #: src/features/applications/components/application-detail-sheet.tsx
@@ -4076,6 +4104,10 @@ msgstr "CSV məlumatları"
 #: src/features/career/offer-entry.tsx
 msgid "Currency"
 msgstr "Valyuta"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Current drafts"
+msgstr ""
 
 #: src/features/applications/components/export-applications-sheet.tsx
 msgid "Current filters"
@@ -4580,11 +4612,16 @@ msgstr "Kodları endir"
 msgid "Download CSV"
 msgstr "CSV yükləyin"
 
+#: src/features/applications/components/detail/sent-documents.tsx
+msgid "Download current PDF"
+msgstr ""
+
 #: src/features/resume/share/download-tab.tsx
 #: src/routes/builder/letter/-components/download-sheet.tsx
 msgid "Download failed. Try again."
 msgstr "Endirmə uğursuz oldu. Yenidən cəhd edin."
 
+#: src/features/career/workspace/preparation.tsx
 #: src/features/resume/editor/chrome/bar.tsx
 #: src/features/resume/share/web-page-text.ts
 msgid "Download PDF"
@@ -4777,6 +4814,7 @@ msgstr "bu söhbətdəki əvvəlki mesajlar"
 #: src/components/input/chip-input.tsx
 #: src/features/applications/components/detail/next-step-card.tsx
 #: src/features/career/knowledge/stories.tsx
+#: src/features/career/workspace/preparation.tsx
 #: src/features/career/workspace/shell.tsx
 #: src/features/resume/editor/write/basics-card.tsx
 #: src/features/settings/ai/providers.tsx
@@ -4804,6 +4842,14 @@ msgstr "Redaktə tətbiq edildi"
 #: src/features/resume/stylesheet/editor.tsx
 msgid "Edit color {0}"
 msgstr "Rəngi redaktə edin {0}"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Edit cover letter"
+msgstr ""
+
+#: src/features/applications/components/detail/sent-documents.tsx
+msgid "Edit current draft"
+msgstr ""
 
 #: src/features/applications/components/detail/activity.tsx
 msgid "Edit date"
@@ -4837,9 +4883,17 @@ msgstr "Linki redaktə edin"
 msgid "Edit note"
 msgstr "Qeydi redaktə et"
 
+#: src/features/career/workspace/preparation.tsx
+msgid "Edit posting"
+msgstr ""
+
 #: src/features/career/workspace/apply.tsx
 msgid "Edit question"
 msgstr "Sualı redaktə et"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Edit resume"
+msgstr ""
 
 #: src/features/career/schedule-sheet.tsx
 msgid "Edit schedule"
@@ -5506,6 +5560,10 @@ msgstr "Parolu unutmusunuz?"
 msgid "Forgot your password?"
 msgstr "Parolunuzu unutmusunuz?"
 
+#: src/features/career/workspace/apply.tsx
+msgid "Form answers"
+msgstr ""
+
 #: src/features/resume/share/download-tab.tsx
 msgid "Format"
 msgstr "Format"
@@ -5627,6 +5685,8 @@ msgstr "Tam en"
 msgid "Generate a random name"
 msgstr "Təsadüfi ad yarat"
 
+#: src/features/applications/components/detail/sent-documents.tsx
+#: src/features/career/workspace/preparation.tsx
 #: src/features/resume/export/use-resume-export.ts
 #: src/routes/builder/letter/-components/letter-bar.tsx
 msgid "Generating PDF…"
@@ -5710,6 +5770,10 @@ msgstr "Evə get"
 #: src/routes/_home/-sections/header.tsx
 msgid "Go to dashboard"
 msgstr "İdarə panelinə keç"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Go to form answers"
+msgstr ""
 
 #: src/features/command-palette/pages/navigation.tsx
 msgid "Go to…"
@@ -6378,6 +6442,7 @@ msgstr "İş"
 
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/import-applications-sheet.tsx
+#: src/features/career/workspace/preparation.tsx
 msgid "Job description"
 msgstr "İş təsviri"
 
@@ -6783,9 +6848,10 @@ msgstr "US Letter"
 msgid "Letter · not sent yet"
 msgstr "Məktub · hələ göndərilməyib"
 
+#. placeholder {0}: date(application.appliedAt)
 #: src/features/career/workspace/shell.tsx
-msgid "Letter · version sent"
-msgstr "Məktub · göndərilmiş versiya"
+msgid "Letter · version sent {0}"
+msgstr ""
 
 #: src/routes/builder/letter/-components/write-panel.tsx
 msgid "Letter body"
@@ -6909,6 +6975,15 @@ msgstr "Link yeniləndi"
 msgid "Linked · not sent yet"
 msgstr "Əlaqələndirilmiş · hələ göndərilməyib"
 
+#: src/features/career/workspace/preparation.tsx
+msgid "Linked document unavailable"
+msgstr ""
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Linked document unavailable. Choose another document or restore it from Trash."
+msgstr ""
+
+#: src/features/career/workspace/preparation.tsx
 #: src/features/career/workspace/shell.tsx
 msgid "Linked documents couldn't be loaded."
 msgstr "Əlaqəli sənədləri yükləmək mümkün olmadı."
@@ -7023,6 +7098,7 @@ msgstr "Müsahibələr yüklənir…"
 msgid "Loading Knowledge before you send…"
 msgstr "Göndərməzdən əvvəl Biliklər yüklənir…"
 
+#: src/features/career/workspace/preparation.tsx
 #: src/features/career/workspace/shell.tsx
 msgid "Loading linked documents…"
 msgstr "Əlaqəli sənədlər yüklənir…"
@@ -7236,10 +7312,6 @@ msgstr "Oxunmuş kimi qeyd et"
 #: src/features/career/workspace/messages.tsx
 msgid "Mark it as applied in Apply first."
 msgstr "Əvvəlcə Müraciət bölməsində müraciət edildi kimi qeyd edin."
-
-#: src/features/career/workspace/apply.tsx
-msgid "Mark the application as applied to keep the versions you sent."
-msgstr "Göndərdiyiniz versiyaları saxlamaq üçün müraciəti müraciət edildi kimi qeyd edin."
 
 #: src/features/career/workspace/apply.tsx
 msgid "Markdown (.md)"
@@ -7756,6 +7828,10 @@ msgstr "Növbəti dəfə uğurun necə ölçüləcəyi barədə ilk prototipdən
 msgid "No active applications."
 msgstr "Aktiv iş müraciətləri yoxdur."
 
+#: src/features/career/workspace/preparation.tsx
+msgid "No AI needed. Edit documents and write answers yourself; nothing here is sent to the employer or marks the job applied."
+msgstr ""
+
 #: src/routes/builder/letter/-components/write-panel.tsx
 msgid "No application"
 msgstr "İş müraciəti yoxdur"
@@ -7814,6 +7890,10 @@ msgstr "Heç bir ölkə tapılmadı."
 #: src/features/ats-checker/messages.ts
 msgid "No dates were found."
 msgstr "Heç bir tarix tapılmadı."
+
+#: src/features/career/workspace/apply.tsx
+msgid "no documents"
+msgstr ""
 
 #: src/features/assistant/assistant-panel.tsx
 msgid "no edits"
@@ -7911,6 +7991,10 @@ msgstr "Foto yoxdur. Əksər ATS fotoşəkillərə məhəl qoymur; bəzi bölgə
 msgid "No postings found. Try different keywords."
 msgstr "Heç bir iş elanı tapılmadı. Fərqli açar sözlər sınayın."
 
+#: src/features/career/workspace/apply.tsx
+msgid "No recorded answers are available."
+msgstr ""
+
 #: src/features/applications/stages.ts
 msgid "No response"
 msgstr "Cavab yoxdur"
@@ -7995,6 +8079,10 @@ msgstr "Heç biri"
 msgctxt "Entry header accent"
 msgid "None"
 msgstr "Yoxdur"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "None selected"
+msgstr ""
 
 #: src/features/resume/editor/design/fit.ts
 #: src/features/resume/editor/design/style-groups.tsx
@@ -8084,6 +8172,10 @@ msgstr "Saxlanmadı"
 #: src/features/career/coach-chat.tsx
 msgid "Not saved — this fact was forgotten before."
 msgstr "Saxlanılmadı — bu fakt əvvəllər unudulub."
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Not saved yet"
+msgstr ""
 
 #: src/features/resume/editor/check/job-match.tsx
 msgid "not scored"
@@ -8421,6 +8513,10 @@ msgstr "Təkliflərdə aç"
 msgid "Open preferences"
 msgstr "Tərcihləri aç"
 
+#: src/features/applications/components/detail/sent-documents.tsx
+msgid "Open sent version"
+msgstr ""
+
 #: src/features/career/workspace/prepare.tsx
 msgid "Open story"
 msgstr "Hekayəni aç"
@@ -8474,6 +8570,14 @@ msgstr "İmkanların axtarışı"
 #: src/features/settings/ai/web-access.tsx
 msgid "Optional"
 msgstr "Könüllü"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Optional · none selected"
+msgstr ""
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Optional AI help in the editors; review edits before accepting. Nothing here is sent to the employer or marks the job applied."
+msgstr ""
 
 #: src/features/settings/ai/providers.tsx
 msgid "Optional for local Ollama"
@@ -8937,6 +9041,7 @@ msgstr "iş elanı"
 
 #: src/features/applications/components/application-detail-sheet.tsx
 #: src/features/career/workspace/fit.tsx
+#: src/features/career/workspace/preparation.tsx
 #: src/features/homepage/tailor.tsx
 msgid "Posting"
 msgstr "İş elanı"
@@ -9588,6 +9693,11 @@ msgstr "Səs yazısı 2 dəqiqəlik limitdə dayandı. Dedikləriniz transkripsi
 msgid "Recording time"
 msgstr "Yazı müddəti"
 
+#. placeholder {0}: records.join(" · ")
+#: src/features/career/workspace/apply.tsx
+msgid "Records {0} as sent. You submit on the employer's site yourself."
+msgstr ""
+
 #: src/features/applications/components/detail/contacts.tsx
 msgid "Recruiter"
 msgstr "İşə götürən"
@@ -9986,6 +10096,7 @@ msgstr "rezyume"
 
 #: src/features/applications/components/application-form-sheet.tsx
 #: src/features/applications/components/list-view.tsx
+#: src/features/career/workspace/preparation.tsx
 #: src/features/documents/document-card.tsx
 #: src/routes/builder/letter/-components/write-panel.tsx
 msgid "Resume"
@@ -9995,9 +10106,10 @@ msgstr "CV"
 msgid "Resume · not sent yet"
 msgstr "CV · hələ göndərilməyib"
 
+#. placeholder {0}: date(application.appliedAt)
 #: src/features/career/workspace/shell.tsx
-msgid "Resume · version sent"
-msgstr "CV · göndərilmiş versiya"
+msgid "Resume · version sent {0}"
+msgstr ""
 
 #: src/features/applications/components/add-application-dialog.tsx
 msgid "Resume (optional)"
@@ -10029,8 +10141,14 @@ msgid "Resume details"
 msgstr "rezyume təfərrüatları"
 
 #: src/features/applications/components/detail/sent-documents.tsx
+#: src/features/career/workspace/apply.tsx
 msgid "Resume file"
 msgstr "CV faylı"
+
+#: src/features/applications/components/detail/sent-documents.tsx
+#: src/features/career/workspace/preparation.tsx
+msgid "Resume options"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-components/page-canvas.tsx
 msgid "Resume page"
@@ -10096,6 +10214,14 @@ msgstr "Yenidən cəhd edilir..."
 msgid "Review"
 msgstr "Baxış"
 
+#: src/features/career/workspace/apply.tsx
+msgid "Review checks"
+msgstr ""
+
+#: src/features/career/workspace/apply.tsx
+msgid "Review checks only reflect what you checked yourself."
+msgstr ""
+
 #: src/features/career/today.tsx
 msgid "Review draft"
 msgstr "Qaralamaya bax"
@@ -10112,6 +10238,10 @@ msgstr "Cavabımı nəzərdən keçir"
 msgid "Review my answer sends the question, what you said, this posting and your Knowledge to {providerName}."
 msgstr "“Cavabımı nəzərdən keçir” sualı, dediklərinizi, bu iş elanını və Biliklərinizi {providerName} provayderinə göndərir."
 
+#: src/features/career/workspace/preparation.tsx
+msgid "Review readiness and record your submission"
+msgstr ""
+
 #: src/features/career/workspace/apply.tsx
 msgid "Review required form answers and remove unsupported claims."
 msgstr "Tələb olunan forma cavablarını nəzərdən keçirin və dəstəklənməyən iddiaları silin."
@@ -10119,6 +10249,10 @@ msgstr "Tələb olunan forma cavablarını nəzərdən keçirin və dəstəklən
 #: src/features/career/workspace/apply.tsx
 msgid "Review the selected resume and cover letter in their editors."
 msgstr "Seçilmiş CV və müşayiət məktubunu öz redaktorlarında nəzərdən keçirin."
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Review with assistant"
+msgstr ""
 
 #: src/features/resume/editor/check/writing-tab.tsx
 msgid "Review writing"
@@ -10344,6 +10478,10 @@ msgstr "Adı saxla"
 msgid "Save offer"
 msgstr "İş təklifini yadda saxla"
 
+#: src/features/career/workspace/preparation.tsx
+msgid "Save posting"
+msgstr ""
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Save schedule"
 msgstr "Cədvəli saxla"
@@ -10360,6 +10498,10 @@ msgstr "Teqləri saxla"
 #: src/features/ats-checker/messages.ts
 msgid "Save the file with every page upright."
 msgstr "Faylı bütün səhifələri düz vəziyyətdə olacaq şəkildə saxlayın."
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Save the job posting"
+msgstr ""
 
 #: src/features/career/workspace/messages.tsx
 msgid "Save these offer terms to compare"
@@ -11518,6 +11660,12 @@ msgstr "Status"
 msgid "Stay here"
 msgstr "Burada qalın"
 
+#. placeholder {0}: stepIndex + 1
+#. placeholder {1}: STEPS.length
+#: src/features/career/workspace/preparation.tsx
+msgid "Step {0} of {1}"
+msgstr ""
+
 #: src/features/assistant/conversation.tsx
 #: src/features/career/coach-thread.tsx
 #: src/features/homepage/prepare.tsx
@@ -11600,9 +11748,13 @@ msgstr "Stil cədvəli redaktoru"
 msgid "Subject"
 msgstr "Mövzu"
 
-#: src/features/career/workspace/apply.tsx
-msgid "Submission is recorded. Review checks only reflect what you checked yourself."
-msgstr "Ərizənin göndərilməsi qeydə alınıb. Yoxlama siyahısı yalnız özünüzün yoxladığınız məqamları əks etdirir."
+#: src/features/applications/components/detail/sent-documents.tsx
+msgid "Submission recorded {date}. The sent versions never change; current drafts stay editable. This record does not confirm employer receipt."
+msgstr ""
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Submission recorded. Current drafts are separate from what you sent."
+msgstr ""
 
 #: src/features/career/workspace/apply.tsx
 msgid "Submit through the employer's application page yourself."
@@ -11783,6 +11935,14 @@ msgstr "Teqlər…"
 #: src/features/homepage/tailor.tsx
 msgid "Tailor"
 msgstr "İş təsvirinə uyğunlaşma"
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Tailor and review your resume"
+msgstr ""
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Tailor the resume"
+msgstr ""
 
 #. placeholder {0}: document.posting.company
 #: src/features/assistant/assistant-panel.tsx
@@ -12297,6 +12457,10 @@ msgid "There is no summary paragraph."
 msgstr "Xülasə paraqrafı yoxdur."
 
 #: src/features/career/workspace/apply.tsx
+msgid "These are saved draft answers."
+msgstr ""
+
+#: src/features/career/workspace/apply.tsx
 msgid "These are the answers saved when you applied."
 msgstr "Bunlar müraciət edərkən saxlanılmış cavablardır."
 
@@ -12730,6 +12894,7 @@ msgstr "Nümunəni sınayın"
 #: src/features/career/coach-chat.tsx
 #: src/features/career/load-state.tsx
 #: src/features/career/workspace/practise.tsx
+#: src/features/career/workspace/preparation.tsx
 #: src/features/career/workspace/shell.tsx
 #: src/features/documents/library-error.tsx
 #: src/features/resume/editor/write/improve.tsx
@@ -13357,6 +13522,10 @@ msgstr "İş ərizəsinə baxın"
 msgid "View posting"
 msgstr "İş elanına baxın"
 
+#: src/features/career/workspace/apply.tsx
+msgid "View recorded answers"
+msgstr ""
+
 #. placeholder {0}: formatVersionTime(viewing.createdAt, i18n.locale)
 #. placeholder {0}: when(selected)
 #. placeholder {1}: getVersionTitle(selected)
@@ -13601,13 +13770,9 @@ msgid "What you did: {0}"
 msgstr "Nə etdiniz: {0}"
 
 #: src/features/applications/components/detail/sent-documents.tsx
+#: src/features/career/workspace/shell.tsx
 msgid "What you sent"
 msgstr "Nə göndərdiyin"
-
-#. placeholder {0}: date(application.appliedAt)
-#: src/features/career/workspace/shell.tsx
-msgid "What you sent · {0}"
-msgstr "Nə göndərdiniz · {0}"
 
 #: src/features/career/knowledge/preferences.tsx
 msgid "What you're looking for"
@@ -13754,13 +13919,22 @@ msgstr "Yaz"
 msgid "Write \"Present\" as the end date of your current role."
 msgstr "Hazırkı vəzifənizin bitmə tarixi kimi \"Present\" yazın."
 
+#: src/features/career/workspace/preparation.tsx
+msgid "Write a cover letter if required"
+msgstr ""
+
 #: src/features/applications/components/detail/sent-documents.tsx
+#: src/features/career/workspace/preparation.tsx
 msgid "Write a letter"
 msgstr "Məktub yaz"
 
 #: src/features/homepage/remember.tsx
 msgid "Write a story once, with the facts behind it, and the coach uses it in 3 places. Switch a fact off and nothing leans on it."
 msgstr "Hekayəni arxasındakı faktlarla bir dəfə yazın və kouç ondan 3 yerdə istifadə edəcək. Faktı söndürün, heç nə ona söykənməyəcək."
+
+#: src/features/career/workspace/preparation.tsx
+msgid "Write and review form answers"
+msgstr ""
 
 #: src/features/homepage/write.tsx
 msgid "Write beside a live page. It saves as you type and keeps every version. Ask the assistant for a sharper line: it suggests, you decide."
@@ -13927,10 +14101,6 @@ msgstr "Onu öz e-poçtunuzdan göndərirsiniz."
 #: src/features/settings/account/security.tsx
 msgid "You sign in without one"
 msgstr "Siz giriş olmadan daxil olursunuz"
-
-#: src/features/career/workspace/apply.tsx
-msgid "You submit on the employer's site yourself. Marking it applied keeps the exact versions you sent."
-msgstr "İşəgötürənin saytında özünüz göndərirsiniz. Müraciət edildi kimi qeyd etmək göndərdiyiniz dəqiq versiyaları saxlayır."
 
 #: src/features/career/schedule-sheet.tsx
 msgid "You'll always see it in Today. Email depends on your server's mail setup."

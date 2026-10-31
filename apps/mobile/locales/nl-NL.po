@@ -128,6 +128,8 @@ msgid "{0, plural, one {{count} of # application changed.} other {{count} of # a
 msgstr "{0, plural, one {{count} van # sollicitatie gewijzigd.} other {{count} van # sollicitaties gewijzigd.}}"
 
 #. placeholder {0}: data.answers.length
+#. placeholder {0}: written.length
+#: src/features/workspace/tabs/apply.tsx
 #: src/features/workspace/tabs/saved.tsx
 msgid "{0, plural, one {# answer} other {# answers}}"
 msgstr "{0, plural, one {# antwoord} other {# antwoorden}}"
@@ -1069,6 +1071,10 @@ msgstr "Voeg er een toe met landcode; sommige sollicitatieformulieren vereisen d
 msgid "Add page"
 msgstr "Pagina toevoegen"
 
+#: src/features/workspace/preparation.tsx
+msgid "Add posting"
+msgstr ""
+
 #: src/features/write/fields.ts
 msgid "Add profile"
 msgstr "Profiel toevoegen"
@@ -1220,6 +1226,10 @@ msgstr "Vergeleken met uw eisen"
 #: src/features/search/search-screen.tsx
 msgid "AI & developer"
 msgstr "AI en ontwikkelaar"
+
+#: src/features/workspace/preparation.tsx
+msgid "AI availability couldn't be confirmed. Prepare manually; nothing here is sent to the employer or marks the job applied."
+msgstr ""
 
 #: src/features/career/schedule-sheet.tsx
 msgid "AI connection"
@@ -1495,6 +1505,10 @@ msgstr "Sollicitatie"
 #: src/features/application-detail/sheets.tsx
 msgid "Application closed"
 msgstr "sollicitatie gesloten"
+
+#: src/features/workspace/preparation.tsx
+msgid "Application closed. Current drafts remain available."
+msgstr ""
 
 #: src/features/application-detail/sheets.tsx
 #: src/features/applications/add-sheet.tsx
@@ -1844,10 +1858,6 @@ msgstr "Vóór sollicitatiegesprek"
 msgid "Before restore"
 msgstr "Vóór herstel"
 
-#: src/features/workspace/tabs/apply.tsx
-msgid "Before you submit"
-msgstr "Voordat u indient"
-
 #: src/features/application-detail/hooks.ts
 #: src/features/applications/next-step.ts
 msgid "Behavioral"
@@ -1981,6 +1991,7 @@ msgstr "Kan software uw cv lezen?"
 #: src/features/check/parser.tsx
 #: src/features/check/writing.tsx
 #: src/features/search/search-screen.tsx
+#: src/features/workspace/preparation.tsx
 #: src/features/workspace/tabs/fit.tsx
 #: src/features/write/improve.tsx
 #: src/features/write/pickers.tsx
@@ -2174,10 +2185,6 @@ msgstr "Uw voorkeuren controleren"
 msgid "Checking… Copy is available after saving."
 msgstr "Controleren… Kopiëren is beschikbaar na opslaan."
 
-#: src/features/workspace/tabs/apply.tsx
-msgid "Checklist progress"
-msgstr "Voortgang checklist"
-
 #: src/features/assistant/assistant-screen.tsx
 msgid "Checks every bullet for action and result"
 msgstr "Controleert elke lijstvermelding op actie en resultaat"
@@ -2189,6 +2196,10 @@ msgstr "Chinees (vereenvoudigd)"
 #: src/features/settings/locale-names.ts
 msgid "Chinese (Traditional)"
 msgstr "Chinees (traditioneel)"
+
+#: src/features/workspace/preparation.tsx
+msgid "Choose a base resume"
+msgstr ""
 
 #: src/features/application-detail/date-field.tsx
 msgid "Choose a date"
@@ -2314,6 +2325,10 @@ msgstr "Strak"
 msgid "Clear"
 msgstr "Wissen"
 
+#: src/features/workspace/preparation.tsx
+msgid "Clear cover letter"
+msgstr ""
+
 #: src/features/application-detail/date-field.tsx
 msgid "Clear date"
 msgstr "Duidelijke datum"
@@ -2323,6 +2338,10 @@ msgstr "Duidelijke datum"
 #: src/features/documents/library.tsx
 msgid "Clear filters"
 msgstr "Filters wissen"
+
+#: src/features/workspace/preparation.tsx
+msgid "Clear resume"
+msgstr ""
 
 #: src/features/write/section-sheet.tsx
 msgid "Clear section"
@@ -2581,10 +2600,6 @@ msgstr "Passend"
 msgid "Content is laid out in a grid."
 msgstr "Inhoud is opgemaakt in een raster."
 
-#: src/features/workspace/tabs/apply.tsx
-msgid "Content review"
-msgstr "Inhoud controleren"
-
 #: src/preview/page.tsx
 msgid "Content still runs over. Hide a section or shorten entries."
 msgstr "De inhoud loopt nog steeds over. Verberg een sectie of verkort items."
@@ -2657,6 +2672,10 @@ msgstr "Kopieert de tekst"
 #: src/features/share/link.tsx
 msgid "Copy"
 msgstr "Kopiëren"
+
+#: src/features/workspace/preparation.tsx
+msgid "Copy a base resume for this job"
+msgstr ""
 
 #: src/features/documents/new-document.tsx
 msgid "Copy a resume for a job"
@@ -2760,6 +2779,7 @@ msgid "Couldn't copy the transcript. Try again."
 msgstr "Kan het transcript niet kopiëren. Probeer het opnieuw."
 
 #: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Couldn't create the letter. Try again."
 msgstr "Kan de brief niet maken. Probeer het opnieuw."
 
@@ -2779,6 +2799,11 @@ msgstr "Kan het sollicitatiegesprek niet verwijderen. Probeer het opnieuw."
 #: src/features/share/download.tsx
 msgid "Couldn't export. Try again."
 msgstr "Kan niet exporteren. Probeer het opnieuw."
+
+#: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
+msgid "Couldn't generate the PDF. Try again."
+msgstr "Kan de PDF niet genereren. Probeer het opnieuw."
 
 #: src/features/share/files.ts
 msgid "Couldn't generate this file. Try again, or download PDF instead."
@@ -2978,6 +3003,10 @@ msgstr "Kan die wijziging niet opslaan. Controleer uw verbinding en probeer het 
 msgid "Couldn't save that change. The item is restored; try again."
 msgstr "Kan die wijziging niet opslaan. Het item is hersteld; probeer het opnieuw."
 
+#: src/features/workspace/preparation.tsx
+msgid "Couldn't save that change. Try again."
+msgstr "Kan die wijziging niet opslaan. Probeer het opnieuw."
+
 #: src/features/workspace/tabs/debrief.tsx
 #: src/features/workspace/tabs/fit.tsx
 msgid "Couldn't save that to Knowledge. Try again."
@@ -3158,6 +3187,7 @@ msgstr "Vullen"
 #: app/letter/[id]/_layout.tsx
 #: src/features/application-detail/sections.tsx
 #: src/features/career/facts.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Cover letter"
 msgstr "Sollicitatiebrief"
 
@@ -3167,12 +3197,19 @@ msgstr "Motivatiebrief"
 
 #. placeholder {0}: application.company
 #: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Cover letter — {0}"
 msgstr "Sollicitatiebrief — {0}"
 
 #: src/features/application-detail/sections.tsx
+#: src/features/workspace/tabs/apply.tsx
 msgid "Cover letter file"
 msgstr "Sollicitatiebriefbestand"
+
+#: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
+msgid "Cover letter options"
+msgstr ""
 
 #: src/features/application-detail/sheets.tsx
 #: src/features/applications/add-sheet.tsx
@@ -3232,6 +3269,10 @@ msgstr "Document maken…"
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "Valuta"
+
+#: src/features/workspace/preparation.tsx
+msgid "Current drafts"
+msgstr ""
 
 #: src/features/design/advanced.tsx
 #: src/features/design/style-groups.tsx
@@ -3681,6 +3722,10 @@ msgstr "Downloads en geschiedenis"
 msgid "Download both PDFs"
 msgstr "Beide PDF’s downloaden"
 
+#: src/features/application-detail/sections.tsx
+msgid "Download current PDF"
+msgstr ""
+
 #: src/features/letters/share.tsx
 msgid "Download failed. Try again."
 msgstr "Downloaden mislukt. Probeer het opnieuw."
@@ -3692,6 +3737,10 @@ msgstr "Downloaden opent het deelvenster van het systeem. Kies een opslagdienst 
 #: src/features/share/download.tsx
 msgid "Download opens the system share sheet. Choose a storage provider to save the file. A linked letter opens as a second file."
 msgstr "Downloaden opent het systeemdeelblad. Kies een opslagprovider om het bestand op te slaan. Een gekoppelde sollicitatiebrief wordt geopend als een tweede bestand."
+
+#: src/features/workspace/preparation.tsx
+msgid "Download PDF"
+msgstr "PDF downloaden"
 
 #: src/features/letters/share.tsx
 msgid "Download PDF instead"
@@ -3836,6 +3885,14 @@ msgstr "Bewerking"
 msgid "Edit {0}: {1}"
 msgstr "Bewerken {0}: {1}"
 
+#: src/features/workspace/preparation.tsx
+msgid "Edit cover letter"
+msgstr ""
+
+#: src/features/application-detail/sections.tsx
+msgid "Edit current draft"
+msgstr ""
+
 #: src/features/application-detail/sheets.tsx
 msgid "Edit date"
 msgstr "Datum bewerken"
@@ -3859,9 +3916,17 @@ msgstr "Link bewerken"
 msgid "Edit note"
 msgstr "Notitie bewerken"
 
+#: src/features/workspace/preparation.tsx
+msgid "Edit posting"
+msgstr ""
+
 #: src/features/workspace/tabs/apply.tsx
 msgid "Edit question"
 msgstr "Vraag bewerken"
+
+#: src/features/workspace/preparation.tsx
+msgid "Edit resume"
+msgstr ""
 
 #: src/features/career/schedule-sheet.tsx
 msgid "Edit schedule"
@@ -4344,6 +4409,10 @@ msgstr "Vergeten"
 msgid "Forgetting unlinks this fact from stories and saved items. The original source stays unchanged."
 msgstr "Door te vergeten wordt dit feit ontkoppeld van verhalen en opgeslagen items. De oorspronkelijke bron blijft ongewijzigd."
 
+#: src/features/workspace/tabs/apply.tsx
+msgid "Form answers"
+msgstr ""
+
 #: src/features/letters/rich-text-field.tsx
 #: src/features/write/rich-text-field.tsx
 msgid "Formatting"
@@ -4388,6 +4457,11 @@ msgstr "Volledige naam"
 #: src/features/design/layout-screen.tsx
 msgid "Full width"
 msgstr "Volledige breedte"
+
+#: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
+msgid "Generating PDF…"
+msgstr "PDF genereren…"
 
 #: src/features/settings/locale-names.ts
 msgid "German"
@@ -4583,6 +4657,10 @@ msgstr "Gelezen items verbergen"
 #: src/features/check/issues.ts
 msgid "Hide the photo"
 msgstr "Verberg de foto"
+
+#: src/features/workspace/preparation.tsx
+msgid "Hides all steps"
+msgstr ""
 
 #: src/features/settings/locale-names.ts
 msgid "Hindi"
@@ -4940,6 +5018,7 @@ msgid "Job"
 msgstr "Functie"
 
 #: src/features/application-detail/sheets.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Job description"
 msgstr "Functieomschrijving"
 
@@ -5365,6 +5444,18 @@ msgstr "Gekoppelde accounts"
 msgid "Linked application"
 msgstr "Gekoppelde sollicitatie"
 
+#: src/features/workspace/preparation.tsx
+msgid "Linked document unavailable"
+msgstr ""
+
+#: src/features/workspace/preparation.tsx
+msgid "Linked document unavailable. Choose another document or restore it from Trash."
+msgstr ""
+
+#: src/features/workspace/preparation.tsx
+msgid "Linked documents couldn't be loaded."
+msgstr "Gekoppelde documenten konden niet worden geladen."
+
 #: src/features/application-detail/sections.tsx
 msgid "Linked resume"
 msgstr "Gekoppeld CV"
@@ -5438,6 +5529,10 @@ msgstr "Kennis laden voordat u verstuurt…"
 #: src/features/documents/thumbnail.tsx
 msgid "Loading letter…"
 msgstr "Sollicitatiebrief laden…"
+
+#: src/features/workspace/preparation.tsx
+msgid "Loading linked documents…"
+msgstr "Gekoppelde documenten laden…"
 
 #: src/features/ai/provider-editor.tsx
 msgid "Loading model suggestions… You can also enter any model ID."
@@ -5642,10 +5737,6 @@ msgstr "Markeren als gelezen"
 #: src/features/workspace/tabs/messages.tsx
 msgid "Mark it as applied in Apply first."
 msgstr "Markeer het eerst als gesolliciteerd in Solliciteren."
-
-#: src/features/workspace/tabs/apply.tsx
-msgid "Mark the application as applied to keep the versions you sent."
-msgstr "Markeer de sollicitatie als gesolliciteerd om de verstuurde versies te bewaren."
 
 #: src/features/letters/share.tsx
 #: src/features/share/download.tsx
@@ -6106,6 +6197,10 @@ msgstr "Volgende stap: {note}. Voegt een herinnering toe aan Vandaag."
 msgid "Next workspace tabs"
 msgstr "Volgende werkruimtetabbladen"
 
+#: src/features/workspace/preparation.tsx
+msgid "No AI needed. Edit documents and write answers yourself; nothing here is sent to the employer or marks the job applied."
+msgstr ""
+
 #: src/features/ai/provider-list.tsx
 msgid "No AI provider yet"
 msgstr "Nog geen AI-provider"
@@ -6151,6 +6246,10 @@ msgstr "Geen datum"
 #: src/features/ats-checker/messages.ts
 msgid "No dates were found."
 msgstr "Er zijn geen data gevonden."
+
+#: src/features/workspace/tabs/apply.tsx
+msgid "no documents"
+msgstr ""
 
 #: src/features/assistant/threads.tsx
 msgid "no edits"
@@ -6251,6 +6350,10 @@ msgstr "Geen Reactive Resume-server heeft op dit adres gereageerd. Controleer de
 msgid "No recognizable terms in this posting."
 msgstr "Geen herkenbare termen in deze vacature."
 
+#: src/features/workspace/tabs/apply.tsx
+msgid "No recorded answers are available."
+msgstr ""
+
 #: src/features/career/today.tsx
 msgid "No reply yet"
 msgstr "Nog geen antwoord"
@@ -6330,6 +6433,10 @@ msgstr "Geen"
 msgid "None of your AI connections can transcribe speech (OpenAI, Google Gemini, Mistral, xAI, Groq or Vercel AI Gateway can). Add one, or type your answer."
 msgstr "Geen van je AI-verbindingen kan spraak transcriberen (OpenAI, Google Gemini, Mistral, xAI, Groq of Vercel AI Gateway wel). Voeg er een toe of typ je antwoord."
 
+#: src/features/workspace/preparation.tsx
+msgid "None selected"
+msgstr ""
+
 #: src/features/design/style-groups.tsx
 #: src/features/letters/design.tsx
 msgid "Normal"
@@ -6384,6 +6491,10 @@ msgstr "Nog niet opgenomen. Laat dit leeg totdat je het kunt ondersteunen."
 #: src/shell/builder-chrome.tsx
 msgid "Not saved"
 msgstr "Niet opgeslagen"
+
+#: src/features/workspace/preparation.tsx
+msgid "Not saved yet"
+msgstr ""
 
 #: src/features/applications/stages.ts
 msgid "Not selected"
@@ -6730,6 +6841,10 @@ msgstr "Het cv openen…"
 msgid "Opens in Career → Offers."
 msgstr "Opent in Loopbaan → Aanbiedingen."
 
+#: src/features/application-detail/sections.tsx
+msgid "Opens the version you sent, read-only"
+msgstr ""
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Opportunity discovery"
 msgstr "Kansen ontdekken"
@@ -6737,6 +6852,14 @@ msgstr "Kansen ontdekken"
 #: src/features/ai/web-access.tsx
 msgid "Optional"
 msgstr "Optioneel"
+
+#: src/features/workspace/preparation.tsx
+msgid "Optional · none selected"
+msgstr ""
+
+#: src/features/workspace/preparation.tsx
+msgid "Optional AI help in the editors; review edits before accepting. Nothing here is sent to the employer or marks the job applied."
+msgstr ""
 
 #: src/features/ai/provider-editor.tsx
 msgid "Optional for local Ollama"
@@ -7105,6 +7228,7 @@ msgstr "Positie"
 msgid "posting"
 msgstr "vacature"
 
+#: src/features/workspace/preparation.tsx
 #: src/features/workspace/tabs/fit.tsx
 msgid "Posting"
 msgstr "Vacature"
@@ -7592,6 +7716,10 @@ msgstr "Opname gestopt bij de limiet van 2 minuten. Wat u zei wordt getranscribe
 msgid "Recording time"
 msgstr "Opnameduur"
 
+#: src/features/workspace/tabs/apply.tsx
+msgid "Records {records} as sent. You submit on the employer's site yourself."
+msgstr ""
+
 #: src/features/application-detail/sheets.tsx
 msgid "Recruiter"
 msgstr "Recruiter"
@@ -7941,6 +8069,7 @@ msgstr "Resultaat"
 #: src/features/career/facts.tsx
 #: src/features/documents/library.tsx
 #: src/features/letters/write.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Resume"
 msgstr "Cv"
 
@@ -7957,8 +8086,14 @@ msgid "Resume feedback, product help, and community ideas."
 msgstr "Feedback op je cv, hulp bij het product en ideeën uit de community."
 
 #: src/features/application-detail/sections.tsx
+#: src/features/workspace/tabs/apply.tsx
 msgid "Resume file"
 msgstr "Cv-bestand"
+
+#: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
+msgid "Resume options"
+msgstr ""
 
 #. placeholder {0}: pageIndex + 1
 #: src/features/check/page.tsx
@@ -8083,6 +8218,14 @@ msgstr "Beoordeling aanvraag"
 msgid "Review Check"
 msgstr "Controle bekijken"
 
+#: src/features/workspace/tabs/apply.tsx
+msgid "Review checks"
+msgstr ""
+
+#: src/features/workspace/tabs/apply.tsx
+msgid "Review checks only reflect what you checked yourself."
+msgstr ""
+
 #: src/features/career/today.tsx
 msgid "Review draft"
 msgstr "Concept bekijken"
@@ -8103,6 +8246,10 @@ msgstr "Mijn antwoord beoordelen"
 msgid "Review my answer sends the question, what you said, this posting and your Knowledge to {providerName}."
 msgstr "Mijn antwoord beoordelen stuurt de vraag, wat u zei, deze vacature en uw Kennis naar {providerName}."
 
+#: src/features/workspace/preparation.tsx
+msgid "Review readiness and record your submission"
+msgstr ""
+
 #: src/features/workspace/tabs/apply.tsx
 msgid "Review required form answers and remove unsupported claims."
 msgstr "Controleer verplichte formulierantwoorden en verwijder ononderbouwde beweringen."
@@ -8114,6 +8261,10 @@ msgstr "Controleer de details voordat je deze opslaat. Opgehaalde inhoud geeft n
 #: src/features/workspace/tabs/apply.tsx
 msgid "Review the selected resume and cover letter in their editors."
 msgstr "Bekijk het gekozen cv en de sollicitatiebrief in hun editors."
+
+#: src/features/workspace/preparation.tsx
+msgid "Review with assistant"
+msgstr ""
 
 #: src/features/check/writing.tsx
 msgid "Review writing"
@@ -8311,6 +8462,10 @@ msgstr "Aanbod opslaan"
 msgid "Save or share file"
 msgstr "Bestand opslaan of delen"
 
+#: src/features/workspace/preparation.tsx
+msgid "Save posting"
+msgstr ""
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Save schedule"
 msgstr "Planning opslaan"
@@ -8331,6 +8486,10 @@ msgstr "Sla het document op voordat je het verstuurt."
 #: src/features/ats-checker/messages.ts
 msgid "Save the file with every page upright."
 msgstr "Sla het bestand op met elke pagina rechtop."
+
+#: src/features/workspace/preparation.tsx
+msgid "Save the job posting"
+msgstr ""
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Save these offer terms to compare"
@@ -8894,6 +9053,10 @@ msgstr "Opgeslagen details weergeven. Ze konden niet worden vernieuwd."
 msgid "Shown in your timezone."
 msgstr "Getoond in uw tijdzone."
 
+#: src/features/workspace/preparation.tsx
+msgid "Shows all steps"
+msgstr ""
+
 #: src/features/documents/document-sheets.tsx
 msgid "Shows shared tags. Add or remove tags without changing each document's other tags."
 msgstr "Toont gedeelde tags. Voeg tags toe of verwijder ze zonder de andere tags van elk document te wijzigen."
@@ -9289,6 +9452,12 @@ msgstr "Begint nu"
 msgid "Stay in Documents"
 msgstr "Verblijf in Documenten"
 
+#. placeholder {0}: stepIndex + 1
+#. placeholder {1}: STEPS.length
+#: src/features/workspace/preparation.tsx
+msgid "Step {0} of {1}"
+msgstr ""
+
 #: src/features/assistant/chat-view.tsx
 #: src/features/letters/write.tsx
 msgid "Stop"
@@ -9339,9 +9508,13 @@ msgstr "Doorhalen"
 msgid "Stronger verb"
 msgstr "Sterker werkwoord"
 
-#: src/features/workspace/tabs/apply.tsx
-msgid "Submission is recorded. Review checks only reflect what you checked yourself."
-msgstr "De verzending is vastgelegd. Vinkjes bij de controles geven alleen aan wat je zelf hebt gecontroleerd."
+#: src/features/application-detail/sections.tsx
+msgid "Submission recorded {date}. The sent versions never change; current drafts stay editable. This record does not confirm employer receipt."
+msgstr ""
+
+#: src/features/workspace/preparation.tsx
+msgid "Submission recorded. Current drafts are separate from what you sent."
+msgstr ""
 
 #: src/features/workspace/tabs/apply.tsx
 msgid "Submit through the employer's application page yourself."
@@ -9364,10 +9537,6 @@ msgstr "Bijgevoegd cv ingediend"
 #: src/features/application-detail/sheets.tsx
 msgid "Submitted attached resume: {0}"
 msgstr "Bijgevoegd CV ingediend: {0}"
-
-#: src/features/workspace/tabs/apply.tsx
-msgid "Submitted on {appliedOn}."
-msgstr "Ingediend op {appliedOn}."
 
 #: src/features/workspace/tabs/prepare.tsx
 msgid "Success at 90 days · next step"
@@ -9476,6 +9645,14 @@ msgstr "Tags geven software een expliciete leesvolgorde. Schakel ze in bij het e
 #: src/features/documents/document-sheets.tsx
 msgid "Tags…"
 msgstr "Labels…"
+
+#: src/features/workspace/preparation.tsx
+msgid "Tailor and review your resume"
+msgstr ""
+
+#: src/features/workspace/preparation.tsx
+msgid "Tailor the resume"
+msgstr ""
 
 #: src/features/assistant/assistant-screen.tsx
 msgid "Tailor to the {company} posting"
@@ -9878,10 +10055,6 @@ msgstr "De voor te lezen tekst wordt via uw server naar deze spraakaanbieder ges
 msgid "The top of the first page does not look like a name."
 msgstr "De bovenkant van de eerste pagina lijkt niet op een naam."
 
-#: src/features/workspace/tabs/apply.tsx
-msgid "The versions you sent are kept in Saved. Edits here don't change what {company} received."
-msgstr "De door je verzonden versies worden bewaard in Opgeslagen. Bewerkingen hier veranderen niets aan wat {company} heeft ontvangen."
-
 #: app/(tabs)/settings/preferences.tsx
 #: src/features/search/search-screen.tsx
 msgid "Theme"
@@ -9898,6 +10071,10 @@ msgstr "Er is geen link naar een profiel, portfolio of repository."
 #: src/features/ats-checker/messages.ts
 msgid "There is no summary paragraph."
 msgstr "Er is geen samenvattende alinea."
+
+#: src/features/workspace/tabs/apply.tsx
+msgid "These are saved draft answers."
+msgstr ""
 
 #: src/features/workspace/tabs/apply.tsx
 msgid "These are the answers saved when you applied."
@@ -10366,6 +10543,7 @@ msgstr "Probeer {suggestion}"
 #: src/features/letters/write.tsx
 #: src/features/settings/api-keys.tsx
 #: src/features/workspace/parts.tsx
+#: src/features/workspace/preparation.tsx
 #: src/features/workspace/shell.tsx
 #: src/features/workspace/tabs/practise.tsx
 #: src/features/write/improve.tsx
@@ -10870,6 +11048,10 @@ msgstr "Bekijk sollicitatie"
 msgid "View posting"
 msgstr "Bekijk vacature"
 
+#: src/features/workspace/tabs/apply.tsx
+msgid "View recorded answers"
+msgstr ""
+
 #: src/features/application-detail/sections.tsx
 msgid "View saved work"
 msgstr "Bekijk opgeslagen werk"
@@ -11155,9 +11337,18 @@ msgstr "Schrijven"
 msgid "Write \"Present\" as the end date of your current role."
 msgstr "Schrijf „heden” als einddatum van je huidige functie."
 
+#: src/features/workspace/preparation.tsx
+msgid "Write a cover letter if required"
+msgstr ""
+
 #: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Write a letter"
 msgstr "Schrijf een brief"
+
+#: src/features/workspace/preparation.tsx
+msgid "Write and review form answers"
+msgstr ""
 
 #: src/features/workspace/tabs/prepare.tsx
 msgid "Write down what they asked while it's fresh. The coach compares your answers with your stories."
@@ -11254,10 +11445,6 @@ msgstr "Je heeft niet-opgeslagen wijzigingen."
 #: src/features/workspace/tabs/messages.tsx
 msgid "You send it from your own email."
 msgstr "U verstuurt het vanuit uw eigen e-mail."
-
-#: src/features/workspace/tabs/apply.tsx
-msgid "You submit on the employer's site yourself. Marking it applied keeps the exact versions you sent."
-msgstr "U dient zelf in op de site van de werkgever. Als gesolliciteerd markeren bewaart precies de versies die u hebt verstuurd."
 
 #: src/features/settings/sign-out.tsx
 msgid "You will be signed out of {server}. Any edits not yet synced from this device will be lost."

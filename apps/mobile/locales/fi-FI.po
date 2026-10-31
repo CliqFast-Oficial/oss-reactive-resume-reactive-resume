@@ -128,6 +128,8 @@ msgid "{0, plural, one {{count} of # application changed.} other {{count} of # a
 msgstr "{0, plural, one {{count}/# hakemus muutettu.} other {{count}/# hakemusta muutettu.}}"
 
 #. placeholder {0}: data.answers.length
+#. placeholder {0}: written.length
+#: src/features/workspace/tabs/apply.tsx
 #: src/features/workspace/tabs/saved.tsx
 msgid "{0, plural, one {# answer} other {# answers}}"
 msgstr "{0, plural, one {# vastaus} other {# vastausta}}"
@@ -1069,6 +1071,10 @@ msgstr "Lisää sellainen maakoodin kanssa; jotkin hakulomakkeet vaativat sitä 
 msgid "Add page"
 msgstr "Lisää sivu"
 
+#: src/features/workspace/preparation.tsx
+msgid "Add posting"
+msgstr ""
+
 #: src/features/write/fields.ts
 msgid "Add profile"
 msgstr "Lisää profiili"
@@ -1220,6 +1226,10 @@ msgstr "Vaatimuksiisi verrattuna"
 #: src/features/search/search-screen.tsx
 msgid "AI & developer"
 msgstr "AI ja kehittäjä"
+
+#: src/features/workspace/preparation.tsx
+msgid "AI availability couldn't be confirmed. Prepare manually; nothing here is sent to the employer or marks the job applied."
+msgstr ""
 
 #: src/features/career/schedule-sheet.tsx
 msgid "AI connection"
@@ -1495,6 +1505,10 @@ msgstr "Hakemus"
 #: src/features/application-detail/sheets.tsx
 msgid "Application closed"
 msgstr "työhakemus suljettu"
+
+#: src/features/workspace/preparation.tsx
+msgid "Application closed. Current drafts remain available."
+msgstr ""
 
 #: src/features/application-detail/sheets.tsx
 #: src/features/applications/add-sheet.tsx
@@ -1844,10 +1858,6 @@ msgstr "Ennen haastattelua"
 msgid "Before restore"
 msgstr "Ennen palautusta"
 
-#: src/features/workspace/tabs/apply.tsx
-msgid "Before you submit"
-msgstr "Ennen lähettämistä"
-
 #: src/features/application-detail/hooks.ts
 #: src/features/applications/next-step.ts
 msgid "Behavioral"
@@ -1981,6 +1991,7 @@ msgstr "Voiko ohjelmisto lukea ansioluettelosi?"
 #: src/features/check/parser.tsx
 #: src/features/check/writing.tsx
 #: src/features/search/search-screen.tsx
+#: src/features/workspace/preparation.tsx
 #: src/features/workspace/tabs/fit.tsx
 #: src/features/write/improve.tsx
 #: src/features/write/pickers.tsx
@@ -2174,10 +2185,6 @@ msgstr "Tarkistetaan toiveitasi"
 msgid "Checking… Copy is available after saving."
 msgstr "Tarkistetaan… Kopio on käytettävissä tallennuksen jälkeen."
 
-#: src/features/workspace/tabs/apply.tsx
-msgid "Checklist progress"
-msgstr "Tarkistuslistan edistyminen"
-
 #: src/features/assistant/assistant-screen.tsx
 msgid "Checks every bullet for action and result"
 msgstr "Tarkistaa jokaisen luettelomerkinnän toiminnan ja tuloksen varalta"
@@ -2189,6 +2196,10 @@ msgstr "kiina (yksinkertaistettu)"
 #: src/features/settings/locale-names.ts
 msgid "Chinese (Traditional)"
 msgstr "kiina (perinteinen)"
+
+#: src/features/workspace/preparation.tsx
+msgid "Choose a base resume"
+msgstr ""
 
 #: src/features/application-detail/date-field.tsx
 msgid "Choose a date"
@@ -2314,6 +2325,10 @@ msgstr "Selkeä"
 msgid "Clear"
 msgstr "Tyhjennä"
 
+#: src/features/workspace/preparation.tsx
+msgid "Clear cover letter"
+msgstr ""
+
 #: src/features/application-detail/date-field.tsx
 msgid "Clear date"
 msgstr "Selkeä päivämäärä"
@@ -2323,6 +2338,10 @@ msgstr "Selkeä päivämäärä"
 #: src/features/documents/library.tsx
 msgid "Clear filters"
 msgstr "Kirkkaat suodattimet"
+
+#: src/features/workspace/preparation.tsx
+msgid "Clear resume"
+msgstr ""
 
 #: src/features/write/section-sheet.tsx
 msgid "Clear section"
@@ -2581,10 +2600,6 @@ msgstr "Sovita"
 msgid "Content is laid out in a grid."
 msgstr "Sisältö on aseteltu ruudukkoon."
 
-#: src/features/workspace/tabs/apply.tsx
-msgid "Content review"
-msgstr "Sisällön tarkistus"
-
 #: src/preview/page.tsx
 msgid "Content still runs over. Hide a section or shorten entries."
 msgstr "Sisältö ylittää edelleen sivun. Piilota osio tai lyhennä merkintöjä."
@@ -2657,6 +2672,10 @@ msgstr "Kopioi tekstin"
 #: src/features/share/link.tsx
 msgid "Copy"
 msgstr "Kopioi"
+
+#: src/features/workspace/preparation.tsx
+msgid "Copy a base resume for this job"
+msgstr ""
 
 #: src/features/documents/new-document.tsx
 msgid "Copy a resume for a job"
@@ -2760,6 +2779,7 @@ msgid "Couldn't copy the transcript. Try again."
 msgstr "Transkriptiota ei voitu kopioida. Yritä uudelleen."
 
 #: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Couldn't create the letter. Try again."
 msgstr "Kirjettä ei voitu luoda. Yritä uudelleen."
 
@@ -2779,6 +2799,11 @@ msgstr "Haastattelua ei voitu poistaa. Yritä uudelleen."
 #: src/features/share/download.tsx
 msgid "Couldn't export. Try again."
 msgstr "Ei voitu viedä. Yritä uudelleen."
+
+#: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
+msgid "Couldn't generate the PDF. Try again."
+msgstr "PDF-tiedostoa ei voitu luoda. Yritä uudelleen."
 
 #: src/features/share/files.ts
 msgid "Couldn't generate this file. Try again, or download PDF instead."
@@ -2978,6 +3003,10 @@ msgstr "Muutosta ei voitu tallentaa. Tarkista yhteytesi ja yritä uudelleen."
 msgid "Couldn't save that change. The item is restored; try again."
 msgstr "Muutosta ei voitu tallentaa. Kohde on palautettu; yritä uudelleen."
 
+#: src/features/workspace/preparation.tsx
+msgid "Couldn't save that change. Try again."
+msgstr "Muutosta ei voitu tallentaa. Yritä uudelleen."
+
 #: src/features/workspace/tabs/debrief.tsx
 #: src/features/workspace/tabs/fit.tsx
 msgid "Couldn't save that to Knowledge. Try again."
@@ -3158,6 +3187,7 @@ msgstr "Täytä"
 #: app/letter/[id]/_layout.tsx
 #: src/features/application-detail/sections.tsx
 #: src/features/career/facts.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Cover letter"
 msgstr "Saatekirje"
 
@@ -3167,12 +3197,19 @@ msgstr "Saatekirje"
 
 #. placeholder {0}: application.company
 #: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Cover letter — {0}"
 msgstr "Saatekirje — {0}"
 
 #: src/features/application-detail/sections.tsx
+#: src/features/workspace/tabs/apply.tsx
 msgid "Cover letter file"
 msgstr "Saatekirjetiedosto"
+
+#: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
+msgid "Cover letter options"
+msgstr ""
 
 #: src/features/application-detail/sheets.tsx
 #: src/features/applications/add-sheet.tsx
@@ -3232,6 +3269,10 @@ msgstr "Luodaan asiakirjaa…"
 #: src/features/career/preferences.tsx
 msgid "Currency"
 msgstr "Valuutta"
+
+#: src/features/workspace/preparation.tsx
+msgid "Current drafts"
+msgstr ""
 
 #: src/features/design/advanced.tsx
 #: src/features/design/style-groups.tsx
@@ -3681,6 +3722,10 @@ msgstr "Lataukset ja historia"
 msgid "Download both PDFs"
 msgstr "Lataa molemmat PDF:t"
 
+#: src/features/application-detail/sections.tsx
+msgid "Download current PDF"
+msgstr ""
+
 #: src/features/letters/share.tsx
 msgid "Download failed. Try again."
 msgstr "Lataus epäonnistui. Yritä uudelleen."
@@ -3692,6 +3737,10 @@ msgstr "Lataus avaa järjestelmän jakovalikon. Valitse tallennuspalvelu tiedost
 #: src/features/share/download.tsx
 msgid "Download opens the system share sheet. Choose a storage provider to save the file. A linked letter opens as a second file."
 msgstr "Lataus avaa järjestelmän jakovalikon. Tallenna tiedosto valitsemalla tallennuspalvelu. Linkitetty saatekirje avautuu toisena tiedostona."
+
+#: src/features/workspace/preparation.tsx
+msgid "Download PDF"
+msgstr "Lataa PDF"
 
 #: src/features/letters/share.tsx
 msgid "Download PDF instead"
@@ -3836,6 +3885,14 @@ msgstr "Muokata"
 msgid "Edit {0}: {1}"
 msgstr "Muokkaa {0}: {1}"
 
+#: src/features/workspace/preparation.tsx
+msgid "Edit cover letter"
+msgstr ""
+
+#: src/features/application-detail/sections.tsx
+msgid "Edit current draft"
+msgstr ""
+
 #: src/features/application-detail/sheets.tsx
 msgid "Edit date"
 msgstr "Muokkaa päivämäärää"
@@ -3859,9 +3916,17 @@ msgstr "Muokkaa linkkiä"
 msgid "Edit note"
 msgstr "Muokkaa muistiinpanoa"
 
+#: src/features/workspace/preparation.tsx
+msgid "Edit posting"
+msgstr ""
+
 #: src/features/workspace/tabs/apply.tsx
 msgid "Edit question"
 msgstr "Muokkaa kysymystä"
+
+#: src/features/workspace/preparation.tsx
+msgid "Edit resume"
+msgstr ""
 
 #: src/features/career/schedule-sheet.tsx
 msgid "Edit schedule"
@@ -4344,6 +4409,10 @@ msgstr "Unohda"
 msgid "Forgetting unlinks this fact from stories and saved items. The original source stays unchanged."
 msgstr "Tämän tosiasian unohtaminen poistaa sen linkit tarinoihin ja tallennettuihin esineisiin. Alkuperäinen lähde on ennallaan."
 
+#: src/features/workspace/tabs/apply.tsx
+msgid "Form answers"
+msgstr ""
+
 #: src/features/letters/rich-text-field.tsx
 #: src/features/write/rich-text-field.tsx
 msgid "Formatting"
@@ -4388,6 +4457,11 @@ msgstr "Koko nimi"
 #: src/features/design/layout-screen.tsx
 msgid "Full width"
 msgstr "Täysi leveys"
+
+#: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
+msgid "Generating PDF…"
+msgstr "Luodaan PDF-tiedostoa…"
 
 #: src/features/settings/locale-names.ts
 msgid "German"
@@ -4583,6 +4657,10 @@ msgstr "Piilota luetut"
 #: src/features/check/issues.ts
 msgid "Hide the photo"
 msgstr "Piilota valokuva"
+
+#: src/features/workspace/preparation.tsx
+msgid "Hides all steps"
+msgstr ""
 
 #: src/features/settings/locale-names.ts
 msgid "Hindi"
@@ -4940,6 +5018,7 @@ msgid "Job"
 msgstr "Job"
 
 #: src/features/application-detail/sheets.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Job description"
 msgstr "Työnkuvaus"
 
@@ -5365,6 +5444,18 @@ msgstr "Linkitetyt tilit"
 msgid "Linked application"
 msgstr "Linkitetty työhakemus"
 
+#: src/features/workspace/preparation.tsx
+msgid "Linked document unavailable"
+msgstr ""
+
+#: src/features/workspace/preparation.tsx
+msgid "Linked document unavailable. Choose another document or restore it from Trash."
+msgstr ""
+
+#: src/features/workspace/preparation.tsx
+msgid "Linked documents couldn't be loaded."
+msgstr "Linkitettyjä asiakirjoja ei voitu ladata."
+
 #: src/features/application-detail/sections.tsx
 msgid "Linked resume"
 msgstr "Linkitetty ansioluettelo"
@@ -5438,6 +5529,10 @@ msgstr "Ladataan tietopankkia ennen lähettämistä…"
 #: src/features/documents/thumbnail.tsx
 msgid "Loading letter…"
 msgstr "Ladataan saatekirjettä…"
+
+#: src/features/workspace/preparation.tsx
+msgid "Loading linked documents…"
+msgstr "Ladataan linkitettyjä asiakirjoja…"
 
 #: src/features/ai/provider-editor.tsx
 msgid "Loading model suggestions… You can also enter any model ID."
@@ -5642,10 +5737,6 @@ msgstr "Merkitse luetuksi"
 #: src/features/workspace/tabs/messages.tsx
 msgid "Mark it as applied in Apply first."
 msgstr "Merkitse se ensin haetuksi Hakeminen-välilehdellä."
-
-#: src/features/workspace/tabs/apply.tsx
-msgid "Mark the application as applied to keep the versions you sent."
-msgstr "Merkitse hakemus haetuksi, niin lähettämäsi versiot säilytetään."
 
 #: src/features/letters/share.tsx
 #: src/features/share/download.tsx
@@ -6106,6 +6197,10 @@ msgstr "Seuraava vaihe: {note}. Lisää muistutuksen Tänään-osioon."
 msgid "Next workspace tabs"
 msgstr "Seuraavat työtilan välilehdet"
 
+#: src/features/workspace/preparation.tsx
+msgid "No AI needed. Edit documents and write answers yourself; nothing here is sent to the employer or marks the job applied."
+msgstr ""
+
 #: src/features/ai/provider-list.tsx
 msgid "No AI provider yet"
 msgstr "Ei vielä tekoälypalveluntarjoajaa"
@@ -6151,6 +6246,10 @@ msgstr "Ei päivämäärää"
 #: src/features/ats-checker/messages.ts
 msgid "No dates were found."
 msgstr "Päivämääriä ei löytynyt."
+
+#: src/features/workspace/tabs/apply.tsx
+msgid "no documents"
+msgstr ""
 
 #: src/features/assistant/threads.tsx
 msgid "no edits"
@@ -6251,6 +6350,10 @@ msgstr "Tähän osoitteeseen ei vastannut Reactive Resume-palvelinta. Tarkista o
 msgid "No recognizable terms in this posting."
 msgstr "Tässä työpaikkailmoituksessa ei ole tunnistettavia termejä."
 
+#: src/features/workspace/tabs/apply.tsx
+msgid "No recorded answers are available."
+msgstr ""
+
 #: src/features/career/today.tsx
 msgid "No reply yet"
 msgstr "Ei vielä vastausta"
@@ -6330,6 +6433,10 @@ msgstr "Ei mitään"
 msgid "None of your AI connections can transcribe speech (OpenAI, Google Gemini, Mistral, xAI, Groq or Vercel AI Gateway can). Add one, or type your answer."
 msgstr "Mikään AI-yhteyksistäsi ei pysty litteroimaan puhetta (OpenAI, Google Gemini, Mistral, xAI, Groq tai Vercel AI Gateway voi). Lisää yksi tai kirjoita vastauksesi."
 
+#: src/features/workspace/preparation.tsx
+msgid "None selected"
+msgstr ""
+
 #: src/features/design/style-groups.tsx
 #: src/features/letters/design.tsx
 msgid "Normal"
@@ -6384,6 +6491,10 @@ msgstr "Ei vielä tallennettu. Jätä tyhjäksi, kunnes sinulla on todisteita."
 #: src/shell/builder-chrome.tsx
 msgid "Not saved"
 msgstr "Ei tallennettu"
+
+#: src/features/workspace/preparation.tsx
+msgid "Not saved yet"
+msgstr ""
 
 #: src/features/applications/stages.ts
 msgid "Not selected"
@@ -6730,6 +6841,10 @@ msgstr "Avataan ansioluetteloa…"
 msgid "Opens in Career → Offers."
 msgstr "Avautuu kohdassa Ura → Tarjoukset."
 
+#: src/features/application-detail/sections.tsx
+msgid "Opens the version you sent, read-only"
+msgstr ""
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Opportunity discovery"
 msgstr "Työpaikkahaku"
@@ -6737,6 +6852,14 @@ msgstr "Työpaikkahaku"
 #: src/features/ai/web-access.tsx
 msgid "Optional"
 msgstr "Valinnainen"
+
+#: src/features/workspace/preparation.tsx
+msgid "Optional · none selected"
+msgstr ""
+
+#: src/features/workspace/preparation.tsx
+msgid "Optional AI help in the editors; review edits before accepting. Nothing here is sent to the employer or marks the job applied."
+msgstr ""
 
 #: src/features/ai/provider-editor.tsx
 msgid "Optional for local Ollama"
@@ -7105,6 +7228,7 @@ msgstr "Tehtävänimike"
 msgid "posting"
 msgstr "ilmoitus"
 
+#: src/features/workspace/preparation.tsx
 #: src/features/workspace/tabs/fit.tsx
 msgid "Posting"
 msgstr "Työpaikkailmoitus"
@@ -7592,6 +7716,10 @@ msgstr "Äänitys pysähtyi 2 minuutin rajaan. Litteroidaan sanomaasi."
 msgid "Recording time"
 msgstr "Äänitysaika"
 
+#: src/features/workspace/tabs/apply.tsx
+msgid "Records {records} as sent. You submit on the employer's site yourself."
+msgstr ""
+
 #: src/features/application-detail/sheets.tsx
 msgid "Recruiter"
 msgstr "Rekrytoija"
@@ -7941,6 +8069,7 @@ msgstr "Tulos"
 #: src/features/career/facts.tsx
 #: src/features/documents/library.tsx
 #: src/features/letters/write.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Resume"
 msgstr "Ansioluettelo"
 
@@ -7957,8 +8086,14 @@ msgid "Resume feedback, product help, and community ideas."
 msgstr "Palautetta ansioluettelosta, apua tuotteen käyttöön ja yhteisön ideoita."
 
 #: src/features/application-detail/sections.tsx
+#: src/features/workspace/tabs/apply.tsx
 msgid "Resume file"
 msgstr "Ansioluettelotiedosto"
+
+#: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
+msgid "Resume options"
+msgstr ""
 
 #. placeholder {0}: pageIndex + 1
 #: src/features/check/page.tsx
@@ -8083,6 +8218,14 @@ msgstr "Tarkista hakemus"
 msgid "Review Check"
 msgstr "Tarkista Tarkistus-tulokset"
 
+#: src/features/workspace/tabs/apply.tsx
+msgid "Review checks"
+msgstr ""
+
+#: src/features/workspace/tabs/apply.tsx
+msgid "Review checks only reflect what you checked yourself."
+msgstr ""
+
 #: src/features/career/today.tsx
 msgid "Review draft"
 msgstr "Tarkista luonnos"
@@ -8103,6 +8246,10 @@ msgstr "Arvioi vastaukseni"
 msgid "Review my answer sends the question, what you said, this posting and your Knowledge to {providerName}."
 msgstr "Arvioi vastaukseni -toiminto lähettää kysymyksen, sanomasi, tämän ilmoituksen ja tietopankkisi palveluun {providerName}."
 
+#: src/features/workspace/preparation.tsx
+msgid "Review readiness and record your submission"
+msgstr ""
+
 #: src/features/workspace/tabs/apply.tsx
 msgid "Review required form answers and remove unsupported claims."
 msgstr "Tarkista lomakkeen pakolliset vastaukset ja poista perustelemattomat väitteet."
@@ -8114,6 +8261,10 @@ msgstr "Tarkista tiedot ennen tallentamista. Haettu sisältö ei osoita, että t
 #: src/features/workspace/tabs/apply.tsx
 msgid "Review the selected resume and cover letter in their editors."
 msgstr "Tarkista valittu ansioluettelo ja saatekirje niiden editoreissa."
+
+#: src/features/workspace/preparation.tsx
+msgid "Review with assistant"
+msgstr ""
 
 #: src/features/check/writing.tsx
 msgid "Review writing"
@@ -8311,6 +8462,10 @@ msgstr "Tallenna työtarjous"
 msgid "Save or share file"
 msgstr "Tallenna tai jaa tiedosto"
 
+#: src/features/workspace/preparation.tsx
+msgid "Save posting"
+msgstr ""
+
 #: src/features/career/schedule-sheet.tsx
 msgid "Save schedule"
 msgstr "Tallenna ajastus"
@@ -8331,6 +8486,10 @@ msgstr "Tallenna asiakirja ennen lähettämistä."
 #: src/features/ats-checker/messages.ts
 msgid "Save the file with every page upright."
 msgstr "Tallenna tiedosto siten, että jokainen sivu on pystysuorassa."
+
+#: src/features/workspace/preparation.tsx
+msgid "Save the job posting"
+msgstr ""
 
 #: src/features/workspace/tabs/messages.tsx
 msgid "Save these offer terms to compare"
@@ -8894,6 +9053,10 @@ msgstr "Näytetään tallennetut tiedot. Niitä ei voitu päivittää."
 msgid "Shown in your timezone."
 msgstr "Näytetään aikavyöhykkeelläsi."
 
+#: src/features/workspace/preparation.tsx
+msgid "Shows all steps"
+msgstr ""
+
 #: src/features/documents/document-sheets.tsx
 msgid "Shows shared tags. Add or remove tags without changing each document's other tags."
 msgstr "Näyttää jaetut tunnisteet. Lisää tai poista tunnisteita muuttamatta kunkin asiakirjan muita tunnisteita."
@@ -9289,6 +9452,12 @@ msgstr "Alkaa nyt"
 msgid "Stay in Documents"
 msgstr "Pysy Asiakirjat:ssä"
 
+#. placeholder {0}: stepIndex + 1
+#. placeholder {1}: STEPS.length
+#: src/features/workspace/preparation.tsx
+msgid "Step {0} of {1}"
+msgstr ""
+
 #: src/features/assistant/chat-view.tsx
 #: src/features/letters/write.tsx
 msgid "Stop"
@@ -9339,9 +9508,13 @@ msgstr "Yliviivaus"
 msgid "Stronger verb"
 msgstr "Vahvempi verbi"
 
-#: src/features/workspace/tabs/apply.tsx
-msgid "Submission is recorded. Review checks only reflect what you checked yourself."
-msgstr "Hakemuksen lähettäminen on kirjattu. Tarkistusmerkinnät kertovat vain siitä, mitä olet itse tarkistanut."
+#: src/features/application-detail/sections.tsx
+msgid "Submission recorded {date}. The sent versions never change; current drafts stay editable. This record does not confirm employer receipt."
+msgstr ""
+
+#: src/features/workspace/preparation.tsx
+msgid "Submission recorded. Current drafts are separate from what you sent."
+msgstr ""
 
 #: src/features/workspace/tabs/apply.tsx
 msgid "Submit through the employer's application page yourself."
@@ -9364,10 +9537,6 @@ msgstr "Liitteenä oleva ansioluettelo lähetetty"
 #: src/features/application-detail/sheets.tsx
 msgid "Submitted attached resume: {0}"
 msgstr "Lähetetty liitteenä oleva ansioluettelo: {0}"
-
-#: src/features/workspace/tabs/apply.tsx
-msgid "Submitted on {appliedOn}."
-msgstr "Hakemus lähetetty {appliedOn}."
 
 #: src/features/workspace/tabs/prepare.tsx
 msgid "Success at 90 days · next step"
@@ -9476,6 +9645,14 @@ msgstr "Tagit antavat ohjelmistolle selkeän lukujärjestyksen. Ota ne käyttö�
 #: src/features/documents/document-sheets.tsx
 msgid "Tags…"
 msgstr "Tunnisteet…"
+
+#: src/features/workspace/preparation.tsx
+msgid "Tailor and review your resume"
+msgstr ""
+
+#: src/features/workspace/preparation.tsx
+msgid "Tailor the resume"
+msgstr ""
 
 #: src/features/assistant/assistant-screen.tsx
 msgid "Tailor to the {company} posting"
@@ -9878,10 +10055,6 @@ msgstr "Ääneen luettava teksti lähetetään palvelimesi kautta tälle puheent
 msgid "The top of the first page does not look like a name."
 msgstr "Ensimmäisen sivun yläosa ei näytä nimeltä."
 
-#: src/features/workspace/tabs/apply.tsx
-msgid "The versions you sent are kept in Saved. Edits here don't change what {company} received."
-msgstr "Lähettämäsi versiot säilytetään Tallennettu-osiossa. Nämä muokkaukset eivät muuta sitä, mitä {company} sai."
-
 #: app/(tabs)/settings/preferences.tsx
 #: src/features/search/search-screen.tsx
 msgid "Theme"
@@ -9898,6 +10071,10 @@ msgstr "Linkkiä profiiliin, portfolioon tai koodivarastoon ei ole."
 #: src/features/ats-checker/messages.ts
 msgid "There is no summary paragraph."
 msgstr "Yhteenvetokappaletta ei ole."
+
+#: src/features/workspace/tabs/apply.tsx
+msgid "These are saved draft answers."
+msgstr ""
 
 #: src/features/workspace/tabs/apply.tsx
 msgid "These are the answers saved when you applied."
@@ -10366,6 +10543,7 @@ msgstr "Kokeile {suggestion}"
 #: src/features/letters/write.tsx
 #: src/features/settings/api-keys.tsx
 #: src/features/workspace/parts.tsx
+#: src/features/workspace/preparation.tsx
 #: src/features/workspace/shell.tsx
 #: src/features/workspace/tabs/practise.tsx
 #: src/features/write/improve.tsx
@@ -10870,6 +11048,10 @@ msgstr "Katso työhakemus"
 msgid "View posting"
 msgstr "Katso työpaikkailmoitus"
 
+#: src/features/workspace/tabs/apply.tsx
+msgid "View recorded answers"
+msgstr ""
+
 #: src/features/application-detail/sections.tsx
 msgid "View saved work"
 msgstr "Näytä tallennettu työ"
@@ -11155,9 +11337,18 @@ msgstr "Kirjoita"
 msgid "Write \"Present\" as the end date of your current role."
 msgstr "Kirjoita \"Present\" nykyisen roolisi päättymispäiväksi."
 
+#: src/features/workspace/preparation.tsx
+msgid "Write a cover letter if required"
+msgstr ""
+
 #: src/features/application-detail/sections.tsx
+#: src/features/workspace/preparation.tsx
 msgid "Write a letter"
 msgstr "Kirjoita kirje"
+
+#: src/features/workspace/preparation.tsx
+msgid "Write and review form answers"
+msgstr ""
 
 #: src/features/workspace/tabs/prepare.tsx
 msgid "Write down what they asked while it's fresh. The coach compares your answers with your stories."
@@ -11254,10 +11445,6 @@ msgstr "Sinulla on tallentamattomia muutoksia."
 #: src/features/workspace/tabs/messages.tsx
 msgid "You send it from your own email."
 msgstr "Lähetät sen omasta sähköpostistasi."
-
-#: src/features/workspace/tabs/apply.tsx
-msgid "You submit on the employer's site yourself. Marking it applied keeps the exact versions you sent."
-msgstr "Lähetät hakemuksen itse työnantajan sivustolla. Haetuksi merkitseminen säilyttää täsmälleen ne versiot, jotka lähetit."
 
 #: src/features/settings/sign-out.tsx
 msgid "You will be signed out of {server}. Any edits not yet synced from this device will be lost."

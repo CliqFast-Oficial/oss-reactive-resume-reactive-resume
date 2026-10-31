@@ -45120,6 +45120,10 @@
 											},
 											"outdated": {
 												"type": "boolean"
+											},
+											"submission": {
+												"type": "boolean",
+												"description": "Answers recorded at submission, separate from generated or current drafts."
 											}
 										},
 										"required": [
@@ -48482,6 +48486,35 @@
 												"factIds"
 											]
 										}
+									},
+									"expectedDocuments": {
+										"type": "object",
+										"properties": {
+											"resumeId": {
+												"anyOf": [
+													{
+														"type": "string"
+													},
+													{
+														"type": "null"
+													}
+												]
+											},
+											"coverLetterId": {
+												"anyOf": [
+													{
+														"type": "string"
+													},
+													{
+														"type": "null"
+													}
+												]
+											}
+										},
+										"required": [
+											"resumeId",
+											"coverLetterId"
+										]
 									}
 								},
 								"required": [
@@ -48552,7 +48585,7 @@
 			"post": {
 				"operationId": "snapshotCareerAnswers",
 				"summary": "Save the answers sent with an application",
-				"description": "Saves the workspace's answers as sent, after the application is marked as applied.",
+				"description": "Saves unchanged pre-submission answers as sent. Rejects later workspace edits; use submitCareerApplication to record answers and submission atomically.",
 				"tags": [
 					"Career"
 				],
